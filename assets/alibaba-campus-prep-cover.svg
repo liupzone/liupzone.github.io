@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">阿里巴巴校招备考攻略</title>
+  <desc id="desc">横向知乎风格的阿里巴巴校招备考攻略封面，包含 Alibaba 标识、阿里云、钉钉、淘宝和菜鸟元素</desc>
+  <rect width="1200" height="480" fill="#2b1712"/>
+  <path d="M0 392H1200M0 424H1200M0 456H1200" stroke="#522b20" stroke-width="2"/>
+  <path d="M772 0v480M1048 0v480" stroke="#4b271e" stroke-width="2"/>
+  <rect x="54" y="52" width="1092" height="376" rx="22" fill="#3b2119" stroke="#885037" stroke-width="2"/>
+  <path d="M92 337C183 303 245 319 320 248s129-14 205 23 140 19 210-47 144-70 239-10" fill="none" stroke="#ff6a00" stroke-width="4"/>
+  <path d="M92 337C183 303 245 319 320 248s129-14 205 23 140 19 210-47 144-70 239-10" fill="none" stroke="#ff6a00" stroke-width="15" opacity=".15"/>
+  <circle cx="320" cy="248" r="8" fill="#fff8f2" stroke="#ff6a00" stroke-width="4"/>
+  <circle cx="525" cy="271" r="8" fill="#fff8f2" stroke="#ffb36d" stroke-width="4"/>
+  <circle cx="974" cy="234" r="8" fill="#fff8f2" stroke="#f5d5a8" stroke-width="4"/>
+
+  <text x="92" y="105" fill="#ffb36d" font-size="15" font-weight="700" letter-spacing="3" font-family="Arial, sans-serif">LIUPZONE / CAMPUS PREP</text>
+  <text x="92" y="182" fill="#fff8f2" font-size="50" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">阿里巴巴校招备考攻略</text>
+  <text x="95" y="220" fill="#f2c9aa" font-size="21" font-family="PingFang SC, Microsoft YaHei, sans-serif">Java · 分布式 · 系统设计 · 项目深挖</text>
+  <text x="95" y="386" fill="#c99577" font-size="14" letter-spacing="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FINAL ARTICLE / COMPANY GUIDE</text>
+
+  <g transform="translate(808 88)">
+    <rect width="280" height="250" rx="18" fill="#24130f" stroke="#a25e3c" stroke-width="2"/>
+    <g transform="translate(20 14)">
+      <path d="M8 22C13 4 28 0 37 7c-6 4-10 10-13 19-4 10-10 13-16 10z" fill="#ff6a00"/>
+      <path d="M8 27c16 9 32 6 43-5-4 14-20 24-36 19-7-2-10-7-7-14z" fill="#ff9a55"/>
+      <text x="62" y="19" fill="#fff8f2" font-size="18" font-weight="700" font-family="Arial, sans-serif">Alibaba</text>
+      <text x="62" y="37" fill="#ffb36d" font-size="12" font-family="PingFang SC, Microsoft YaHei, sans-serif">阿里巴巴</text>
+    </g>
+    <text x="22" y="64" fill="#ffb36d" font-size="13" letter-spacing="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">ALIBABA ECOSYSTEM</text>
+    <g transform="translate(28 88)" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+      <rect x="0" y="0" width="54" height="35" rx="8" fill="#ff6a00"/>
+      <text x="12" y="24" fill="#fff8f2" font-size="15" font-weight="700">阿里云</text>
+      <text x="75" y="23" fill="#f2c9aa" font-size="16">阿里云</text>
+      <rect x="0" y="56" width="54" height="35" rx="8" fill="#f0a21b"/>
+      <text x="12" y="80" fill="#24130f" font-size="15" font-weight="700">钉钉</text>
+      <text x="75" y="79" fill="#f2c9aa" font-size="16">钉钉</text>
+      <rect x="0" y="112" width="54" height="35" rx="8" fill="#fff8f2"/>
+      <text x="11" y="136" fill="#d85b24" font-size="15" font-weight="700">淘天</text>
+      <text x="75" y="135" fill="#f2c9aa" font-size="16">淘宝 · 菜鸟</text>
+    </g>
+  </g>
+</svg>

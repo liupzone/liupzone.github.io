@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Baidu and Google can discover the canonical URL set here.
+Sitemap: https://liupzone.github.io/sitemap.xml

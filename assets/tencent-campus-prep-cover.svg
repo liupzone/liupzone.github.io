@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">腾讯校招备考攻略</title>
+  <desc id="desc">横向知乎风格的腾讯校招备考攻略封面，包含企鹅、微信、QQ、游戏和云服务元素</desc>
+  <rect width="1200" height="480" fill="#101b39"/>
+  <path d="M0 392H1200M0 424H1200M0 456H1200" stroke="#1f315b" stroke-width="2"/>
+  <path d="M772 0v480M1048 0v480" stroke="#1c2b50" stroke-width="2"/>
+  <rect x="54" y="52" width="1092" height="376" rx="22" fill="#16264c" stroke="#304a7c" stroke-width="2"/>
+  <path d="M92 337C188 309 212 250 306 266S438 337 530 270s144-102 232-48 126 33 212-46" fill="none" stroke="#2b8cff" stroke-width="4"/>
+  <path d="M92 337C188 309 212 250 306 266S438 337 530 270s144-102 232-48 126 33 212-46" fill="none" stroke="#2b8cff" stroke-width="15" opacity=".14"/>
+  <circle cx="306" cy="266" r="8" fill="#fff" stroke="#2b8cff" stroke-width="4"/>
+  <circle cx="530" cy="270" r="8" fill="#fff" stroke="#2b8cff" stroke-width="4"/>
+  <circle cx="974" cy="176" r="8" fill="#fff" stroke="#5bd6c7" stroke-width="4"/>
+
+  <text x="92" y="105" fill="#5bd6c7" font-size="15" font-weight="700" letter-spacing="3" font-family="Arial, sans-serif">LIUPZONE / CAMPUS PREP</text>
+  <text x="92" y="182" fill="#f5f8ff" font-size="50" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">腾讯校招备考攻略</text>
+  <text x="95" y="220" fill="#a9b9e4" font-size="21" font-family="PingFang SC, Microsoft YaHei, sans-serif">高频题 · 技术面 · 面试风格 · 备考路线</text>
+  <text x="95" y="386" fill="#7f96c8" font-size="14" letter-spacing="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FINAL ARTICLE / COMPANY GUIDE</text>
+
+  <g transform="translate(808 88)">
+    <rect width="280" height="250" rx="18" fill="#0c1733" stroke="#3d5c91" stroke-width="2"/>
+    <g transform="translate(20 14)">
+      <circle cx="15" cy="13" r="13" fill="#2b8cff"/>
+      <circle cx="23" cy="9" r="7" fill="#ffad70"/>
+      <path d="M10 21l8-7 8 7" fill="none" stroke="#f5f8ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="43" y="12" fill="#f5f8ff" font-size="16" font-weight="700" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif">Tencent</text>
+      <text x="43" y="29" fill="#7fb4ff" font-size="12" font-family="PingFang SC, Microsoft YaHei, sans-serif">腾讯</text>
+    </g>
+    <text x="22" y="64" fill="#5bd6c7" font-size="13" letter-spacing="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">TENCENT ECOSYSTEM</text>
+    <g transform="translate(32 58)">
+      <ellipse cx="52" cy="82" rx="35" ry="52" fill="#f5f8ff"/>
+      <ellipse cx="52" cy="48" rx="25" ry="30" fill="#171f38"/>
+      <circle cx="43" cy="44" r="4" fill="#f5f8ff"/>
+      <circle cx="61" cy="44" r="4" fill="#f5f8ff"/>
+      <path d="M47 51l5 7 5-7z" fill="#ffad70"/>
+      <ellipse cx="52" cy="100" rx="20" ry="24" fill="#dbe7ff"/>
+      <path d="M26 73l-20 13 23 8M78 73l20 13-23 8" fill="none" stroke="#f5f8ff" stroke-width="8" stroke-linecap="round"/>
+      <text x="27" y="166" fill="#f5f8ff" font-size="14" font-family="PingFang SC, Microsoft YaHei, sans-serif">企鹅</text>
+    </g>
+    <g transform="translate(132 62)" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+      <circle cx="25" cy="25" r="22" fill="#2b8cff"/>
+      <path d="M15 21h20M15 28h13" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <text x="58" y="30" fill="#dce8ff" font-size="16">微信</text>
+      <circle cx="25" cy="91" r="22" fill="#5bd6c7"/>
+      <text x="16" y="98" fill="#0c1733" font-size="17" font-weight="700">Q</text>
+      <text x="58" y="96" fill="#dce8ff" font-size="16">QQ</text>
+      <rect x="4" y="137" width="42" height="28" rx="6" fill="#ffad70"/>
+      <path d="M13 151h24" stroke="#0c1733" stroke-width="3" stroke-linecap="round"/>
+      <text x="58" y="157" fill="#dce8ff" font-size="16">游戏 · 云</text>
+    </g>
+  </g>
+</svg>
