@@ -1,16 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 260" role="img" aria-labelledby="title">
   <title id="title">大厂校招攻略封面</title>
-  <rect width="480" height="260" fill="#eef2ff"/>
-  <path d="M0 214C76 182 126 238 202 194s103-55 278-8v74H0z" fill="#dbe4ff"/>
-  <circle cx="386" cy="53" r="31" fill="#f5c8ae"/>
-  <circle cx="76" cy="57" r="18" fill="#fff" opacity=".9"/>
-  <rect x="56" y="83" width="273" height="124" rx="16" fill="#fff" stroke="#bec9ed" stroke-width="2"/>
-  <rect x="76" y="104" width="74" height="8" rx="4" fill="#4963c7"/>
-  <rect x="76" y="127" width="151" height="6" rx="3" fill="#d9e0f5"/>
-  <rect x="76" y="140" width="122" height="6" rx="3" fill="#d9e0f5"/>
-  <rect x="76" y="166" width="62" height="18" rx="9" fill="#4963c7"/>
-  <circle cx="232" cy="175" r="17" fill="#f5c8ae"/>
-  <path d="M237 162l15 13-15 13z" fill="#fff"/>
-  <text x="56" y="42" fill="#4963c7" font-size="14" font-weight="700" font-family="Arial, sans-serif">CAMPUS PREP</text>
-  <text x="56" y="66" fill="#28355f" font-size="21" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">31 家公司攻略</text>
+  <rect width="320" height="260" fill="#eef2ff"/><path d="M0 211C55 181 96 235 160 194s105-49 160-10v76H0z" fill="#dce5ff"/><circle cx="270" cy="50" r="28" fill="#f5c8ae"/><circle cx="47" cy="53" r="15" fill="#fff" opacity=".9"/>
+  <text x="25" y="38" fill="#4963c7" font-size="11" font-weight="700" font-family="Arial, sans-serif">CAMPUS PREP</text><text x="25" y="61" fill="#28355f" font-size="20" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">31 家公司攻略</text>
+  <rect x="25" y="82" width="210" height="126" rx="14" fill="#fff" stroke="#bec9ed" stroke-width="2"/><rect x="43" y="102" width="65" height="8" rx="4" fill="#4963c7"/><rect x="43" y="125" width="144" height="6" rx="3" fill="#d9e0f5"/><rect x="43" y="138" width="116" height="6" rx="3" fill="#d9e0f5"/><rect x="43" y="169" width="61" height="17" rx="9" fill="#4963c7"/><circle cx="184" cy="175" r="17" fill="#f5c8ae"/><path d="M189 162l15 13-15 13z" fill="#fff"/><rect x="238" y="111" width="55" height="75" rx="10" fill="#fff" opacity=".82"/><path d="M255 138v27M244 151h22" stroke="#4963c7" stroke-width="3"/>
 </svg>
