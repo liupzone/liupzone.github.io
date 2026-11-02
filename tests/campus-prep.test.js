@@ -42,6 +42,12 @@ for (const label of ['校招稳稳拿OFFER', '宝藏资源', '考研之路', '�
 if (!home.includes('resources.html?category=考研')) {
   throw new Error('homepage should link to the real graduate-exam resources');
 }
+if ((home.match(/class="update-card"/g) || []).length !== 5) {
+  throw new Error('homepage should list exactly five latest updates');
+}
+if (home.includes('topic-grid')) {
+  throw new Error('homepage should replace scenario cards with latest updates');
+}
 if (!overview.includes('校招稳稳拿OFFER')) throw new Error('overview title missing');
 if (!overview.includes('大厂校招备考攻略')) throw new Error('overview subtitle missing');
 if (overview.includes('内容筹备中')) throw new Error('overview still contains unpublished placeholders');
