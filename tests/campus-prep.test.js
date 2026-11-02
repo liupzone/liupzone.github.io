@@ -61,6 +61,9 @@ for (const marker of ['腾讯校招备考攻略', 'resources-data.js', '校招�
 for (const marker of ['考研之路', '生活福利', 'fuzzyMatch', 'queryTerms', 'examResults']) {
   if (!siteSearch.includes(marker)) throw new Error(`site-wide fuzzy search missing: ${marker}`);
 }
+if (!siteSearch.includes('<script src="resources-data.js"></script>')) {
+  throw new Error('site search should load the complete resource index directly');
+}
 if (!overview.includes('校招稳稳拿OFFER')) throw new Error('overview title missing');
 if (!overview.includes('大厂校招备考攻略')) throw new Error('overview subtitle missing');
 if (overview.includes('内容筹备中')) throw new Error('overview still contains unpublished placeholders');

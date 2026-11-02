@@ -45,6 +45,7 @@
     <section class="site-search-hero"><div class="shell"><div class="eyebrow">SITE SEARCH / ALL CONTENT</div><h1>搜索全站内容</h1><p>一次检索校招稳稳拿OFFER、宝藏资源、考研之路和生活福利。支持多个关键词、空格与常见同义词，输入局部词也能匹配。</p><form class="site-search-box" id="siteSearchForm"><input id="siteSearchInput" type="search" placeholder="搜索公司、技术、科目、书籍或影视资源" autocomplete="off" autofocus /><button type="submit">模糊搜索 →</button></form></div></section>
     <section class="site-search-main shell"><div class="site-search-summary"><div id="searchSummary"><strong>全部内容</strong><span> · 输入关键词开始检索</span></div><button class="site-search-clear" id="clearSearch" type="button">清空搜索</button></div><section class="site-search-group" id="guideResults"><h2>校招稳稳拿OFFER <b id="guideCount">31</b></h2><div class="site-result-list" id="guideResultList"></div></section><section class="site-search-group" id="treasureResults"><h2>宝藏资源 <b id="treasureCount">881</b></h2><div class="site-result-list" id="treasureResultList"></div></section><section class="site-search-group" id="examResults"><h2>考研之路 <b id="examCount">19</b></h2><div class="site-result-list" id="examResultList"></div></section><section class="site-search-group" id="lifeResults"><h2>生活福利 <b id="lifeCount">0</b></h2><div class="site-result-list" id="lifeResultList"></div><p class="side-note">生活福利内容尚在整理，当前没有可检索的真实内容。</p></section><div class="search-empty" id="searchEmpty">没有找到匹配内容，试试更短的关键词，或浏览四个栏目的内容目录。</div></section>
   </main>
+  <script src="resources-data.js"></script>
   <script>
     const guides = [
       ['腾讯校招备考攻略','腾讯 C++ Go LRU LFU 操作系统 网络 后台开发 技术面','campus-prep/tencent.html','assets/tencent-campus-prep-cover.svg'],
@@ -80,21 +81,23 @@
       ['追觅科技校招备考攻略','追觅 Dreame 清洁机器人 SLAM RTOS 嵌入式 C++','campus-prep/dreame.html','assets/dreame-campus-prep-cover.svg']
     ];
     const input=document.getElementById('siteSearchInput'), guideList=document.getElementById('guideResultList'), treasureList=document.getElementById('treasureResultList'), examList=document.getElementById('examResultList'), lifeList=document.getElementById('lifeResultList'), summary=document.getElementById('searchSummary'), empty=document.getElementById('searchEmpty');
-    let resources=[];
+    let resources=typeof resourceData!=='undefined'?resourceData:[];
     const esc=(value)=>String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
     const aliases={'计算机':'计算机 电脑 编程 代码 coding','编程':'编程 计算机 代码 coding','程序':'程序 编程 代码 coding 算法','搜索':'搜索 查找 检索 search','人工智能':'人工智能 AI 大模型 机器学习 LLM','自动驾驶':'自动驾驶 智驾 无人驾驶 机器人 robot','资料':'资料 资源 课程 材料 合集','电影':'电影 影视 剧集 动画','纪录片':'纪录片 BBC','书籍':'书籍 书 阅读 图书 名著','考研':'考研 研究生 复试 初试 调剂','校招':'校招 秋招 春招 校园招聘 offer 岗位 面试','测试':'测试 测开 QA','机器人':'机器人 robot 自动驾驶 控制','汽车':'汽车 智驾 车载 自动驾驶','英语':'英语 english 启蒙','教辅':'教辅 学习 资料 作业','中学':'初中 高中 中考 高考','小学':'小学 小初 幼小 启蒙'};
     function normalize(value){return String(value).toLowerCase().normalize('NFKC').replace(/[\s\p{P}\p{S}]+/gu,'');}
     function queryTerms(value){const base=String(value).trim().toLowerCase();if(!base)return[];const raw=base.split(/[\s\p{P}\p{S}]+/u).filter(Boolean);const source=raw.length?raw:[base];const extras=source.flatMap(token=>String(aliases[token]||'').toLowerCase().split(/\s+/));return[...new Set([...source,...extras].map(normalize).filter(Boolean))];}
     function fuzzyMatch(text,terms){if(!terms.length)return true;const normalizedText=normalize(text);return terms.some(term=>normalizedText.includes(term)||term.includes(normalizedText));}
+    function relevance(item,terms,type){const title=normalize(item.name||item.title||'');if(title.includes(terms[0]||'chosen-none'))return 0;return type==='guide'?1:2;}
     function resultCard(item,type){if(type==='guide'){return '<a class="site-result" href="'+esc(item.href)+'"><div><strong>'+esc(item.title)+'</strong><p>'+esc(item.keywords)+'</p><small>校招稳稳拿OFFER · 公司专项攻略</small></div><img src="'+esc(item.img)+'" alt="'+esc(item.title)+'封面" /></a>';}return '<a class="site-result resource" href="'+esc(item.url)+'" target="_blank" rel="noopener noreferrer"><div><strong>'+esc(item.name)+'</strong><p>'+esc(item.category)+' · '+esc(item.group)+'</p><small>'+(type==='exam'?'考研之路':'宝藏资源')+' · 打开原始资源</small></div><span class="go">打开 ↗</span></a>';}
     function render(){
       const query=input.value.trim(),terms=queryTerms(query);document.getElementById('clearSearch').hidden=!query;
-      const foundGuides=query?guides.filter(([title,keywords])=>fuzzyMatch(title+' '+keywords,terms)):guides;
+      const url=new URL(location.href);query?url.searchParams.set('q',query):url.searchParams.delete('q');history.replaceState(null,'',url);
+      const foundGuides=(query?guides.filter(([title,keywords])=>fuzzyMatch(title+' '+keywords,terms)):guides).map(item=>({item,score:relevance({title:item[0]},terms,'guide')})).sort((a,b)=>a.score-b.score).map(({item})=>item);
       const isExam=item=>item.category==='考研'||/考研/.test(item.name);
-      const foundTreasure=query?resources.filter(item=>!isExam(item)&&fuzzyMatch(item.name+' '+item.category+' '+item.group,terms)):resources.filter(item=>!isExam(item));
-      const foundExam=query?resources.filter(item=>isExam(item)&&fuzzyMatch(item.name+' '+item.category+' '+item.group,terms)):resources.filter(isExam);
+      const foundTreasure=(query?resources.filter(item=>!isExam(item)&&fuzzyMatch(item.name+' '+item.category+' '+item.group,terms)):resources.filter(item=>!isExam(item))).map(item=>({item,score:relevance(item,terms,'resource')})).sort((a,b)=>a.score-b.score).map(({item})=>item);
+      const foundExam=(query?resources.filter(item=>isExam(item)&&fuzzyMatch(item.name+' '+item.category+' '+item.group,terms)):resources.filter(isExam)).map(item=>({item,score:relevance(item,terms,'exam')})).sort((a,b)=>a.score-b.score).map(({item})=>item);
       guideList.innerHTML=foundGuides.map(item=>resultCard({title:item[0],keywords:item[1],href:item[2],img:item[3]},'guide')).join('');
-      treasureList.innerHTML=foundTreasure.slice(0,query?120:20).map(item=>resultCard(item,'resource')).join('');
+      treasureList.innerHTML=foundTreasure.slice(0,query?300:20).map(item=>resultCard(item,'resource')).join('');
       examList.innerHTML=foundExam.slice(0,100).map(item=>resultCard(item,'exam')).join('');
       lifeList.innerHTML='';
       document.getElementById('guideCount').textContent=foundGuides.length;document.getElementById('treasureCount').textContent=foundTreasure.length;document.getElementById('examCount').textContent=foundExam.length;document.getElementById('lifeCount').textContent='0';
@@ -102,12 +105,13 @@
       empty.classList.toggle('show',Boolean(query)&&foundGuides.length===0&&foundTreasure.length===0&&foundExam.length===0);
       document.getElementById('guideResults').hidden=query&&foundGuides.length===0;document.getElementById('treasureResults').hidden=query&&foundTreasure.length===0;document.getElementById('examResults').hidden=query&&foundExam.length===0;
     }
-    document.getElementById('siteSearchForm').addEventListener('submit',(event)=>event.preventDefault());
+    input.value=new URLSearchParams(location.search).get('q')||'';
+    document.getElementById('siteSearchForm').addEventListener('submit',(event)=>{event.preventDefault();render();});
     let searchTimer;
     input.addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(render,80);});
     document.getElementById('clearSearch').addEventListener('click',()=>{input.value='';input.focus();render();});
     document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});
-    fetch('resources-data.js').then(response=>response.text()).then(source=>{const start=source.indexOf('[');const end=source.lastIndexOf(']');resources=JSON.parse(source.slice(start,end+1));render();}).catch(()=>{document.getElementById('treasureCount').textContent='暂不可用';render();});
+    render();
   </script>
 </body>
 </html>
