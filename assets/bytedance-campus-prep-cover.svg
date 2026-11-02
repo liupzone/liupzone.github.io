@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">字节跳动校招备考攻略</title>
+  <desc id="desc">横向知乎风格的字节跳动校招备考攻略封面，包含 ByteDance 标识、抖音、飞书、剪映和 TikTok 元素</desc>
+  <rect width="1200" height="480" fill="#11131a"/>
+  <path d="M0 392H1200M0 424H1200M0 456H1200" stroke="#242936" stroke-width="2"/>
+  <path d="M772 0v480M1048 0v480" stroke="#222832" stroke-width="2"/>
+  <rect x="54" y="52" width="1092" height="376" rx="22" fill="#191d27" stroke="#3b4352" stroke-width="2"/>
+  <path d="M92 338C171 314 217 283 286 286s120 42 189-5 127-111 209-76 130 57 219-30" fill="none" stroke="#25f4ee" stroke-width="4"/>
+  <path d="M92 338C171 314 217 283 286 286s120 42 189-5 127-111 209-76 130 57 219-30" fill="none" stroke="#fe2c55" stroke-width="15" opacity=".2"/>
+  <circle cx="286" cy="286" r="8" fill="#fff" stroke="#25f4ee" stroke-width="4"/>
+  <circle cx="475" cy="281" r="8" fill="#fff" stroke="#fe2c55" stroke-width="4"/>
+  <circle cx="903" cy="175" r="8" fill="#fff" stroke="#25f4ee" stroke-width="4"/>
+
+  <text x="92" y="105" fill="#25f4ee" font-size="15" font-weight="700" letter-spacing="3" font-family="Arial, sans-serif">LIUPZONE / CAMPUS PREP</text>
+  <text x="92" y="182" fill="#f6f7fb" font-size="50" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">字节跳动校招备考攻略</text>
+  <text x="95" y="220" fill="#b9c2d4" font-size="21" font-family="PingFang SC, Microsoft YaHei, sans-serif">算法 · Go / C++ · 系统设计 · 面试节奏</text>
+  <text x="95" y="386" fill="#7f8a9f" font-size="14" letter-spacing="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FINAL ARTICLE / COMPANY GUIDE</text>
+
+  <g transform="translate(808 88)">
+    <rect width="280" height="250" rx="18" fill="#10131b" stroke="#4a5263" stroke-width="2"/>
+    <g transform="translate(20 14)">
+      <path d="M19 4v18c0 8 7 14 15 14 7 0 13-4 16-10-3 2-7 3-10 2-6-1-10-6-10-12V4z" fill="#25f4ee"/>
+      <path d="M25 4h10v17c0 4 3 7 7 8-3 4-7 7-13 7-8 0-15-6-15-14V4z" fill="#fe2c55" opacity=".9"/>
+      <text x="62" y="19" fill="#f6f7fb" font-size="18" font-weight="700" font-family="Arial, sans-serif">ByteDance</text>
+      <text x="62" y="37" fill="#25f4ee" font-size="12" font-family="PingFang SC, Microsoft YaHei, sans-serif">字节跳动</text>
+    </g>
+    <text x="22" y="64" fill="#25f4ee" font-size="13" letter-spacing="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">BYTEDANCE ECOSYSTEM</text>
+    <g transform="translate(28 88)" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+      <rect x="0" y="0" width="54" height="35" rx="8" fill="#fe2c55"/>
+      <text x="12" y="24" fill="#fff" font-size="15" font-weight="700">抖音</text>
+      <text x="75" y="23" fill="#d9e0ed" font-size="16">TikTok</text>
+      <rect x="0" y="56" width="54" height="35" rx="8" fill="#25f4ee"/>
+      <text x="12" y="80" fill="#10131b" font-size="15" font-weight="700">飞书</text>
+      <text x="75" y="79" fill="#d9e0ed" font-size="16">企业协作</text>
+      <rect x="0" y="112" width="54" height="35" rx="8" fill="#f6f7fb"/>
+      <text x="11" y="136" fill="#141821" font-size="15" font-weight="700">剪映</text>
+      <text x="75" y="135" fill="#d9e0ed" font-size="16">音视频 · 云原生</text>
+    </g>
+  </g>
+</svg>

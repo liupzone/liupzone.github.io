@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f6fb" />
+  <meta name="description" content="大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备：岗位方向、高频题、技术考点、面试风格与备考路线。" />
+  <meta name="keywords" content="大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备,校招,校招备考,大厂面试,高频题,技术面试,应届生求职" />
+  <meta name="author" content="liupzone" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="applicable-device" content="pc,mobile" />
+  <meta name="mobile-agent" content="format=html5;url=https://www.liupzone.cn/campus-prep/dji.html" />
+  <title>大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备 · 校招稳稳拿OFFER</title>
+  <link rel="canonical" href="https://www.liupzone.cn/campus-prep/dji.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://www.liupzone.cn/campus-prep/dji.html" />
+  <link rel="sitemap" type="application/xml" href="https://www.liupzone.cn/sitemap.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="liupzone 人生路标小站" />
+  <meta property="og:title" content="大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备" />
+  <meta property="og:description" content="大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备：岗位方向、高频题、技术考点、面试风格与备考路线。" />
+  <meta property="og:url" content="https://www.liupzone.cn/campus-prep/dji.html" />
+  <meta property="og:image" content="https://www.liupzone.cn/assets/dji-campus-prep-cover.svg" />
+  <meta property="og:image:alt" content="大疆创新校招备考攻略封面" />
+  <meta property="article:section" content="校招稳稳拿OFFER" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备" />
+  <meta name="twitter:description" content="大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备：岗位方向、高频题、技术考点、面试风格与备考路线。" />
+  <meta name="twitter:image" content="https://www.liupzone.cn/assets/dji-campus-prep-cover.svg" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备", "description": "大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备：岗位方向、高频题、技术考点、面试风格与备考路线。", "image": ["https://www.liupzone.cn/assets/dji-campus-prep-cover.svg"], "author": {"@type": "Organization", "name": "liupzone", "url": "https://www.liupzone.cn"}, "publisher": {"@type": "Organization", "name": "liupzone", "url": "https://www.liupzone.cn"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.liupzone.cn/campus-prep/dji.html"}, "articleSection": "校招稳稳拿OFFER", "inLanguage": "zh-CN"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.liupzone.cn/"}, {"@type": "ListItem", "position": 2, "name": "大厂校招备考攻略", "item": "https://www.liupzone.cn/campus-prep.html"}, {"@type": "ListItem", "position": 3, "name": "大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备", "item": "https://www.liupzone.cn/campus-prep/dji.html"}]}</script>
+  <link rel="stylesheet" href="../campus-prep.css" />
+</head>
+<body class="light">
+  <header class="topbar shell">
+    <a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a>
+    <nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a class="active" href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">精品资源</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav>
+  </header>
+  <main class="article-page shell">
+    <a class="article-back" href="../campus-prep.html">← 返回攻略目录</a>
+    <header class="article-head"><div class="eyebrow">CAMPUS PREP / FINAL ARTICLE</div><h1>大疆创新校招备考攻略：嵌入式、C++、算法岗怎么准备</h1><img class="article-cover" src="../assets/dji-campus-prep-cover.svg" alt="大疆创新校招备考攻略封面" /><div class="article-meta"><span>版本：final</span><span>内容类型：公司专项攻略</span><span>仅供学习参考</span></div></header>
+    <div class="article-layout"><aside class="article-nav"><h2>本篇导航</h2><a href="#_1">大疆是什么量级的对手？</a><a href="#jd">JD 在说什么？翻译给你听</a><a href="#leetcode-top-20">LeetCode 高频题 Top 20（真实面经高频方向）</a><a href="#_7">技术面试考点：算法写完，还会追这些</a><a href="#_8">大疆面试风格：不是背八股，是做工程</a><a href="#_13">备考计划</a><a href="#_15">📚 你可能还需要这些</a><a href="#_17">💡 关注我，硬科技备考少走弯路</a></aside><article class="article-body"><blockquote>
+<p>数据来源：真实面经整理 + 公开资料交叉验证 | 版本：final</p>
+</blockquote>
+<hr />
+<p>大疆面试里，我觉得最有代表性的一句话是：</p>
+<p>“如果这段代码要跑在 MCU 上，你觉得哪里会出问题？”</p>
+<p>很多人以为自己在面 C++。</p>
+<p>其实大疆更想看的是：你有没有工程脑子。</p>
+<p>你写的不是云上 Demo。</p>
+<p>而是可能真要跑在飞行器、云台、相机、机器人上的代码。</p>
+<p>栈够不够？
+中断怎么打？
+I2C 抖了怎么办？
+没有 FPU 的时候，浮点开销你想过没有？</p>
+<p>如果你脑子里这时候只剩一句“我本地跑过”，那就有点危险了。</p>
+<p>这才是大疆面试真正的味道。</p>
+<p>这篇文章把大疆校招最该准备的东西拆开讲：公司画像、岗位要求、LeetCode 高频题、技术追问链、备考路线。内容偏硬核，建议先收藏，再慢慢啃。</p>
+<hr />
+<h2 id="_1">大疆是什么量级的对手？</h2>
+<p>大疆不是传统互联网公司。</p>
+<p>更准确地说，它是一家把消费电子、机器人、机器视觉、嵌入式系统拧在一起的硬科技公司。</p>
+<p>几个你需要先建立的基本认知：</p>
+<ul>
+<li>大疆成立于 2006 年，总部在深圳</li>
+<li>员工规模超过 1.4 万人，研发占比很高</li>
+<li>公开研究通常认为，大疆在全球无人机整体市场长期维持约 70% 的份额；如果只看消费级，份额还会更高</li>
+<li>大疆是非上市公司，外界能看到的营收数字大多是媒体估算，别把某个“精确数字”当成铁律</li>
+</ul>
+<p>如果你之前只把大疆理解成“卖无人机的公司”，那还不够。</p>
+<p>它真正有意思的地方，是产品线并不窄：</p>
+<ul>
+<li><strong>消费级无人机</strong>：Mavic、Air、Mini 这几条线，是大疆最广为人知的基本盘</li>
+<li><strong>行业级无人机</strong>：农业、测绘、巡检、安防，这部分更偏 To B，也更考验系统稳定性</li>
+<li><strong>影像设备</strong>：Ronin、Osmo 这一类产品，对控制、图像处理、嵌入式协同要求很高</li>
+<li><strong>机器人教育</strong>：RoboMaster 不只是比赛，也是大疆筛选工程型人才的一条重要通道</li>
+<li><strong>车载相关业务</strong>：近几年持续布局辅助驾驶感知等方向，说明它对感知、控制、系统工程的要求在继续加码</li>
+</ul>
+<p>这决定了它招人的逻辑：</p>
+<p><strong>不是“你会不会刷题”，而是“你能不能把东西做出来”。</strong></p>
+<h3 id="_2">主要招聘岗位</h3>
+<table>
+<thead>
+<tr>
+<th>岗位方向</th>
+<th>技术侧重</th>
+<th>招聘体感</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>嵌入式软件工程师</td>
+<td>C/C++、驱动、RTOS、ARM、接口协议</td>
+<td>最大方向，最有大疆味</td>
+</tr>
+<tr>
+<td>算法工程师</td>
+<td>C++/Python、CV、SLAM、部署优化</td>
+<td>第二大方向，要求工程落地</td>
+</tr>
+<tr>
+<td>后端工程师</td>
+<td>Go/C++/Java、并发、网络、数据链路</td>
+<td>规模中等，偏底层能力</td>
+</tr>
+<tr>
+<td>测试工程师</td>
+<td>自动化测试、硬件在环、系统稳定性</td>
+<td>稳定招聘</td>
+</tr>
+<tr>
+<td>App / 前端工程师</td>
+<td>移动端产品、前端交互</td>
+<td>相对较少</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">校招节奏怎么理解？</h3>
+<p>这里别死背某个固定日期。</p>
+<p>公开招聘信息显示，大疆“拓疆者”校园招聘会根据岗位和团队滚动推进。</p>
+<p>官方校园招聘入口，建议直接看 <code>we.dji.com</code> 相关页面。别再盯旧域名了。</p>
+<p>更稳妥的理解方式是：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>你该做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>提前批与实习转正</td>
+<td>有实习和竞赛经历的同学优先关注</td>
+</tr>
+<tr>
+<td>秋招主批</td>
+<td>尽早投递，不要等准备完再说</td>
+</tr>
+<tr>
+<td>笔试与面试</td>
+<td>基础题只是开始，重点准备追问链</td>
+</tr>
+<tr>
+<td>Offer 阶段</td>
+<td>结合部门方向和发展路径做选择</td>
+</tr>
+</tbody>
+</table>
+<p>如果你只想做互联网式 CRUD，或者对硬件、控制、实时系统完全没兴趣，那大疆未必适合你。</p>
+<p>但如果你对飞控、嵌入式、机器视觉、机器人竞赛这些方向真有兴趣，大疆很值得冲。</p>
+<p>它不一定最轻松，也不一定最“泛化”。</p>
+<p>但技术气味确实很浓。</p>
+<p>还有一点很关键：</p>
+<p><strong>RoboMaster 竞赛背景，在大疆这里确实是加分项。</strong></p>
+<p>原因很简单。比赛本身就在训练工程系统能力：电控、嵌入式、视觉、机械、协作、调试、抗压。你如果真在队里干过活，面试时说出来的东西，和只在实验课上点过 STM32 的同学，不是一种质感。</p>
+<hr />
+<h2 id="jd">JD 在说什么？翻译给你听</h2>
+<p>大疆不同岗位之间差异很大。嵌入式、算法、后端三条线，备考重点根本不是一个配方。</p>
+<p>不要“一锅炖”。先定方向，再下重手。</p>
+<h3 id="1">1）嵌入式软件工程师</h3>
+<table>
+<thead>
+<tr>
+<th>能力维度</th>
+<th>面试官真正在看什么</th>
+<th>备考权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C/C++ 基础</td>
+<td>指针、内存管理、<code>const/volatile</code>、位运算、结构体对齐</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>RTOS</td>
+<td>任务调度、优先级反转、信号量/互斥量、抢占式调度</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>硬件接口</td>
+<td>SPI / I2C / UART / CAN 的原理、时序、故障排查</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>驱动开发</td>
+<td>中断、DMA、字符设备、Linux 驱动框架</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>ARM / MCU</td>
+<td>栈空间、寄存器、中断上下文、启动流程</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>控制基础</td>
+<td>PID、姿态解算、传感器数据融合</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<p>这个岗位的核心不是“会写 C++”，而是<strong>会不会和硬件打交道</strong>。</p>
+<p>你说“我做过 I2C”。面试官很可能下一句就是：“那 SDA 被拉低不释放的时候你怎么查？”</p>
+<p>如果你没有真实硬件调试经验，也不是不能投。但简历要老实，别把点灯工程写成飞控系统，不然后面会被追得很惨。</p>
+<h3 id="2-slam">2）算法工程师（视觉 / SLAM / 感知方向）</h3>
+<table>
+<thead>
+<tr>
+<th>能力维度</th>
+<th>面试官真正在看什么</th>
+<th>备考权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C++ 工程能力</td>
+<td>智能指针、STL、多线程、内存模型</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>目标检测</td>
+<td>YOLO 系列、NMS、量化、部署</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>SLAM / VIO</td>
+<td>ORB-SLAM、特征提取、IMU 预积分、回环检测</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>相机模型</td>
+<td>标定、畸变、针孔模型、坐标变换</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>部署优化</td>
+<td>TensorRT / ONNX Runtime、延迟优化、显存/内存优化</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>OpenCV / 图像处理</td>
+<td>滤波、特征、跟踪、基础算子</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<p>大疆算法岗和很多“论文型算法岗”不太一样。</p>
+<p>它更看重两件事：</p>
+<ol>
+<li>你有没有真正把模型落到设备上</li>
+<li>你能不能解释清楚“为什么这样做更快、更稳、更省资源”</li>
+</ol>
+<p>一句话概括：</p>
+<p><strong>在大疆，部署能力经常比论文指标更值钱。</strong></p>
+<h3 id="3">3）后端工程师</h3>
+<table>
+<thead>
+<tr>
+<th>能力维度</th>
+<th>面试官真正在看什么</th>
+<th>备考权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go / C++ / Java</td>
+<td>至少一门足够熟，尤其是并发和网络编程</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>epoll / IO 多路复用</td>
+<td>LT vs ET、非阻塞 IO、惊群、事件驱动</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>多线程与并发</td>
+<td>锁、线程池、生产者消费者、无锁思路</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>数据库与缓存</td>
+<td>MySQL 索引、Redis、缓存设计</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>分布式基础</td>
+<td>MQ、一致性、服务治理、链路设计</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<p>后端岗在大疆不算最大规模，但有一个明显特征：</p>
+<p><strong>偏底层。</strong></p>
+<p>如果你平时准备后端只盯着 Spring 全家桶，来大疆会有点不对味。</p>
+<p>这里更喜欢继续往网络、系统、并发、设备到云的数据链路这边深挖。</p>
+<h3 id="4">4）测试工程师</h3>
+<table>
+<thead>
+<tr>
+<th>能力维度</th>
+<th>面试官真正在看什么</th>
+<th>备考权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自动化测试</td>
+<td>Python / C++、脚本能力、自动化框架</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>系统稳定性</td>
+<td>故障注入、边界测试、性能瓶颈定位</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>硬件在环</td>
+<td>设备联调、场景模拟、问题复现能力</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>分析与表达</td>
+<td>能不能把问题讲明白、定位准</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<p>大疆测试岗不是“点点点测试”。</p>
+<p>很多时候，它更像系统工程师。</p>
+<p>你得知道问题怎么复现、链路哪里断，到底是软件逻辑、硬件接口，还是环境噪声在作妖。</p>
+<hr />
+<h2 id="leetcode-top-20">LeetCode 高频题 Top 20（真实面经高频方向）</h2>
+<p>先说结论。</p>
+<p>大疆技术面里的算法题，默认心智模型是：<strong>你要用 C++ 把它写出来，而且最好写得像一个工程师。</strong></p>
+<p>尤其是嵌入式、算法、后端方向，代码风格、边界处理、空间开销，都会被看。</p>
+<h3 id="_4">第一梯队：必刷</h3>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th>题号</th>
+<th>难度</th>
+<th>大疆常见考察点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>反转链表</td>
+<td>No.206</td>
+<td>Easy</td>
+<td>指针操作是否扎实，递归和迭代都要会</td>
+</tr>
+<tr>
+<td>二叉树层序遍历</td>
+<td>No.102</td>
+<td>Medium</td>
+<td>BFS 模板是否熟练，能否自然扩展到逐层处理</td>
+</tr>
+<tr>
+<td>手撕快速排序</td>
+<td>非 LeetCode 原题</td>
+<td>Medium</td>
+<td>分区函数、边界、最坏情况、非递归思路</td>
+</tr>
+<tr>
+<td>LRU 缓存机制</td>
+<td>No.146</td>
+<td>Medium</td>
+<td>哈希 + 双向链表，设计能力</td>
+</tr>
+<tr>
+<td>合并 K 个有序链表</td>
+<td>No.23</td>
+<td>Hard</td>
+<td>优先队列、复杂度分析、C++ STL 熟练度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">第二梯队：高频</h3>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th>题号</th>
+<th>难度</th>
+<th>大疆常见考察点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数组中第 K 大元素</td>
+<td>No.215</td>
+<td>Medium</td>
+<td>快速选择 / 堆，两种解法对比</td>
+</tr>
+<tr>
+<td>二叉树最近公共祖先</td>
+<td>No.236</td>
+<td>Medium</td>
+<td>递归逻辑是否清楚</td>
+</tr>
+<tr>
+<td>接雨水</td>
+<td>No.42</td>
+<td>Hard</td>
+<td>单调栈 / 双指针，Hard 题思维</td>
+</tr>
+<tr>
+<td>最长上升子序列</td>
+<td>No.300</td>
+<td>Medium</td>
+<td>DP + 二分优化</td>
+</tr>
+<tr>
+<td>岛屿数量</td>
+<td>No.200</td>
+<td>Medium</td>
+<td>BFS / DFS 模板，原地修改优化</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">第三梯队：中频</h3>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th>题号</th>
+<th>难度</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最大矩形</td>
+<td>No.84</td>
+<td>Hard</td>
+<td>单调栈经典题</td>
+</tr>
+<tr>
+<td>二叉树锯齿形遍历</td>
+<td>No.103</td>
+<td>Medium</td>
+<td>层序遍历变形</td>
+</tr>
+<tr>
+<td>最小覆盖子串</td>
+<td>No.76</td>
+<td>Hard</td>
+<td>滑动窗口高阶题</td>
+</tr>
+<tr>
+<td>全排列</td>
+<td>No.46</td>
+<td>Medium</td>
+<td>回溯模板</td>
+</tr>
+<tr>
+<td>最长公共子序列</td>
+<td>No.1143</td>
+<td>Medium</td>
+<td>DP 基本功</td>
+</tr>
+<tr>
+<td>搜索旋转排序数组</td>
+<td>No.33</td>
+<td>Medium</td>
+<td>二分变形</td>
+</tr>
+<tr>
+<td>跳跃游戏 II</td>
+<td>No.45</td>
+<td>Medium</td>
+<td>贪心思想</td>
+</tr>
+<tr>
+<td>最大子数组和</td>
+<td>No.53</td>
+<td>Medium</td>
+<td>Kadane 算法</td>
+</tr>
+<tr>
+<td>用栈实现队列</td>
+<td>No.232</td>
+<td>Easy</td>
+<td>数据结构基础</td>
+</tr>
+<tr>
+<td>设计推特</td>
+<td>No.355</td>
+<td>Medium</td>
+<td>面向对象设计 + 数据结构组合</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">大疆刷题有 4 个明显规律</h3>
+<ol>
+<li>
+<p><strong>难度不低。</strong>
+   不要把大疆当成“硬件公司所以算法会简单”来准备。很多岗位的算法难度并不低，Hard 题出现一点都不稀奇。</p>
+</li>
+<li>
+<p><strong>C++ 实现几乎是默认语言。</strong>
+   写完后，面试官会看你有没有明显的内存问题、边界漏洞、无意义拷贝。</p>
+</li>
+<li>
+<p><strong>算法题后面，经常接工程追问。</strong>
+   比如：
+   - 如果内存只有 1MB，怎么改？
+   - 如果在 MCU 上跑，哪里会出问题？
+   - 递归会不会炸栈？</p>
+</li>
+<li>
+<p><strong>“为什么这么设计”比 AC 更重要。</strong>
+   你把题做出来只是及格。你要是能顺手说出复杂度、空间开销、替代方案，面试体验会好很多。</p>
+</li>
+</ol>
+<hr />
+<h2 id="_7">技术面试考点：算法写完，还会追这些</h2>
+<p>大疆技术面的典型模式是：</p>
+<p><strong>先让你写题，再一路往底层和工程场景里追。</strong></p>
+<h3 id="1c">1）C++ 深度：第一道过滤器</h3>
+<p>这部分几乎每轮都可能出现。</p>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>高频问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多态原理</td>
+<td>vtable / vptr 怎么工作？虚析构函数为什么重要？</td>
+</tr>
+<tr>
+<td>拷贝与移动语义</td>
+<td>Rule of Three / Five，什么时候该拷贝，什么时候该 move？</td>
+</tr>
+<tr>
+<td>智能指针</td>
+<td><code>unique_ptr</code> / <code>shared_ptr</code> / <code>weak_ptr</code> 的区别；循环引用怎么解决？</td>
+</tr>
+<tr>
+<td>内存模型</td>
+<td>栈、堆、静态区、只读区；对齐；引用和指针</td>
+</tr>
+<tr>
+<td><code>const/volatile</code></td>
+<td>在接口设计和硬件寄存器场景里怎么理解？</td>
+</tr>
+</tbody>
+</table>
+<p>这里有一个很常见的误区：</p>
+<p>很多人会背“虚函数就是动态绑定”。这句话不算错，但在大疆面试里不够用。面试官通常会继续问：</p>
+<ul>
+<li>对象内存里到底多了什么？</li>
+<li>多重继承的时候怎么布局？</li>
+<li>虚析构不写为什么会出事？</li>
+</ul>
+<p>如果你答到这里还很虚，基本就开始掉分了。</p>
+<h3 id="2-epoll">2）网络与系统：不是只会背 epoll</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>高频问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>epoll</td>
+<td>LT vs ET、为什么 ET 必须配合非阻塞 IO、底层思路</td>
+</tr>
+<tr>
+<td>select / poll / epoll</td>
+<td>三者区别、复杂度、适用场景</td>
+</tr>
+<tr>
+<td>进程 / 线程</td>
+<td>区别、切换开销、通信方式</td>
+</tr>
+<tr>
+<td>锁与同步</td>
+<td>互斥锁、自旋锁、条件变量、信号量</td>
+</tr>
+<tr>
+<td>用户态 / 内核态</td>
+<td>系统调用、中断上下文、上下文切换</td>
+</tr>
+</tbody>
+</table>
+<p>epoll 在大疆面试里经常不是一道题，而是一串题。</p>
+<p>你答“ET 更高效”。</p>
+<p>面试官会接：</p>
+<ul>
+<li>为什么更高效？</li>
+<li>为什么必须非阻塞？</li>
+<li>没读完会怎样？</li>
+<li>惊群问题知道吗？</li>
+</ul>
+<p>这就是典型的追问链。</p>
+<h3 id="3_1">3）嵌入式与硬件接口：大疆味最重的部分</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>高频问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RTOS 调度</td>
+<td>抢占式调度、优先级反转、优先级继承</td>
+</tr>
+<tr>
+<td>中断机制</td>
+<td>中断上半部 / 下半部、ISR 能做什么不能做什么</td>
+</tr>
+<tr>
+<td>接口协议</td>
+<td>SPI / I2C / UART / CAN 的区别和应用场景</td>
+</tr>
+<tr>
+<td>DMA</td>
+<td>为什么能减轻 CPU 开销，什么时候用</td>
+</tr>
+<tr>
+<td>驱动开发</td>
+<td>字符设备、总线、驱动模型、调试方法</td>
+</tr>
+<tr>
+<td>ARM / MCU</td>
+<td>栈空间、启动流程、寄存器、地址映射</td>
+</tr>
+</tbody>
+</table>
+<p>大疆很喜欢问这种题：</p>
+<p>“这个方案理论上成立，但如果真放到板子上，会在哪一步出问题？”</p>
+<p>这是很多人最不适应的地方。</p>
+<p>学校里你习惯的是“能跑”。</p>
+<p>大疆更关心“能不能稳定跑、持续跑、在高低温和抖动环境里也跑”。</p>
+<h3 id="4_2">4）控制与无人机基础：嵌入式方向高频追问</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>高频问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID 控制</td>
+<td>P / I / D 各自作用，怎么调参，为什么会振荡</td>
+</tr>
+<tr>
+<td>姿态解算</td>
+<td>IMU 数据怎么融合，互补滤波 / 卡尔曼滤波怎么理解</td>
+</tr>
+<tr>
+<td>传感器</td>
+<td>噪声、采样频率、误差积累</td>
+</tr>
+<tr>
+<td>实时性</td>
+<td>延迟预算、任务优先级、资源分配</td>
+</tr>
+</tbody>
+</table>
+<p>如果你简历里写了飞控、小车、无人机、平衡车，大概率会被一路问到这里。</p>
+<h3 id="5">5）视觉算法：算法岗的“工程落地能力”检查</h3>
+<table>
+<thead>
+<tr>
+<th>考点</th>
+<th>高频问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标检测</td>
+<td>YOLO、NMS、量化、剪枝</td>
+</tr>
+<tr>
+<td>目标跟踪</td>
+<td>KCF、DeepSORT、遮挡后怎么恢复</td>
+</tr>
+<tr>
+<td>SLAM</td>
+<td>特征提取、位姿估计、回环检测、后端优化</td>
+</tr>
+<tr>
+<td>相机标定</td>
+<td>针孔模型、畸变校正、坐标系转换</td>
+</tr>
+<tr>
+<td>部署优化</td>
+<td>推理延迟、模型大小、算子优化</td>
+</tr>
+</tbody>
+</table>
+<p>这部分最容易踩的坑是：</p>
+<p><strong>只会讲模型，不会讲部署。</strong></p>
+<p>在大疆，面试官更喜欢听到的是：</p>
+<p>“我把推理延迟从 50ms 压到 20ms，用了哪些办法。”</p>
+<p>这比”我做过一个很新的模型”更有说服力。</p>
+<hr />
+<h2 id="_8">大疆面试风格：不是背八股，是做工程</h2>
+<p>整理完大量面经后，大疆的面试风格其实很稳定。</p>
+<h3 id="c_1">规律一：C++ 深度，是第一道门槛</h3>
+<p>很多岗位都会先拿 C++ 试水温。</p>
+<p>你如果连虚函数、智能指针、拷贝移动语义这些都讲不顺，大概率连项目都聊不深。</p>
+<h3 id="_9">规律二：追问链才是主菜</h3>
+<p>大疆很少停在第一问。</p>
+<p>常见追问链大概长这样：</p>
+<ul>
+<li>多态原理 → 虚析构函数 → 多重继承内存布局</li>
+<li>epoll LT / ET → 非阻塞 IO → 惊群问题</li>
+<li>PID 控制 → 姿态解算 → IMU 数据融合</li>
+<li>算法题 AC → MCU 场景下的栈 / 内存 / 浮点优化</li>
+</ul>
+<p>你只准备第一层答案，通常不够。</p>
+<h3 id="_10">规律三：工程感，比“八股正确”更值钱</h3>
+<p>会背答案的人很多。</p>
+<p>但大疆特别看重两种能力：</p>
+<ol>
+<li>你能不能把知识点落到真实场景里</li>
+<li>你能不能把问题拆成可执行的工程动作</li>
+</ol>
+<p>比如同样是回答 I2C，背出“半双工、两根线、有地址”只是起点。</p>
+<p>能继续说到时序、仲裁、上拉电阻、异常排查，这才开始像回事。</p>
+<h3 id="_11">规律四：实物项目，含金量很高</h3>
+<p>做过这些东西，通常都加分：</p>
+<ul>
+<li>STM32 / ESP32 小车、平衡车、无人机</li>
+<li>RoboMaster 战车、电控、视觉模块</li>
+<li>Linux 驱动、板级调试、总线通信</li>
+<li>真正做过部署优化的视觉项目</li>
+</ul>
+<p>因为这些项目一旦是真的，面试官很容易听出来。</p>
+<p>反过来说，如果项目是”课程作业包装成工业级系统”，也很容易被听出来。</p>
+<p>那种场面，通常不太体面。</p>
+<h3 id="_12">规律五：岗位差异大，但底层审美一致</h3>
+<p>嵌入式、算法、后端看起来是三条线。</p>
+<p>但大疆对好候选人的判断标准，其实很统一：</p>
+<ul>
+<li>基础扎实</li>
+<li>代码靠谱</li>
+<li>对底层有感觉</li>
+<li>能把事情做成</li>
+</ul>
+<p>这也是为什么很多人面完大疆会有同一个感受：</p>
+<p><strong>这家公司不是在招“会答题的人”，是在招“能扛工程的人”。</strong></p>
+<hr />
+<h2 id="_13">备考计划</h2>
+<p>如果你现在才开始准备，也来得及，但别乱刷。</p>
+<p>下面这份路线，适合大多数目标是嵌入式 / 算法 / 后端的同学。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>准备重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C++ 深度强化</td>
+<td>多态、智能指针、拷贝/移动语义、STL 底层、内存模型</td>
+</tr>
+<tr>
+<td>网络与系统</td>
+<td>epoll、非阻塞 IO、线程/进程、锁、系统调用</td>
+</tr>
+<tr>
+<td>算法高频题</td>
+<td>快排、LRU、合并 K 链表、接雨水、LIS、二叉树题组</td>
+</tr>
+<tr>
+<td>嵌入式系统</td>
+<td>RTOS、SPI/I2C/CAN、DMA、中断、驱动基础</td>
+</tr>
+<tr>
+<td>控制 / 视觉专项</td>
+<td>PID、姿态解算、OpenCV、目标检测 / 跟踪、SLAM 基础</td>
+</tr>
+<tr>
+<td>冲刺收尾</td>
+<td>面经复盘、项目追问模拟、自我介绍和追问链演练</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_14">参加面试前，至少保证这些过关</h3>
+<p><strong>C++ 基础</strong>
+- [ ] 能从对象内存布局角度解释多态
+- [ ] 能说清 Rule of Three / Five、移动语义、智能指针
+- [ ] 能解释 <code>vector</code> 扩容、<code>map</code> / <code>unordered_map</code> 的底层差别</p>
+<p><strong>网络与系统</strong>
+- [ ] 能讲清 epoll LT / ET 和非阻塞 IO
+- [ ] 能区分进程与线程、常见 IPC、常见锁
+- [ ] 能说清用户态 / 内核态 / 系统调用的基本链路</p>
+<p><strong>算法题</strong>
+- [ ] 10 分钟内写完反转链表和层序遍历
+- [ ] 限时从零写出 LRU
+- [ ] 能手撕快排，并解释最坏情况和优化思路</p>
+<p><strong>嵌入式基础</strong>
+- [ ] 会讲 RTOS 优先级反转和优先级继承
+- [ ] 能说清 SPI 和 I2C 的本质区别
+- [ ] 知道中断、DMA、栈空间这些词不是摆设</p>
+<p><strong>工程视角</strong>
+- [ ] 面对“这段代码放在 MCU 上有什么问题”时，能从栈、动态内存、浮点开销三个角度下手
+- [ ] 项目能讲出真实细节，而不是空话</p>
+<hr />
+<h2 id="_15">📚 你可能还需要这些</h2>
+<h3 id="c_2">同样偏底层 / C++ / 工程方向的内容</h3>
+<p>如果你不只投大疆，这几篇也值得一起看：
+- 📌 <strong>C++客户端大厂面经合集</strong>（腾讯游戏、米哈游、华为、大疆等公司高频题一次看全）
+- 📌 <strong>后端开发大厂面经合集</strong>（epoll、网络、并发这条线可以配套准备）
+- 📌 <strong>算法工程师大厂面经合集</strong>（适合同时投视觉 / 感知 / 算法岗的同学）</p>
+<h3 id="_16">公司专项攻略</h3>
+<p>如果你准备多投几家硬核公司，可以继续刷：
+- 📌 <strong>腾讯校招备考攻略</strong>（大厂通用题库 + 追问链很完整）
+- 📌 <strong>阿里校招全攻略</strong>（系统设计和分布式思维值得补）
+- 📌 <strong>米哈游游戏大厂隐藏考点</strong>（C++ 基础和 Hard 题强度都不低）</p>
+<hr />
+<h2 id="_17">💡 关注我，硬科技备考少走弯路</h2>
+<p>我会持续分享：
+- ✅ <strong>大厂面经精准整理</strong>（按公司、按岗位方向拆，不做大杂烩）
+- ✅ <strong>C++ / 嵌入式深度解析</strong>（不是背概念，是讲到能上面试）
+- ✅ <strong>硬科技公司校招动态</strong>（大疆、华为、机器人、自动驾驶方向会持续更）
+- ✅ <strong>追问链专项训练</strong>（帮你把“知道”练成“会答”）</p>
+<p>这篇文章整理起来挺费时间。如果对你有帮助：
+- 👍 点个“赞”和“在看”，让更多备考的同学看到
+- 💬 评论区聊聊你准备投大疆的哪个方向
+- 🔄 转发给也在冲硬科技岗的朋友</p>
+<p>有问题也可以留言。我尽量回。</p>
+<hr />
+<p><strong>数据来源</strong>：
+本文内容基于大疆官方校园招聘公开信息、行业公开研究资料及真实面经交叉整理。由于大疆为非上市公司，部分经营数据和薪资信息存在外部估算差异，文中已尽量采用保守口径。版本：final。</p>
+<hr /></article></div>
+  </main>
+  <script>
+    document.getElementById('themeToggle').addEventListener('click', () => { const dark = document.body.classList.toggle('dark'); document.body.classList.toggle('light', !dark); document.getElementById('themeToggle').textContent = dark ? '☼' : '☾'; document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#0b1026' : '#f5f6fb'); });
+  </script>
+</body>
+</html>

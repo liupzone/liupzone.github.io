@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">百度校招备考攻略</title>
+  <desc id="desc">横向知乎风格的百度校招备考攻略封面，包含 Baidu 标识、文心、Apollo 和百度智能云元素</desc>
+  <rect width="1200" height="480" fill="#101827"/>
+  <path d="M0 392H1200M0 424H1200M0 456H1200" stroke="#20314a" stroke-width="2"/>
+  <path d="M772 0v480M1048 0v480" stroke="#1c2b42" stroke-width="2"/>
+  <rect x="54" y="52" width="1092" height="376" rx="22" fill="#162338" stroke="#315173" stroke-width="2"/>
+  <path d="M92 338C174 310 231 327 300 270s125-32 196 20 133 33 211-48 140-61 231-5" fill="none" stroke="#4da3ff" stroke-width="4"/>
+  <path d="M92 338C174 310 231 327 300 270s125-32 196 20 133 33 211-48 140-61 231-5" fill="none" stroke="#eb3b65" stroke-width="15" opacity=".18"/>
+  <circle cx="300" cy="270" r="8" fill="#fff" stroke="#4da3ff" stroke-width="4"/>
+  <circle cx="496" cy="290" r="8" fill="#fff" stroke="#eb3b65" stroke-width="4"/>
+  <circle cx="938" cy="242" r="8" fill="#fff" stroke="#4da3ff" stroke-width="4"/>
+
+  <text x="92" y="105" fill="#75c0ff" font-size="15" font-weight="700" letter-spacing="3" font-family="Arial, sans-serif">LIUPZONE / CAMPUS PREP</text>
+  <text x="92" y="182" fill="#f3f7ff" font-size="50" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">百度校招备考攻略</text>
+  <text x="95" y="220" fill="#b9c8df" font-size="21" font-family="PingFang SC, Microsoft YaHei, sans-serif">C++ · AI / 大模型 · 智能驾驶 · 工程基础</text>
+  <text x="95" y="386" fill="#8297b4" font-size="14" letter-spacing="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FINAL ARTICLE / COMPANY GUIDE</text>
+
+  <g transform="translate(808 88)">
+    <rect width="280" height="250" rx="18" fill="#0f1929" stroke="#426383" stroke-width="2"/>
+    <g transform="translate(20 14)">
+      <path d="M6 18c9-13 26-18 38-7-8 0-15 4-20 11-5 7-12 10-18 8 0-4-1-8 0-12z" fill="#4da3ff"/>
+      <circle cx="18" cy="21" r="5" fill="#f3f7ff"/>
+      <circle cx="39" cy="14" r="5" fill="#f3f7ff"/>
+      <text x="62" y="19" fill="#f3f7ff" font-size="18" font-weight="700" font-family="Arial, sans-serif">Baidu</text>
+      <text x="62" y="37" fill="#75c0ff" font-size="12" font-family="PingFang SC, Microsoft YaHei, sans-serif">百度</text>
+    </g>
+    <text x="22" y="64" fill="#75c0ff" font-size="13" letter-spacing="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">BAIDU ECOSYSTEM</text>
+    <g transform="translate(28 88)" font-family="PingFang SC, Microsoft YaHei, sans-serif">
+      <rect x="0" y="0" width="54" height="35" rx="8" fill="#4da3ff"/>
+      <text x="11" y="24" fill="#fff" font-size="15" font-weight="700">文心</text>
+      <text x="75" y="23" fill="#d8e5f6" font-size="16">ERNIE</text>
+      <rect x="0" y="56" width="54" height="35" rx="8" fill="#eb3b65"/>
+      <text x="9" y="80" fill="#fff" font-size="15" font-weight="700">Apollo</text>
+      <text x="75" y="79" fill="#d8e5f6" font-size="16">智能驾驶</text>
+      <rect x="0" y="112" width="54" height="35" rx="8" fill="#f3f7ff"/>
+      <text x="11" y="136" fill="#172238" font-size="15" font-weight="700">百度云</text>
+      <text x="75" y="135" fill="#d8e5f6" font-size="16">搜索 · 基础模型</text>
+    </g>
+  </g>
+</svg>

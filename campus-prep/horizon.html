@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f6fb" />
+  <meta name="description" content="地平线校招备考攻略：岗位方向、高频题、技术考点、面试风格与备考路线。" />
+  <meta name="keywords" content="地平线校招备考攻略,校招,校招备考,大厂面试,高频题,技术面试,应届生求职" />
+  <meta name="author" content="liupzone" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="applicable-device" content="pc,mobile" />
+  <meta name="mobile-agent" content="format=html5;url=https://www.liupzone.cn/campus-prep/horizon.html" />
+  <title>地平线校招备考攻略 · 校招稳稳拿OFFER</title>
+  <link rel="canonical" href="https://www.liupzone.cn/campus-prep/horizon.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://www.liupzone.cn/campus-prep/horizon.html" />
+  <link rel="sitemap" type="application/xml" href="https://www.liupzone.cn/sitemap.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="liupzone 人生路标小站" />
+  <meta property="og:title" content="地平线校招备考攻略" />
+  <meta property="og:description" content="地平线校招备考攻略：岗位方向、高频题、技术考点、面试风格与备考路线。" />
+  <meta property="og:url" content="https://www.liupzone.cn/campus-prep/horizon.html" />
+  <meta property="og:image" content="https://www.liupzone.cn/assets/horizon-campus-prep-cover.svg" />
+  <meta property="og:image:alt" content="地平线校招备考攻略封面" />
+  <meta property="article:section" content="校招稳稳拿OFFER" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="地平线校招备考攻略" />
+  <meta name="twitter:description" content="地平线校招备考攻略：岗位方向、高频题、技术考点、面试风格与备考路线。" />
+  <meta name="twitter:image" content="https://www.liupzone.cn/assets/horizon-campus-prep-cover.svg" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "地平线校招备考攻略", "description": "地平线校招备考攻略：岗位方向、高频题、技术考点、面试风格与备考路线。", "image": ["https://www.liupzone.cn/assets/horizon-campus-prep-cover.svg"], "author": {"@type": "Organization", "name": "liupzone", "url": "https://www.liupzone.cn"}, "publisher": {"@type": "Organization", "name": "liupzone", "url": "https://www.liupzone.cn"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.liupzone.cn/campus-prep/horizon.html"}, "articleSection": "校招稳稳拿OFFER", "inLanguage": "zh-CN"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.liupzone.cn/"}, {"@type": "ListItem", "position": 2, "name": "大厂校招备考攻略", "item": "https://www.liupzone.cn/campus-prep.html"}, {"@type": "ListItem", "position": 3, "name": "地平线校招备考攻略", "item": "https://www.liupzone.cn/campus-prep/horizon.html"}]}</script>
+  <link rel="stylesheet" href="../campus-prep.css" />
+</head>
+<body class="light">
+  <header class="topbar shell">
+    <a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a>
+    <nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a class="active" href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">精品资源</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav>
+  </header>
+  <main class="article-page shell">
+    <a class="article-back" href="../campus-prep.html">← 返回攻略目录</a>
+    <header class="article-head"><div class="eyebrow">CAMPUS PREP / FINAL ARTICLE</div><h1>地平线校招备考攻略</h1><img class="article-cover" src="../assets/horizon-campus-prep-cover.svg" alt="地平线校招备考攻略封面" /><div class="article-meta"><span>版本：final</span><span>内容类型：公司专项攻略</span><span>仅供学习参考</span></div></header>
+    <div class="article-layout"><aside class="article-nav"><h2>本篇导航</h2><a href="#_2">一、公司画像 &amp;amp; 校招节奏</a><a href="#jd">二、岗位 JD 解析：技术要求拆解</a><a href="#leetcode-top-20">三、LeetCode 高频题 Top 20（真实面经数据）</a><a href="#_7">四、技术面试考点</a><a href="#_10">五、面经规律总结</a><a href="#_15">校招节奏</a></aside><article class="article-body"><blockquote>
+<p>数据来源：真实面经整理 | 版本：final</p>
+</blockquote>
+<hr />
+<h2 id="_2">一、公司画像 &amp; 校招节奏</h2>
+<p>地平线（Horizon Robotics）成立于，总部北京，由余凯创立——他此前是百度主任科学家，深度学习领域的顶尖学者之一。这个背景很重要：你能理解为什么地平线的技术基因如此纯正。</p>
+<p>核心产品是<strong>征程系列芯片</strong>（征程5/征程6），这是专为自动驾驶设计的AI处理器，核心是地平线自研的<strong>BPU（Brain Processing Unit，脑处理单元）</strong>架构。简单类比：英伟达的GPU是通用并行计算，地平线的BPU是专为神经网络推理优化的定制芯片，功耗更低，在车端推理场景更有竞争力。</p>
+<p>，地平线在港股上市（股票代码：9660.HK），估值约700亿港元。商业化进展非常扎实：大众汽车投资50亿欧元与地平线成立合资公司CARIZON，比亚迪、理想、长城、奇瑞等超过60家车企都在用地平线的芯片方案。这不是PPT公司，是真实跑量产的。</p>
+<p>员工约1万人，技术人员占比超70%。这个比例在中国科技公司里算高的。你进去大概率跟工程师打交道，不用太担心内耗问题——当然也正因为此，技术能力要求非常高。</p>
+<p><strong>主要招聘方向</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>代表业务</th>
+<th>技术侧重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算法工程师（最大方向）</td>
+<td>感知/规划/预测算法</td>
+<td>C++/Python，深度学习，点云</td>
+</tr>
+<tr>
+<td>芯片架构工程师</td>
+<td>BPU设计，NPU微架构</td>
+<td>Verilog/SystemVerilog，微架构</td>
+</tr>
+<tr>
+<td>BSP/驱动工程师</td>
+<td>芯片BSP，Linux驱动</td>
+<td>C，Linux内核，设备驱动</td>
+</tr>
+<tr>
+<td>工具链工程师</td>
+<td>模型量化/编译器</td>
+<td>C++/Python，编译器优化，量化</td>
+</tr>
+<tr>
+<td>系统软件工程师</td>
+<td>实时操作系统，中间件</td>
+<td>C/C++，RTOS，Autosar</td>
+</tr>
+<tr>
+<td>测试工程师</td>
+<td>芯片验证，算法评测</td>
+<td>Python，仿真，数据标注</td>
+</tr>
+</tbody>
+</table>
+<p><strong>校招节奏（参考）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>时间</th>
+<th>行动建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>暑期实习</td>
+<td></td>
+<td>竞争激烈，是最佳转正通道，提前准备</td>
+</tr>
+<tr>
+<td>正式网申</td>
+<td></td>
+<td>horizon.cc/campus，简历突出AI/深度学习项目</td>
+</tr>
+<tr>
+<td>笔试</td>
+<td></td>
+<td>C++/算法/AI基础，90-</td>
+</tr>
+<tr>
+<td>技术面试</td>
+<td></td>
+<td>2-3轮技术面 + 1轮HR面</td>
+</tr>
+<tr>
+<td>Offer发放</td>
+<td></td>
+<td>薪资水平对标顶级互联网公司</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一个需要提前想清楚的问题</strong>：地平线是做芯片的，不是做互联网产品的。这意味着你写的代码最终跑在嵌入式设备上，有实时性要求，有功耗约束，有内存限制。如果你只喜欢做纯后端、纯前端，地平线可能不是最合适的地方。但如果你对AI+硬件的结合感兴趣，地平线是国内最好的舞台之一。</p>
+<hr />
+<h2 id="jd">二、岗位 JD 解析：技术要求拆解</h2>
+<p>地平线的岗位差异非常大，算法工程师和芯片架构工程师的备考路径几乎不重叠。先确定投哪个方向，再针对性准备。</p>
+<h3 id="_3">算法工程师（最大方向，最多校招名额）</h3>
+<table>
+<thead>
+<tr>
+<th>能力维度</th>
+<th>JD描述</th>
+<th>真实考察重心</th>
+<th>备考权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深度学习理论</td>
+<td>熟悉神经网络</td>
+<td>卷积计算、BN层推理行为、Transformer原理，几乎每轮必问</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>感知算法</td>
+<td>目标检测/分割</td>
+<td>YOLO/DETR原理、3D目标检测（PointPillar/CenterPoint）、BEV感知</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>C++编程</td>
+<td>熟练C++</td>
+<td>智能指针、多线程、内存管理，必考，不接受Python伪代码</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>模型优化</td>
+<td>量化/部署经验</td>
+<td>FP32→INT8量化原理、TensorRT优化、在嵌入式设备的推理</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>BEV感知</td>
+<td>多传感器融合</td>
+<td>BEVDet/BEVFusion原理，为什么BEV比前视图适合自动驾驶</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>数学基础</td>
+<td>线性代数/概率</td>
+<td>矩阵运算（GEMM实现）、贝叶斯推理基础，笔试会考</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<p><strong>特别说明</strong>：地平线算法岗不是纯互联网算法岗。"怎么把PyTorch模型部署到BPU上"这个问题，比"介绍一下BERT的结构"更接近真实工作内容。面试时能讲清楚部署链路的候选人，比只会讲模型结构的候选人更受欢迎。</p>
+<h3 id="_4">工具链工程师（地平线特色方向）</h3>
+<p>这个方向在其他公司很少见，但在地平线非常重要——地平线的竞争力之一就是Horizon OpenExplorer工具链，让车企能够方便地把模型部署到征程芯片。</p>
+<table>
+<thead>
+<tr>
+<th>能力维度</th>
+<th>JD描述</th>
+<th>真实考察重心</th>
+<th>备考权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>编译器原理</td>
+<td>了解编译器</td>
+<td>AST、IR优化、算子融合（conv+bn+relu合并）</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>量化技术</td>
+<td>模型量化经验</td>
+<td>PTQ/QAT原理，INT8量化的scale/zero_point计算</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>C++工程</td>
+<td>熟练C++</td>
+<td>与算法岗要求相同，性能优化更重要</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>模型格式</td>
+<td>ONNX/部署</td>
+<td>ONNX导出、算子支持情况、自定义算子</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bsp">芯片架构 / BSP工程师</h3>
+<table>
+<thead>
+<tr>
+<th>能力维度</th>
+<th>JD描述</th>
+<th>真实考察重心</th>
+<th>备考权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数字电路</td>
+<td>HDL设计</td>
+<td>Verilog/SystemVerilog设计，时序分析，状态机</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>计算机组成</td>
+<td>微架构理解</td>
+<td>Cache一致性，DRAM带宽，流水线设计</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>Linux驱动（BSP方向）</td>
+<td>内核开发</td>
+<td>字符设备驱动、平台驱动、DMA传输</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>RTOS（系统软件方向）</td>
+<td>实时操作系统</td>
+<td>任务调度，优先级反转，Autosar架构分层</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="leetcode-top-20">三、LeetCode 高频题 Top 20（真实面经数据）</h2>
+<p>地平线的LeetCode考察有一个明显特点：算法题难度不是最高优先，但<strong>AI相关算法题</strong>（NMS、IOU、GEMM）出现频率很高，而且必须用C++写。面试官不接受"大概思路是这样"，需要你当场写出正确、可运行的代码。</p>
+<h3 id="_5">第一梯队（必刷，几乎每次都考）</h3>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th>考察频率</th>
+<th>地平线的考察重点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No.206 反转链表</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>C++实现，迭代+递归两种</td>
+</tr>
+<tr>
+<td>No.102 二叉树层序遍历</td>
+<td>⭐⭐⭐⭐</td>
+<td>BFS基础，手写队列实现</td>
+</tr>
+<tr>
+<td>快速排序（手撕）</td>
+<td>⭐⭐⭐⭐</td>
+<td>C++完整实现，分区逻辑要清晰</td>
+</tr>
+<tr>
+<td>No.146 LRU缓存机制</td>
+<td>⭐⭐⭐⭐</td>
+<td>HashMap + 双向链表，工程设计能力</td>
+</tr>
+<tr>
+<td>No.23 合并K个排序链表</td>
+<td>⭐⭐⭐⭐</td>
+<td>优先队列（std::priority_queue）用法</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">第二梯队（高频，认真刷）</h3>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th>考察频率</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No.215 数组中的第K大元素</td>
+<td>⭐⭐⭐</td>
+<td>堆 or 快速选择，两种都要会</td>
+</tr>
+<tr>
+<td>No.15 三数之和</td>
+<td>⭐⭐⭐</td>
+<td>排序+双指针，边界条件容易出错</td>
+</tr>
+<tr>
+<td>No.141 环形链表</td>
+<td>⭐⭐⭐</td>
+<td>快慢指针，经典入门题</td>
+</tr>
+<tr>
+<td>No.236 二叉树最近公共祖先</td>
+<td>⭐⭐⭐</td>
+<td>递归理解，不只是背答案</td>
+</tr>
+<tr>
+<td>No.200 岛屿数量</td>
+<td>⭐⭐⭐</td>
+<td>DFS/BFS两种，C++实现</td>
+</tr>
+<tr>
+<td>No.56 合并区间</td>
+<td>⭐⭐⭐</td>
+<td>排序后贪心，边界判断</td>
+</tr>
+<tr>
+<td>No.42 接雨水</td>
+<td>⭐⭐⭐</td>
+<td>单调栈或双指针，经典Hard</td>
+</tr>
+<tr>
+<td>No.25 K个一组翻转链表</td>
+<td>⭐⭐⭐</td>
+<td>链表操作扎实程度的测试</td>
+</tr>
+<tr>
+<td>No.239 滑动窗口最大值</td>
+<td>⭐⭐⭐</td>
+<td>单调双端队列（deque）</td>
+</tr>
+<tr>
+<td>No.300 最长递增子序列</td>
+<td>⭐⭐</td>
+<td>DP + 二分优化两种解法</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai">第三梯队：AI专项算法题（地平线特色，必须准备）</h3>
+<p>这是和其他公司最不一样的地方。地平线算法岗会考以下几类"AI算法题"，本质上是手写实现，而不是刷LeetCode题库。</p>
+<h4 id="1-nms">1. NMS（非极大值抑制）手写实现</h4>
+<p>这几乎是地平线算法岗的必考题。NMS是目标检测后处理的核心步骤。面试官会让你当场写C++代码：</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>输入：一组检测框 boxes（每个框有x1,y1,x2,y2坐标和置信度score）
+输出：经过NMS筛选后保留的检测框索引列表
+参数：iou_threshold（IOU阈值，通常0.5）
+
+伪代码逻辑：
+1. 按score降序排列所有框
+2. 循环：取score最高的框，加入结果列表
+3. 计算该框与剩余所有框的IOU
+4. 删除IOU &gt; threshold的框（认为它们与当前框重复）
+5. 重复2-4，直到没有框
+</code></pre></div>
+
+<h4 id="2-iou">2. IOU（交并比）计算</h4>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code>IOU = 交集面积 / 并集面积
+交集 = max(0, min(x2_a, x2_b) - max(x1_a, x1_b)) * max(0, min(y2_a, y2_b) - max(y1_a, y1_b))
+并集 = 面积A + 面积B - 交集
+</code></pre></div>
+
+<p>这个公式短，但容易在边界条件上出错（两个框不相交的情况）。</p>
+<h4 id="3-softmax">3. Softmax数值稳定实现</h4>
+<p>普通Softmax在指数运算时会溢出。数值稳定版：先减去最大值再做指数运算。这个考察的是对数值计算细节的理解，而不是背公式。</p>
+<h4 id="4-gemm">4. GEMM矩阵乘法实现</h4>
+<p>最基础的矩阵乘法C++实现，考察内存访问模式和缓存友好性。高阶版本可能要求谈谈如何用SIMD指令（AVX2）加速。</p>
+<p><strong>刷题策略总结</strong>：
+1. 第一梯队5题必须能闭眼写出正确C++代码（不是Python）
+2. AI专项4类题（NMS/IOU/Softmax/GEMM）至少各手写一遍，理解逻辑
+3. 第二梯队10题争取在面试前都过一遍</p>
+<hr />
+<h2 id="_7">四、技术面试考点</h2>
+<h3 id="_8">深度学习专项（算法岗，权重最高）</h3>
+<p><strong>卷积神经网络基础</strong>：
+- Conv层输出尺寸计算：<code>output = (input + 2*padding - kernel) / stride + 1</code>，这个公式要能秒答
+- Batch Normalization：训练时用batch统计量，推理时用running_mean/running_var——这个区别被问到的频率极高
+- Depthwise Separable Conv：MobileNet的核心，参数量和计算量的节省比例</p>
+<p><strong>Transformer与Vision Transformer</strong>：
+- Self-Attention的计算公式：<code>Attention(Q,K,V) = softmax(QK^T/√d_k)V</code>
+- 为什么要除以√d_k：防止点积过大导致softmax梯度消失
+- ViT是怎么把图片喂进Transformer的：patch embedding，把图片切成16×16的块</p>
+<p><strong>目标检测核心问题</strong>：
+- Anchor-based（YOLO）vs Anchor-free（FCOS/CenterPoint）的本质区别和适用场景
+- NMS的作用和局限（遮挡场景下的问题），Soft-NMS如何缓解
+- 2D检测和3D检测的主要差异（在自动驾驶中，3D检测才有实际意义）</p>
+<p><strong>BEV感知（地平线重点）</strong>：
+- 为什么BEV（Bird's Eye View，鸟瞰图）比前视图更适合自动驾驶：
+  - 坐标系统一，多摄像头的视角可以融合到同一平面
+  - 距离感更准确，不受近大远小的透视畸变影响
+  - 更容易与激光雷达的点云数据融合
+- BEVFusion如何融合摄像头和激光雷达：图像特征投影到BEV空间，再与点云特征拼接</p>
+<p><strong>模型量化（工具链岗/算法岗都考）</strong>：
+- FP32→INT8的量化原理：用scale和zero_point参数将浮点数映射到整数范围
+- PTQ（训练后量化）vs QAT（量化感知训练）：PTQ更快，QAT精度损失更小
+- 量化引起精度损失的根本原因：信息压缩（32bit→8bit），激活值分布不均匀时损失更大
+- 关键问题：如何判断哪层对量化敏感（逐层精度分析）</p>
+<h3 id="c">C++专项（全方向必考）</h3>
+<p>地平线的C++考察比一般互联网公司严格很多，因为代码最终要跑在资源受限的嵌入式设备上，性能是真实约束。</p>
+<p><strong>内存管理</strong>：
+- RAII原则：资源获取即初始化，对象析构时自动释放资源——这是C++和C最大的区别之一
+- <code>unique_ptr</code> vs <code>shared_ptr</code>：独占所有权 vs 共享所有权，前者零开销，后者有引用计数
+- 对象池：推理框架中避免频繁new/delete的常见手段，面试可能要求手写简单实现</p>
+<p><strong>多线程</strong>：
+- <code>std::thread</code> + <code>std::atomic</code> + <code>std::mutex</code> 的基本使用
+- 无锁队列（lock-free queue）：用于实时推理流水线的生产者-消费者场景，考察对memory_order的理解
+- 死锁的四个必要条件和预防方法</p>
+<p><strong>性能优化</strong>：
+- SIMD指令（AVX2）：一条指令处理8个float，向量化加速矩阵运算
+- 内存对齐：64字节对齐，提升Cache命中率
+- 缓存友好代码：行主序遍历矩阵 vs 列主序遍历的性能差异</p>
+<p><strong>模板编程</strong>（高级加分项）：
+- 类型推导（auto、decltype）
+- 函数模板和类模板的基本使用</p>
+<h3 id="_9">芯片/系统软件专项（对应方向必考）</h3>
+<p><strong>计算机组成原理</strong>：
+- Cache一致性（MESI协议）：多核处理器的缓存同步机制，芯片设计必须理解
+- DRAM带宽计算：内存带宽 = 数据总线宽度 × 工作频率，是BPU性能的关键约束</p>
+<p><strong>Linux内核/驱动（BSP方向）</strong>：
+- 字符设备驱动的注册流程：<code>alloc_chrdev_region</code> → <code>cdev_init</code> → <code>cdev_add</code>
+- DMA传输：绕过CPU，让外设直接访问内存，减少CPU占用
+- 中断处理：上半部（IRQ handler）和下半部（tasklet/work queue）的分工</p>
+<p><strong>RTOS与Autosar（系统软件方向）</strong>：
+- 实时操作系统的核心：任务调度（优先级调度/时间片调度），响应时间可预测
+- 优先级反转问题和解决方法（优先级继承协议）
+- 经典Autosar分层架构：应用层 → RTE → BSW → MCAL</p>
+<hr />
+<h2 id="_10">五、面经规律总结</h2>
+<h3 id="ai-c">面试风格：AI技术深度 + C++工程能力双轨制</h3>
+<p>地平线的技术面试有一个非常明显的规律：<strong>每个技术问题都有两层</strong>。</p>
+<p>第一层是"知道不知道"——你了解这个技术概念吗？
+第二层是"能不能用"——你能用C++手写出来吗？</p>
+<p>停在第一层是不够的。说得出BN层推理时用running_mean，但写不出代码，在地平线的面试里算没过。</p>
+<h3 id="_11">五个高概率追问链</h3>
+<p><strong>链条1：目标检测追问链</strong>
+"介绍一下YOLO的检测原理" → 追问："NMS是怎么实现的？手写一下" → 追问："遮挡场景下NMS有什么问题？Soft-NMS怎么解决？"</p>
+<p><strong>链条2：模型量化追问链</strong>
+"介绍一下INT8量化" → 追问："scale和zero_point是怎么计算的？" → 追问："QAT训练流程和普通训练有什么区别？"</p>
+<p><strong>链条3：C++多线程追问链</strong>
+"如何用mutex保证线程安全" → 追问："无锁队列怎么实现？" → 追问："std::atomic的memory_order参数有什么用？"</p>
+<p><strong>链条4：BEV感知追问链</strong>
+"BEV感知和前视图感知有什么区别" → 追问："BEVFusion是如何融合摄像头和激光雷达的？" → 追问："BEV特征图的分辨率和感知范围如何权衡？"</p>
+<p><strong>链条5：模型部署追问链</strong>
+"PyTorch模型怎么部署到嵌入式设备上" → 追问："ONNX导出有什么注意事项？" → 追问："算子融合是怎么做的？能举个例子吗？"</p>
+<h3 id="_12">加分项：体现行业热情</h3>
+<p>地平线的面试官非常喜欢有"自动驾驶热情"的候选人，不只是把这当成一份工作。以下几个表现会明显加分：</p>
+<ul>
+<li><strong>了解地平线BPU</strong>：面试前查清楚征程5/征程6的基本规格（128 TOPS / INT8算力），能主动聊BPU的设计思路</li>
+<li><strong>了解行业进展</strong>：BEVFusion、Transformer在自动驾驶中的应用，L2++和L3的技术差异</li>
+<li><strong>有端到端部署经验</strong>：哪怕是课程项目，能讲清楚"我把这个模型从PyTorch训练到部署到树莓派/Jetson上"的全流程</li>
+</ul>
+<h3 id="_13">笔试特点</h3>
+<ul>
+<li><strong>题型</strong>：C++/Python编程题2-3道 + AI基础选择题 + 数学题（矩阵运算/概率统计）</li>
+<li><strong>时间</strong>：90-</li>
+<li><strong>编程题难度</strong>：以Medium为主，C++实现，注意代码质量</li>
+<li><strong>AI基础题</strong>：卷积输出尺寸计算、量化基础、BN层行为，不是很难但需要真正掌握</li>
+<li><strong>数学题</strong>：矩阵乘法的时间复杂度、贝叶斯公式的简单应用</li>
+</ul>
+<h3 id="_14">需要避开的误区</h3>
+<p><strong>误区1：只准备LeetCode</strong>
+AI算法题（NMS/IOU手写）不准备，是很多同学面地平线翻车的直接原因。</p>
+<p><strong>误区2：只会Python</strong>
+地平线面试要求C++手写代码，Python伪代码不被接受。算法工程师也不例外。</p>
+<p><strong>误区3：只懂理论不会部署</strong>
+能讲BEV感知原理，但不知道模型怎么量化、怎么导出ONNX，在地平线面试里是减分项。</p>
+<p><strong>误区4：忽视自动驾驶业务背景</strong>
+地平线不是通用AI公司，面试官想要的是对自动驾驶真正感兴趣的人。提前了解行业背景，能让面试体验好很多。</p>
+<hr />
+<h2 id="_15">校招节奏</h2>
+<h3 id="_16">总体原则</h3>
+<p>地平线的备考重心和普通互联网公司有明显差异：深度学习理论和C++工程能力的比重远高于纯算法题。的时间要集中火力，不能平均分配。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>时间</th>
+<th>重点任务</th>
+<th>每日投入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深度学习基础</td>
+<td></td>
+<td>CNN/Transformer/目标检测三大类模型原理</td>
+<td>3-</td>
+</tr>
+<tr>
+<td>自动驾驶AI</td>
+<td></td>
+<td>BEV感知/点云处理/多传感器融合基础</td>
+<td>3-</td>
+</tr>
+<tr>
+<td>模型优化</td>
+<td></td>
+<td>量化（PTQ/QAT）/剪枝/蒸馏/TensorRT部署</td>
+<td>3-</td>
+</tr>
+<tr>
+<td>C++专项</td>
+<td></td>
+<td>内存管理/多线程/SIMD/性能优化</td>
+<td>3-</td>
+</tr>
+<tr>
+<td>算法+AI题</td>
+<td></td>
+<td>NMS/IOU手写/LeetCode Top 20/矩阵运算</td>
+<td></td>
+</tr>
+<tr>
+<td>冲刺</td>
+<td></td>
+<td>了解地平线BPU/看面经/整理项目AI部署经验</td>
+<td>2-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_17">每阶段详细任务</h3>
+<p><strong>：深度学习基础</strong>
+- CNN：从LeNet到ResNet，重点是每个改进解决了什么问题
+- Transformer：Self-Attention手推一遍，理解Multi-head的意义
+- 目标检测：YOLO/FCOS/DETR，Anchor-based和Anchor-free的对比
+- 验收标准：能在纸上画出Transformer的计算图，写出Self-Attention的伪代码</p>
+<p><strong>：自动驾驶AI</strong>
+- BEV感知：为什么用BEV？BEVDet的基本结构？BEVFusion如何融合多传感器？
+- 点云处理：PointPillar（体素化）和CenterPoint（3D检测）的基本原理
+- 看1-2篇相关论文的Abstract和Introduction就够了，不需要精读全文
+- 验收标准：能解释"为什么BEV比前视图更适合自动驾驶"的3个理由</p>
+<p><strong>：模型优化</strong>
+- 量化：FP32→INT8的scale/zero_point计算，PTQ vs QAT的适用场景
+- TensorRT：ONNX→TensorRT的基本流程，算子融合的概念
+- 知识蒸馏/剪枝：了解基本原理，在自动驾驶中的适用场景
+- 验收标准：能用公式推导INT8量化的scale计算，能解释QAT和PTQ的核心区别</p>
+<p><strong>：C++专项</strong>
+- 内存管理：unique_ptr/shared_ptr的实现原理和使用场景，手写简单的shared_ptr
+- 多线程：mutex/condition_variable/atomic的用法，生产者-消费者模式
+- 性能优化：了解SIMD概念，内存对齐的意义，cache-friendly代码的写法
+- 验收标准：能手写线程安全的队列，能解释unique_ptr和shared_ptr的区别</p>
+<p><strong>：算法+AI题专项</strong>
+- 第一梯队5题：反转链表/层序遍历/快排/LRU/合并K链表，每题C++手写3遍
+- AI专项4题：NMS/IOU/Softmax数值稳定版/GEMM，各手写1-2遍
+- 第二梯队10题：各刷一遍，重点理解思路
+- 验收标准：NMS完整C++代码能在内写完且正确</p>
+<p><strong>：冲刺</strong>
+- 了解地平线：征程系列芯片的规格（128 TOPS/256 TOPS），BPU的设计思想
+- 整理项目经历：把自己的AI项目整理成"训练→优化→部署"的完整链路来描述
+- 看近期面经：重点关注算法岗和工具链岗的最新考察点
+- 模拟面试：对着镜子或找朋友，把5个追问链各讲一遍</p>
+<h3 id="_18">最低备考标准（入场门槛）</h3>
+<ul>
+<li>[ ] NMS手写：能在纸上写出正确的C++代码，逻辑完整</li>
+<li>[ ] 模型量化：FP32→INT8的scale/zero_point计算原理能解释清楚</li>
+<li>[ ] C++ RAII：能解释RAII，unique_ptr和shared_ptr的区别，以及使用场景</li>
+<li>[ ] BEV感知：能说出BEV比前视图更适合自动驾驶的2-3个理由</li>
+<li>[ ] 地平线背景：了解征程芯片的基本情况（系列/算力规格），能体现行业热情</li>
+</ul>
+<p>达不到以上5条标准，面试地平线的胜算很低。这不是吓人，是实话。</p>
+<h3 id="_19">备考资源推荐</h3>
+<ul>
+<li><strong>深度学习理论</strong>：李沐的《动手学深度学习》（d2l.ai），免费，中文，质量极高</li>
+<li><strong>目标检测</strong>：YOLO/PointPillar论文原文，重点读Introduction和Method</li>
+<li><strong>C++</strong>：《Effective Modern C++》（Scott Meyers），第4章智能指针必读</li>
+<li><strong>模型量化</strong>：NVIDIA的TensorRT文档，量化概念部分</li>
+<li><strong>BEV感知</strong>：BEVFusion论文（MIT版本），Abstract+图1+Method前半段</li>
+</ul>
+<hr />
+<hr /></article></div>
+  </main>
+  <script>
+    document.getElementById('themeToggle').addEventListener('click', () => { const dark = document.body.classList.toggle('dark'); document.body.classList.toggle('light', !dark); document.getElementById('themeToggle').textContent = dark ? '☼' : '☾'; document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#0b1026' : '#f5f6fb'); });
+  </script>
+</body>
+</html>

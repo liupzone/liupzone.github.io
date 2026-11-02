@@ -3,28 +3,49 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
+const siteUrl = 'https://www.liupzone.cn';
 
 const robots = read('robots.txt');
-if (!robots.includes('Sitemap: https://liupzone.github.io/sitemap.xml')) throw new Error('robots sitemap missing');
+if (!robots.includes(`Sitemap: ${siteUrl}/sitemap.xml`)) throw new Error('robots sitemap missing');
 const sitemap = read('sitemap.xml');
-for (const url of ['https://liupzone.github.io/', 'https://liupzone.github.io/campus-prep.html', 'https://liupzone.github.io/campus-prep/tencent.html', 'https://liupzone.github.io/campus-prep/alibaba.html']) {
+const publishedSlugs = [
+  'tencent', 'alibaba', 'bytedance', 'baidu', 'meituan', 'jd', 'huawei', 'kuaishou', 'dji',
+  'xiaomi', 'vivo', 'oppo', 'microsoft', 'google', 'ant', 'bilibili', 'xiaohongshu', 'didi',
+  'ctrip', 'pinduoduo', 'iflytek', 'mihoyo', 'horizon', 'momenta', 'xpeng', 'lixiang',
+  'huawei-intelligent-driving', 'weride', 'unitree', 'ubtech', 'dreame',
+];
+for (const url of [`${siteUrl}/`, `${siteUrl}/campus-prep.html`, ...publishedSlugs.map((slug) => `${siteUrl}/campus-prep/${slug}.html`)]) {
   if (!sitemap.includes(`<loc>${url}</loc>`)) throw new Error(`sitemap URL missing: ${url}`);
+}
+if (sitemap.includes('liupzone.github.io') || robots.includes('liupzone.github.io')) {
+  throw new Error('SEO entry points still reference the old GitHub Pages domain');
 }
 
 const overview = read('campus-prep.html');
 const home = read('index.html');
+if (!overview.includes(`<link rel="canonical" href="${siteUrl}/campus-prep.html" />`)) {
+  throw new Error('overview canonical URL is not the custom domain');
+}
+if (!home.includes(`<link rel="canonical" href="${siteUrl}/" />`)) {
+  throw new Error('home canonical URL is not the custom domain');
+}
 if (!overview.includes('校招稳稳拿OFFER')) throw new Error('overview title missing');
 if (!overview.includes('大厂校招备考攻略')) throw new Error('overview subtitle missing');
-if (!overview.includes('内容筹备中')) throw new Error('remaining layout placeholders missing');
+if (overview.includes('内容筹备中')) throw new Error('overview still contains unpublished placeholders');
 if (!overview.includes('id="prepSearch"')) throw new Error('search control missing');
-if ((overview.match(/class="company-card/g) || []).length !== 9) {
-  throw new Error('expected 9 layout cards');
+if ((overview.match(/class="company-card/g) || []).length !== publishedSlugs.length) {
+  throw new Error(`expected ${publishedSlugs.length} layout cards`);
 }
 if (!home.includes('href="campus-prep.html"') || !home.includes('data-topic="大厂校招备考攻略"')) {
   throw new Error('homepage menu link missing');
 }
 if (!overview.includes('href="campus-prep/tencent.html"')) throw new Error('Tencent article link missing');
 if (!overview.includes('href="campus-prep/alibaba.html"')) throw new Error('Alibaba article link missing');
+if (!overview.includes('href="campus-prep/bytedance.html"')) throw new Error('ByteDance article link missing');
+if (!overview.includes('href="campus-prep/baidu.html"')) throw new Error('Baidu article link missing');
+for (const slug of publishedSlugs) {
+  if (!overview.includes(`href="campus-prep/${slug}.html"`)) throw new Error(`${slug} article link missing`);
+}
 const articlePath = path.join(root, 'campus-prep', 'tencent.html');
 if (!fs.existsSync(articlePath)) throw new Error('Tencent article page missing');
 const article = fs.readFileSync(articlePath, 'utf8');
@@ -48,8 +69,6 @@ for (const tag of ['rel="canonical"', 'property="og:title"', 'property="og:descr
   if (/2026|2024|2025|\d{1,2}月|Day \d|\d+小时|\d+分钟|更新时间/.test(article)) {
   throw new Error('Tencent article still contains concrete dates or times');
 }
-if (overview.includes('campus-prep/bytedance.html')) throw new Error('unpublished article page link should not be present');
-
 const alibabaPath = path.join(root, 'campus-prep', 'alibaba.html');
 if (!fs.existsSync(alibabaPath)) throw new Error('Alibaba article page missing');
 const alibaba = fs.readFileSync(alibabaPath, 'utf8');
@@ -70,4 +89,109 @@ if (!alibabaCover.includes('Alibaba') || !alibabaCover.includes('阿里云') || 
   throw new Error('Alibaba cover should include company-specific elements and logo');
 }
 
-console.log('campus prep publication verification passed (Tencent and Alibaba)');
+const bytedancePath = path.join(root, 'campus-prep', 'bytedance.html');
+if (!fs.existsSync(bytedancePath)) throw new Error('ByteDance article page missing');
+const bytedance = fs.readFileSync(bytedancePath, 'utf8');
+for (const tag of ['rel="canonical"', 'property="og:title"', 'property="og:description"', 'application/ld+json']) {
+  if (!bytedance.includes(tag)) throw new Error(`ByteDance SEO tag missing: ${tag}`);
+}
+if (!bytedance.includes('assets/bytedance-campus-prep-cover.svg')) throw new Error('ByteDance cover missing');
+if (!bytedance.includes('字节跳动校招备考全攻略')) throw new Error('ByteDance article title missing');
+if (!bytedance.includes('<article class="article-body">')) throw new Error('ByteDance article body missing');
+if (!bytedance.includes('<h4')) throw new Error('ByteDance question sections should render as h4 headings');
+if (bytedance.includes('<p>| # | 题号')) throw new Error('ByteDance frequency table is still raw Markdown');
+if (/2026|2024|2025|\d{1,2}月|Day \d|\d+小时|\d+分钟|\d+天|更新时间/.test(bytedance)) {
+  throw new Error('ByteDance article still contains concrete dates or times');
+}
+const bytedanceCover = read('assets/bytedance-campus-prep-cover.svg');
+if (!bytedanceCover.includes('viewBox="0 0 1200 480"')) throw new Error('ByteDance cover should use a short Zhihu-style ratio');
+if (!bytedanceCover.includes('ByteDance') || !bytedanceCover.includes('抖音') || !bytedanceCover.includes('飞书')) {
+  throw new Error('ByteDance cover should include company-specific elements and logo');
+}
+
+const baiduPath = path.join(root, 'campus-prep', 'baidu.html');
+if (!fs.existsSync(baiduPath)) throw new Error('Baidu article page missing');
+const baidu = fs.readFileSync(baiduPath, 'utf8');
+for (const tag of ['rel="canonical"', 'property="og:title"', 'property="og:description"', 'application/ld+json']) {
+  if (!baidu.includes(tag)) throw new Error(`Baidu SEO tag missing: ${tag}`);
+}
+if (!baidu.includes('assets/baidu-campus-prep-cover.svg')) throw new Error('Baidu cover missing');
+if (!baidu.includes('百度校招全攻略')) throw new Error('Baidu article title missing');
+if (!baidu.includes('<article class="article-body">')) throw new Error('Baidu article body missing');
+if (!baidu.includes('<h4')) throw new Error('Baidu question sections should render as h4 headings');
+if (baidu.includes('<p>| # | 题号')) throw new Error('Baidu frequency table is still raw Markdown');
+if (/2026|2024|2025|\d{1,2}月|Day \d|\d+小时|\d+分钟|\d+天|更新时间|金三银四/.test(baidu)) {
+  throw new Error('Baidu article still contains concrete dates or times');
+}
+const baiduCover = read('assets/baidu-campus-prep-cover.svg');
+if (!baiduCover.includes('viewBox="0 0 1200 480"')) throw new Error('Baidu cover should use a short Zhihu-style ratio');
+if (!baiduCover.includes('Baidu') || !baiduCover.includes('文心') || !baiduCover.includes('Apollo')) {
+  throw new Error('Baidu cover should include company-specific elements and logo');
+}
+
+const laterArticles = [
+  ['meituan', '美团校招全攻略', 'Meituan', '外卖'],
+  ['jd', '京东校招全攻略', 'JD.com', '物流'],
+  ['huawei', '华为校招备考攻略', 'HUAWEI', '鸿蒙'],
+  ['kuaishou', '快手校招全攻略', 'Kuaishou', '直播'],
+  ['dji', '大疆创新校招备考攻略', 'DJI', '无人机'],
+];
+for (const [slug, title, logo, element] of laterArticles) {
+  const page = read(`campus-prep/${slug}.html`);
+  for (const tag of ['rel="canonical"', 'property="og:title"', 'property="og:description"', 'application/ld+json']) {
+    if (!page.includes(tag)) throw new Error(`${slug} SEO tag missing: ${tag}`);
+  }
+  if (!page.includes(`<article class="article-body">`)) throw new Error(`${slug} article body missing`);
+  if (!page.includes('<h3') && !page.includes('<h4')) throw new Error(`${slug} article subheadings are missing`);
+  if (page.includes('<p>| # | 题号')) throw new Error(`${slug} frequency table is still raw Markdown`);
+  if (/2026|2024|2025|\d{1,2}月|Day \d|\d+小时|\d+分钟|\d+天|更新时间|金三银四/.test(page)) {
+    throw new Error(`${slug} article still contains concrete dates or times`);
+  }
+  const cover = read(`assets/${slug}-campus-prep-cover.svg`);
+  if (!cover.includes('viewBox="0 0 1200 480"') || !cover.includes(logo) || !cover.includes(element)) {
+    throw new Error(`${slug} cover should include company-specific elements and logo`);
+  }
+}
+
+const aggregateArticles = [
+  ['xiaomi', '小米', 'Xiaomi', 'IoT'],
+  ['vivo', 'vivo', 'vivo', '影像'],
+  ['oppo', 'OPPO', 'OPPO', 'ColorOS'],
+  ['microsoft', '微软中国', 'Microsoft', 'Azure'],
+  ['google', '谷歌', 'Google', 'Search'],
+  ['ant', '蚂蚁集团', 'Ant Group', '支付'],
+  ['bilibili', '哔哩哔哩', 'bilibili', '直播'],
+  ['xiaohongshu', '小红书', 'REDnote', '推荐'],
+  ['didi', '滴滴', 'DiDi', '出行'],
+  ['ctrip', '携程', 'Trip.com', '旅行'],
+  ['pinduoduo', '拼多多', 'PDD', '电商'],
+  ['iflytek', '科大讯飞', 'iFLYTEK', '语音'],
+  ['mihoyo', '米哈游', 'miHoYo', '游戏'],
+  ['horizon', '地平线', 'Horizon', 'BPU'],
+  ['momenta', 'Momenta', 'Momenta', '自动驾驶'],
+  ['xpeng', '小鹏汽车', 'XPENG', 'XNGP'],
+  ['lixiang', '理想汽车', 'Li Auto', 'AD Max'],
+  ['huawei-intelligent-driving', '华为智能驾驶', 'HUAWEI', 'MDC'],
+  ['weride', '文远知行', 'WeRide', 'Robotaxi'],
+  ['unitree', '宇树科技', 'Unitree', '四足机器人'],
+  ['ubtech', '优必选科技', 'UBTECH', '人形机器人'],
+  ['dreame', '追觅科技', 'Dreame', '清洁机器人'],
+];
+for (const [slug, title, logo, element] of aggregateArticles) {
+  const page = read(`campus-prep/${slug}.html`);
+  for (const tag of ['rel="canonical"', 'property="og:title"', 'property="og:description"', 'application/ld+json']) {
+    if (!page.includes(tag)) throw new Error(`${slug} SEO tag missing: ${tag}`);
+  }
+  if (!page.includes(`<article class="article-body">`)) throw new Error(`${slug} article body missing`);
+  if (!page.includes('<h3') && !page.includes('<h4')) throw new Error(`${slug} article subheadings are missing`);
+  if (page.includes('<p>|')) throw new Error(`${slug} article still contains raw Markdown table rows`);
+  if (/2026|2025|2024|\b19\d{2}\b|\d{1,2}月|Day \d|\d+小时|\d+分钟|\d+天|更新时间|金三银四|618|双十一/.test(page)) {
+    throw new Error(`${slug} article still contains concrete dates or times`);
+  }
+  const cover = read(`assets/${slug}-campus-prep-cover.svg`);
+  if (!cover.includes('viewBox="0 0 1200 480"') || !cover.includes(logo) || !cover.includes(element)) {
+    throw new Error(`${slug} cover should include company-specific elements and logo`);
+  }
+}
+
+console.log(`campus prep publication verification passed for all ${publishedSlugs.length} guides`);
