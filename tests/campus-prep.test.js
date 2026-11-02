@@ -45,6 +45,12 @@ if (!home.includes('resources.html?category=考研')) {
 if ((home.match(/class="update-card"/g) || []).length !== 5) {
   throw new Error('homepage should list exactly five latest updates');
 }
+if (!home.includes('每日反问人数') || !home.includes('questionCount') || !home.includes('recordDailyQuestion')) {
+  throw new Error('homepage should expose daily question statistics');
+}
+if ((home.match(/id="questionCount"/g) || []).length !== 1) {
+  throw new Error('homepage should have one daily question counter');
+}
 if (!home.includes('内容贡献') || !home.includes('campus-prep/horizon.html') || !home.includes('campus-prep/unitree.html')) {
   throw new Error('homepage latest content should use published campus articles');
 }
@@ -71,8 +77,8 @@ if (!overview.includes('id="prepSearch"')) throw new Error('search control missi
 if ((overview.match(/class="company-card/g) || []).length !== publishedSlugs.length) {
   throw new Error(`expected ${publishedSlugs.length} layout cards`);
 }
-if (!overview.includes('class="company-card" data-track="internet" data-search="腾讯') || !overview.includes(`class="card-footer" style="--cover:url('../assets/tencent-campus-prep-cover.svg')"`)) {
-  throw new Error('campus guide listing should use the desktop article layout');
+if (!overview.includes('class="company-card" data-track="internet" data-search="腾讯') || !overview.includes('src="../assets/tencent-campus-prep-cover.svg"')) {
+  throw new Error('campus guide listing should use direct cover images');
 }
 if (!home.includes('href="campus-prep.html"') || !home.includes('href="resources.html"')) {
   throw new Error('homepage menu link missing');
