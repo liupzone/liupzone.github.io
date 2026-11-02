@@ -45,6 +45,9 @@ if (!home.includes('resources.html?category=考研')) {
 if ((home.match(/class="update-card"/g) || []).length !== 5) {
   throw new Error('homepage should list exactly five latest updates');
 }
+if (!home.includes('内容贡献') || !home.includes('campus-prep/horizon.html') || !home.includes('campus-prep/unitree.html')) {
+  throw new Error('homepage latest content should use published campus articles');
+}
 if (home.includes('topic-grid')) {
   throw new Error('homepage should replace scenario cards with latest updates');
 }
