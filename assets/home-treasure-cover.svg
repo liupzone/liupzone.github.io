@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" role="img" aria-labelledby="title">
+  <title id="title">宝藏资源封面</title>
+  <rect width="480" height="260" fill="#eaf5ff"/>
+  <circle cx="391" cy="55" r="39" fill="#d4eaff"/>
+  <path d="M0 215C80 173 145 235 227 193s160-31 253 1v66H0z" fill="#d7ecfd"/>
+  <rect x="59" y="88" width="139" height="115" rx="14" fill="#fff" stroke="#abd2ef" stroke-width="2"/>
+  <rect x="78" y="108" width="44" height="43" rx="8" fill="#5aa5e8"/>
+  <rect x="132" y="108" width="44" height="43" rx="8" fill="#f0b272"/>
+  <rect x="78" y="161" width="98" height="8" rx="4" fill="#c9dfef"/>
+  <rect x="78" y="178" width="69" height="7" rx="3" fill="#ddeaf4"/>
+  <rect x="229" y="71" width="183" height="76" rx="15" fill="#fff" stroke="#b6d8f0"/>
+  <path d="M253 108h45M253 124h95" stroke="#9ec9e5" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="376" cy="108" r="17" fill="#e8f5c0"/>
+  <rect x="259" y="170" width="121" height="38" rx="11" fill="#5aa5e8"/>
+  <text x="283" y="195" fill="#fff" font-size="15" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">900 份资源</text>
+  <text x="56" y="42" fill="#357fb9" font-size="14" font-weight="700" font-family="Arial, sans-serif">TREASURE LIBRARY</text>
+  <text x="56" y="66" fill="#244c68" font-size="21" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">学习 · 阅读 · 影视</text>
+</svg>

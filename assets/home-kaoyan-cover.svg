@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" role="img" aria-labelledby="title">
+  <title id="title">考研资料封面</title>
+  <rect width="480" height="260" fill="#e9f8f2"/>
+  <circle cx="385" cy="64" r="48" fill="#c9ecdf"/>
+  <path d="M0 214C84 192 151 223 238 188s170-20 242 12v60H0z" fill="#cfece3"/>
+  <rect x="62" y="90" width="93" height="118" rx="8" fill="#fff" stroke="#9acdbd"/>
+  <rect x="91" y="72" width="93" height="138" rx="8" fill="#fbfefd" stroke="#6bb69f" stroke-width="2"/>
+  <rect x="108" y="95" width="53" height="9" rx="4" fill="#4aaf95"/>
+  <rect x="108" y="117" width="39" height="5" rx="2" fill="#b7dcd0"/>
+  <path d="M108 165l13-18 15 12 20-30 23 36" fill="none" stroke="#4aaf95" stroke-width="5"/>
+  <circle cx="279" cy="135" r="49" fill="#fff" stroke="#7dcdb7" stroke-width="2"/>
+  <path d="M279 101l9 22 24 2-18 16 5 24-20-12-20 12 5-24-18-16 24-2z" fill="#e8b75a"/>
+  <text x="56" y="42" fill="#328671" font-size="14" font-weight="700" font-family="Arial, sans-serif">GRADUATE EXAM</text>
+  <text x="56" y="66" fill="#1d4e41" font-size="21" font-weight="700" font-family="PingFang SC, Microsoft YaHei, sans-serif">考研资料与复试</text>
+</svg>
