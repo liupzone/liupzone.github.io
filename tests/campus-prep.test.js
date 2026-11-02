@@ -71,6 +71,9 @@ if (!overview.includes('id="prepSearch"')) throw new Error('search control missi
 if ((overview.match(/class="company-card/g) || []).length !== publishedSlugs.length) {
   throw new Error(`expected ${publishedSlugs.length} layout cards`);
 }
+if (!overview.includes('class="company-card" data-track="internet" data-search="腾讯') || !overview.includes(`class="card-footer" style="--cover:url('../assets/tencent-campus-prep-cover.svg')"`)) {
+  throw new Error('campus guide listing should use the desktop article layout');
+}
 if (!home.includes('href="campus-prep.html"') || !home.includes('href="resources.html"')) {
   throw new Error('homepage menu link missing');
 }

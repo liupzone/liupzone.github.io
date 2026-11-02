@@ -80,9 +80,10 @@ h1 { max-width: 680px; margin: 10px 0 13px; font-size: clamp(36px, 5vw, 58px); l
 .section-heading p { margin: 0; color: var(--prep-faint); font-size: 12px; }
 .section-heading a { color: var(--prep-blue); font-size: 12px; text-decoration: none; }
 .companies { scroll-margin-top: 18px; }
-.company-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.company-card { --accent: var(--prep-blue); display: flex; min-height: 218px; flex-direction: column; justify-content: space-between; padding: 18px; border: 1px solid var(--prep-line); border-top: 4px solid var(--accent); border-radius: 13px; background: var(--prep-panel); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-.company-card:hover { border-color: #cbd4f4; box-shadow: var(--prep-shadow); transform: translateY(-2px); }
+.company-grid { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--prep-line); }
+.company-card { --accent: var(--prep-blue); display: grid; grid-template-columns: minmax(0, 1fr) 202px; gap: 23px; align-items: center; min-height: 166px; padding: 21px 0; border: 0; border-bottom: 1px solid var(--prep-line); border-radius: 0; background: var(--prep-panel); text-decoration: none; transition: background .2s ease; }
+.company-card:hover { background: var(--prep-blue-soft); box-shadow: none; transform: none; }
+.company-card > div { min-width: 0; }
 .company-card[data-track="internet"] { --accent: var(--prep-blue); }
 .company-card[data-track="platform"] { --accent: var(--prep-orange); }
 .company-card[data-track="hardware"] { --accent: var(--prep-mint); }
@@ -90,13 +91,14 @@ h1 { max-width: 680px; margin: 10px 0 13px; font-size: clamp(36px, 5vw, 58px); l
 .card-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--prep-faint); font-size: 10px; }
 .card-tag { color: var(--accent); font-weight: 700; }
 .card-number { font-variant-numeric: tabular-nums; }
-.company-card h3 { margin: 13px 0 7px; font-size: 18px; }
-.company-card p { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.65; }
-.card-focus { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 13px; }
+.company-card h3 { margin: 9px 0 7px; font-size: 19px; line-height: 1.42; }
+.company-card p { display: -webkit-box; overflow: hidden; margin: 0; color: var(--prep-muted); font-size: 13px; line-height: 1.7; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.card-focus { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
 .card-focus span { padding: 4px 7px; border-radius: 99px; color: var(--prep-muted); background: #f4f5fa; font-size: 10px; }
-.card-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 19px; padding-top: 11px; border-top: 1px solid var(--prep-line); }
+.card-footer { width: 202px; height: 114px; display: block; position: relative; overflow: hidden; grid-column: 2; grid-row: 1; margin: 0; padding: 0; border: 0; border-radius: 8px; background: var(--prep-blue-soft); }
+.card-footer:before { content: attr(data-cover); display: block; width: 100%; height: 100%; background: var(--cover) center / cover no-repeat; }
 .card-footer small { color: var(--prep-faint); font-size: 10px; }
-.card-footer b { color: var(--accent); font-size: 17px; font-weight: 400; }
+.card-footer b { position: absolute; right: 8px; bottom: 7px; width: 23px; height: 23px; display: grid; place-items: center; border-radius: 50%; color:#fff; background: var(--accent); font-size: 13px; font-weight: 400; }
 .card-status { color: var(--prep-faint) !important; font-size: 10px !important; font-weight: 650 !important; }
 .empty { display: none; padding: 55px 20px; border: 1px dashed var(--prep-line); border-radius: 13px; color: var(--prep-muted); text-align: center; font-size: 13px; }
 .empty.show { display: block; }
@@ -186,7 +188,9 @@ body.dark .article-body tr:nth-child(even) td { background: rgba(21, 29, 61, .5)
   .toolbar { align-items: stretch; }
   .shortcut { display: none; }
   .company-grid { grid-template-columns: 1fr; }
-  .company-card { min-height: 195px; }
+  .company-card { grid-template-columns: minmax(0, 1fr) 94px; gap: 11px; min-height: 132px; padding: 15px 0; }
+  .company-card p { -webkit-line-clamp: 3; font-size: 12px; }
+  .card-footer { width: 94px; height: 82px; }
   .sprint-section { padding: 17px; }
   .sprint-grid { grid-template-columns: 1fr 1fr; }
   .article-page { padding-top: 28px; }
