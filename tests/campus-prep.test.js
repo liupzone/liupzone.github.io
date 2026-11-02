@@ -45,11 +45,11 @@ if (!home.includes('resources.html?category=考研')) {
 if ((home.match(/class="update-card"/g) || []).length !== 5) {
   throw new Error('homepage should list exactly five latest updates');
 }
-if (!home.includes('每日反问人数') || !home.includes('questionCount') || !home.includes('recordDailyQuestion')) {
-  throw new Error('homepage should expose daily question statistics');
+if (!home.includes('每日访问人数') || !home.includes('visitCount')) {
+  throw new Error('homepage should expose daily visit statistics');
 }
-if ((home.match(/id="questionCount"/g) || []).length !== 1) {
-  throw new Error('homepage should have one daily question counter');
+if ((home.match(/id="visitCount"/g) || []).length !== 1) {
+  throw new Error('homepage should have one daily visit counter');
 }
 if (!home.includes('内容贡献') || !home.includes('campus-prep/horizon.html') || !home.includes('campus-prep/unitree.html')) {
   throw new Error('homepage latest content should use published campus articles');
