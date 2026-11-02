@@ -29,6 +29,13 @@ if (!overview.includes(`<link rel="canonical" href="${siteUrl}/campus-prep.html"
 if (!home.includes(`<link rel="canonical" href="${siteUrl}/" />`)) {
   throw new Error('home canonical URL is not the custom domain');
 }
+const homeBody = home.slice(home.indexOf('<body'), home.lastIndexOf('</body>'));
+if (/本周更新 12 篇|27届秋招内推信息|大厂笔试面试真题合集|内容整理进度|72%|已展示最新内容（示例）|正在查看：/.test(homeBody)) {
+  throw new Error('homepage still contains simulated content or interactions');
+}
+if (!home.includes('31 篇') || !home.includes('900 份')) {
+  throw new Error('homepage should show actual published guide and resource counts');
+}
 if (!overview.includes('校招稳稳拿OFFER')) throw new Error('overview title missing');
 if (!overview.includes('大厂校招备考攻略')) throw new Error('overview subtitle missing');
 if (overview.includes('内容筹备中')) throw new Error('overview still contains unpublished placeholders');
@@ -36,7 +43,7 @@ if (!overview.includes('id="prepSearch"')) throw new Error('search control missi
 if ((overview.match(/class="company-card/g) || []).length !== publishedSlugs.length) {
   throw new Error(`expected ${publishedSlugs.length} layout cards`);
 }
-if (!home.includes('href="campus-prep.html"') || !home.includes('data-topic="大厂校招备考攻略"')) {
+if (!home.includes('href="campus-prep.html"') || !home.includes('href="resources.html"')) {
   throw new Error('homepage menu link missing');
 }
 if (!overview.includes('href="campus-prep/tencent.html"')) throw new Error('Tencent article link missing');
