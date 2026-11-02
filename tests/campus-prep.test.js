@@ -51,6 +51,13 @@ if (!home.includes('内容贡献') || !home.includes('campus-prep/horizon.html')
 if (home.includes('topic-grid')) {
   throw new Error('homepage should replace scenario cards with latest updates');
 }
+if (!home.includes('href="search.html"') || !home.includes('搜索全站内容')) {
+  throw new Error('homepage should use the site-wide search');
+}
+const siteSearch = read('search.html');
+for (const marker of ['腾讯校招备考攻略', 'resources-data.js', '校招稳稳拿OFFER', '宝藏资源']) {
+  if (!siteSearch.includes(marker)) throw new Error(`site search missing: ${marker}`);
+}
 if (!overview.includes('校招稳稳拿OFFER')) throw new Error('overview title missing');
 if (!overview.includes('大厂校招备考攻略')) throw new Error('overview subtitle missing');
 if (overview.includes('内容筹备中')) throw new Error('overview still contains unpublished placeholders');

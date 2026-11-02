@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f6fb" />
+  <meta name="description" content="搜索 liupzone 的全部内容：校招攻略、宝藏资源、考研资料、阅读与影视记录。" />
+  <meta name="robots" content="index,follow" />
+  <title>搜索全站内容 · liupzone</title>
+  <link rel="canonical" href="https://www.liupzone.cn/search.html" />
+  <link rel="stylesheet" href="campus-prep.css" />
+  <style>
+    .site-search-hero { padding:52px 0 29px; border-bottom:1px solid var(--prep-line); }
+    .site-search-hero h1 { margin:10px 0 11px; font-size:clamp(34px,4.8vw,54px); }
+    .site-search-hero p { max-width:720px; margin:0; color:var(--prep-muted); font-size:14px; line-height:1.8; }
+    .site-search-box { display:flex; gap:9px; margin-top:26px; max-width:820px; }
+    .site-search-box input { flex:1; min-width:0; height:49px; padding:0 15px; border:1px solid var(--prep-line); border-radius:11px; outline:0; color:var(--prep-ink); background:var(--prep-panel); font-size:14px; }
+    .site-search-box input:focus { border-color:var(--prep-blue); box-shadow:0 0 0 3px var(--prep-blue-soft); }
+    .site-search-box button { padding:0 19px; border:0; border-radius:11px; color:#fff; background:var(--prep-ink); font-size:13px; }
+    .site-search-box button:hover { background:var(--prep-blue); }
+    .site-search-main { padding:31px 0 80px; }
+    .site-search-summary { display:flex; justify-content:space-between; gap:15px; align-items:center; color:var(--prep-muted); font-size:12px; }
+    .site-search-summary strong { color:var(--prep-ink); font-size:17px; }
+    .site-search-clear { color:var(--prep-blue); background:none; border:0; font-size:12px; }
+    .site-search-group { margin-top:29px; }
+    .site-search-group h2 { display:flex; align-items:center; gap:9px; margin:0 0 12px; font-size:18px; }
+    .site-search-group h2 b { padding:3px 8px; border-radius:99px; color:var(--prep-blue); background:var(--prep-blue-soft); font-size:10px; font-weight:650; }
+    .site-result-list { display:grid; gap:10px; }
+    .site-result { display:grid; grid-template-columns:minmax(0,1fr) 122px; gap:16px; align-items:center; min-height:102px; padding:14px 17px; border:1px solid var(--prep-line); border-radius:13px; color:inherit; background:var(--prep-panel); text-decoration:none; }
+    .site-result:hover { border-color:#aab9e9; box-shadow:var(--prep-shadow); }
+    .site-result strong { display:block; color:var(--prep-ink); font-size:15px; line-height:1.5; }
+    .site-result p { display:-webkit-box; overflow:hidden; margin:7px 0 0; color:var(--prep-muted); font-size:12px; line-height:1.65; -webkit-box-orient:vertical; -webkit-line-clamp:2; }
+    .site-result small { display:block; margin-top:7px; color:var(--prep-faint); font-size:10px; }
+    .site-result img { display:block; width:122px; height:74px; border-radius:8px; object-fit:cover; background:var(--prep-blue-soft); }
+    .site-result.resource { grid-template-columns:minmax(0,1fr) 110px; }
+    .site-result.resource .go { color:var(--prep-blue); font-size:12px; text-align:right; }
+    .search-empty { display:none; margin-top:28px; padding:48px 20px; border:1px dashed var(--prep-line); border-radius:13px; color:var(--prep-muted); text-align:center; font-size:13px; }
+    .search-empty.show { display:block; }
+    @media (max-width:760px) { .site-search-hero { padding:31px 0 24px; } .site-search-box { flex-direction:column; } .site-search-box button { height:44px; } .site-result, .site-result.resource { grid-template-columns:minmax(0,1fr) 84px; gap:10px; padding:11px; } .site-result img { width:84px; height:64px; } .site-result strong { font-size:14px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="index.html">首页</a><a href="campus-prep.html">校招稳稳拿OFFER</a><a href="resources.html">宝藏资源</a><a href="resources.html?category=考研">考研之路</a><a href="index.html#life">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main>
+    <section class="site-search-hero"><div class="shell"><div class="eyebrow">SITE SEARCH / ALL CONTENT</div><h1>搜索全站内容</h1><p>一次检索校招攻略、宝藏资源、考研资料、阅读和影视记录。输入公司、岗位、技术、科目或资源名称即可。</p><form class="site-search-box" id="siteSearchForm"><input id="siteSearchInput" type="search" placeholder="搜索公司、技术、科目、书籍或影视资源" autocomplete="off" autofocus /><button type="submit">搜索 →</button></form></div></section>
+    <section class="site-search-main shell"><div class="site-search-summary"><div id="searchSummary"><strong>全部内容</strong><span> · 输入关键词开始检索</span></div><button class="site-search-clear" id="clearSearch" type="button">清空搜索</button></div><section class="site-search-group" id="guideResults"><h2>校招攻略 <b id="guideCount">31</b></h2><div class="site-result-list" id="guideResultList"></div></section><section class="site-search-group" id="resourceResults"><h2>宝藏资源 <b id="resourceCount">900</b></h2><div class="site-result-list" id="resourceResultList"></div></section><div class="search-empty" id="searchEmpty">没有找到匹配内容，试试更短的关键词，或浏览校招攻略与宝藏资源目录。</div></section>
+  </main>
+  <script>
+    const guides = [
+      ['腾讯校招备考攻略','腾讯 C++ Go LRU LFU 操作系统 网络 后台开发 技术面','campus-prep/tencent.html','assets/tencent-campus-prep-cover.svg'],
+      ['阿里巴巴校招备考攻略','阿里巴巴 Java JVM 分布式 Redis MySQL 项目 系统设计','campus-prep/alibaba.html','assets/alibaba-campus-prep-cover.svg'],
+      ['字节跳动校招备考攻略','字节跳动 Go C++ 算法 系统设计 抖音 飞书','campus-prep/bytedance.html','assets/bytedance-campus-prep-cover.svg'],
+      ['百度校招备考攻略','百度 C++ 树 算法 大模型 AI 智能驾驶 搜索 推荐','campus-prep/baidu.html','assets/baidu-campus-prep-cover.svg'],
+      ['美团校招备考攻略','美团 Java Go 并发 链表 外卖 配送 业务工程','campus-prep/meituan.html','assets/meituan-campus-prep-cover.svg'],
+      ['京东校招备考攻略','京东 Java Redis MySQL 电商 物流 分布式锁','campus-prep/jd.html','assets/jd-campus-prep-cover.svg'],
+      ['华为校招备考攻略','华为 C++ 机考 嵌入式 鸿蒙 昇腾 AI','campus-prep/huawei.html','assets/huawei-campus-prep-cover.svg'],
+      ['快手校招备考攻略','快手 Go 直播 推荐 Redis Kafka 实时系统','campus-prep/kuaishou.html','assets/kuaishou-campus-prep-cover.svg'],
+      ['大疆创新校招备考攻略','大疆 DJI 无人机 嵌入式 C++ 视觉算法','campus-prep/dji.html','assets/dji-campus-prep-cover.svg'],
+      ['小米校招备考攻略','小米 Go C++ IoT Android 汽车 epoll','campus-prep/xiaomi.html','assets/xiaomi-campus-prep-cover.svg'],
+      ['vivo 校招备考攻略','vivo 手机 影像 OriginOS C++ Java Android','campus-prep/vivo.html','assets/vivo-campus-prep-cover.svg'],
+      ['OPPO 校招备考攻略','OPPO 手机 影像 ColorOS C++ Java AI','campus-prep/oppo.html','assets/oppo-campus-prep-cover.svg'],
+      ['微软中国校招备考攻略','微软 Microsoft Azure Windows C# 英文面试 系统设计','campus-prep/microsoft.html','assets/microsoft-campus-prep-cover.svg'],
+      ['谷歌（Google）校招备考攻略','谷歌 Google Python Java 算法 Search Cloud AI 系统设计','campus-prep/google.html','assets/google-campus-prep-cover.svg'],
+      ['蚂蚁集团校招备考攻略','蚂蚁 支付 金融科技 Java TCC 分布式事务','campus-prep/ant.html','assets/ant-campus-prep-cover.svg'],
+      ['哔哩哔哩校招备考攻略','B站 bilibili Go C++ 弹幕 直播 内容社区','campus-prep/bilibili.html','assets/bilibili-campus-prep-cover.svg'],
+      ['小红书校招备考攻略','小红书 REDnote Go Python 推荐 内容理解 性能','campus-prep/xiaohongshu.html','assets/xiaohongshu-campus-prep-cover.svg'],
+      ['滴滴校招备考攻略','滴滴 DiDi 出行 地图 调度 C++ Go Redis GEO','campus-prep/didi.html','assets/didi-campus-prep-cover.svg'],
+      ['携程校招备考攻略','携程 Trip.com 旅行 Java Apollo 交易系统 全球化','campus-prep/ctrip.html','assets/ctrip-campus-prep-cover.svg'],
+      ['拼多多校招备考攻略','拼多多 PDD C++ STL epoll 推荐 电商','campus-prep/pinduoduo.html','assets/pinduoduo-campus-prep-cover.svg'],
+      ['科大讯飞校招备考攻略','科大讯飞 语音 大模型 AI Python C++ SQL','campus-prep/iflytek.html','assets/iflytek-campus-prep-cover.svg'],
+      ['米哈游校招备考攻略','米哈游 miHoYo 游戏 C++ 引擎 图形学 服务端','campus-prep/mihoyo.html','assets/mihoyo-campus-prep-cover.svg'],
+      ['地平线校招备考攻略','地平线 Horizon BPU 芯片 模型量化 嵌入式 AI C++','campus-prep/horizon.html','assets/horizon-campus-prep-cover.svg'],
+      ['Momenta 校招备考攻略','Momenta 自动驾驶 数据飞轮 共享内存 IPC C++','campus-prep/momenta.html','assets/momenta-campus-prep-cover.svg'],
+      ['小鹏汽车校招备考攻略','小鹏 XPENG XNGP BEV protobuf gRPC 智能驾驶','campus-prep/xpeng.html','assets/xpeng-campus-prep-cover.svg'],
+      ['理想汽车校招备考攻略','理想 Li Auto AD Max 智能座舱 C++ 量产工程','campus-prep/lixiang.html','assets/lixiang-campus-prep-cover.svg'],
+      ['华为智能驾驶校招备考攻略','华为智能驾驶 ADS MDC 传感器融合 Autosar C++','campus-prep/huawei-intelligent-driving.html','assets/huawei-intelligent-driving-campus-prep-cover.svg'],
+      ['文远知行校招备考攻略','文远知行 WeRide Robotaxi SLAM ROS2 C++ Python','campus-prep/weride.html','assets/weride-campus-prep-cover.svg'],
+      ['宇树科技校招备考攻略','宇树 Unitree 四足机器人 强化学习 FOC 运动控制','campus-prep/unitree.html','assets/unitree-campus-prep-cover.svg'],
+      ['优必选科技校招备考攻略','优必选 UBTECH 人形机器人 具身智能 WBC C++ Python','campus-prep/ubtech.html','assets/ubtech-campus-prep-cover.svg'],
+      ['追觅科技校招备考攻略','追觅 Dreame 清洁机器人 SLAM RTOS 嵌入式 C++','campus-prep/dreame.html','assets/dreame-campus-prep-cover.svg']
+    ];
+    const input=document.getElementById('siteSearchInput'), guideList=document.getElementById('guideResultList'), resourceList=document.getElementById('resourceResultList'), summary=document.getElementById('searchSummary'), empty=document.getElementById('searchEmpty');
+    let resources=[];
+    const esc=(value)=>String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    function render(){const query=input.value.trim().toLowerCase();document.getElementById('clearSearch').hidden=!query;const foundGuides=query?guides.filter(([title,keywords])=>(title+' '+keywords).toLowerCase().includes(query)):guides;const foundResources=query?resources.filter((item)=>(item.name+' '+item.category+' '+item.group).toLowerCase().includes(query)):resources;guideList.innerHTML=foundGuides.map(([title,keywords,href,img])=>`<a class="site-result" href="${href}"><div><strong>${esc(title)}</strong><p>${esc(keywords)}</p><small>校招稳稳拿OFFER · 公司专项攻略</small></div><img src="${img}" alt="${esc(title)}封面" /></a>`).join('');resourceList.innerHTML=foundResources.slice(0,query?100:20).map((item)=>`<a class="site-result resource" href="${esc(item.url)}" target="_blank" rel="noopener noreferrer"><div><strong>${esc(item.name)}</strong><p>${esc(item.category)} · ${esc(item.group)}</p><small>宝藏资源 · 打开原始资源</small></div><span class="go">打开 ↗</span></a>`).join('');document.getElementById('guideCount').textContent=foundGuides.length;document.getElementById('resourceCount').textContent=foundResources.length;summary.innerHTML=query?`<strong>搜索结果</strong><span> · ${foundGuides.length} 篇攻略，${foundResources.length} 份资源</span>`:'<strong>全部内容</strong><span> · 输入关键词开始检索</span>';empty.classList.toggle('show',Boolean(query)&&foundGuides.length===0&&foundResources.length===0);document.getElementById('guideResults').hidden=query&&foundGuides.length===0;document.getElementById('resourceResults').hidden=query&&foundResources.length===0;}
+    document.getElementById('siteSearchForm').addEventListener('submit',(event)=>event.preventDefault());
+    input.addEventListener('input',render);
+    document.getElementById('clearSearch').addEventListener('click',()=>{input.value='';input.focus();render();});
+    document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});
+    fetch('resources-data.js').then(response=>response.text()).then(source=>{const start=source.indexOf('[');const end=source.lastIndexOf(']');resources=JSON.parse(source.slice(start,end+1));render();}).catch(()=>{document.getElementById('resourceCount').textContent='暂不可用';render();});
+  </script>
+</body>
+</html>
