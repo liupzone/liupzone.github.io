@@ -36,6 +36,9 @@ if (/本周更新 12 篇|27届秋招内推信息|大厂笔试面试真题合集|
 if (!home.includes('31 篇') || !home.includes('900 份')) {
   throw new Error('homepage should show actual published guide and resource counts');
 }
+if (!home.includes('求职、学习、阅读，都在这里。') || !home.includes('学习教育') || !home.includes('阅读与影像')) {
+  throw new Error('homepage should present all real content categories, not only campus guides');
+}
 if (!overview.includes('校招稳稳拿OFFER')) throw new Error('overview title missing');
 if (!overview.includes('大厂校招备考攻略')) throw new Error('overview subtitle missing');
 if (overview.includes('内容筹备中')) throw new Error('overview still contains unpublished placeholders');
