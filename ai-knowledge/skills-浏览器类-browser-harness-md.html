@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Browser Harness ♞：让 LLM 直接开你的真实浏览器，还会自己写 helper · AI知识库专栏" />
+  <title>Browser Harness ♞：让 LLM 直接开你的真实浏览器，还会自己写 helper · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/skills-浏览器类-browser-harness-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / skills</div><h1>Browser Harness ♞：让 LLM 直接开你的真实浏览器，还会自己写 helper</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills---browser-harness-md.svg" alt="Browser Harness ♞：让 LLM 直接开你的真实浏览器，还会自己写 helper主题配图" /></header><article class="ai-body ai-reading-width">
+<ul>
+<li><strong>仓库</strong>：<a href="https://github.com/browser-use/browser-harness">https://github.com/browser-use/browser-harness</a></li>
+</ul>
+<h2>一句话总结</h2>
+<p>Browser Harness 是一个「<strong>自愈的浏览器 Harness</strong>」——通过<strong>一条可编辑的 CDP WebSocket</strong>，让 LLM 直接接管你<strong>本地正在运行的真实 Chrome</strong>（保留登录态、cookie、SSO）。它最独特的地方不是"能操作浏览器"，而是<strong>agent 干活时如果缺 helper，会自己往 <code>agent_helpers.py</code> 里写一个可复用的</strong>——Harness 越用越顺手。</p>
+<p>作者的核心观点浓缩在两篇博客里：
+- <a href="https://browser-use.com/posts/bitter-lesson-agent-harnesses">The Bitter Lesson of Agent Harnesses</a>
+- <a href="https://browser-use.com/posts/web-agents-that-actually-learn">Web Agents That Actually Learn</a></p>
+<p>思路和传统 browser-use / Playwright 完全不同：不封装一层"高级 API"，而是把 CDP 原生原语暴露给 agent，让它像人类工程师一样<strong>边做边沉淀工具库</strong>。</p>
+<h2>五分钟上手</h2>
+<p>作为 Claude Code / Codex / Cursor 等 agent 的 <strong>Skill</strong> 使用。把下面这段贴给你的 coding agent：</p>
+<pre><code class="language-text">Install or upgrade browser-harness to the latest stable version with uv using
+Python 3.12, register the skill from `browser-harness skill`, and connect it
+to my browser. Ask whether I want local browser recordings enabled; default
+to no. Follow https://github.com/browser-use/browser-harness/blob/main/install.md
+if setup or connection fails.
+</code></pre>
+<p>或者手动一把 all-in-one：</p>
+<pre><code class="language-bash">uv tool install --python 3.12 --upgrade --force browser-harness
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills/browser-harness"
+browser-harness skill &gt; "${CODEX_HOME:-$HOME/.codex}/skills/browser-harness/SKILL.md"
+
+browser-harness &lt;&lt;'PY'
+print(page_info())
+PY
+</code></pre>
+<p>首次会引导你打开 <code>chrome://inspect/#remote-debugging</code> 勾选允许远程调试；macOS 上如遇授权弹窗，运行 <code>browser-harness mac-approve</code>。</p>
+<h2>三个核心文件</h2>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>install.md</code></td>
+<td>教 agent 怎么装、怎么连上浏览器</td>
+</tr>
+<tr>
+<td><code>SKILL.md</code></td>
+<td>教 agent 浏览器操作工作流（AX 树优先、helper 调用、tab 管理）</td>
+</tr>
+<tr>
+<td><code>src/browser_harness/</code></td>
+<td>只读核心；agent 写的 helper 都进它自己的 workspace，永远不污染主库</td>
+</tr>
+</tbody>
+</table>
+<p>分层非常干净：<strong>内核不动，agent 只在 workspace 里长自己的能力</strong>。</p>
+<h2>干活方式（对 agent 而言）</h2>
+<p>多行 Python 用 heredoc 直接投喂：</p>
+<pre><code class="language-bash">browser-harness &lt;&lt;'PY'
+new_tab("https://x.com/settings")
+print(page_info())
+PY
+</code></pre>
+<p>关键工作流约定（写进 SKILL.md）：</p>
+<ul>
+<li><strong>首次导航用 <code>new_tab(url)</code></strong>，不是 <code>goto_url</code>；</li>
+<li><strong>优先走 accessibility 树</strong>：<code>cdp("Accessibility.getFullAXTree")</code> 拿 role + name + <code>backendDOMNodeId</code>，用 <code>DOM.getBoxModel</code> 算中心坐标，再 <code>click_at_xy(x, y)</code>，最后 <code>page_info()</code> / <code>js(...)</code> 验证——比截图省 token 得多；</li>
+<li><strong>screenshot 只在版式/图像必要时用</strong>；</li>
+<li>遇到 canvas 等 AX 拿不到的元素，退回到 <code>js(...)</code> 抓原始 HTML；</li>
+<li>导航后必调 <code>wait_for_load()</code>；</li>
+<li><strong>登录墙一律停下问用户</strong>，只有已登录 SSO 允许自动完成，密码/MFA/账户选择都要停；</li>
+<li>原生 CDP 全开：<code>cdp("Domain.method", ...)</code> 直连；</li>
+<li>后台 tab 附加不切前台，除非用户明确要求或页面渲染真的暂停才 <code>activate_tab</code>。</li>
+</ul>
+<p><strong>"tab 附加≠切换前台"</strong> 这个设计对多任务并行很关键——agent 可以在你正常上网的时候，静默在别的 tab 里干活。</p>
+<h2>自愈：<code>agent_helpers.py</code> 就是它的进化点</h2>
+<p>任务示例：<strong>"打开我的 X 主页，找到最近 20 条视频，全部下载下来。"</strong></p>
+<p>Agent 干到某一步发现「批量下载视频」这个操作 harness 里没现成的 helper，于是它自己写一个进 <code>agent-workspace/agent_helpers.py</code>，下次同类任务直接调用。</p>
+<p>这就是 README 里那张 ASCII 流程图想传达的：</p>
+<pre><code>● agent: wants to upload a file
+│
+● agent-workspace/agent_helpers.py → helper missing
+│
+● agent writes it                         agent_helpers.py
+│                                                       + custom helper
+✓ file uploaded
+</code></pre>
+<p><strong>结果是：同一个 agent 在同一个用户机器上，越用越好用。</strong> 不是"更大模型"变强，而是"harness 自身"变强——很有 Bitter Lesson 的味道。</p>
+<p><strong>Domain Skills</strong>（默认关闭）：设置 <code>BH_DOMAIN_SKILLS=1</code> 后，agent 会先读 <code>$BH_AGENT_WORKSPACE/domain-skills/&lt;site&gt;/</code> 下<strong>所有</strong>站点特定文档再动手，避免每次都从零摸索大型 SaaS 的 UI。</p>
+<h2>何时<strong>不要</strong>用它</h2>
+<p>SKILL.md 里写得很明确——<strong>能 <code>curl</code> 就别开浏览器</strong>：</p>
+<blockquote>
+<p>A basic fetch of public information needs no browser. If a plain HTTP request can read it — a public page, an API, docs — use <code>curl</code> or your fetch tool, and leave the browser alone.</p>
+</blockquote>
+<p>浏览器只在这些场景才合理：需要交互、需要登录态、需要 JS 渲染、被 bot 保护、直接 fetch 失败或拿到壳页。这个自律在同类工具里比较少见。</p>
+<h2>本地 vs 云端</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>用什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>个人日常、需要登录态</td>
+<td><strong>本地 Chrome</strong>（一条 CDP，共享你的会话）</td>
+</tr>
+<tr>
+<td>需要并行多任务 / 隔离</td>
+<td><strong>Browser Use Cloud</strong>（每任务一个隔离浏览器，避免争抢 tab）</td>
+</tr>
+<tr>
+<td>抓 captcha / bot 敏感站</td>
+<td><strong>Cloud</strong>（干净托管 IP + stealth，用户 IP 不外泄）</td>
+</tr>
+<tr>
+<td>headless 服务器</td>
+<td><strong>Cloud</strong></td>
+</tr>
+</tbody>
+</table>
+<p>云端启动方式：</p>
+<pre><code class="language-bash">browser-harness auth login
+browser-harness &lt;&lt;'PY'
+start_remote_daemon("r7k2")
+PY
+
+BU_NAME=r7k2 browser-harness &lt;&lt;'PY'
+new_tab("https://example.com")
+print(page_info())
+PY
+</code></pre>
+<p>要注意：<strong>远程 daemon 按运行时长计费</strong>，任务结束记得 <code>stop_remote_daemon(name)</code>。SKILL.md 明确要求 agent 在结束时主动询问用户"要不要关掉这个 browser"。</p>
+<h2>Recording：默认关，问过再开</h2>
+<p><code>browser-harness recordings</code> 可查看当前状态，<code>enable</code> / <code>disable</code> 切换。首次安装默认<strong>不录</strong>；agent 只会问你一次，之后升级不会重复骚扰：</p>
+<blockquote>
+<p>Enable local browser recordings? This saves screenshots and action traces on this machine, which may include sensitive page content. [y/N]</p>
+</blockquote>
+<p>开了之后可以让 agent「回放刚才干了什么」，甚至生成视频（视频从不自动生成）。</p>
+<h2>诊断 &amp; 兼容</h2>
+<ul>
+<li><code>browser-harness --doctor</code> 一键诊断连接、权限、Chrome 状态；</li>
+<li>Chrome 没开会自动拉起来重试；</li>
+<li>老的 <code>browser</code> / <code>browser-use</code> skill 要手动删，别改插件缓存；</li>
+<li>macOS 需要给终端 / IDE 在系统设置里开 <strong>Accessibility 权限</strong>。</li>
+</ul>
+<h2>价值判断</h2>
+<p>Browser Harness 站在一个很有意思的位置：</p>
+<ul>
+<li><strong>对比 Playwright/Selenium</strong>：不写"脚本"，让 LLM 直接开原生浏览器，自动沉淀 helper——更适合"意图型任务"而非"确定性测试"；</li>
+<li><strong>对比传统 browser-use（同厂前作）</strong>：走"薄封装 + 自愈"路线，agent 有更高自由度，也更像现代 coding agent 的思路；</li>
+<li><strong>对比 Claude Computer Use / OpenAI Operator</strong>：不吃截图 token，走 CDP + AX 树，速度和成本都更好，但需要本地 Chrome，不是纯云 SaaS。</li>
+</ul>
+<p><strong>适合</strong>：
+- 想让 Claude Code / Codex 自动完成"帮我从 X 下 20 个视频"「登录 Notion 整理这周会议」这类<strong>有状态的个人任务</strong>；
+- 需要 agent <strong>在你的登录态</strong>里做事，不想反复登录/传 cookie；
+- 想搭一套「随着使用越来越懂我」的私人 browser agent。</p>
+<p><strong>注意</strong>：
+- 内核只读、helper 只增不删——workspace 得偶尔 review，别让 agent 写出重复或有 bug 的 helper 长期潜伏；
+- 登录/敏感页面依然是"停下问用户"的最佳实践，别把它当无监督工人；
+- 云端并行方便但计费，跑完记得关。</p>
+<h2>常用命令速查</h2>
+<pre><code class="language-bash"># 安装/升级
+uv tool install --python 3.12 --upgrade --force browser-harness
+
+# 生成 skill 文件（供 Codex / Claude Code 加载）
+browser-harness skill &gt; $CODEX_HOME/skills/browser-harness/SKILL.md
+
+# 诊断
+browser-harness --doctor
+browser-harness mac-approve            # macOS 授权兜底
+
+# 录制开关
+browser-harness recordings
+browser-harness recordings enable
+browser-harness recordings disable
+
+# 本地任务
+browser-harness &lt;&lt;'PY'
+new_tab("https://example.com")
+print(page_info())
+PY
+
+# 云端任务
+browser-harness auth login
+browser-harness &lt;&lt;'PY'
+start_remote_daemon("r7k2")
+PY
+BU_NAME=r7k2 browser-harness &lt;&lt;'PY'
+new_tab("https://example.com")
+PY
+</code></pre></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

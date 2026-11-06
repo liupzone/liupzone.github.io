@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="配置管理指南 · AI知识库专栏" />
+  <title>配置管理指南 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/docs-配置管理-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / docs</div><h1>配置管理指南</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/docs---md.svg" alt="配置管理指南主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>问题说明</h2>
+<p>每次添加新文件夹时，如果忘记更新配置文件，会导致网站出现 <strong>404错误</strong>。</p>
+<p>这是因为项目使用了符号链接系统，需要在多个配置文件中同步更新。</p>
+<h2>快速解决方案</h2>
+<h3>1. 检查配置状态</h3>
+<pre><code class="language-bash">npm run check-config
+</code></pre>
+<p>这会检测所有内容文件夹，并报告哪些文件夹缺少配置。</p>
+<h3>2. 自动修复配置</h3>
+<pre><code class="language-bash">npm run fix-config
+</code></pre>
+<p>这会自动更新以下配置文件：
+- <code>scripts/copy-symlinks.js</code> - 添加新文件夹到符号链接映射
+- <code>docs/.vitepress/utils/sidebar.ts</code> - 添加新文件夹到名称映射</p>
+<h3>3. 重新构建</h3>
+<pre><code class="language-bash">npm run build
+</code></pre>
+<h2>完整工作流程</h2>
+<p>当你想添加新的内容文件夹时：</p>
+<pre><code class="language-bash"># 1. 在根目录创建新文件夹（例如：新文件夹）
+mkdir 新文件夹
+
+# 2. 添加内容文件
+echo "# 欢迎" &gt; 新文件夹/index.md
+
+# 3. 自动修复配置
+npm run fix-config
+
+# 4. 验证配置
+npm run check-config
+
+# 5. 本地测试
+npm run dev
+
+# 6. 构建并部署
+npm run build
+git add .
+git commit -m "feat: 添加新文件夹"
+git push
+</code></pre>
+<h2>配置文件说明</h2>
+<h3>1. <code>scripts/copy-symlinks.js</code></h3>
+<p>在 <code>symlinkMap</code> 中配置文件夹映射：</p>
+<pre><code class="language-javascript">const symlinkMap = {
+  'url-friendly-name': '实际文件夹名',
+  // 例如：
+  'bu-shu-ai': '部署ai'
+}
+</code></pre>
+<p><strong>作用</strong>: 构建时将根目录的文件夹复制到 <code>docs/ai/</code> 下</p>
+<h3>2. <code>docs/.vitepress/utils/sidebar.ts</code></h3>
+<h4><code>getDisplayName()</code> - 显示名称映射</h4>
+<pre><code class="language-typescript">const nameMap: Record&lt;string, string&gt; = {
+  '文件夹名': '显示名称',
+  // 例如：
+  '部署ai': '部署AI'
+}
+</code></pre>
+<h4><code>getUrlFriendlyName()</code> - URL友好名称</h4>
+<pre><code class="language-typescript">const urlMap: Record&lt;string, string&gt; = {
+  '实际文件夹名': 'url-friendly-name',
+  // 例如：
+  '部署ai': 'bu-shu-ai'
+}
+</code></pre>
+<p><strong>作用</strong>: 生成导航栏和侧边栏的链接</p>
+<h2>常见问题</h2>
+<h3>Q: 为什么需要配置多个文件？</h3>
+<p>A: 项目设计采用了符号链接系统来组织内容，这样可以将不同主题的内容放在独立的文件夹中，便于管理。但代价是需要手动维护映射关系。</p>
+<h3>Q: 忘记配置会怎样？</h3>
+<p>A: 新文件夹的内容不会被复制到构建目录，导航栏虽然会显示该文件夹，但点击会出现404错误。</p>
+<h3>Q: 如何快速诊断404问题？</h3>
+<p>A: 运行 <code>npm run check-config</code>，它会告诉你哪些文件夹缺少配置。</p>
+<h3>Q: 可以手动配置吗？</h3>
+<p>A: 可以，但推荐使用 <code>npm run fix-config</code> 自动配置，避免遗漏和错误。</p>
+<h2>技术细节</h2>
+<h3>URL命名规则</h3>
+<ul>
+<li>中文目录名会被转换为拼音或英文</li>
+<li>多个单词用连字符 <code>-</code> 连接</li>
+<li>例如：<code>部署ai</code> → <code>bu-shu-ai</code></li>
+</ul>
+<h3>文件夹识别规则</h3>
+<p>系统会自动识别根目录下的所有文件夹，除了以下排除目录：
+- <code>node_modules</code>
+- <code>docs</code>
+- <code>scripts</code>
+- <code>.git</code>
+- <code>.github</code>
+- <code>public</code>
+- <code>dist</code>
+- <code>.claude</code>
+- <code>.vscode</code></p>
+<h2>最佳实践</h2>
+<ol>
+<li><strong>添加新文件夹前</strong>: 先运行 <code>npm run check-config</code> 确保当前配置完整</li>
+<li><strong>添加新文件夹后</strong>: 立即运行 <code>npm run fix-config</code> 更新配置</li>
+<li><strong>提交代码前</strong>: 运行 <code>npm run build</code> 确保构建成功</li>
+<li><strong>推送代码后</strong>: 检查 GitHub Actions 构建状态</li>
+</ol>
+<h2>脚本说明</h2>
+<ul>
+<li><code>npm run check-config</code> - 检查配置完整性（不修改文件）</li>
+<li><code>npm run fix-config</code> - 自动修复缺失的配置</li>
+<li><code>npm run build</code> - 完整构建（包含符号链接处理）</li>
+</ul></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

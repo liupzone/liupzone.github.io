@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="drawio-skill — 从文本到专业图表 · AI知识库专栏" />
+  <title>drawio-skill — 从文本到专业图表 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/skills-画图类-drawio-skill-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / skills</div><h1>drawio-skill — 从文本到专业图表</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills---drawio-skill-md.svg" alt="drawio-skill — 从文本到专业图表主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>简介</h2>
+<p>一个 AI Agent 技能（SKILL.md 格式），能从自然语言描述生成 draw.io 图表文件，并导出为 PNG / SVG / PDF 格式。兼容 Claude Code、OpenClaw、Hermes Agent、OpenAI Codex、SkillsMP 等平台。</p>
+<h2>核心功能</h2>
+<ul>
+<li><strong>自然语言生成图</strong>：用自然语言描述即可自动生成 <code>.drawio</code> XML 文件</li>
+<li><strong>多格式导出</strong>：支持 PNG、SVG、PDF、JPG 导出（需安装 draw.io 桌面版）</li>
+<li><strong>6 种图表预设</strong>：ERD、UML 类图、时序图、架构图、ML/深度学习图、流程图，每种都有预设形状、样式和布局规范</li>
+<li><strong>动态连接线</strong>：支持 <code>flowAnimation=1</code> 动画连接，适合数据流/流水线图</li>
+<li><strong>ML 模型图支持</strong>：带张量形状标注 <code>(B, C, H, W)</code>，适合 NeurIPS/ICML/ICLR 论文</li>
+<li><strong>网格对齐</strong>：所有坐标自动对齐到 10px 倍数，布局整洁</li>
+<li><strong>浏览器兜底</strong>：当桌面 CLI 不可用时，自动生成 diagrams.net 在线链接</li>
+<li><strong>迭代式设计</strong>：预览 → 反馈 → 修改，直到满意</li>
+<li><strong>自动打开桌面应用</strong>：导出后自动启动 draw.io 桌面版供手动微调</li>
+<li><strong>主动触发</strong>：当描述包含 3 个以上组件时，AI 会自动建议生成图表</li>
+<li><strong>风格预设（v1.3）</strong>：从现有 <code>.drawio</code> 文件或图片学习视觉风格，保存后可复用到后续图表</li>
+<li><strong>自定义输出目录（v1.4）</strong>：可指定任意输出路径（如 <code>./artifacts/</code>、<code>docs/images/</code>），适合 CI/CD 流水线</li>
+</ul>
+<h2>多平台支持</h2>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>✅ 完全支持</td>
+<td>原生 SKILL.md 格式</td>
+</tr>
+<tr>
+<td><strong>Opencode</strong></td>
+<td>✅ 完全支持</td>
+<td>通过 <code>skill</code> 工具加载，也读取 <code>.claude/skills/</code> 路径</td>
+</tr>
+<tr>
+<td><strong>OpenClaw / ClawHub</strong></td>
+<td>✅ 完全支持</td>
+<td><code>metadata.openclaw</code> 命名空间</td>
+</tr>
+<tr>
+<td><strong>Hermes Agent</strong></td>
+<td>✅ 完全支持</td>
+<td><code>metadata.hermes</code> 命名空间</td>
+</tr>
+<tr>
+<td><strong>OpenAI Codex</strong></td>
+<td>✅ 完全支持</td>
+<td><code>agents/openai.yaml</code> 侧边配置文件</td>
+</tr>
+<tr>
+<td><strong>SkillsMP</strong></td>
+<td>✅ 已索引</td>
+<td>GitHub topics 已配置</td>
+</tr>
+</tbody>
+</table>
+<h2>与其他方案的对比</h2>
+<h3>对比无 Skill 的原生 Agent</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>原生 Agent</th>
+<th>本 Skill</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成 draw.io XML</td>
+<td>✅ LLM 本身知道格式</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>导出后自检</td>
+<td>❌</td>
+<td>✅ 读取 PNG 自动修复 6 类问题</td>
+</tr>
+<tr>
+<td>迭代审查循环</td>
+<td>❌ 需手动重新提示</td>
+<td>✅ 定向修改，5 轮安全阀</td>
+</tr>
+<tr>
+<td>主动触发</td>
+<td>❌ 仅当被明确要求时</td>
+<td>✅ 自动建议（3+ 组件时）</td>
+</tr>
+<tr>
+<td>布局指南</td>
+<td>❌ 每次不同</td>
+<td>✅ 按复杂度缩放间距、路由走廊、中心枢纽策略</td>
+</tr>
+<tr>
+<td>网格对齐</td>
+<td>❌</td>
+<td>✅ 坐标自动对齐到 10px</td>
+</tr>
+<tr>
+<td>图表类型预设</td>
+<td>❌</td>
+<td>✅ 6 种（ERD、UML、时序、架构、ML、流程）</td>
+</tr>
+<tr>
+<td>动态连接线</td>
+<td>❌</td>
+<td>✅ <code>flowAnimation=1</code></td>
+</tr>
+<tr>
+<td>ML 模型图</td>
+<td>❌</td>
+<td>✅ 张量形状标注、层级颜色编码</td>
+</tr>
+<tr>
+<td>颜色体系</td>
+<td>❌ 随机</td>
+<td>✅ 7 色语义系统（蓝=服务、绿=数据库、紫=认证...）</td>
+</tr>
+<tr>
+<td>边缘路由规则</td>
+<td>基本</td>
+<td>✅ 引脚入口/出口、连接分散、走廊途经点</td>
+</tr>
+<tr>
+<td>容器/分组模式</td>
+<td>❌</td>
+<td>✅ 泳道、分组、自定义容器嵌套</td>
+</tr>
+<tr>
+<td>导出嵌入</td>
+<td>❌</td>
+<td>✅ <code>--embed-diagram</code> 保持导出文件可编辑</td>
+</tr>
+<tr>
+<td>浏览器兜底</td>
+<td>❌</td>
+<td>✅ 自动生成 diagrams.net URL</td>
+</tr>
+<tr>
+<td>自动启动桌面</td>
+<td>❌</td>
+<td>✅ 导出后打开 .drawio 文件</td>
+</tr>
+</tbody>
+</table>
+<h3>对比其他 draw.io 工具</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>本 Skill</th>
+<th>jgraph/drawio-mcp</th>
+<th>drawio-skills</th>
+<th>ai-drawio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实现方式</td>
+<td>纯 SKILL.md</td>
+<td>SKILL.md / MCP / Project</td>
+<td>YAML DSL + MCP</td>
+<td>插件 + 浏览器</td>
+</tr>
+<tr>
+<td>依赖</td>
+<td>仅 draw.io 桌面</td>
+<td>draw.io 桌面</td>
+<td>MCP 服务器</td>
+<td>浏览器 + 本地服务</td>
+</tr>
+<tr>
+<td>多平台</td>
+<td>✅ 6 个平台</td>
+<td>❌ 仅 Claude Code</td>
+<td>❌ 仅 Claude Code</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>自检</td>
+<td>✅ 2 轮自修复</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌ 截图</td>
+</tr>
+<tr>
+<td>迭代审查</td>
+<td>✅ 5 轮循环</td>
+<td>❌ 仅生成一次</td>
+<td>✅ 3 个工作流</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>布局指引</td>
+<td>✅ 网格对齐 + 复杂度缩放</td>
+<td>✅ 基本间距</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>图表预设</td>
+<td>✅ 6 种类型</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>动态边</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>ML/DL 图</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>颜色体系</td>
+<td>✅ 7 色语义</td>
+<td>❌</td>
+<td>✅ 5 主题</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>零配置</td>
+<td>✅ 复制 SKILL.md 即可</td>
+<td>✅</td>
+<td>❌ 需 <code>npx</code></td>
+<td>❌ 需安装插件</td>
+</tr>
+</tbody>
+</table>
+<h3>核心优势</h3>
+<ol>
+<li><strong>自检 + 迭代循环</strong> — 唯一能自读输出并自动修复的纯 SKILL.md 方案</li>
+<li><strong>6 种图表预设</strong> — ERD、UML 类图、时序图、架构图、ML/深度学习图、流程图</li>
+<li><strong>ML/DL 模型图</strong> — 张量形状标注、层级颜色编码、编解码器泳道</li>
+<li><strong>多平台零配置</strong> — 仅需一个 SKILL.md + draw.io 桌面版，无 MCP 服务器、无 Python、无 Node.js</li>
+<li><strong>生产级布局</strong> — 网格对齐、复杂度缩放间距、路由走廊、中心枢纽策略、动态连接线</li>
+<li><strong>浏览器兜底</strong> — CLI 不可用时自动生成 diagrams.net URL</li>
+</ol>
+<h2>支持的图表类型</h2>
+<ul>
+<li><strong>架构图</strong>：微服务、云（AWS / GCP / Azure）、网络拓扑、部署架构 — 带分层泳道和中心枢纽策略</li>
+<li><strong>ML / 深度学习</strong>：Transformer、CNN、LSTM、GRU 架构 — 带张量形状标注和层级颜色编码</li>
+<li><strong>流程图</strong>：业务流程、工作流、决策树、状态机 — 带语义形状（平行四边形 I/O、菱形决策）</li>
+<li><strong>UML</strong>：类图（继承 / 组合 / 聚合箭头）、时序图（生命线、激活框）</li>
+<li><strong>数据图</strong>：ER 图（表格容器、PK/FK 标注）、数据流图（DFD）</li>
+<li><strong>其他</strong>：组织架构图、思维导图、线框图</li>
+</ul>
+<h2>工作原理</h2>
+<ol>
+<li>用户用自然语言描述想要的图表</li>
+<li>Agent 根据 SKILL.md 中的布局规则生成 <code>.drawio</code> XML</li>
+<li>调用 draw.io 桌面 CLI 导出为 PNG / SVG / PDF</li>
+<li>自检阶段：读取导出图片，自动修复 6 类常见问题</li>
+<li>支持多轮迭代修改</li>
+</ol>
+<h2>前置条件</h2>
+<p>需要安装 draw.io 桌面应用（用于导出图片）：</p>
+<h3>macOS</h3>
+<pre><code class="language-bash"># 推荐 — Homebrew
+brew install --cask drawio
+
+# 验证
+draw.io --version
+</code></pre>
+<h3>Windows</h3>
+<p>从 <a href="https://github.com/jgraph/drawio-desktop/releases">GitHub Releases</a> 下载安装</p>
+<pre><code class="language-powershell"># 验证
+"C:\Program Files\draw.io\draw.io.exe" --version
+</code></pre>
+<h3>Linux</h3>
+<p>从 <a href="https://github.com/jgraph/drawio-desktop/releases">GitHub Releases</a> 下载 <code>.deb</code> 或 <code>.rpm</code></p>
+<pre><code class="language-bash"># 无头导出（无显示器的服务器需要）
+sudo apt install xvfb  # Debian/Ubuntu
+xvfb-run -a drawio --version
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>额外说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>macOS</strong></td>
+<td>Homebrew 安装后无需额外操作</td>
+</tr>
+<tr>
+<td><strong>Windows</strong></td>
+<td>如不在 PATH 中，使用完整路径</td>
+</tr>
+<tr>
+<td><strong>Linux</strong></td>
+<td>无头环境需用 <code>xvfb-run -a</code> 包裹命令</td>
+</tr>
+</tbody>
+</table>
+<h2>安装</h2>
+<h3>Claude Code</h3>
+<pre><code class="language-bash"># 全局安装（所有项目可用）
+git clone https://github.com/Agents365-ai/drawio-skill.git ~/.claude/skills/drawio-skill
+
+# 项目级安装
+git clone https://github.com/Agents365-ai/drawio-skill.git .claude/skills/drawio-skill
+</code></pre>
+<h3>Opencode</h3>
+<pre><code class="language-bash"># 全局安装
+git clone https://github.com/Agents365-ai/drawio-skill.git ~/.config/opencode/skills/drawio-skill
+
+# 项目级安装
+git clone https://github.com/Agents365-ai/drawio-skill.git .opencode/skills/drawio-skill
+</code></pre>
+<p>Opencode 也读取 <code>~/.claude/skills/</code> 和 <code>.claude/skills/</code>，已有 Claude Code 安装会自动识别。</p>
+<h3>OpenClaw</h3>
+<pre><code class="language-bash"># 通过 ClawHub
+clawhub install drawio-pro-skill
+
+# 手动安装
+git clone https://github.com/Agents365-ai/drawio-skill.git ~/.openclaw/skills/drawio-skill
+
+# 项目级安装
+git clone https://github.com/Agents365-ai/drawio-skill.git skills/drawio-skill
+</code></pre>
+<h3>Hermes Agent</h3>
+<pre><code class="language-bash">git clone https://github.com/Agents365-ai/drawio-skill.git ~/.hermes/skills/design/drawio-skill
+</code></pre>
+<p>或在 <code>~/.hermes/config.yaml</code> 中添加外部目录：</p>
+<pre><code class="language-yaml">skills:
+  external_dirs:
+    - ~/myskills/drawio-skill
+</code></pre>
+<h3>OpenAI Codex</h3>
+<pre><code class="language-bash"># 用户级安装
+git clone https://github.com/Agents365-ai/drawio-skill.git ~/.agents/skills/drawio-skill
+
+# 项目级安装
+git clone https://github.com/Agents365-ai/drawio-skill.git .agents/skills/drawio-skill
+</code></pre>
+<h3>安装路径汇总</h3>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>全局路径</th>
+<th>项目路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Code</td>
+<td><code>~/.claude/skills/drawio-skill/</code></td>
+<td><code>.claude/skills/drawio-skill/</code></td>
+</tr>
+<tr>
+<td>Opencode</td>
+<td><code>~/.config/opencode/skills/drawio-skill/</code></td>
+<td><code>.opencode/skills/drawio-skill/</code></td>
+</tr>
+<tr>
+<td>OpenClaw / ClawHub</td>
+<td><code>~/.openclaw/skills/drawio-skill/</code></td>
+<td><code>skills/drawio-skill/</code></td>
+</tr>
+<tr>
+<td>Hermes Agent</td>
+<td><code>~/.hermes/skills/design/drawio-skill/</code></td>
+<td>通过 <code>external_dirs</code> 配置</td>
+</tr>
+<tr>
+<td>OpenAI Codex</td>
+<td><code>~/.agents/skills/drawio-skill/</code></td>
+<td><code>.agents/skills/drawio-skill/</code></td>
+</tr>
+</tbody>
+</table>
+<h2>更新</h2>
+<p>Skill 首次在对话中使用时会自动检查更新（24 小时节流）。有新版本时会提示一行更新通知。更新方法：</p>
+<pre><code class="language-bash">cd &lt;安装路径&gt;/drawio-skill &amp;&amp; git pull
+</code></pre>
+<p>包管理器安装会自动处理更新：</p>
+<pre><code class="language-bash"># OpenClaw
+clawhub update drawio-pro-skill
+
+# SkillsMP
+skills update drawio-skill
+</code></pre>
+<h2>使用方法</h2>
+<p>直接描述你想要的图表即可：</p>
+<pre><code>创建一个微服务电商架构，包含 API Gateway、认证/用户/订单/商品/支付服务、
+Kafka 消息队列、通知服务，以及每个服务独立的数据库
+</code></pre>
+<p>Agent 会自动生成 <code>.drawio</code> XML 文件并导出为 PNG。</p>
+<h2>示例</h2>
+<p><strong>提示词：</strong></p>
+<blockquote>
+<p>创建一个微服务电商架构，包含 Mobile/Web/Admin 客户端、API Gateway、
+认证/用户/订单/商品/支付服务、Kafka 消息队列、通知服务、
+以及用户数据库/订单数据库/商品数据库/Redis 缓存/Stripe API</p>
+</blockquote>
+<p><strong>输出效果：</strong> 参见仓库中的 <code>assets/microservices-example.png</code></p>
+<h2>图表拓扑演示</h2>
+<h3>星型拓扑（7 节点）</h3>
+<p>中央消息总线，6 个微服务向外辐射，连接线从不同侧进入，零交叉。</p>
+<h3>分层流（10 节点，4 层）</h3>
+<p>电商架构，带 2 条跨层连接线，对角线通过路由走廊，连接线不交叉。</p>
+<h3>环形（8 节点）</h3>
+<p>CI/CD 流水线闭环 + 2 个分支，连接线沿外围走线，不穿越内部。</p>
+<h2>文件说明</h2>
+<ul>
+<li><code>SKILL.md</code> — <strong>唯一必需文件</strong>，所有平台都加载此文件作为技能指令</li>
+<li><code>agents/openai.yaml</code> — OpenAI Codex 专属配置</li>
+<li><code>styles/built-in/</code> — 内置风格预设（<code>default.json</code>、<code>corporate.json</code>、<code>handdrawn.json</code>）</li>
+<li><code>references/style-extraction.md</code> — 风格提取算法参考文档</li>
+<li><code>README.md</code> — 英文文档</li>
+<li><code>README_CN.md</code> — 中文文档</li>
+<li><code>assets/</code> — 示例图表和工作流图片</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：仅 <code>SKILL.md</code> 即可工作，其他文件都是文档和示例，可安全删除。</p>
+</blockquote>
+<h2>风格预设</h2>
+<h3>内置预设</h3>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default</code></td>
+<td>清洁的蓝/绿/黄配色，符合内置惯例</td>
+</tr>
+<tr>
+<td><code>corporate</code></td>
+<td>柔和的专业配色，适合商务演示</td>
+</tr>
+<tr>
+<td><code>handdrawn</code></td>
+<td>手绘风格笔触，适合非正式或白板风格图表</td>
+</tr>
+</tbody>
+</table>
+<h3>使用预设</h3>
+<pre><code>用 "corporate" 风格画一个微服务架构图
+</code></pre>
+<p>或设为默认：</p>
+<pre><code>把 "corporate" 设为默认风格
+</code></pre>
+<h3>从文件学习风格</h3>
+<pre><code>从 ~/diagrams/brand.drawio 学习风格，命名为 "mybrand"
+从 ~/diagrams/screenshot.png 学习风格，命名为 "mybrand"
+</code></pre>
+<p>会提取颜色、形状、字体、线条风格，生成预览图，确认后再保存。</p>
+<h3>管理预设</h3>
+<table>
+<thead>
+<tr>
+<th>你说什么</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"列出我的风格"</td>
+<td>显示所有内置和用户预设</td>
+</tr>
+<tr>
+<td>"显示 mybrand 风格"</td>
+<td>打印预设 JSON</td>
+</tr>
+<tr>
+<td>"把 xxx 设为默认"</td>
+<td>设为所有图表的默认风格</td>
+</tr>
+<tr>
+<td>"清除默认"</td>
+<td>恢复内置惯例</td>
+</tr>
+<tr>
+<td>"删除 mybrand"</td>
+<td>删除用户预设（需确认）</td>
+</tr>
+<tr>
+<td>"把 a 改名为 b"</td>
+<td>重命名用户预设</td>
+</tr>
+</tbody>
+</table>
+<h2>已知限制</h2>
+<ul>
+<li><strong>命令名因平台而异</strong>：macOS Homebrew 是 <code>draw.io</code>，Linux 可能是 <code>drawio</code></li>
+<li><strong>Linux 无头导出</strong>：需要 <code>xvfb</code> 虚拟显示</li>
+<li><strong>浏览器兜底需要 Python</strong>：无 Python 时仅生成 <code>.drawio</code> XML</li>
+<li><strong>自检需要视觉能力</strong>：无视觉支持的模型会跳过自检步骤</li>
+<li><strong>云图标</strong>：目前仅支持基础 AWS 图标，GCP / Azure / K8s 图标未包含</li>
+<li><strong>微服务示例无源码</strong>：<code>assets/microservices-example.png</code> 的源 <code>.drawio</code> 未保留</li>
+</ul>
+<h2>仓库文件结构（安装后）</h2>
+<pre><code>drawio-skill/
+├── SKILL.md              # 核心技能文件（必须）
+├── README.md             # 英文文档
+├── README_CN.md          # 中文文档
+├── agents/
+│   └── openai.yaml       # OpenAI Codex 配置
+├── styles/
+│   └── built-in/
+│       ├── default.json
+│       ├── corporate.json
+│       └── handdrawn.json
+├── references/
+│   └── style-extraction.md
+└── assets/               # 示例图表
+</code></pre></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

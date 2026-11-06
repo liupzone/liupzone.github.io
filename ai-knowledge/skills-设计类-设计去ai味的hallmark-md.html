@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Hallmark - 反 AI 味的设计 Skill · AI知识库专栏" />
+  <title>Hallmark - 反 AI 味的设计 Skill · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/skills-设计类-设计去ai味的hallmark-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / skills</div><h1>Hallmark - 反 AI 味的设计 Skill</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills----ai-hallmark-md.svg" alt="Hallmark - 反 AI 味的设计 Skill主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p>GitHub: https://github.com/nutlope/hallmark</p>
+</blockquote>
+<h2>一句话简介</h2>
+<p><strong>一个专门给 Claude Code / Cursor / Codex 用的设计 Skill，核心目标只有一个——生成的 UI 绝不能"一眼 AI"</strong>。</p>
+<h2>解决什么痛点</h2>
+<p>AI 生成的网页/UI 几乎都是同一副面孔：紫色渐变 hero、居中 CTA、三列 feature card、圆角 shadow……<strong>一眼就能看出是 AI 做的</strong>。Hallmark 强制打破这些"训练分布默认值"，让两个不同 brief 出的两个页面<strong>看起来像不同网站，而不是同一模板换配色</strong>。</p>
+<h2>核心机制</h2>
+<ol>
+<li><strong>21 种主题（themes）</strong> + <strong>多种宏结构（macrostructure）</strong></li>
+<li><strong>57 项"slop 测试"闸门</strong>：每次输出前自动检查是否落入 AI 陈词滥调</li>
+<li><strong>预输出自我批判（self-critique）</strong>：交付前再审视一遍</li>
+<li><strong>拒绝 on-distribution 默认</strong>：主动避开 LLM 训练里最容易吐出的那些模式</li>
+<li>输出：自包含的 HTML + CSS，CSS 注释里标注所用宏结构</li>
+</ol>
+<h2>四个核心动词（verbs）</h2>
+<table>
+<thead>
+<tr>
+<th>动词</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>(默认)</em></td>
+<td>从 brief 建新 UI：选宏结构 → 套规则集 → 过 slop 测试 → 交付</td>
+</tr>
+<tr>
+<td><code>hallmark audit &lt;目标&gt;</code></td>
+<td>对现有代码打分（对照反模式清单），只出问题清单不改代码</td>
+</tr>
+<tr>
+<td><code>hallmark redesign &lt;目标&gt;</code></td>
+<td>保留文案 + 信息架构 + 品牌，扔掉旧结构重做一版不同"指纹"</td>
+</tr>
+<tr>
+<td><code>hallmark study &lt;截图 \| URL&gt;</code></td>
+<td>从你喜欢的设计里提取 DNA（宏结构、字体搭配、色彩锚点）；拒绝像素级抄袭；可输出 <code>design.md</code> 供其他 AI 工具复用</td>
+</tr>
+</tbody>
+</table>
+<h2>Custom 模式（新特性）</h2>
+<p>当 brief 的创意方向不适合任何目录里的主题时，Hallmark 切到 <strong>Custom</strong> 模式：
+- 从零设计定制化色板、字体、布局
+- 同样过 57 项 slop 测试
+- 底层无模板
+- 只在 brief 明显需要时才启用，普通 brief 不会看到</p>
+<h2>技术形态</h2>
+<ul>
+<li>纯 Markdown Skill（<code>SKILL.md</code> + <code>references/</code>）</li>
+<li>输出自包含 HTML + CSS</li>
+<li>MIT 协议，可自由使用/fork/商用</li>
+</ul>
+<h2>安装</h2>
+<pre><code class="language-bash">npx skills add nutlope/hallmark
+</code></pre>
+<p>或手动放到：
+- <strong>Claude Code</strong>：<code>~/.claude/skills/hallmark/</code>
+- <strong>Cursor</strong>：<code>.cursor/rules/hallmark.mdc</code>（去掉 frontmatter）
+- <strong>Codex</strong>：<code>~/.codex/skills/hallmark/</code>（个人）或 <code>.codex/skills/hallmark/</code>（项目）</p>
+<h2>典型使用场景</h2>
+<ol>
+<li><strong>做 landing page、产品页、品牌站</strong>——想跳出 AI 模板脸</li>
+<li><strong>审计现有 UI</strong> 是否落入 AI slop（<code>audit</code>）</li>
+<li><strong>重设计</strong>——保留内容、换全新视觉指纹（<code>redesign</code>）</li>
+<li><strong>学习优秀设计</strong>并合规复用其思路（<code>study</code>）</li>
+<li><strong>需要定制化视觉</strong>、无现成主题匹配时（Custom 模式）</li>
+</ol>
+<h2>一句话记住</h2>
+<p><strong>Hallmark = "反 AI 味"设计规则集</strong>，通过强制多样化的宏结构 + 主题 + 57 项 slop 检测，让 AI 生成的 UI 不再千篇一律。核心哲学：<strong>"两个不同 brief 应该看起来是两个网站，而不是同一模板换色"</strong>。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

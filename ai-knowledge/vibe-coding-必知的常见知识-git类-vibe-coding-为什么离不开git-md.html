@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Vibe Coding 为什么离不开 Git - 总结 · AI知识库专栏" />
+  <title>Vibe Coding 为什么离不开 Git - 总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/vibe-coding-必知的常见知识-git类-vibe-coding-为什么离不开git-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / vibe coding 必知的常见知识</div><h1>Vibe Coding 为什么离不开 Git - 总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/vibe-coding---git--vibe-coding--git-md.svg" alt="Vibe Coding 为什么离不开 Git - 总结主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>前提概念</h2>
+<p><strong>Vibe Coding</strong>（Karpathy 提出）：不手写代码，用自然语言让 AI 生成/改代码，你只看运行效果。
+AI 改得快但容易乱改多文件、删逻辑、越界修改——<strong>Git 就是这套玩法的安全带、时光机、实验台</strong>。</p>
+<h2>六大核心原因</h2>
+<h3>1. Ctrl+Z 救不了你</h3>
+<p>AI 一次改十几个文件，编辑器撤销无法整体回滚。
+- <code>commit</code> = 项目完整状态快照
+- <strong>黄金法则：AI 动手前先 commit</strong> 一个可运行版本</p>
+<h3>2. 安全做实验（branch）</h3>
+<p>大改 UI、重构后端、换数据库方案，直接在主线改 = 自杀。
+- 分支上随便折腾，好则合并，坏则删除，主线零风险</p>
+<h3>3. 看懂 AI 到底改了什么（diff）</h3>
+<p>Vibe Coding 最大痛点：你没逐行读代码，AI 可能偷偷删了鉴权/核心逻辑。
+- <code>git diff</code> 只看差异，快速识别 AI 的"暗箱操作"</p>
+<h3>4. 让 AI 自己修复</h3>
+<p>把 <code>git diff</code> / <code>git status</code> 丢给 AI：</p>
+<blockquote>
+<p>"哪些是坏改动，帮我修复，别破坏原有逻辑"</p>
+</blockquote>
+<p>比口头描述 bug 准确率高得多。</p>
+<h3>5. 会话丢失不怕</h3>
+<p>Cursor/Claude Code 会话清空 = AI 失忆。
+Git 保存真实代码，新会话直接读仓库，无需复现 prompt 历史。</p>
+<h3>6. 备份、迁移、交付</h3>
+<p>推 GitHub = 云备份 + 换机 + 分享 + 部署。</p>
+<h2>极简工作流（背下这 5 步就够）</h2>
+<ol>
+<li><code>git init</code> 开新项目</li>
+<li><strong>可运行 → 立刻 commit</strong> 一次
+   <code>bash
+   git add .
+   git commit -m "登录页可运行"</code></li>
+<li>让 AI 改 → 测试</li>
+<li>✅ 满意：再 commit</li>
+<li>❌ 崩了：<code>git reset --hard</code> 回退；想大胆试：<code>git branch try-xxx</code> 开新分支</li>
+</ol>
+<h2>一句话记住</h2>
+<p><strong>Vibe Coding 是快速试错的艺术，Git 是"试错不翻车"的保险丝。</strong> 没有 Git 的 Vibe Coding = 高空走钢丝不系保险绳。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="CLAUDE.md 如何维护 · AI知识库专栏" />
+  <title>CLAUDE.md 如何维护 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/ai面试类-claude-md如何维护-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / Ai面试类</div><h1>CLAUDE.md 如何维护</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/ai--claude-md--md.svg" alt="CLAUDE.md 如何维护主题配图" /></header><article class="ai-body ai-reading-width">
+<p>面试常被问到："CLAUDE.md 你是怎么维护的？" 只会答 <code>/init</code> 远远不够。下面是这篇文章的核心总结。</p>
+<h2>1. CLAUDE.md 是什么</h2>
+<ul>
+<li>不是 README、不是注释、不是文档，而是 Claude Code <strong>每次启动时自动读取的持久化指令文件</strong>。</li>
+<li>相当于给 Claude 写的"入职须知"：技术栈、代码风格、测试方式、踩坑清单。</li>
+<li><code>/init</code> 只是冷启动：扫描 <code>package.json</code>、<code>Makefile</code>、<code>README</code> 等生成基础版，仅仅是起点。</li>
+<li>小贴士：为兼容 Codex，可让 CLAUDE.md 加载 AGENTS.md，避免维护两份规则。</li>
+</ul>
+<h2>2. 四层加载体系</h2>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>路径</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全局</td>
+<td><code>~/.claude/CLAUDE.md</code></td>
+<td>个人偏好，所有项目生效</td>
+</tr>
+<tr>
+<td>项目</td>
+<td><code>CLAUDE.md</code> 或 <code>.claude/CLAUDE.md</code></td>
+<td>提交到 git，团队共享</td>
+</tr>
+<tr>
+<td>本地覆盖</td>
+<td><code>CLAUDE.local.md</code></td>
+<td>加入 <code>.gitignore</code>，只在本地生效</td>
+</tr>
+<tr>
+<td>子目录</td>
+<td>子目录下的 <code>CLAUDE.md</code></td>
+<td><strong>按需加载</strong>，monorepo 友好</td>
+</tr>
+</tbody>
+</table>
+<p>加载顺序：从文件系统根目录一路走到工作目录，内容<strong>拼接</strong>在一起；越靠近工作目录，优先级越高（后加载覆盖前面）。源码逻辑在 <code>src/utils/claudemd.ts</code> 的 <code>getMemoryFiles()</code> 中，先收集路径再 <code>dirs.reverse()</code>，所以 <code>CLAUDE.local.md</code> 天然覆盖项目规则。</p>
+<p><strong>第一原则：不要让不同层级的 CLAUDE.md 互相矛盾。</strong></p>
+<h2>3. LLM 的指令预算</h2>
+<p>Anthropic 官方提醒：CLAUDE.md 太长，Claude 会忽略一半，重要规则会被噪音淹没。</p>
+<p>arXiv 论文《How Many Instructions Can LLMs Follow at Once?》（2507.11538）测试结论：</p>
+<ul>
+<li>即便最强模型，在 <strong>500 条指令密度下准确率也只有 68%</strong>。</li>
+<li>指令越多，遵循率越低；模型会<strong>系统性偏向序列前面的指令</strong>。</li>
+<li>瓶颈不是上下文窗口装不下，而是<strong>模型的注意力分配不过来</strong>。</li>
+</ul>
+<p>Claude Code 系统提示本身已占用大量指令位，留给 CLAUDE.md 的有效空间没有想象中多。</p>
+<p><strong>判断一条指令是否要写入 CLAUDE.md，问两个问题：</strong>
+1. 不写这条，Claude 会不会搞错？能从代码推断的，不要写。
+2. 是不是每次会话都需要？只在特定场景需要的，放到 <code>rules/</code> 做路径限定。</p>
+<p><strong>官方建议：像维护代码一样维护 CLAUDE.md。</strong> 定期 review：Claude 没遵守的加重语气，本来就做对的果断删掉。</p>
+<h2>4. 什么样的规则真正生效</h2>
+<p><strong>好规则的三个特征：</strong>
+1. 一句话能写完。
+2. Claude 靠自己推断不出来（如"<code>mvn clean package</code> 默认跳过测试"、"改命令入口需同步 4 个地方"）。
+3. 有明确的行动指导（如"PathGuard 限制在项目根目录，禁止绝对路径逃逸"，而非"注意安全"）。</p>
+<p><strong>反例：</strong> "使用 Java 17"（<code>pom.xml</code> 里就有）、"遵循分层架构"（目录结构已说明）、"保持代码整洁"（等于没说）。</p>
+<h2>5. Anthropic 自己怎么写</h2>
+<p>参考 <code>claude-code-action</code> 仓库的 CLAUDE.md 结构：</p>
+<ul>
+<li><strong>Commands</strong>：构建、测试、lint 命令</li>
+<li><strong>What This Is</strong>：项目是什么，一句话</li>
+<li><strong>How It Runs</strong>：运行机制（改代码前必须知道的事）</li>
+<li><strong>Key Concepts</strong>：3-5 个核心要点</li>
+<li><strong>Things That Will Bite You</strong>：踩坑清单</li>
+<li><strong>Code Conventions</strong>：只写和默认不一样的部分</li>
+</ul>
+<h2>6. <code>.claude/rules/</code> 目录</h2>
+<p>单文件臃肿时，按主题拆分到 rules 目录。带 <code>paths</code> 前置字段的 rules 文件<strong>只在 Claude 操作匹配路径时才加载</strong>。</p>
+<pre><code class="language-markdown">---
+paths:
+  - "src/components/**/*.tsx"
+  - "src/hooks/**/*.ts"
+---
+- 组件用函数式写法，不用 class
+- props 在函数签名中解构
+- 自定义 hook 以 use 开头
+- 状态管理用 zustand，不用 redux
+</code></pre>
+<p>推荐结构：</p>
+<pre><code>.claude/
+├── CLAUDE.md              # 核心规则，控制在 80 行以内
+└── rules/
+    ├── code-style.md      # 无路径限定
+    ├── testing.md
+    ├── security.md
+    ├── frontend.md        # paths: ["src/**/*.tsx"]
+    └── api.md             # paths: ["src/api/**/*.ts"]
+</code></pre>
+<p>进阶用法：用 <code>@path</code> 语法导入外部文件，如 <code>@README.md</code> 会在启动时展开注入上下文。</p>
+<h2>7. <code>/init</code> 与 <code>/memory</code> 的分工</h2>
+<ul>
+<li><strong><code>/init</code></strong>：冷启动，扫描仓库生成基础 CLAUDE.md。</li>
+<li><strong><code>/memory</code></strong>：热更新。每个项目在 <code>~/.claude/projects/</code> 下都有 <code>MEMORY.md</code>，跨会话经验自动写入，下次启动前 200 行自动加载。</li>
+</ul>
+<p><strong>该写在哪里？</strong>
+- CLAUDE.md：团队共享的、长期稳定的规则（提交 git）。
+- memory：个人的、会变化的、日常协作积累的经验。</p>
+<p><strong>节奏：</strong> 第一周跑 <code>/init</code>，日常让 memory 自动积累；第二周开始 review memory，把通用经验提炼到 CLAUDE.md，清理过时条目。</p>
+<h2>8. 配置体系的四个角色</h2>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CLAUDE.md</strong></td>
+<td>管"建议"</td>
+</tr>
+<tr>
+<td><strong>settings.json</strong></td>
+<td>管"强制"——权限、环境变量、MCP 配置，无商量余地</td>
+</tr>
+<tr>
+<td><strong>hooks</strong></td>
+<td>管"自动化"——必须每次执行的（如编辑后跑 Prettier），由 harness 执行</td>
+</tr>
+<tr>
+<td><strong>rules/</strong></td>
+<td>管"精准投放"——按路径限定加载，节省指令预算</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-json">{
+  "permissions": {
+    "allow": ["Bash(npm run *)", "Bash(git *)"],
+    "deny": ["Bash(rm -rf *)", "Bash(git push --force)"]
+  }
+}
+</code></pre>
+<h2>9. 可直接复用的模板</h2>
+<pre><code class="language-markdown"># CLAUDE.md
+
+## Commands
+- 构建：mvn clean package -DskipTests
+- 测试：mvn test
+- 单个测试：mvn test -Dtest=XxxTest
+- 代码检查：mvn spotbugs:check
+- 格式化：mvn spotless:apply
+
+## What This Is
+一句话说清楚项目是什么。
+
+## Architecture
+- 入口：Main.java → CliCommandParser 分发命令
+- Agent 循环：AgentLoop.java，工具注册在 ToolRegistry
+- 不要动 agent/core/ 下的接口定义，下游工具全部依赖它们
+
+## Things That Will Bite You
+- search_code 是 RAG 辅助，优先用 glob → grep → read
+- 改命令入口 → 同步 Main.java + CliCommandParser + 测试 + 文档
+- 测试里 API Key 全部 mock，禁止提交真实 Key
+
+## Code Conventions
+- 日志用 SLF4J，不用 System.out
+- 异常不要吞掉，至少 log.warn
+- public API 返回统一的 Result 包装类
+
+## Don't
+- 不要 new Thread，用 ExecutorService
+- 不要往 CLAUDE.md 里加"保持代码整洁"这种废话
+</code></pre>
+<p>全文不到 50 行，覆盖全部关键信息，没有一句废话。</p>
+<h2>10. 面试三句话回答</h2>
+<ol>
+<li><strong>讲机制</strong>：CLAUDE.md 是 Claude Code 的持久化指令文件，启动时自动加载。四层加载体系（系统/全局/项目/本地/子目录），越靠近工作目录优先级越高。</li>
+<li><strong>讲原则</strong>：arXiv 论文实测 500 条指令密度下最强模型只有 68% 准确率，所以核心规则放 CLAUDE.md 控制在 80 行内；按场景拆分到 <code>.claude/rules/</code>，用 <code>paths</code> 做路径限定按需加载。</li>
+<li><strong>讲实践</strong>：<code>/init</code> 冷启动生成基础版，<code>/memory</code> 自动积累跨会话经验。只写 Claude 推断不出来的东西，定期 review，像维护代码一样维护 CLAUDE.md。</li>
+</ol></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

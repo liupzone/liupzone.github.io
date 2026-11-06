@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="page-agent · AI知识库专栏" />
+  <title>page-agent · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/工具-网页自动化类-page-agent-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / 工具</div><h1>page-agent</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/page-agent-md.svg" alt="page-agent主题配图" /></header><article class="ai-body ai-reading-width">
+<p><strong>Page Agent</strong> 是阿里巴巴开源的一个 <strong>纯 JavaScript 的网页内 GUI Agent</strong>，核心目标是：<strong>让网页应用直接在页面里获得“自然语言操作界面”的能力</strong>。</p>
+<p>它最值得注意的点在于，它不是传统意义上的浏览器自动化脚本，也不是依赖截图识别的多模态 Agent，而是把 Agent 运行在当前网页上下文中，通过 <strong>DOM 文本信息 + 页面内交互</strong> 来完成操作。</p>
+<p>一句话理解：</p>
+<blockquote>
+<p><strong>Page Agent = 把“用自然语言操作网页”这件事，直接嵌进你的 Web 应用。</strong></p>
+</blockquote>
+<hr/>
+<h2>它是什么？</h2>
+<p>根据官方仓库说明，Page Agent 是一个 “living in your webpage” 的 GUI Agent。它强调几个方向：</p>
+<ul>
+<li><strong>运行在网页内</strong></li>
+<li><strong>不依赖 Python / 无头浏览器 / 浏览器扩展才能工作</strong></li>
+<li><strong>主要基于文本化 DOM 信息进行操作，而不是靠截图点击</strong></li>
+<li><strong>支持接入你自己的 LLM</strong></li>
+<li><strong>提供 human-in-the-loop 的交互界面</strong></li>
+<li><strong>可选 Chrome 扩展，用于跨页面、多标签任务</strong></li>
+</ul>
+<p>这意味着它更像是一个 <strong>面向产品集成的前端 Agent SDK</strong>，而不是一个只给测试工程师使用的自动化框架。</p>
+<hr/>
+<h2>它解决什么问题？</h2>
+<p>很多 Web 系统已经有很强的业务能力，但交互成本很高，尤其是：</p>
+<ul>
+<li>ERP / CRM / OA / 管理后台的长流程操作</li>
+<li>大量表单录入、筛选、检索、批量点击</li>
+<li>面向非技术用户的复杂 SaaS 系统</li>
+<li>需要自然语言辅助操作的无障碍场景</li>
+</ul>
+<p>Page Agent 的价值在于，它允许用户直接说：</p>
+<ul>
+<li>“帮我点开订单管理，并筛选今天未付款的客户”</li>
+<li>“把这个表单按公司信息自动填完”</li>
+<li>“打开登录页并点击提交”</li>
+</ul>
+<p>然后由页面内 Agent 去理解当前 DOM、生成步骤并执行。</p>
+<hr/>
+<h2>核心特点</h2>
+<h3>1. 纯前端集成</h3>
+<p>官方强调它可以直接通过前端脚本接入。你不需要先搭一个 Selenium / Playwright / Puppeteer 服务，也不需要额外启动 Python Agent 环境。</p>
+<p>这对产品接入非常关键，因为它意味着：</p>
+<ul>
+<li>接入门槛低</li>
+<li>改造成本小</li>
+<li>更适合嵌入现有 Web 产品</li>
+</ul>
+<h3>2. 基于文本的 DOM 操作</h3>
+<p>Page Agent 的一个重要设计点是：</p>
+<ul>
+<li><strong>不以截图为主</strong></li>
+<li><strong>不强依赖多模态模型</strong></li>
+<li><strong>不需要特殊浏览器权限</strong></li>
+</ul>
+<p>相比依赖视觉定位的 Agent，这类方案通常：</p>
+<ul>
+<li>更轻量</li>
+<li>更容易控制成本</li>
+<li>在结构化网页场景中更稳定</li>
+</ul>
+<h3>3. Bring Your Own LLM</h3>
+<p>你可以接入自己的模型服务。官方示例使用的是 OpenAI 兼容风格的接口参数，包括：</p>
+<ul>
+<li><code>model</code></li>
+<li><code>baseURL</code></li>
+<li><code>apiKey</code></li>
+<li><code>language</code></li>
+</ul>
+<p>这意味着它并不绑定某一个特定模型厂商，更适合企业内部接入已有的推理服务。</p>
+<h3>4. 面向真实产品，而不是只面向测试</h3>
+<p>Page Agent 的定位不是单纯做自动化测试，而是更偏向：</p>
+<ul>
+<li>产品内 AI Copilot</li>
+<li>智能操作助手</li>
+<li>自然语言表单助手</li>
+<li>无障碍交互入口</li>
+</ul>
+<p>这和 Playwright / Selenium 的出发点不太一样。</p>
+<h3>5. 可扩展到跨页面任务</h3>
+<p>官方提供了 <strong>可选的 Chrome 扩展</strong>，用于处理多页面、多标签页任务。<br/>
+如果你只在单页应用或当前页面内工作，纯页面内方案就够了；如果要跨标签页协同，就可以配合扩展能力使用。</p>
+<hr/>
+<h2>适用场景</h2>
+<p>官方 README 中给出的典型场景包括：</p>
+<ul>
+<li>
+<p><strong>SaaS AI Copilot</strong><br/>
+  几行代码就能给你的产品增加一个网页操作型 Copilot。</p>
+</li>
+<li>
+<p><strong>智能表单填写</strong><br/>
+  把原本要十几二十次点击和输入的操作压缩成一句自然语言。</p>
+</li>
+<li>
+<p><strong>无障碍增强</strong><br/>
+  让用户通过自然语言、语音命令等方式访问复杂 Web 应用。</p>
+</li>
+<li>
+<p><strong>跨页面 Agent</strong><br/>
+  结合 Chrome 扩展，把能力延伸到多个标签页。</p>
+</li>
+</ul>
+<hr/>
+<h2>和传统网页自动化的区别</h2>
+<p>如果把它和 Playwright、Puppeteer、Selenium 这类工具放在一起看，差异大致是：</p>
+<ul>
+<li><strong>传统自动化工具</strong> 更偏工程控制和测试脚本</li>
+<li><strong>Page Agent</strong> 更偏产品内嵌式自然语言操作层</li>
+</ul>
+<p>你可以把它理解为：</p>
+<ul>
+<li>Playwright 解决的是 “开发者如何精确编写自动化脚本”</li>
+<li>Page Agent 解决的是 “最终用户如何直接用自然语言操作页面”</li>
+</ul>
+<p>所以它更适合：</p>
+<ul>
+<li>面向终端用户的 AI 功能</li>
+<li>SaaS 内嵌 Copilot</li>
+<li>智能后台助手</li>
+</ul>
+<p>而不是单纯替代测试框架。</p>
+<hr/>
+<h2>快速开始</h2>
+<h3>方式一：NPM 安装</h3>
+<pre><code class="language-bash">npm install page-agent
+</code></pre>
+<pre><code class="language-javascript">import { PageAgent } from 'page-agent'
+
+const agent = new PageAgent({
+  model: 'qwen3.5-plus',
+  baseURL: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+  apiKey: 'YOUR_API_KEY',
+  language: 'zh-CN',
+})
+
+await agent.execute('点击登录按钮')
+</code></pre>
+<p>从这个示例可以看出，它的使用方式很直接：</p>
+<ol>
+<li>初始化 <code>PageAgent</code></li>
+<li>配置模型与 API</li>
+<li>调用 <code>execute()</code> 传入自然语言任务</li>
+</ol>
+<h3>方式二：脚本快速集成</h3>
+<p>官方 README 还提供了基于 CDN 的页面脚本接入方式，用于快速体验。<br/>
+这种方式更适合 Demo、验证和原型开发；生产接入更适合直接走 NPM。</p>
+<hr/>
+<h2>优势总结</h2>
+<ul>
+<li><strong>接入成本低</strong>：适合直接嵌入现有 Web 应用</li>
+<li><strong>不依赖视觉模型</strong>：很多结构化页面场景更轻量</li>
+<li><strong>更像产品能力，而不是测试脚本</strong></li>
+<li><strong>支持自定义模型接入</strong></li>
+<li><strong>可以扩展到跨页面任务</strong></li>
+</ul>
+<hr/>
+<h2>使用时要注意</h2>
+<ul>
+<li>它的强项是 <strong>客户端网页增强</strong>，官方明确说明：<strong>不是服务端自动化工具</strong>。</li>
+<li>如果你的目标是大规模爬虫、后端批处理浏览器自动化、CI 测试流水线，Playwright / Puppeteer 往往还是更直接。</li>
+<li>如果页面结构极其动态、DOM 语义很差、组件层层嵌套又缺少可读文本，那么 Agent 的理解效果也会受到页面质量影响。</li>
+</ul>
+<p>换句话说，<strong>Page Agent 更依赖“网页本身是否具备良好的可理解结构”</strong>。</p>
+<hr/>
+<h2>适合谁</h2>
+<ul>
+<li>想给自己产品增加 AI 网页操作能力的前端/全栈团队</li>
+<li>做企业后台、SaaS、CRM、ERP 的产品团队</li>
+<li>想做“自然语言操控网页”的 AI Copilot 团队</li>
+<li>想做 Web 无障碍增强入口的开发者</li>
+</ul>
+<p>如果你的需求是：</p>
+<ul>
+<li>“让用户直接在网页里说一句话完成操作”</li>
+<li>“给现有系统加一个 AI 助手，而不是重写整个后端”</li>
+</ul>
+<p>那么 Page Agent 是一个非常值得关注的方向。</p>
+<hr/>
+<h2>项目地址</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/alibaba/page-agent">https://github.com/alibaba/page-agent</a></li>
+<li>官方文档: <a href="https://alibaba.github.io/page-agent/">https://alibaba.github.io/page-agent/</a></li>
+</ul>
+<hr/>
+<h2>一句话总结</h2>
+<p><strong>Page Agent 的核心价值不是“替代浏览器自动化工具”，而是把“网页可被自然语言直接操控”这件事，做成一个可嵌入产品的前端能力。</strong></p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

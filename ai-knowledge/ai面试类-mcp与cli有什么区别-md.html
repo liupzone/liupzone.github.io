@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="MCP 与 CLI 有什么区别？ · AI知识库专栏" />
+  <title>MCP 与 CLI 有什么区别？ · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/ai面试类-mcp与cli有什么区别-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / Ai面试类</div><h1>MCP 与 CLI 有什么区别？</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/ai--mcp-cli--md.svg" alt="MCP 与 CLI 有什么区别？主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>一句话本质</h2>
+<blockquote>
+<p><strong>CLI 是「人去操作工具」，MCP 是「AI 去操作工具」。</strong></p>
+</blockquote>
+<ul>
+<li><strong>CLI</strong> = 给<strong>人</strong>用的命令行接口</li>
+<li><strong>MCP</strong> = 给 <strong>AI</strong> 用的标准化工具调用协议</li>
+</ul>
+<hr/>
+<h2>一、最直观的调用链</h2>
+<p><strong>CLI 的链路</strong></p>
+<pre><code>人 → CLI → 电脑
+</code></pre>
+<p>你自己在终端敲：</p>
+<pre><code class="language-bash">git status
+docker ps
+mysql -u root
+</code></pre>
+<p><strong>MCP 的链路</strong></p>
+<pre><code>人 → AI → MCP → 各种工具（Git / DB / Slack …）
+</code></pre>
+<p>你只说：「帮我看看有没有未提交代码」，AI 自己去调 Git MCP，拿结果，分析后回你。</p>
+<hr/>
+<h2>二、生活化比喻</h2>
+<table>
+<thead>
+<tr>
+<th>类比</th>
+<th>CLI</th>
+<th>MCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电饭煲</td>
+<td>你按按键煮饭</td>
+<td>智能管家通过统一协议控制</td>
+</tr>
+<tr>
+<td>遥控器</td>
+<td>一台设备一个遥控器，你自己按</td>
+<td>万能协议，AI 直接跨设备操作</td>
+</tr>
+<tr>
+<td>银行</td>
+<td>你亲自排队填单办贷款</td>
+<td>客户经理帮你查征信、填表、提交</td>
+</tr>
+<tr>
+<td>智能家居</td>
+<td>手动开灯关空调</td>
+<td>Matter/Zigbee 协议让 AI 统一调度</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>三、典型场景对比</h2>
+<h3>查看项目</h3>
+<ul>
+<li><strong>CLI</strong>：你敲 <code>ls</code>，看到一堆文件名</li>
+<li><strong>MCP</strong>：你问「这个项目干嘛的？」→ AI 调 File MCP 读 README、package.json、src，直接告诉你「这是一个 Spring Boot 项目……」</li>
+</ul>
+<h3>提交代码</h3>
+<ul>
+<li><strong>CLI</strong>：<code>git status → git add → git commit → git push</code>，全靠人</li>
+<li><strong>MCP</strong>：一句「帮我提交今天的修改」→ AI 走 Git MCP 全部自动完成，还能自己生成 commit message</li>
+</ul>
+<h3>查数据库</h3>
+<ul>
+<li><strong>CLI</strong>：登进 mysql，自己写 SQL</li>
+<li><strong>MCP</strong>：「找昨天注册的用户」→ AI 通过 Database MCP 自动生成 SQL、查询、整理结果，你甚至不用懂 SQL</li>
+</ul>
+<hr/>
+<h2>四、对比表格</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>CLI</th>
+<th>MCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>使用者</td>
+<td>人类（或脚本）</td>
+<td>AI Agent / LLM</td>
+</tr>
+<tr>
+<td>面向</td>
+<td>命令</td>
+<td>能力</td>
+</tr>
+<tr>
+<td>输入形式</td>
+<td>手敲命令、参数</td>
+<td>AI 按协议发起调用</td>
+</tr>
+<tr>
+<td>返回格式</td>
+<td>人类可读的文本/表格/日志</td>
+<td>结构化数据（JSON 等）</td>
+</tr>
+<tr>
+<td>接口风格</td>
+<td>每个软件命令不同，学习成本高</td>
+<td>协议统一，跨工具一致</td>
+</tr>
+<tr>
+<td>层次</td>
+<td>更底层、更灵活</td>
+<td>更高层、更智能</td>
+</tr>
+<tr>
+<td>适合谁</td>
+<td>开发者</td>
+<td>AI Agent</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>五、二者的关系：互补，不是替代</h2>
+<p>真实 Agent（Codex、Claude Code 等）通常<strong>两者都用</strong>：</p>
+<ul>
+<li>有 MCP 就优先用 MCP（更规范、更安全、更结构化）</li>
+<li>没 MCP 时就退化到直接调 CLI（够灵活、覆盖面广）</li>
+</ul>
+<p>可以这样理解：</p>
+<ul>
+<li><strong>CLI = AI 的手</strong> → 实际敲命令、执行程序</li>
+<li><strong>MCP = AI 的工具箱</strong> → 告诉 AI 有哪些能力、怎么调</li>
+</ul>
+<hr/>
+<h2>终极总结</h2>
+<blockquote>
+<p><strong>CLI 是给人用的接口；MCP 是给 AI 用的接口。</strong></p>
+<p>CLI 让人直接操作机器；MCP 让 AI 用标准化协议操作一切工具。</p>
+<p>二者互补：MCP 优先（规范、安全、结构化），CLI 兜底（灵活、覆盖广）。</p>
+</blockquote></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

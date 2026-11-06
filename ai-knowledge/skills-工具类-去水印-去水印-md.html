@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Watermarks-Remover：多厂商 AI 溯源标记剥离工具 · AI知识库专栏" />
+  <title>Watermarks-Remover：多厂商 AI 溯源标记剥离工具 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/skills-工具类-去水印-去水印-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / skills</div><h1>Watermarks-Remover：多厂商 AI 溯源标记剥离工具</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills-------md.svg" alt="Watermarks-Remover：多厂商 AI 溯源标记剥离工具主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p>项目地址：<a href="https://github.com/guillaumemeyer/watermarks-remover">https://github.com/guillaumemeyer/watermarks-remover</a>
+授权：MIT · <strong>约 15.5k ⭐</strong>
+定位：<strong>Agent skill + stdlib Python service to strip multi-vendor AI provenance marks</strong></p>
+</blockquote>
+<h2>一、这是什么</h2>
+<p>一个用来<strong>剥离多厂商 AI 溯源标记</strong>的工具，面向"内容你所拥有"的<strong>隐私与卫生处理</strong>场景（例如去掉自己文件里被平台注入的隐形标识）。核心两部分：</p>
+<ul>
+<li><strong>瘦客户端 Skill</strong>：无代码，纯 HTTP 调用</li>
+<li><strong>Python stdlib HTTP 服务</strong>：承载所有实际处理逻辑</li>
+</ul>
+<h2>二、覆盖范围</h2>
+<h3>厂商 / 生态（类别级）</h3>
+<ul>
+<li><strong>Claude</strong></li>
+<li><strong>Gemini / SynthID-Text</strong></li>
+<li><strong>OpenAI 溯源面</strong></li>
+<li>开源 LLM 的 <strong>Kirchenbauer 绿名单</strong> 与 <strong>keyed-Gumbel / EXP (Aaronson)</strong> 标记</li>
+</ul>
+<h3>文件格式</h3>
+<ul>
+<li><strong>图片</strong>：PNG / JPEG / WebP / AVIF / HEIC / BMP / GIF / TIFF / SVG</li>
+<li><strong>文档</strong>：PDF / DOCX / XLSX / PPTX / EPUB / ODT / HTML / Markdown</li>
+<li><strong>音视频</strong>：MP4 / MOV / M4A / M4V / WAV / MP3</li>
+</ul>
+<h3>平台</h3>
+<p>macOS / Linux / Windows（含 PowerShell 引导脚本 + 登录自启动文档），也提供 Docker / compose。</p>
+<h2>三、技术原理（三层）</h2>
+<table>
+<thead>
+<tr>
+<th>层</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Layer A — 确定性</strong></td>
+<td>清除不可见 Unicode、异形空格、bidi、tag 字符、noncharacters、reserved default-ignorable 等；对表情连接符、脚本连接符做上下文保护，避免误删</td>
+</tr>
+<tr>
+<td><strong>Layer B — 尽力而为</strong></td>
+<td>针对基于采样的<strong>统计文本水印</strong>，通过 LLM <strong>改写攻击</strong>（paraphrase / humanize / code 等 strength 模式）。新版引入<strong>迭代式改写</strong>：每轮生成 N 个候选，用检测器评估直到通过；evaluator 优先级 <strong>gumbel &gt; MarkLLM &gt; 双字母 Jaccard 词汇发散度</strong></td>
+</tr>
+<tr>
+<td><strong>文件层</strong></td>
+<td>剥离 C2PA / EXIF / XMP / docProps 等。PDF 需要 <strong><code>qpdf</code> 做结构性重写</strong>，因为 exiftool 只做增量编辑，原始元数据字节仍可恢复</td>
+</tr>
+</tbody>
+</table>
+<h2>四、可选外部组件</h2>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>reverse-SynthID</strong></td>
+<td>图像 SynthID 像素域打分（非商业研究许可，<strong>不打包发布</strong>）</td>
+</tr>
+<tr>
+<td><strong>CtrlRegen</strong> (<code>noai-watermark</code>)</td>
+<td>像素域水印移除（ControlNet + DINOv2 再生），默认强度保守 0.25</td>
+</tr>
+<tr>
+<td><strong>MarkLLM</strong></td>
+<td>文本水印同配置验证（KGW / SynthID-Text）</td>
+</tr>
+<tr>
+<td><strong>MarkDiffusion</strong></td>
+<td>图像水印同方案生成/检测 + DiffusionPurification 盲再生</td>
+</tr>
+<tr>
+<td><strong>keyed-Gumbel 检测器</strong></td>
+<td>stdlib-only 的<strong>同密钥重放</strong>，无需模型或 GPU</td>
+</tr>
+</tbody>
+</table>
+<h2>五、安装与使用</h2>
+<h3>最简：起 HTTP 服务</h3>
+<pre><code class="language-sh">make serve   # 起在 http://127.0.0.1:8765
+</code></pre>
+<p>暴露端点：<code>/health</code>、<code>/inspect</code>、<code>/clean</code>、<code>/detect</code>、<code>/capabilities</code>、<code>/openapi.json</code>，以及批量端点。</p>
+<h3>Skill 安装</h3>
+<p>软链接到 <code>.grok/skills/</code> 或 <code>~/.grok/skills/</code>；Cursor 用户跑 <code>python3 install_skill.py</code>。</p>
+<h3>Docker</h3>
+<pre><code class="language-sh">docker pull ghcr.io/guillaumemeyer/watermarks-remover:latest
+</code></pre>
+<p>Harness / heavy profile 服务用 compose 拉起。</p>
+<h3>配置</h3>
+<p>走 <code>.env</code>（gitignored），支持 API Key bearer 鉴权（<code>WATERMARKS_SERVER_API_KEY</code>），<strong>默认仅回环绑定</strong>。</p>
+<h2>六、亮点</h2>
+<ol>
+<li><strong>核心零依赖</strong>：Python 3.10+ stdlib，HTTP 接口任何语言/前端可集成</li>
+<li><strong>能力划分诚实</strong>：明确区分"<strong>可验证</strong>"与"<strong>尽力而为</strong>"，Layer B 不承诺 vendor 检测器一定失败</li>
+<li><strong>强化写入路径</strong>：原子写、拒符号链接、资源上限、SSRF 防护、CI SHA 固定、CodeQL、pip-audit</li>
+<li><strong>文本工具拒绝二进制输入</strong>：避免把 DOCX/PDF 解码成"乱码文本"再写回去毁掉原文件</li>
+<li><strong>生态封装</strong>：MetaClean（Tauri GUI）、unmark-web（浏览器端）等第三方前端</li>
+</ol>
+<h2>七、限制（作者写得很直白）</h2>
+<ul>
+<li><strong>风格代价</strong>：Layer B 改写会 "flatten tone, voice, and precision" —— 水印藏在措辞里，去它就要动语气。作者反问：既然要用便宜模型重写，为什么不一开始就用便宜模型生成？</li>
+<li><strong>超出范围</strong>：</li>
+<li><strong>C2PA soft binding</strong>（内容中植入、可重连远程 manifest 的软绑定）</li>
+<li><strong>训练后门</strong></li>
+<li><strong>音频 / 视频像素水印</strong>移除</li>
+<li><strong>检测能力限制</strong>：MarkLLM 和 keyed-Gumbel 都是<strong>同配置 / 同密钥重放</strong>，不是 vendor oracle —— <strong>负结果证明不了什么</strong></li>
+<li><strong>PDF 兜底</strong>：无 <code>qpdf</code> 时会降级并给出警告</li>
+<li><strong>重型组件不发布</strong>：CtrlRegen / SynthID scorer 因上游许可只能<strong>本地构建</strong>；模型下载数 GB，强烈建议 GPU</li>
+</ul>
+<h2>一句话总结</h2>
+<p><strong>Watermarks-Remover 把"去 AI 水印"这件常被过度承诺的事，用一个 stdlib HTTP 服务 + 三层清理（确定性 / 改写 / 文件元数据）诚实地做了出来</strong>——覆盖十几种文件格式和多家厂商标记，明确划清"可验证"与"尽力而为"的边界。适合两种人：<strong>想清理自己内容里被平台埋点的溯源标记</strong>，以及<strong>想研究 AI 水印攻防的开发者</strong>。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

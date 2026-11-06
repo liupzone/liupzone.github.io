@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="dsh-market 插件市场总结 · AI知识库专栏" />
+  <title>dsh-market 插件市场总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-plugins-插件市场dsh-market-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness plugins</div><h1>dsh-market 插件市场总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness-plugins--dsh-market-md.svg" alt="dsh-market 插件市场总结主题配图" /></header><article class="ai-body ai-reading-width">
+<p>仓库地址：https://github.com/dsh-market/dsh-market</p>
+<h2>定位</h2>
+<p>DeepSeek Harness (DSH) 内置的可视化插件市场。用户通过 <strong>Settings → Plugin Market</strong> 浏览、搜索并一键安装社区插件。独立于具体客户端，兼容任何遵循标准 DSH 协议的宿主（如 dsh-desktop、deepseek-harness-desktop）。</p>
+<h2>核心功能</h2>
+<ul>
+<li><strong>浏览与搜索</strong>：覆盖 1550+ 插件的社区目录，支持分类过滤、按星数/新旧排序、双语描述</li>
+<li><strong>截图预览</strong>：AppStore 风格截图，多图自动轮播，可点击放大</li>
+<li><strong>主题市场</strong>：独立标签页，一键切换社区主题，互斥且持久化</li>
+<li><strong>一键安装</strong>：实时进度显示，大多数插件刷新页面即生效</li>
+<li><strong>备份与恢复</strong>：导出 JSON、跨机导入；支持 WebDAV 每日自动备份或 GitHub Gist 同步；恢复采用合并策略并可回滚</li>
+<li><strong>更新管理</strong>：按 npm 版本或 commit 检查更新，支持单个/批量更新，市场自身也走同一通道</li>
+<li><strong>卸载 / 热禁用启用</strong>：通过写入 <code>cordis.patch.yml</code>，DSH HMR 约 1 秒内重组，无需重启</li>
+<li><strong>诊断面板</strong>：显示加载顺序、重复项、依赖版本冲突、多版本核心包等</li>
+<li><strong>加载顺序调整</strong>：拖拽排序，试组合通过后才写入</li>
+<li><strong>AI 修复</strong>：一键复制诊断驱动的修复提示词到剪贴板</li>
+<li><strong>日志导出</strong>：脱敏纯文本日志（掩码 home 路径和凭据），便于 bug 报告</li>
+<li><strong>必要时重启</strong>：仅接受同源 loopback 请求的重启端点</li>
+</ul>
+<h2>安全性</h2>
+<ul>
+<li>仅允许安装来自 awesome-dsh-plugin 注册表的插件</li>
+<li>pnpm ≥10 默认阻止 build 脚本</li>
+<li>安装端点仅接受同源 POST，市场不外传数据</li>
+<li>WebDAV 强制 https、拒绝私网目标、不在浏览器存储密码</li>
+</ul>
+<h2>技术栈</h2>
+<ul>
+<li><strong>语言/构建</strong>：TypeScript（多个 tsconfig：client/tests/主），使用 <code>tsdown</code> 打包</li>
+<li><strong>测试</strong>：Vitest（<code>vitest.config.ts</code>、<code>vitest.web.config.ts</code>、<code>vitest.compat.config.ts</code>）</li>
+<li><strong>包管理</strong>：同时存在 <code>pnpm-lock.yaml</code> 和 <code>package-lock.json</code></li>
+<li><strong>发布</strong>：npm 包名 <code>dshmarket</code></li>
+<li><strong>配置层</strong>：基于 Cordis 的 <code>cordis.patch.yml</code> 补丁机制</li>
+<li><strong>数据源</strong>：运行时拉取 <code>awesome-dsh-plugin.com/plugins.json</code></li>
+</ul>
+<h2>目录结构</h2>
+<ul>
+<li><code>.github/</code> — GitHub 工作流与模板</li>
+<li><code>assets/</code> — logo、演示图（demo-en.png、themes-en.png 等）</li>
+<li><code>client/</code> — 前端客户端代码</li>
+<li><code>data/</code> — 数据文件</li>
+<li><code>scripts/</code> — 构建/维护脚本</li>
+<li><code>site/</code> — 站点相关代码</li>
+<li><code>src/</code> — 主源码（服务端 / 插件入口）</li>
+<li><code>tests/</code> — 测试代码</li>
+<li>根文件：<code>IMPROVEMENT-PLAN.md</code>、<code>TESTING.md</code>、<code>README.md</code> / <code>README.zh.md</code>、<code>cordis.patch.yml</code>、<code>LICENSE</code> (MIT) 及若干 tsconfig / vitest 配置</li>
+</ul>
+<h2>生态</h2>
+<p>需 dsh web 0.1.0-rc.6+；与 dsh-desktop、deepseek-harness-desktop、DSH Get、modlens 等项目协作或互通。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

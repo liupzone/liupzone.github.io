@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="QM 是啥?一句话讲明白 · AI知识库专栏" />
+  <title>QM 是啥?一句话讲明白 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/qm-初识qm-通俗版-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / qm</div><h1>QM 是啥?一句话讲明白</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/qm--qm---md.svg" alt="QM 是啥?一句话讲明白主题配图" /></header><article class="ai-body ai-reading-width">
+<p><strong>QM 就是一个"公司内部的 AI 员工调度中心"</strong>,由 Y Combinator 开源。你可以把它想象成:</p>
+<blockquote>
+<p>公司花钱雇了一群 AI 助手,QM 就是管这群 AI 的"人事部 + 工位系统"。</p>
+</blockquote>
+<hr/>
+<h2>打个比方</h2>
+<p>想象你开了一家公司:</p>
+<ul>
+<li>以前:每个员工自己去用 ChatGPT,聊天记录、文件、权限全乱套,老板也不知道谁在干啥</li>
+<li>有了 QM:公司统一部署一套 AI 系统,<strong>每个员工发一个专属 AI 助手</strong>,每个项目也配一个 AI 助手。老板能管、员工能用、还能在 Slack 群里 @AI 一起干活</li>
+</ul>
+<p>名字 <strong>Quartermaster</strong> 就是"军需官"—— 船上管后勤、发装备的那个人。</p>
+<hr/>
+<h2>它能干嘛?(用大白话)</h2>
+<ul>
+<li>📱 <strong>在 Slack 里 @ 它</strong>,或者打开网页跟它聊 —— <strong>同一个 AI,两个入口</strong></li>
+<li>🧠 <strong>它记得你</strong>:你的文件、你的偏好、你给过的密码,都存着,不用每次重讲</li>
+<li>👥 <strong>可以拉群协作</strong>:项目组的 AI 是共享的,大家都能给它派活</li>
+<li>🛠️ <strong>能干活</strong>:跑代码、发邮件、查资料、开 PR、看 CI —— 不是光聊天</li>
+<li>⏰ <strong>能设闹钟</strong>:"每天早上 9 点给我总结昨天的 GitHub 动态"这种定时任务</li>
+<li>🎨 <strong>能造小工具</strong>:让 AI 给公司做个内部小网页,发给指定的人用</li>
+</ul>
+<hr/>
+<h2>老板最关心的:安全</h2>
+<p>QM 提供<strong>三档安全模式</strong>,选一档:</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>通俗解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔒 严格</td>
+<td>AI 干每件事都要人点"同意"</td>
+</tr>
+<tr>
+<td>⚖️ 自动(默认)</td>
+<td>AI 自己干,系统在旁边盯着可疑操作</td>
+</tr>
+<tr>
+<td>⚡ 放飞</td>
+<td>全自动,啥都不拦</td>
+</tr>
+</tbody>
+</table>
+<p>删库跑路这种命令<strong>永远拦</strong>,不管选哪档。</p>
+<hr/>
+<h2>怎么用?三条路</h2>
+<ol>
+<li><strong>懒人路线</strong>:一行命令部署到你的云服务器(Fly 或 AWS),不用管源码</li>
+<li><strong>改造路线</strong>:把代码 clone 下来,自己深度定制</li>
+<li><strong>试玩路线</strong>:在自己 Mac 上跑一套玩,有 22 章教程手把手教</li>
+</ol>
+<hr/>
+<h2>跟别的 AI 工具有啥不一样?</h2>
+<table>
+<thead>
+<tr>
+<th>别人</th>
+<th>QM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>给<strong>个人</strong>用的助手(ChatGPT)</td>
+<td>给<strong>整个公司</strong>用的助手系统</td>
+</tr>
+<tr>
+<td>一个 AI 服务所有人</td>
+<td>每人/每项目一个隔离的 AI</td>
+</tr>
+<tr>
+<td>SaaS,数据在别人那</td>
+<td><strong>自己部署在自己云上</strong></td>
+</tr>
+<tr>
+<td>只能聊天</td>
+<td>能跑命令、能定时、能做小应用</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>一句话记住</h2>
+<blockquote>
+<p><strong>QM = 把公司里散乱的 AI 使用,变成有组织、有权限、有记忆、能协作的"AI 员工舰队"。</strong></p>
+</blockquote>
+<p>适合的公司:想让 AI 深度融入工作流,又不想把公司数据交给第三方 SaaS 的<strong>初创团队</strong>。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

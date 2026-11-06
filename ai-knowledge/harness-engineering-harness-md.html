@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Harness Engineering 介绍 · AI知识库专栏" />
+  <title>Harness Engineering 介绍 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/harness-engineering-harness-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / Harness Engineering</div><h1>Harness Engineering 介绍</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/harness-engineering-harness-md.svg" alt="Harness Engineering 介绍主题配图" /></header><article class="ai-body ai-reading-width">
+<p>Harness Engineering 那这个是什么意思呢，首先想象你有一匹马，这个马很有力量，但是没有马鞍，缰绳，你也很难去驾驭它，就是这样一个东西，统称为harness，现在我们的大模型现在能力很强，可以说是上知天文下知地理，但是他有能力就不代表着可以给一个好的输出，所以呢，harness 就是是给模型模型外面套一层像马一样的挽具，让模型可以稳定的输出，并且可重复的去驾驭。</p>
+<p>了解Harness 之前呢，我们要先了解llm 有哪些缺陷或特性呢？
+    1. LLM 是无状态的，对话结束就很容易去忘记。
+    2. 只能生成文字，无法操控外部世界
+    3. 上下文窗口的限制，不能无限处理信息。
+    4. 输出是概率性的，同样的输入，输出的内容是不一样的，他也不能保证哪一次都是正确的。</p>
+<p>这些都是大模型的一些特性，harness在大模型的基础上，让它能够去做一些，他之前根本完不成的一些事情。</p>
+<p>一个更形象的比喻，我们的模型就像是引擎，我们的harness，就像是外部的这辆车，如果没有查车，方向盘，等这些配置，这辆车也是不能上路的。</p>
+<p>讲完harness对这个模型的作用呢，我们再讲一下harness，有几哪个结构</p>
+<p>他不是一个具体的工具，而是围绕着这个模型做的几类基础设施的总称</p>
+<p>他总共分为4层
+    1. 记忆层，解决的模型无状态的问题（他不知道你上一轮对话说了什么，你的项目有什么规范，那记忆层呢，用文件系统去做这个持久化，想让他知道的内容的，我们给他写下来，结构化存放，让模型每次都能检索到正确的背景信息，在代码场景里，这就是claude.md/agent.md,这个文件充当的是导航地图的作用，只放一些关键的约束和规则，具体详细的百科全书可以到对应的模块里面去维护）
+    2. 执行层，解决的是只能生成文字的问题（通过使用一些工具，让模型能够只是从我说一些话，到我能够做一些事情，harness，提供一些沙箱环境，让模型可以大胆的去修改，改完之后有问题呢，还可以去回滚）
+    3. 反馈层，解决的是输出不可靠的问题（这一层比较关键，有测试呀，有linter呀，有cicd呀，模型跑完代码，跑测试，测试失败了，就让他改，改完之后再跑测试，直到测试通过才进入下一步，反馈的速度呢，从人工review的小时级别，缩小到秒级。这个回路能够闭合的关键是，虽然生成是不确定性的，但是我们验证是确定性的，你生成一个文章质量高不高不要去判断，生成一个图好看不好看不好去评判，但是代码逻辑呢，你知道写100个用例，过了他就是ok的，你知道所以你不用每次都对，只要保证我有足够好的验证手段就够了）
+    4. 编排层，解决的事复杂任务拆解的问题（主要解决的是，复杂任务的拆解的问题，比如我们一个复杂的主任务，不可能只让一个agent去执行，我们也会拆解成几个并行的子任务，让ai同步执行，这样呢，就能处理远超本次能力上限的工程任务。）</p>
+<h2>4. 核心实践：OpenAI 的 Codex 极端实验</h2>
+<p>OpenAI 曾记录过一个极具代表性的实践案例：<strong>5 名工程师在 5 个月内交付了 100 万行代码，且其中包含 0 行人类手写代码。</strong></p>
+<p><strong>关键成功因素：</strong>
+1.  <strong>倒逼机制 (Forcing Function)</strong>：全团队禁止直接编写代码，迫使所有人集中精力构建 Harness（基础设施）。
+2.  <strong>角色彻底转型</strong>：工程师从 Code Writer 进化为 <strong>Environment Designer</strong>。其日常工作由写逻辑转变为维护 <code>AGENTS.md</code>、编写自定义 Linter 以及建立可观测性栈。
+3.  <strong>极高吞吐量</strong>：平均每人每日交付 3.5 个 PR，且大部分 Code Review 是由 Agent 对 Agent 完成的。</p>
+<hr/>
+<h2>5. 开发者如何构建自己的 Harness？</h2>
+<ol>
+<li><strong>精炼 <code>AGENTS.md</code> 索引</strong>：<ul>
+<li>目录化：根目录文件应少于 100 行，仅作为导航。</li>
+<li>模块化：将架构、设计和安全约束拆分到 <code>docs/*.md</code>。</li>
+<li>层级化：支持子目录级的覆盖规则（如 <code>AGENTS.override.md</code>）。</li>
+</ul>
+</li>
+<li><strong>闭环反馈回路</strong>：<ul>
+<li>接入自动触发的测试、Lint 和验证工具。</li>
+<li>优化反馈信息的格式，使其更易被 AI 解析和执行。</li>
+</ul>
+</li>
+<li><strong>优化工作流习惯</strong>：<ul>
+<li><strong>热启动</strong>：下班前启动 Agent 进行深度调研或并行探索。</li>
+<li><strong>职能分离</strong>：将模糊需求明确拆分为“规划 (Planning)”和“执行 (Execution)”两个阶段。</li>
+</ul>
+</li>
+<li><strong>建立评估体系 (Evals)</strong>：<ul>
+<li>超越简单的 CI，建立一套针对 Agent 意向和产出质量的系统化评估工具。</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h2>总结</h2>
+<p><strong>Harness Engineering = 用工程手段“驯服”大模型，将 AI 转化为可靠的产品。</strong></p>
+<p>软件工程团队的核心竞争力，正在从“谁的代码写得好”转向“谁能设计出更好的 Agent 运行环境”。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

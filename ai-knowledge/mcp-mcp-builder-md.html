@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="MCP Builder：高质量 MCP Server 开发指南 · AI知识库专栏" />
+  <title>MCP Builder：高质量 MCP Server 开发指南 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/mcp-mcp-builder-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / mcp</div><h1>MCP Builder：高质量 MCP Server 开发指南</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/mcp-mcp-builder-md.svg" alt="MCP Builder：高质量 MCP Server 开发指南主题配图" /></header><article class="ai-body ai-reading-width">
+<p>MCP Builder 是开发、测试和优化 MCP (Model Context Protocol) Server 的权威指南。它旨在帮助开发者构建能够让 LLM 有效与外部服务交互的高质量工具。</p>
+<hr/>
+<h2>🚀 核心工作流：四阶段开发法</h2>
+<p>创建一个高质量的 MCP Server 分为四个关键阶段：</p>
+<h3>第一阶段：深度研究与规划 (Deep Research &amp; Planning)</h3>
+<ol>
+<li><strong>理解现代 MCP 设计</strong>：
+   - <strong>API 覆盖 vs. 工作流工具</strong>：平衡全面 API 端点覆盖与专用工作流工具。优先考虑全面的 API 覆盖，让 Agent 具备灵活组合操作的能力。
+   - <strong>工具命名与发现</strong>：使用一致的前缀（如 <code>github_create_issue</code>）和动作导向的命名。
+   - <strong>上下文管理</strong>：提供简洁且聚焦的数据，支持过滤和分页，避免无关信息干扰。
+   - <strong>可操作的错误消息</strong>：错误信息应指导 Agent 解决问题，并提供具体建议。</li>
+<li><strong>研究协议文档</strong>：
+   - 从 <a href="https://modelcontextprotocol.io/sitemap.xml">modelcontextprotocol.io/sitemap.xml</a> 获取协议地图。
+   - <strong>技巧</strong>：访问特定页面时，可以尝试在 URL 后添加 <code>.md</code> 后缀来直接获取 Markdown 格式内容（例如：<code>https://modelcontextprotocol.io/specification/draft.md</code>）。</li>
+<li><strong>规划实施方案</strong>：分析目标服务的 API 文档，确定核心端点、认证要求及数据模型。</li>
+</ol>
+<h3>第二阶段：实施阶段 (Implementation)</h3>
+<ol>
+<li><strong>设置项目结构</strong>：
+   - <strong>TypeScript (推荐)</strong>：使用 MCP SDK，支持 Zod 模式验证。
+   - <strong>Python</strong>：使用 FastMCP / Python SDK，支持 Pydantic 模型。</li>
+<li><strong>构建核心基础设施</strong>：
+   - 实现带认证的 API 客户端。
+   - 编写统一的错误处理助手。
+   - 支持分页和响应格式化（JSON/Markdown）。</li>
+<li><strong>实现工具 (Tools)</strong>：
+   - <strong>输入模式</strong>：使用 Zod 或 Pydantic 定义严格的约束、描述和示例。
+   - <strong>输出模式</strong>：定义 <code>outputSchema</code> 和 <code>structuredContent</code> 以帮助客户端处理数据。
+   - <strong>注解 (Annotations)</strong>：正确标记 <code>readOnlyHint</code>, <code>destructiveHint</code>, <code>idempotentHint</code>, <code>openWorldHint</code> 等。</li>
+</ol>
+<h3>第三阶段：审查与测试 (Review &amp; Testing)</h3>
+<ol>
+<li><strong>代码质量审查</strong>：
+   - 遵循 DRY 原则，避免重复代码。
+   - 确保类型全覆盖（Full type coverage）。
+   - 提供清晰、准确的工具描述。</li>
+<li><strong>构建与验证</strong>：
+   - 使用 <strong>MCP Inspector</strong> (<code>npx @modelcontextprotocol/inspector</code>) 进行实时测试。
+   - 验证编译是否通过（如 <code>npm run build</code> 或 <code>python -m py_compile</code>）。</li>
+</ol>
+<h3>第四阶段：创建评估 (Create Evaluations)</h3>
+<p>构建 10 个以上复杂、真实的评估问题。评估文件通常使用 XML 格式存储：</p>
+<pre><code class="language-xml">&lt;evaluation&gt;
+  &lt;qa_pair&gt;
+    &lt;question&gt;具体的、复杂的、需要多步工具调用的问题...&lt;/question&gt;
+    &lt;answer&gt;唯一且可比对的标准答案&lt;/answer&gt;
+  &lt;/qa_pair&gt;
+&lt;/evaluation&gt;
+</code></pre>
+<p><strong>评估要求</strong>：
+- <strong>独立性</strong>：各问题互不依赖。
+- <strong>只读性</strong>：仅执行非破坏性操作（Read-only）。
+- <strong>复杂性</strong>：需要多次工具调用和深度探索。
+- <strong>稳定性</strong>：答案不会随时间轻易改变。</p>
+<hr/>
+<h2>🛠️ 推荐技术栈</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>推荐选择 (Recommended)</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>编程语言</strong></td>
+<td><strong>TypeScript</strong></td>
+<td>SDK 支持度最高，类型安全，AI 生成代码效果更好。</td>
+</tr>
+<tr>
+<td><strong>验证库</strong></td>
+<td><strong>Zod</strong> (TS) / <strong>Pydantic</strong> (Py)</td>
+<td>强大的模式验证和清晰的元数据描述。</td>
+</tr>
+<tr>
+<td><strong>传输协议</strong></td>
+<td><strong>stdio</strong> (本地) / <strong>HTTP</strong> (远程)</td>
+<td>灵活适配各种运行环境。</td>
+</tr>
+<tr>
+<td><strong>数据格式</strong></td>
+<td><strong>无状态 JSON</strong></td>
+<td>易于扩展和维护。</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>✨ 质量标准清单 (Quality Checklist)</h2>
+<ul>
+<li>[ ] 符合 DRY 原则，无冗余代码。</li>
+<li>[ ] 错误响应具备可操作性（Actionable instructions）。</li>
+<li>[ ] 所有的工具（Tools）都有准确的模式（Schema）描述和示例。</li>
+<li>[ ] 关键操作已添加 Hint 注解。</li>
+<li>[ ] 包含 10 个以上的评估案例（Evaluations）。</li>
+<li>[ ] 处理了分页和长内容限制。</li>
+</ul>
+<hr/>
+<blockquote>
+<p>来源参考：
+- <a href="https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md">Anthropic MCP Builder Skill</a></p>
+</blockquote></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

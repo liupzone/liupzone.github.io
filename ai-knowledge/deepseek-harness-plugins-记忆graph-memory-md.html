@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Graph Memory 知识图谱记忆插件总结 · AI知识库专栏" />
+  <title>Graph Memory 知识图谱记忆插件总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-plugins-记忆graph-memory-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness plugins</div><h1>Graph Memory 知识图谱记忆插件总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness-plugins--graph-memory-md.svg" alt="Graph Memory 知识图谱记忆插件总结主题配图" /></header><article class="ai-body ai-reading-width">
+<p>仓库地址：https://github.com/adoresever/graph-memory</p>
+<h2>定位</h2>
+<p>为 AI Agent 提供"可追溯、可搜索、跨会话"的知识图谱记忆系统。原为 OpenClaw 插件，现已演进为 DeepSeek Harness (DSH) 的原生插件，同时保留 OpenClaw 入口。</p>
+<p><strong>核心理念</strong>：与其重放完整对话历史，不如检索一个相关的局部知识子图。</p>
+<h2>核心功能</h2>
+<ul>
+<li><strong>类型化知识图谱</strong>：将对话抽取为三类节点</li>
+<li><code>TASK</code>（任务）</li>
+<li><code>SKILL</code>（可复用方法）</li>
+<li><code>EVENT</code>（错误 / 修复 / 决策）</li>
+</ul>
+<p>通过 <code>USED_SKILL</code>、<code>SOLVED_BY</code>、<code>REQUIRES</code>、<code>PATCHES</code>、<code>CONFLICTS_WITH</code> 等<strong>类型化边</strong>关联</p>
+<ul>
+<li><strong>双路径召回</strong>：</li>
+<li>精确路径：向量 + FTS5 → 社区扩展 + 遍历</li>
+<li>泛化路径：社区摘要 → 成员</li>
+<li>
+<p>最终通过 Personalized PageRank 排序去重</p>
+</li>
+<li>
+<p><strong>跨会话持久记忆</strong>：Session A 中的知识可在 Session B 自动召回，DSH 重启后仍可用</p>
+</li>
+<li>
+<p><strong>上下文压缩</strong>：在其测试的七轮 bilibili-mcp 工作流中，第 7 轮 token 从 95,187 降至 23,977（约 75%，该场景专属，非普适保证）</p>
+</li>
+<li>
+<p><strong>可观测性</strong>：<code>gm_status</code>、<code>gm_search</code>、<code>gm_record</code>、<code>gm_stats</code> 等工具查看和操作</p>
+</li>
+</ul>
+<h2>技术栈</h2>
+<ul>
+<li><strong>语言 / 运行时</strong>：TypeScript，Node.js 22.19+ 或 24+</li>
+<li><strong>框架</strong>：Cordis 插件系统（DSH）+ OpenClaw plugin-sdk</li>
+<li><strong>存储</strong>：默认 SQLite + FTS5 全文检索；Pro 版本可选 Neo4j（含 GDS / APOC）</li>
+<li><strong>向量嵌入</strong>：可选，兼容 OpenAI 接口（DashScope、OpenAI、本地 provider）</li>
+<li><strong>测试</strong>：Vitest（107 项自动化测试）</li>
+<li><strong>代码结构</strong>：<code>extractor/</code>、<code>recaller/</code>、<code>graph/</code>、<code>store/</code>、<code>format/</code>、<code>engine/</code></li>
+</ul>
+<h2>使用方法</h2>
+<p>当前 beta 版本 <code>1.6.0-beta.1</code> 尚未发布到 npm，需从源码构建：</p>
+<pre><code class="language-bash">git clone https://github.com/adoresever/graph-memory.git
+cd graph-memory
+npm ci &amp;&amp; npm test &amp;&amp; npm run build &amp;&amp; npm pack
+</code></pre>
+<p>安装到 DSH Web profile：</p>
+<pre><code class="language-bash">npx @deepseek-ai/dsh plugin --profile web add /absolute/path/to/graph-memory-1.6.0-beta.1.tgz
+npx @deepseek-ai/dsh web
+</code></pre>
+<p>在 <strong>Settings → Plugins</strong> 中确认 <code>graph-memory/dsh</code> 已启用。默认数据库位于 <code>$DSH_HOME/graph-memory/graph-memory.db</code>。</p>
+<h3>启用向量召回（可选，以 DashScope 为例）</h3>
+<p>设置环境变量：
+- <code>GRAPH_MEMORY_EMBEDDING_API_KEY</code>
+- <code>GRAPH_MEMORY_EMBEDDING_BASE_URL</code>
+- <code>GRAPH_MEMORY_EMBEDDING_MODEL</code>
+- <code>GRAPH_MEMORY_EMBEDDING_DIMENSIONS</code></p>
+<p>若不配置，则自动降级为 FTS5 词法检索。</p>
+<h3>OpenClaw 老用户</h3>
+<p>仍可使用 <code>openclaw plugins install graph-memory</code> 入口，但需在 <code>~/.openclaw/openclaw.json</code> 中激活 <code>contextEngine</code> slot。</p>
+<h2>现状与限制</h2>
+<ul>
+<li>✅ DSH 原生集成、跨会话自动召回、向量回填已完成并测试通过</li>
+<li>⏳ Pro 版可视化图谱工作台（Client Plugin）尚未实现，现有 <code>desktop-2.0</code> 仍是 OpenClaw + Neo4j</li>
+<li>⚠️ 自动抽取依赖辅助模型稳定性，关键知识建议使用 <code>gm_record</code> 显式写入</li>
+<li><strong>许可证</strong>：MIT</li>
+</ul></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

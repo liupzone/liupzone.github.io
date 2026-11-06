@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="搭建天气预报 mcp · AI知识库专栏" />
+  <title>搭建天气预报 mcp · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/mcp-搭建天气预报mcp-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / mcp</div><h1>搭建天气预报 mcp</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/mcp--mcp-md.svg" alt="搭建天气预报 mcp主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>链接高德地图 MCP</h2>
+<pre><code class="language-js">{
+  "mcpServers": {
+    "amap-amap-sse": {
+      "url": "https://mcp.amap.com/sse?key=e6f2b10a83287c163dd26fd868c23b9d"
+    }
+  }
+}
+</code></pre>
+<p>高德官网上申请的 key [https://lbs.amap.com/]</p>
+<p>创建新应用--》 添加 key --》 选择 web 服务 —————&gt; 提交 ，，复制对应的 key</p>
+<h2>链接 quickchart-server MCP Server</h2>
+<p>它是一个基于 TypeScript 的服务器，集成了 quickchart.io 基于 URL 的图表生成服务。通过 MCP Server，用户可以通过提供数据和样式参数，使用 Chart.js 配置创建各种类型的图表，服务器会将这些配置转换为图表 URL 或可下载的图像 1。
+我们的思路就是将天气反馈，让这个做一个图表
+我们还是一样的步骤，将下面的代码放到创建 MCP 里面</p>
+<pre><code class="language-js">{
+  "mcpServers": {
+    "quickchart-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@gongrzhe/quickchart-mcp-server"
+      ]
+    }
+  }
+}
+
+</code></pre>
+<h2>链接 EdgeOne Pages Deploy MCP</h2>
+<p>EdgeOne Pages Deploy MCP 是一项专用服务，能够将 HTML 内容快速部署到 EdgeOne Pages 并生成公开访问链接。这使您能够立即预览和分享 AI 生成的网页内容。
+说白了就是我们可以在本地创建一个 html 文件，然后通过 EdgeOne Pages Deploy MCP 上传成一个可访问的网站页面</p>
+<pre><code class="language-js">{
+  "mcpServers": {
+    "edgeone-pages-mcp-server": {
+      "command": "npx",
+      "args": ["edgeone-pages-mcp"]
+    }
+  }
+}
+</code></pre>
+<p>创建智能体，输入提示词</p>
+<pre><code class="language-js">
+# 角色
+
+你是一位专业的气象数据分析师，能够查询任意城市的未来7天天气，并生成可视化图表。
+
+## 技能
+### 技能 1: 查询天气数据
+
+- 使用高德MCP这个MCP服务，查询任意城市未来7天的天气数据。
+- 获取的数据应包括但不限于温度、湿度、风速、降水量等关键气象指标。
+
+### 技能 2: 生成可视化图表
+
+- 将查询到的天气数据用QuickChart这个MCP服务转换为易于理解的可视化图表。
+- 可视化图表可以是折线图、柱状图或热力图等形式，具体取决于用户的需求和数据特性。
+- 确保图表清晰、美观且易于解读。
+
+### 技能 3: 提供天气分析报告
+
+- 根据查询到的天气数据，提供简要的天气分析报告。
+- 报告应包括对未来4天天气趋势的总结，以及可能对用户活动产生影响的建议。
+
+### 技能3 ：部署到EdgeOne Pages
+
+- 将最后的html代码部分，将 HTML 内容快速部署到 EdgeOne Pages 并生成公开访问链接
+
+## 限制
+
+- 仅提供与天气相关的数据和分析。
+- 生成的图表必须基于查询到的实际天气数据。
+- 如果需要调用外部工具或API，请明确说明并提供相应的调用方法。
+- 所有输出的内容必须准确无误，不得包含任何误导性信息。
+</code></pre>
+<p>那么到这里了，我们的这个智能体就用到了三个 MCP Servers 了
+我来分析下，使用高德地图 MCP Servers 进行天气情况的获取操作
+利用 quickchart-server MCP Server 来进行表格的创建操作
+利用 EdgeOne Pages Deploy MCP 进行可视化网站的部署搭建操作</p>
+<p>引用新建的的智能体，输入问题</p>
+<pre><code class="language-js">利用高德MCP帮我获取北京最近7天的天气，利用quickchart-server MCP Server帮我进行图标的构建，利用EdgeOne Pages Deploy MCP帮我进行网站的部署操作
+
+代码格式为html
+</code></pre></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

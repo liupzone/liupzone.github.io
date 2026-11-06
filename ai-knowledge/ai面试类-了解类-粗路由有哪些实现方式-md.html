@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="粗路由有哪些实现方式 · AI知识库专栏" />
+  <title>粗路由有哪些实现方式 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/ai面试类-了解类-粗路由有哪些实现方式-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / Ai面试类</div><h1>粗路由有哪些实现方式</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/ai------md.svg" alt="粗路由有哪些实现方式主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p>粗路由是 Agent 的前置过滤器：不用大模型，低成本、快速砍掉绝大多数无关 Skill，只给后面的精决策留一小撮候选。它只判断「意图大类 / 是否相关」，不负责填参数。</p>
+</blockquote>
+<h2>四种实现方式</h2>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>做法</th>
+<th>优点</th>
+<th>缺点</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>关键词规则</strong></td>
+<td>每个 Skill 配正向词和否定词，命中正向词入选，命中否定词排除，可加权重和阈值</td>
+<td>零推理成本、毫秒级、稳定可调试</td>
+<td>同义词和口语化表达容易漏</td>
+<td>高频标准化查询，做第一层兜底</td>
+</tr>
+<tr>
+<td><strong>轻量分类器</strong></td>
+<td>把 Skill 分成意图大类，训练 bert-small、textcnn 或蒸馏小模型，输出大类（可多标签）</td>
+<td>能理解同义词、泛化好、推理便宜</td>
+<td>要标注样本，类别多时工作量大，冷启动难</td>
+<td>线上生产的主流方案</td>
+</tr>
+<tr>
+<td><strong>向量检索</strong></td>
+<td>给每个 Skill 的简短描述生成向量，query 向量化后取 Top-N</td>
+<td>不用标注，新增 Skill 直接入库，不怕换说法</td>
+<td>会召回语义相近但功能不同的 Skill，有少量向量计算开销</td>
+<td>Skill 多、经常新增的场景</td>
+</tr>
+<tr>
+<td><strong>规则 + 向量混合</strong></td>
+<td>先用关键词黑名单排除明显无关的，再用向量召回 TopN，最后用规则二次打分去重</td>
+<td>稳定性和语义能力兼顾，可控，对新增 Skill 友好</td>
+<td>要维护两套逻辑，调试稍复杂</td>
+<td>工程里最推荐的组合</td>
+</tr>
+</tbody>
+</table>
+<h2>两个要点</h2>
+<ul>
+<li>分类器只分到「大类」，不要直接分到单个 Skill，大类下面再召回。</li>
+<li>向量检索嵌入的是简短的用途描述，不是完整 schema，否则向量会被冗余信息污染。</li>
+</ul>
+<h2>选型建议</h2>
+<ul>
+<li>Skill 少且稳定：关键词 + 分类器。</li>
+<li>Skill 多且常变：向量或混合方案。</li>
+</ul>
+<h2>工程踩坑</h2>
+<ol>
+<li><strong>粗路由只分组，不选最终 Skill。</strong> 最终调用交给主大模型，否则粗路由一错，错误会直接传到下游。</li>
+<li><strong>宁可多召回 1～2 个，不要漏召回。</strong> 漏掉正确的 Skill 是致命的，多放几个无关的让精筛处理，损耗很小。</li>
+<li><strong>分层边界要划清。</strong>
+   - 粗路由：能不能进入候选集合（低成本）。
+   - 精决策（主 Agent）：要不要调用、参数是什么（贵模型）。</li>
+</ol>
+<h2>最简落地建议</h2>
+<p>从零搭建 Agent，优先上「向量召回 + 简单关键词黑白名单」的混合粗路由，开发最快，对 Skill 多的场景最友好。业务稳定后，再叠加轻量分类器做优化。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

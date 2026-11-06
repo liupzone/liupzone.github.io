@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="dsh-TUI 总结 · AI知识库专栏" />
+  <title>dsh-TUI 总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-plugins-终端插件dsh-tui-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness plugins</div><h1>dsh-TUI 总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness-plugins--dsh-tui-md.svg" alt="dsh-TUI 总结主题配图" /></header><article class="ai-body ai-reading-width">
+<p>仓库地址：https://github.com/ccch1mneyyy/dsh-TUI
+官网：dshtui.com
+许可证：MIT ｜ 状态：公测 ｜ Star：约 2.1k</p>
+<h2>是什么</h2>
+<p>一款为 <strong>DeepSeek Harness (DSH) CLI</strong> 打造的 Claude Code 风格终端 UI 插件，由 DeepSeek Harness 官方公众号推荐收录。它在不修改 DSH 核心的前提下，通过插件方式为其套上一层美观、可观测的 TUI；卸载后无残留补丁。面向"TUI 爱好者/极客"。</p>
+<h2>主要特性</h2>
+<h3>视觉</h3>
+<ul>
+<li>像素鲸鱼顶栏、双流光标题</li>
+<li>"轻雾蓝"配色，通过 OSC 11 自动适配终端明/暗色</li>
+</ul>
+<h3>可观测性</h3>
+<ul>
+<li>实时工作状态行</li>
+<li>分段式上下文进度条</li>
+<li>TPS 仪表 + 迷你趋势图（sparkline）</li>
+<li>缓存命中率、推理等级、Token 计数、Git/会话信息</li>
+</ul>
+<h3>会话工作流</h3>
+<ul>
+<li><code>/resume</code>、<code>/new</code>、<code>/compact</code>、<code>/export</code>、<code>/btw</code>（穿插提问）</li>
+<li>模型切换、双击 <code>Esc</code> 回溯/分叉会话</li>
+</ul>
+<h3>输入体验</h3>
+<ul>
+<li>流式 Markdown 渲染、结构化工具调用卡片</li>
+<li><code>@</code> 文件引用（PNG/JPEG/WebP/GIF 作为持久图像块）</li>
+<li>命令/文件补全、历史搜索</li>
+<li><code>/lang</code> 中英文切换</li>
+</ul>
+<h3>模型运行中的三态操作</h3>
+<ul>
+<li><code>Enter</code> 引导（steer）</li>
+<li><code>Tab</code> 追问</li>
+<li><code>Ctrl+Enter</code> 中断</li>
+</ul>
+<h3>鼠标支持（全屏模式）</h3>
+<ul>
+<li>拖选、松开即复制（OSC 52 / <code>wl-copy</code> / <code>xclip</code> / <code>xsel</code> / tmux buffer）</li>
+</ul>
+<h3>DSH 集成</h3>
+<ul>
+<li>Agent 预设：<code>standard</code> / <code>code</code> / <code>minimal</code> / <code>cordis</code> / <code>liangshen</code></li>
+<li>Skills、MCP、Goals、Todos、子 Agent、<code>ask_user_question</code> 问卷</li>
+</ul>
+<h3>性能</h3>
+<ul>
+<li>事件驱动投影、终端 diff 输出</li>
+<li>消息虚拟化（layout 级虚拟化，仅渲染可见窗口）</li>
+</ul>
+<h3>配套</h3>
+<ul>
+<li>VS Code 扩展 <code>dsh-tui-vscode</code>，体验接近 Claude Code 官方扩展</li>
+</ul>
+<h2>技术栈</h2>
+<p>TypeScript ｜ React（移植的 Ink/Yoga 渲染器）｜ Cordis（配置组合/补丁）｜ pnpm workspace
+Node 要求：<code>^22.19 || &gt;=24</code>；CI 使用 Node 24 + pnpm 11</p>
+<h2>安装</h2>
+<p>前置：TTY 终端、官方 <code>dsh</code> CLI、pnpm 10+、<code>DEEPSEEK_API_KEY</code></p>
+<pre><code class="language-sh">npm install -g @deepseek-ai/dsh @deepseek-harness-tui/dsh-tui
+dsh-tui
+</code></pre>
+<p>其他方式：<code>sh install.sh</code>，或 <code>dsh plugin --profile dsh-tui add @deepseek-harness-tui/dsh-tui</code>
+Windows：<code>dsh-tui.cmd</code>
+首次运行会自动初始化 <code>dsh-tui</code> profile。</p>
+<h2>使用</h2>
+<ul>
+<li><code>dsh-tui --resume</code> 恢复上一次会话</li>
+<li><code>/update</code> 升级当前 profile 内运行时并重启（仅在 <code>dsh --profile</code> 启动下有效，且不能在对话中执行）</li>
+<li>完整斜杠命令对齐 Claude Code：</li>
+<li>会话类：<code>/new</code>、<code>/resume</code>、<code>/rename</code></li>
+<li>状态类：<code>/context</code>、<code>/status</code>、<code>/cost</code>、<code>/doctor</code></li>
+<li>模型类：<code>/model</code>、<code>/effort</code>、<code>/preset</code>、<code>/theme</code>、<code>/lang</code></li>
+<li>Skills：<code>/audit</code>、<code>/bug</code>、<code>/review</code>、<code>/pr_comments</code> 等</li>
+<li>注册表命令：<code>/plan</code>、<code>/goal</code>、<code>/feedback</code>、<code>/permission</code></li>
+</ul>
+<h2>注意事项</h2>
+<ul>
+<li><code>/model</code> 切换通过"会话分叉"实现（DSH 无原地换模型 API），历史保留但新对话走新模型</li>
+<li>Agent 预设仅在会话尚无消息时可切换</li>
+<li><strong>没有独立沙箱</strong>，继承当前 DSH profile 的文件/shell/审批策略</li>
+<li><strong>Windows 无沙箱后端</strong>，回退到 <code>danger-full-access</code> 且无审批提示——处理敏感凭证/不受信仓库前请检查 profile 配置</li>
+<li><code>/thinking</code> 开关不跨重启持久化</li>
+<li><code>minimal</code> 预设下 <code>/compact</code> 不可用</li>
+<li>生态：插件模板与规范在 <code>dsh-tui-ecosystem</code> 和 <code>T-Auto/dsh-ecosystem-spec</code> 组织下；核心仓库不迁移</li>
+</ul></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

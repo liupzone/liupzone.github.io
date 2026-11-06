@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="MediaCrawler 🕷️：小红书 / 抖音 / 快手 / B 站 / 微博 / 贴吧 / 知乎 —— 七大平台内容+评论爬虫 · AI知识库专栏" />
+  <title>MediaCrawler 🕷️：小红书 / 抖音 / 快手 / B 站 / 微博 / 贴吧 / 知乎 —— 七大平台内容+评论爬虫 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/skills-爬虫类-抓取内容评论mediacrawler-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / skills</div><h1>MediaCrawler 🕷️：小红书 / 抖音 / 快手 / B 站 / 微博 / 贴吧 / 知乎 —— 七大平台内容+评论爬虫</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills----mediacrawler-md.svg" alt="MediaCrawler 🕷️：小红书 / 抖音 / 快手 / B 站 / 微博 / 贴吧 / 知乎 —— 七大平台内容+评论爬虫主题配图" /></header><article class="ai-body ai-reading-width">
+<ul>
+<li><strong>仓库</strong>：<a href="https://github.com/NanmiCoder/MediaCrawler">https://github.com/NanmiCoder/MediaCrawler</a></li>
+</ul>
+<h2>一句话总结</h2>
+<p>MediaCrawler 是<strong>国内自媒体爬虫赛道的头部开源项目</strong>——一份代码搞定 <strong>小红书、抖音、快手、B 站、微博、百度贴吧、知乎</strong> 七大平台的公开信息抓取，涵盖：<strong>关键词搜索、指定帖子 ID 详情、二级评论、指定创作者主页、登录态缓存、IP 代理池、评论词云图</strong>。</p>
+<p><strong>核心技术亮点</strong>：<strong>不做 JS 逆向</strong>——利用 Playwright 保留浏览器登录态，直接在浏览器上下文里通过 JS 表达式取签名参数。这一招大幅降低了自媒体爬虫的技术门槛，也是它能长期稳定跟进七大平台风控迭代的关键。</p>
+<h2>⚠️ 使用前必读的免责声明</h2>
+<blockquote>
+<p>本仓库所有内容<strong>仅供学习和参考</strong>，<strong>禁止用于商业用途</strong>。任何人不得用于非法用途或侵犯他人合法权益。爬虫涉及《网络安全法》《反间谍法》等，用户自行承担一切法律责任。</p>
+</blockquote>
+<p>作者甚至挂了一个<strong><a href="https://github.com/HiddenStrawberry/Crawler_Illegal_Cases_In_China">爬虫违法违规案例仓库</a></strong>作为反面警示。</p>
+<p><strong>在国内做自媒体爬虫，务必读懂：</strong>
+- 不要大规模、高频请求破坏平台正常运营
+- 不要抓取平台明示禁止或需登录才能看到的私密内容
+- 不要把抓到的数据商用、转卖、公开发布
+- 不要用来做黑灰产（引流、刷量、精准营销打扰用户）</p>
+<h2>功能矩阵</h2>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>关键词搜索</th>
+<th>指定帖子ID</th>
+<th>二级评论</th>
+<th>创作者主页</th>
+<th>登录态缓存</th>
+<th>IP代理池</th>
+<th>评论词云</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小红书</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>抖音</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>快手</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>B 站</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>微博</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>贴吧</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>知乎</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>七大平台七个能力全打通</strong>——这在同类开源里是独一份。</p>
+<h2>技术原理</h2>
+<ul>
+<li><strong>核心</strong>：Playwright 浏览器自动化框架，扫码登录后<strong>保存登录态 storage_state</strong></li>
+<li><strong>签名参数</strong>：不做 JS 逆向，直接在已登录的浏览器上下文里执行 JS 表达式拿签名</li>
+<li><strong>优势</strong>：</li>
+<li>不用逆向复杂的加密算法，跟进平台更新只需要改选择器和 JS 片段</li>
+<li>保留完整的登录态、Cookie、UA、指纹——<strong>降低风控命中率</strong></li>
+</ul>
+<h2>五分钟上手</h2>
+<h3>前置依赖</h3>
+<pre><code class="language-bash"># 推荐 uv（Astral 出品的 Python 包管理器）
+# https://docs.astral.sh/uv/getting-started/installation
+
+# Node.js &gt;= 16（抖音/知乎签名会用）
+# https://nodejs.org/en/download/
+</code></pre>
+<h3>安装</h3>
+<pre><code class="language-bash">git clone https://github.com/NanmiCoder/MediaCrawler.git
+cd MediaCrawler
+uv sync
+
+# 若不用 CDP 模式（连接已有 Chrome），才需要装 Playwright 浏览器驱动
+uv run playwright install
+</code></pre>
+<h3>推荐：CDP 模式（连接已有 Chrome）</h3>
+<p><strong>默认走 CDP 模式</strong>——连接你本机已安装的 Chrome，复用登录态/Cookie/扩展/指纹，<strong>风控命中率最低</strong>。</p>
+<ol>
+<li>安装最新 Chrome（<strong>&gt;= 144</strong>）</li>
+<li>打开 <code>chrome://inspect/#remote-debugging</code>，勾选 <strong>"Allow remote debugging for this browser instance"</strong></li>
+<li>看到 <code>Server running at: 127.0.0.1:9222</code> 即就绪</li>
+<li>不想用 CDP 模式的话，<code>config/base_config.py</code> 里改 <code>ENABLE_CDP_MODE = False</code></li>
+</ol>
+<h3>跑起来</h3>
+<pre><code class="language-bash"># 关键词搜索模式（读 config/base_config.py 里的关键词）
+uv run main.py --platform xhs --lt qrcode --type search
+
+# 指定帖子 ID 详情模式（读 config 里的帖子 ID 列表）
+uv run main.py --platform xhs --lt qrcode --type detail
+
+# 全部选项
+uv run main.py --help
+</code></pre>
+<p>首次运行会弹二维码扫码登录，登录态自动缓存下次复用。</p>
+<p><strong>默认不开评论爬取</strong>——在 <code>config/base_config.py</code> 里把 <code>ENABLE_GET_COMMENTS</code> 改为 True。</p>
+<h2>WebUI 可视化界面</h2>
+<p>除了 CLI，MediaCrawler 还带一个 <strong>Vite + FastAPI</strong> 的 WebUI：</p>
+<pre><code class="language-bash"># 后端 API（端口 8080）
+uv run uvicorn api.main:app --port 8080 --reload
+
+# 前端（端口 5173，代理 /api 到 8080）
+cd webui
+npm install
+npm run dev
+</code></pre>
+<p>访问 <code>http://localhost:5173/</code>：
+- 可视化配置爬虫参数（平台/登录方式/爬取类型）
+- 实时看运行状态和日志
+- 数据预览与导出</p>
+<p>生产模式：<code>npm run build</code> 把静态资源打进 <code>api/webui/</code>，之后只跑后端就行。</p>
+<h2>数据存储</h2>
+<p>支持 <strong>CSV、JSON、JSONL、Excel、SQLite、MySQL</strong> 六种落地方式，切换在配置文件里改。适合从个人调研（CSV/JSON）到团队大规模数据仓库（MySQL）的各种规模。</p>
+<h2>我的判断</h2>
+<p>MediaCrawler 已经是国内自媒体爬虫开源里的<strong>事实标准</strong>：</p>
+<ul>
+<li><strong>技术路线选得极其正确</strong>——放弃 JS 逆向、拥抱浏览器上下文，7 大平台一套架构；</li>
+<li><strong>文档、WebUI、多存储、代理池、词云</strong>一应俱全，从个人调研到团队研究都能用；</li>
+<li><strong>合规意识强</strong>——README 顶部就贴违法案例警示，作者定位非常清楚："学习研究工具，不是生产力工具"；</li>
+<li><strong>商业化路径成熟</strong>——免费开源基座 + 付费 Pro（Agent 集成）+ 赞助商生态，可持续更新。</li>
+</ul>
+<p><strong>适合谁</strong>：
+- 学习<strong>多平台爬虫架构</strong>、<strong>登录态复用</strong>、<strong>Playwright CDP 模式</strong>、<strong>签名参数免逆向</strong>技术的开发者
+- 学术/舆情研究者做<strong>合规范围内</strong>的公开数据采集
+- 学 Agent 工具化（Pro 版的 OpenClaw / Claude Code / Cursor 集成是很好的模板）</p>
+<p><strong>要避开</strong>：
+- <strong>不要商用</strong>（License 不允许，法律风险高）
+- <strong>不要高频/大规模爬</strong>（风控封号 + 平台法务风险）
+- <strong>不要碰非公开内容</strong>（灰产禁区）
+- <strong>不要在企业生产环境部署这个开源版</strong>——那是 Pro 版的定位</p>
+<h2>常用命令速查</h2>
+<pre><code class="language-bash"># 装
+git clone https://github.com/NanmiCoder/MediaCrawler.git &amp;&amp; cd MediaCrawler
+uv sync
+
+# CDP 模式：开 Chrome 远程调试，勾选 chrome://inspect/#remote-debugging 的开关
+
+# 关键词搜索
+uv run main.py --platform xhs --lt qrcode --type search
+uv run main.py --platform dy  --lt qrcode --type search       # 抖音
+uv run main.py --platform ks  --lt qrcode --type search       # 快手
+uv run main.py --platform bili --lt qrcode --type search      # B 站
+uv run main.py --platform wb  --lt qrcode --type search       # 微博
+uv run main.py --platform tieba --lt qrcode --type search     # 贴吧
+uv run main.py --platform zhihu --lt qrcode --type search     # 知乎
+
+# 指定帖子 ID 详情
+uv run main.py --platform xhs --lt qrcode --type detail
+
+# WebUI
+uv run uvicorn api.main:app --port 8080 --reload
+cd webui &amp;&amp; npm install &amp;&amp; npm run dev
+
+# 全部选项
+uv run main.py --help
+</code></pre>
+<hr/>
+<p><strong>参考</strong>：
+- 主仓库：<a href="https://github.com/NanmiCoder/MediaCrawler">https://github.com/NanmiCoder/MediaCrawler</a>
+- 爬虫违法案例（务必读）：<a href="https://github.com/HiddenStrawberry/Crawler_Illegal_Cases_In_China">https://github.com/HiddenStrawberry/Crawler_Illegal_Cases_In_China</a></p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

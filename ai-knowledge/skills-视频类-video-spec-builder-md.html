@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="video-spec-builder · AI知识库专栏" />
+  <title>video-spec-builder · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/skills-视频类-video-spec-builder-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / skills</div><h1>video-spec-builder</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills---video-spec-builder-md.svg" alt="video-spec-builder主题配图" /></header><article class="ai-body ai-reading-width">
+<p>仓库地址：https://github.com/feicaiclub/video-spec-builder</p>
+<h2>是什么</h2>
+<p>一个像"视频导演"一样工作的 AI Skill。你说一句"我想做个视频"，它就用连环追问逼你把模糊的想法拆成一份可实拍/可渲染的分镜脚本 <code>video-spec.md</code>，交给下游的 HyperFrames 渲染成视频。</p>
+<p>作者的核心洞察：做视频真正难的不是渲染，而是"想清楚到底要什么"。这个 Skill 只解决从"我有个想法"到"我有份能落地的脚本"这一段。</p>
+<h2>解决的场景</h2>
+<ul>
+<li><strong>有感觉说不出画面</strong>：拒绝"高级感""有冲击力"这类空词，逼你描述具体镜头和运动。</li>
+<li><strong>想法有洞</strong>：只有开头结尾没有中间、忘了考虑字幕/配乐节奏，它会主动提醒。</li>
+<li><strong>素材一堆没顺序</strong>：把脚本、卖点、素材切成一个个镜头并排好序。</li>
+</ul>
+<p>产出结果：每个镜头的画面内容、呈现方式、时长、切换方式，逐镜头写成脚本。</p>
+<h2>两种用法</h2>
+<ol>
+<li><strong>从零做</strong>：一句"我想做个 3 分钟的产品 Demo 发 YouTube"，Skill 依次追问受众、渠道、时长、核心信息 → 盘点素材 → 定风格与节奏 → 选视觉主题 → 用参考片/反例校准 → 输出 <code>video-spec.md</code>。</li>
+<li><strong>改已有脚本</strong>：项目里已有 <code>video-spec.md</code> 时，直接说"第 3 镜太快，把 BGM 换安静点"，它会确认意图、检查连带影响、更新脚本。</li>
+</ol>
+<h2>工作流</h2>
+<pre><code>你："我想做个视频"
+   ↓
+video-spec-builder（追问 + 拆镜）
+   ↓
+video-spec.md（逐镜头、按秒计时）
+   ↓  /hyperframes
+HyperFrames（渲染）
+   ↓
+成片
+</code></pre>
+<h2>安装</h2>
+<p>主要面向 <strong>Codex</strong> 和 <strong>Claude Code</strong>，通过 <code>skills</code> CLI 一行命令安装（需要 Node 18+）：</p>
+<pre><code class="language-bash">npx skills add heygen-com/hyperframes
+npx skills add feicaiclub/video-spec-builder
+</code></pre>
+<p>加 <code>-g</code> 装到全局：</p>
+<pre><code class="language-bash">npx skills add feicaiclub/video-spec-builder -g
+</code></pre>
+<p>一次安装对 Codex、Claude Code、Cursor 等都生效。</p>
+<h2>关于 HyperFrames 的能力边界（写脚本前必读）</h2>
+<p>HyperFrames 用 HTML 渲染视频，是<strong>组装</strong>工具而不是<strong>创作</strong>工具。</p>
+<ul>
+<li>✅ 擅长：标题动画、字幕、逐字高亮、版式、转场、图表、UI Mock、几何动画——凡是代码能画的都行。</li>
+<li>❌ 做不了：手绘/插画/卡通、真人实拍、写实照片、AI 配音只能应急、不会作 BGM。</li>
+</ul>
+<p>所以视频最终质量取决于你<strong>准备的素材</strong>（视频片段、图片、配音、音乐），HyperFrames 只负责剪辑合成、加字幕加动效。</p>
+<h2>视觉主题</h2>
+<p>视频的观感（颜色、字体、动效、转场）由 "theme" 决定，两种选择：</p>
+<h3>1. HyperFrames 内置 8 套预设</h3>
+<table>
+<thead>
+<tr>
+<th>主题</th>
+<th>气质</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Swiss Pulse</td>
+<td>精确克制、瑞士字体</td>
+<td>SaaS、数据、开发工具</td>
+</tr>
+<tr>
+<td>Velvet Standard</td>
+<td>高端、经典</td>
+<td>奢侈品、企业软件、Keynote、投资人 Deck</td>
+</tr>
+<tr>
+<td>Deconstructed</td>
+<td>工业、粗粝</td>
+<td>科技发布、安全产品</td>
+</tr>
+<tr>
+<td>Maximalist Type</td>
+<td>张扬、动感</td>
+<td>大发布、里程碑</td>
+</tr>
+<tr>
+<td>Data Drift</td>
+<td>未来、沉浸</td>
+<td>AI 产品、ML 平台</td>
+</tr>
+<tr>
+<td>Soft Signal</td>
+<td>亲密、温暖</td>
+<td>Wellness、个人故事、生活方式</td>
+</tr>
+<tr>
+<td>Folk Frequency</td>
+<td>文化、鲜艳</td>
+<td>消费 App、餐饮、社区</td>
+</tr>
+<tr>
+<td>Shadow Cut</td>
+<td>暗黑、电影感</td>
+<td>安全产品、悬念叙事</td>
+</tr>
+</tbody>
+</table>
+<p>在 <code>video-spec.md</code> 里写主题名字即可。</p>
+<h3>2. 自定义主题</h3>
+<p>写一个 <code>design.md</code> 放视频项目根目录：顶部 YAML 声明颜色/字体/圆角/间距/动效，下面按固定小节写设计规则（Overview / Colors / Typography / Elevation / Components / Do's and Don'ts）。用到自定义字体就把 <code>.woff2</code> 丢到 <code>fonts/</code>。</p>
+<h3>3. 内置示例主题 Spec Mono</h3>
+<p>作者预置了一套 "<strong>Spec Mono</strong>"：纯黑白、几何克制、SpaceX × Grok 风的硅谷暗色科技风。位于仓库 <code>spec-mono/</code> 目录：</p>
+<ul>
+<li><code>design.md</code> —— HyperFrames 读的主题定义</li>
+<li><code>tokens.css</code> —— 颜色/字体/间距变量 + 装饰样式</li>
+<li><code>spec-mono-components.md</code> —— 69 个组件的分组件规格</li>
+</ul>
+<p>复制到项目根目录即可直接渲染。完整实现代码见 <code>Full Code/</code>。</p>
+<h2>仓库结构</h2>
+<pre><code>video-spec-builder/
+├── SKILL.md                 主入口，AI 先读它
+├── README.md / README.zh.md
+├── references/              分模块参考文档，按需加载
+│   ├── workflow-0-1.md          从零到一的追问流程
+│   ├── workflow-iteration.md    改动已有脚本的流程
+│   ├── question-bank.md         追问题库
+│   ├── scene-breakdown.md       分镜方法
+│   ├── components-catalog.md    组件目录
+│   ├── pacing-rules.md          节奏规则
+│   ├── spec-rules.md            脚本规范
+│   └── dialogue-style.md        对话风格
+├── templates/video-spec-template.md
+├── examples/video-spec-spacex.md
+└── spec-mono/               自带的 Spec Mono 主题
+    ├── design.md
+    ├── tokens.css
+    └── spec-mono-components.md
+</code></pre>
+<h2>与其他 Skill 的关系</h2>
+<ul>
+<li><strong>上游</strong>：video-spec-builder（本项目）—— 想法 → 脚本</li>
+<li><strong>下游</strong>：<a href="https://github.com/heygen-com/hyperframes">heygen-com/hyperframes</a> —— 脚本 → 视频</li>
+<li><strong>触发</strong>：Claude Code 里可用 <code>/video-spec-builder</code> 直接调用；渲染阶段用 <code>/hyperframes</code>。</li>
+</ul>
+<h2>License</h2>
+<p>MIT</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

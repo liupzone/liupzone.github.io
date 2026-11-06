@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Codex Design Bridge (CDB) - Codex 与 Figma 实时双向打通 · AI知识库专栏" />
+  <title>Codex Design Bridge (CDB) - Codex 与 Figma 实时双向打通 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/vibe-design-codex-design-bridge-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / vibe design</div><h1>Codex Design Bridge (CDB) - Codex 与 Figma 实时双向打通</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/vibe-design-codex-design-bridge-md.svg" alt="Codex Design Bridge (CDB) - Codex 与 Figma 实时双向打通主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p>GitHub: https://github.com/daodaoup/CDB-CodexDesignBridge</p>
+</blockquote>
+<h2>一句话简介</h2>
+<p><strong>嵌入 Codex 内部的"设计师优先"工作台</strong>：预览静态前端页面 → 把可编辑图层推给本地 Figma 插件 → 在 Figma 里改的内容反向应用回源码，<strong>全程不消耗 Figma 官方 MCP 配额</strong>。</p>
+<h2>核心解决什么痛点</h2>
+<ul>
+<li>Codex 写好的前端页面，设计师想在 Figma 里改</li>
+<li>官方 Figma MCP 有配额限制、成本高</li>
+<li>设计和代码常年脱节：设计师改设计 → 工程师手动改代码 → 又对不上</li>
+</ul>
+<p><strong>CDB 的解法</strong>：本地跑一座"桥"，双向同步 Codex 源码 ↔ Figma 图层，改任何一端另一端自动跟。</p>
+<h2>工作流（日常使用）</h2>
+<ol>
+<li>在 Codex 输入 <strong>CDB</strong> 命令 → 恢复上次项目 or 打开启动器</li>
+<li>从已有 Figma Frame 开始，或用 <code>new design: &lt;描述&gt;</code> 创建全新 CDB 项目</li>
+<li>CDB 预检源码，安全的确定性修复需明确授权，阻塞问题不启动工作台</li>
+<li>在 Figma Desktop 里打开本地 <strong>CDB 开发插件</strong>，插件里 <strong>CDB Pages</strong> 显示 manifest 页面和同步状态</li>
+<li>导入当前/选中页面 → 在 Figma 编辑 → 支持的改动走事务化快速通道回写源码；复杂/模糊改动排队交给 Codex</li>
+</ol>
+<h2>页面识别规则（<code>.cdb/manifest.json</code>）</h2>
+<ul>
+<li><strong>页面</strong>：HTML 条目 或 路由</li>
+<li><strong>依赖</strong>：CSS / JS / 图片 / SVG / 字体</li>
+<li>不再支持运行时新增/重命名假页面</li>
+</ul>
+<h2>一次性 Figma 配置</h2>
+<ol>
+<li>Figma Desktop → <strong>Plugins → Development → Import plugin from manifest</strong></li>
+<li>选 <code>plugin/manifest.json</code></li>
+<li>在目标文件里 <strong>Plugins → Development → CDB</strong> 运行
+- 插件自动配对当前本地工作台，<strong>无需连接码，无独立 Bridge 窗口</strong>
+- 协议 14 需要重开旧插件窗口；协议 13 兼容迁移期</li>
+</ol>
+<h2>架构</h2>
+<pre><code>CDB intent / launcher
+  → 源码解析器
+  → manifest + 统一预检
+  → 单工作台租约（single-workspace lease）
+  → 内嵌 Apps UI + 本地预览
+  → loopback Figma Bridge（protocol 14，兼容 13）
+  → 本地 Figma 开发插件
+  → 事务化源码 patch / 安全 Undo
+</code></pre>
+<p><strong>只允许一个真实工作台占用 preview/Figma 资源</strong>，开新工作台会自动关旧的并接管 Figma 连接。</p>
+<h2>0.7.0 版本能力边界</h2>
+<p>✅ <strong>支持</strong>
+- 原子性跨父级结构编辑（reparenting）
+- <strong>Auto Layout / Flex / Grid 布局双向映射</strong>
+- 静态 HTML/CSS 往返
+- manifest 驱动的多页面选择
+- 校验过的源码 patch</p>
+<p>❌ <strong>暂不支持（延后）</strong>
+- React / Vue / Vite 语义适配器
+- ZIP 导入
+- 组件 / variants / design tokens
+- 高级响应式推断
+- 批量多页面工作流</p>
+<h2>技术栈</h2>
+<ul>
+<li>Node.js 20+（推荐 22，为 Electron 依赖）</li>
+<li>MCP（Model Context Protocol）工具服务：<code>server.mjs</code></li>
+<li>本地 Figma 传输：<code>local-figma-bridge.mjs</code></li>
+<li>工作台租约跨进程管理：<code>workspace-lease.mjs</code></li>
+<li>Windows 一键安装：<code>Install Codex Design Bridge.vbs</code> / <code>install-codex-design-bridge.ps1</code></li>
+</ul>
+<h2>典型使用场景</h2>
+<ol>
+<li><strong>Codex 生成静态页面 → 设计师在 Figma 微调 → 自动回写代码</strong></li>
+<li><strong>不想用 Figma 官方 MCP</strong>（配额/成本原因）的团队</li>
+<li><strong>设计代码持续对齐</strong>的项目</li>
+<li>只做<strong>静态 HTML/CSS</strong>项目（暂不适合复杂 React 工程）</li>
+</ol>
+<h2>核心亮点</h2>
+<ul>
+<li>🔥 <strong>不消耗 Figma 官方 MCP 配额</strong>（本地桥）</li>
+<li>🔥 <strong>真双向</strong>：Figma 改 → 回写源码；源码改 → 同步 Figma</li>
+<li>🔥 <strong>Auto Layout / Flex / Grid 布局映射</strong>是 0.7.0 重头</li>
+<li>🔥 <strong>事务化 patch + 安全 Undo</strong>，改坏可回滚</li>
+<li>⚠️ 目前<strong>未指定开源许可证</strong>，商用/二次分发前需要联系作者</li>
+</ul>
+<h2>一句话记住</h2>
+<p><strong>CDB = 本地版 Figma ↔ Codex 双向桥</strong>，让设计师在 Figma 里改的东西直接落到 Codex 项目源码里，反之亦然，不占官方 MCP 配额，专注静态 HTML/CSS 场景。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

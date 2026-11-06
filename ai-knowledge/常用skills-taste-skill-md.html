@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Taste Skill — 治好 AI 生成 UI 的&quot;模板味&quot; · AI知识库专栏" />
+  <title>Taste Skill — 治好 AI 生成 UI 的&quot;模板味&quot; · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/常用skills-taste-skill-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / 常用skills</div><h1>Taste Skill — 治好 AI 生成 UI 的&quot;模板味&quot;</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills-taste-skill-md.svg" alt="Taste Skill — 治好 AI 生成 UI 的&quot;模板味&quot;主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p>The Anti-Slop Frontend Framework for AI Agents</p>
+</blockquote>
+<hr/>
+<h2>一、它是什么</h2>
+<p>Taste Skill 是一套<strong>便携的 Agent Skills</strong>，用于升级 AI 生成的界面质量：更强的布局、字体、动效和间距，代替千篇一律的样板味 UI。</p>
+<p>它<strong>不提供任何组件代码</strong>，只做一件事：</p>
+<blockquote>
+<p>在 AI 生成 UI 时，注入一套设计审美规则。</p>
+</blockquote>
+<p>仓库同时包含<strong>图像生成类 Skill</strong>（网页参考图、移动端稿、品牌 Kit），可搭配 ChatGPT Images 等生成器输出参考稿，再交给 Codex / Cursor / Claude Code 落地实现。</p>
+<h2>二、它解决什么问题（掘金文章视角）</h2>
+<p>用 AI 生成前端页面时最常见的痛点：</p>
+<blockquote>
+<p>功能全对，但看起来就是"不对劲"——间距不均匀、颜色太跳、按钮长得像 Bootstrap 默认样式、排版像没设计师参与过的内部工具。</p>
+</blockquote>
+<h3>装之前 vs 装之后</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>没装</th>
+<th>装了 Taste Skill</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>间距</strong></td>
+<td>大小随机，页面像没对齐</td>
+<td>遵循 4 / 8 / 16 / 24px 的倍数系统</td>
+</tr>
+<tr>
+<td><strong>配色</strong></td>
+<td>经常出现高饱和度撞色</td>
+<td>主色 + 辅色 + 中性色，有层次</td>
+</tr>
+<tr>
+<td><strong>排版</strong></td>
+<td>标题和正文大小差不多</td>
+<td>明确的字号层级，视觉重心清晰</td>
+</tr>
+<tr>
+<td><strong>按钮 / 卡片</strong></td>
+<td>圆角大小不统一</td>
+<td>全局一致的圆角和阴影</td>
+</tr>
+</tbody>
+</table>
+<h3>最适合的场景</h3>
+<p>落地页、产品官网、个人 / 团队作品集、Demo——这些"好不好看"直接影响第一印象的地方。</p>
+<h2>三、安装</h2>
+<p><code>npx skills add</code> CLI 会扫描仓库的 <code>skills/</code> 目录，<strong>所有 Skill（含图像生成类）安装方式一致</strong>。</p>
+<h3>安装全部 Skills</h3>
+<pre><code class="language-bash">npx skills add https://github.com/Leonxlnx/taste-skill
+</code></pre>
+<h3>只装单个 Skill</h3>
+<p>按 SKILL frontmatter 里的 <code>name:</code>（即"install name"）安装：</p>
+<pre><code class="language-bash">npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"
+</code></pre>
+<p>也可以直接把任意 <code>SKILL.md</code> 拷进项目，或粘贴到 ChatGPT / Codex 对话里。</p>
+<h3>从旧版升级</h3>
+<p>默认的 <code>taste-skill</code>（install name <code>design-taste-frontend</code>）当前为 <strong>v2（experimental）</strong>，是对 v1 的大幅重写。已装 v1 的直接重跑安装命令即可就地升级：</p>
+<pre><code class="language-bash">npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"
+</code></pre>
+<p>若要<strong>固定用 v1</strong>：</p>
+<pre><code class="language-bash">npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend-v1"
+</code></pre>
+<h2>四、Skills 全清单</h2>
+<p>每个 Skill 只做一件事，<strong>不必全装</strong>。实现类 Skill 输出<strong>代码</strong>，图像生成类 Skill 输出<strong>参考图</strong>。</p>
+<h3>实现类 Skills（输出代码）</h3>
+<table>
+<thead>
+<tr>
+<th>Skill（目录）</th>
+<th>Install name</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>taste-skill</strong></td>
+<td><code>design-taste-frontend</code></td>
+<td>🆕 <strong>v2 (experimental)</strong> — 默认 Skill 的大幅重写。读 brief → 推断设计语言 → 调三档档位（VARIANCE / MOTION / DENSITY）；含 brief 推断、设计系统地图、硬性禁用 em-dash、GSAP 代码骨架、redesign 审计流程、严格 pre-flight 检查。</td>
+</tr>
+<tr>
+<td><strong>taste-skill-v1</strong></td>
+<td><code>design-taste-frontend-v1</code></td>
+<td>原始 v1，为依赖其精确行为的项目保留。</td>
+</tr>
+<tr>
+<td><strong>gpt-tasteskill</strong></td>
+<td><code>gpt-taste</code></td>
+<td>GPT / Codex 专用严格版：更高布局 variance、更强 GSAP 指引、更激进 anti-slop。</td>
+</tr>
+<tr>
+<td><strong>image-to-code-skill</strong></td>
+<td><code>image-to-code</code></td>
+<td>图像先行：先生成参考图 → 分析 → 落地实现。</td>
+</tr>
+<tr>
+<td><strong>redesign-skill</strong></td>
+<td><code>redesign-existing-projects</code></td>
+<td><strong>改造存量项目</strong>：先审计 UI，再修布局、间距、层级、样式。</td>
+</tr>
+<tr>
+<td><strong>soft-skill</strong></td>
+<td><code>high-end-visual-design</code></td>
+<td>优雅、克制、高级感 UI：柔对比、留白、精致字体、弹簧动效。</td>
+</tr>
+<tr>
+<td><strong>output-skill</strong></td>
+<td><code>full-output-enforcement</code></td>
+<td>模型爱交半成品时——强制完整输出，禁止 placeholder 注释。</td>
+</tr>
+<tr>
+<td><strong>minimalist-skill</strong></td>
+<td><code>minimalist-ui</code></td>
+<td>Editorial 风（Notion / Linear 味），克制配色，结构清晰。</td>
+</tr>
+<tr>
+<td><strong>brutalist-skill</strong></td>
+<td><code>industrial-brutalist-ui</code></td>
+<td>硬派机械语言：Swiss 字体、锐利对比、实验性布局。</td>
+</tr>
+<tr>
+<td><strong>stitch-skill</strong></td>
+<td><code>stitch-design-taste</code></td>
+<td>兼容 Google Stitch 规则，可选 <code>DESIGN.md</code> 导出格式。</td>
+</tr>
+</tbody>
+</table>
+<h3>图像生成类 Skills（只出图，不出代码）</h3>
+<table>
+<thead>
+<tr>
+<th>Skill（目录）</th>
+<th>Install name</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>imagegen-frontend-web</strong></td>
+<td><code>imagegen-frontend-web</code></td>
+<td>网页视觉稿：hero、landing、多分区，强字体、强间距、anti-slop 艺术指导。</td>
+</tr>
+<tr>
+<td><strong>imagegen-frontend-mobile</strong></td>
+<td><code>imagegen-frontend-mobile</code></td>
+<td>移动端页面与流程：iOS / Android / 跨平台，成套 mockup。</td>
+</tr>
+<tr>
+<td><strong>brandkit</strong></td>
+<td><code>brandkit</code></td>
+<td>品牌 Kit：logo 方向、色板、字体、跨场景应用。</td>
+</tr>
+</tbody>
+</table>
+<h3>该用哪一个？</h3>
+<ul>
+<li><strong>通用默认</strong> → <code>taste-skill</code>（v2 experimental；改动详见 <a href="https://github.com/leonxlnx/taste-skill/blob/main/CHANGELOG.md">CHANGELOG</a>）</li>
+<li><strong>依赖 v1 精确行为</strong> → <code>taste-skill-v1</code></li>
+<li><strong>GPT / Codex 场景</strong> → <code>gpt-taste</code></li>
+<li><strong>图像 → 分析 → 代码 一条龙</strong> → <code>image-to-code-skill</code></li>
+<li><strong>改造存量代码库</strong>（而非从零起）→ <code>redesign-skill</code></li>
+<li><strong>视觉方向已定</strong> → 加 <code>soft-skill</code> / <code>minimalist-skill</code> / <code>brutalist-skill</code></li>
+<li><strong>Agent 老截断输出</strong> → 加 <code>output-skill</code></li>
+<li><strong>交付物是图片</strong>（视觉稿、流程、品牌板）→ 用 <code>imagegen-*</code> 或 <code>brandkit</code>，再把渲染结果丢给编码 Agent</li>
+</ul>
+<h3>Image-first 小技巧</h3>
+<p>用 <code>image-to-code-skill</code> 时，在 prompt 里显式说出流水线：</p>
+<pre><code>follow the skill: generate images, then analyze, then code
+</code></pre>
+<h2>五、Settings（仅 taste-skill）</h2>
+<p>SKILL.md 顶部的三个数字是 <strong>1–10 档位</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>Dial</th>
+<th>低值</th>
+<th>高值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DESIGN_VARIANCE</strong>（布局实验度）</td>
+<td>居中 / 简洁</td>
+<td>非对称 / 现代</td>
+</tr>
+<tr>
+<td><strong>MOTION_INTENSITY</strong>（动效强度）</td>
+<td>仅 hover</td>
+<td>scroll / magnetic</td>
+</tr>
+<tr>
+<td><strong>VISUAL_DENSITY</strong>（信息密度）</td>
+<td>宽松留白</td>
+<td>Dashboard 密排</td>
+</tr>
+</tbody>
+</table>
+<h2>六、兼容性</h2>
+<ul>
+<li>Agent Skills 生态标准（<a href="https://github.com/vercel-labs/agent-skills">vercel-labs/agent-skills</a>）</li>
+<li>支持 <strong>Codex / Cursor / Claude Code</strong></li>
+<li>前端框架无关，<strong>React / Vue / Svelte 均可</strong>——规则针对设计意图而非某个框架 API</li>
+</ul>
+<h2>七、为什么它比"换一段 Prompt"值得装</h2>
+<blockquote>
+<p>打开它的 <code>SKILL.md</code>，如果核心内容你可以用一句话对 AI 说出来——那就不需要这个 Skill。</p>
+<p>真正好用的 Skill，改变的是 AI 的<strong>工作流程和思维模式</strong>，不只是换一段 Prompt。</p>
+</blockquote>
+<p>Taste Skill 的价值正在于此：它让 AI 在生成<strong>每一个 UI 元素</strong>时都过一遍规则（brief 推断、设计系统地图、间距 / 配色 / 层级、动效档位、pre-flight 检查），而不是仅在开头挂一句"你是一位资深设计师"。</p>
+<h2>八、相关 Skills（同文推荐）</h2>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Star</th>
+<th>核心价值</th>
+<th>安装</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Superpowers</td>
+<td>245K</td>
+<td>AI 从"打字员"变成"会思考的同事"</td>
+<td><code>npx skills add obra/superpowers</code></td>
+</tr>
+<tr>
+<td><strong>Taste Skill</strong></td>
+<td><strong>51.8K</strong></td>
+<td><strong>治好 AI 生成 UI 的"模板味"</strong></td>
+<td><code>npx skills add Leonxlnx/taste-skill</code></td>
+</tr>
+<tr>
+<td>Graphify</td>
+<td>41.8K</td>
+<td>陌生代码库 3 分钟看懂</td>
+<td><code>npx skills add safishamsi/graphify</code></td>
+</tr>
+<tr>
+<td>Deep Research</td>
+<td>内置</td>
+<td>调研型任务的质变</td>
+<td><code>/deep-research</code></td>
+</tr>
+<tr>
+<td>find-skills</td>
+<td>内置</td>
+<td>Skills 搜索入口</td>
+<td><code>/find-skills</code></td>
+</tr>
+</tbody>
+</table>
+<h2>九、FAQ</h2>
+<ul>
+<li><strong>和其它 AI 设计 Skill 有何不同？</strong> 多个专门化变体、关键 Skill 有可调档位、基于专门 research 的 anti-repetition 规则，且<strong>框架无关</strong>。</li>
+<li><strong>支持 React / Vue / Svelte 吗？</strong> 支持。规则针对设计意图，不绑定单一框架 API。</li>
+<li><strong>SKILL.md 是什么？</strong> 一份便携的指令文件，Agent 可自动加载；通过 <code>npx skills add</code> 安装，或直接拷进仓库 / 对话。</li>
+<li><strong>图像生成 Skill 能用 <code>npx skills add</code> 装吗？</strong> 能。它们和代码 Skill 一起放在 <code>skills/</code> 下，同一个 CLI 会一并发现。</li>
+</ul>
+<hr/></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

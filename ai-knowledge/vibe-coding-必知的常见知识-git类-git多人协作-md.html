@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="git多人协作 · AI知识库专栏" />
+  <title>git多人协作 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/vibe-coding-必知的常见知识-git类-git多人协作-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / vibe coding 必知的常见知识</div><h1>git多人协作</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/vibe-coding---git--git--md.svg" alt="git多人协作主题配图" /></header><article class="ai-body ai-reading-width">
+<p>图形化工具有很多，我们下载后直接用就行，现在我们主要说一下命令行的git 的使用。</p>
+<p>下面我们说一下，在工作常见的多人协作使用命令行场景：</p>
+<blockquote>
+<p>假设现在有三个人，A，B都是开发，C是负责人。
+任务需求到达，A来开发登录板块。B来开发注册板块。</p>
+</blockquote>
+<p><strong>1</strong>
+A 首先把git 项目克隆到本地，（就一开始没有项目时候使用一次即可）</p>
+<pre><code class="language-bash">git clone http//XXX
+
+</code></pre>
+<p>cd 到下载的这个文件夹，进入的默认是master分支。</p>
+<p>A 同学开发的是login板块，所以，A新建了个分支来开发。</p>
+<pre><code class="language-bash">git checkout -b feature-login
+
+</code></pre>
+<p>此时新建了个feature-login的分支，并且当前分支就是feature-login分支了，</p>
+<p>当A 在分支修改完后就直接提交</p>
+<pre><code class="language-bash">git status //看看自己改了哪些文件
+</code></pre>
+<pre><code class="language-bash">git add --all或 git add .
+git commit -m "登录板块开发完毕"
+
+git push origin feature-login
+</code></pre>
+<p><strong>2</strong>
+B 同学开发与A同理</p>
+<p><strong>3</strong>
+当A与B都已经开发完毕了，C出场了</p>
+<p>C 合并代码</p>
+<p>C首先合并A代码</p>
+<pre><code class="language-bash">git fetch  //把线上所有的分支都下载下来
+
+git branch //查看有几条分支
+
+git checkout feature-login //转到feature-login分支
+
+git pull origin feature-login  //把feature-login代码下载下来
+
+git checkout master  //转到master分支
+
+git merge feature-login  //将feature-login代码合并到master分支上来
+
+</code></pre>
+<p>同理再合并B代码</p>
+<p>merge时候有时候会冲突，就进入文件把冲突解决掉，再merge就可以了。</p>
+<p>等都合并完了，C再正常的提交一下，master分支，即可！</p>
+<pre><code class="language-bash">git status
+git add .
+git commit -m "添加登录注册功能"
+git push origin master
+</code></pre>
+<p><strong>以上就是多人协作啦</strong></p>
+<h2>多人协作常见意外情况</h2>
+<p>开发一开始，你忘了新建分支。但此时，你已经在master分支上开发了半天了，写了好多代码。</p>
+<p>如果你现在新建分支是不可以了，你得先提交，但那不就提到master分支了吗。。。。</p>
+<h3>如何解决</h3>
+<pre><code class="language-bash">git statsh //把已经修改的代码暂存到另外一个地方
+
+</code></pre>
+<p>现在你再切换分支就可以了</p>
+<pre><code class="language-bash">git checkout -b new-feature  //切换到new-feature分支
+
+git stash pop //把修改的释放出来
+
+</code></pre>
+<p>然后正常那个提交即可</p>
+<pre><code class="language-bash">git add .
+git commit -m "新增XX"
+</code></pre></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

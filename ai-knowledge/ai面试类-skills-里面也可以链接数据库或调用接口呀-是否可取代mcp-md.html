@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Skill 里能连数据库/调 API，是否可以取代 MCP？ · AI知识库专栏" />
+  <title>Skill 里能连数据库/调 API，是否可以取代 MCP？ · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/ai面试类-skills-里面也可以链接数据库或调用接口呀-是否可取代mcp-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / Ai面试类</div><h1>Skill 里能连数据库/调 API，是否可以取代 MCP？</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/ai--skills----mcp-md.svg" alt="Skill 里能连数据库/调 API，是否可以取代 MCP？主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>结论先说</h2>
+<p><strong>技术上可以，但不能取代 MCP。</strong> Skill 里塞连接代码是「土办法」，MCP 才是标准化、平台托管、安全可复用的正规方式。</p>
+<hr/>
+<h2>一、Skill 直接调 API/连数据库的三大硬伤</h2>
+<h3>1. 密钥和认证是个大问题</h3>
+<p>Skill 里写 <code>requests.get(url, headers={"Authorization": "Bearer xxx"})</code> 完全能跑，但密钥怎么办？</p>
+<ul>
+<li><strong>硬编码到脚本里</strong> → 一旦分享 Skill，密钥就泄露</li>
+<li><strong>让用户每次手动传入</strong> → 体验差，还会污染对话记录</li>
+</ul>
+<p><strong>MCP 的做法</strong>：密钥由平台托管，Skill 代码本身<strong>永远看不到、碰不到</strong>真实凭证，Claude 只是「被允许」调用。</p>
+<h3>2. 静态说明书 vs 动态自描述</h3>
+<ul>
+<li><strong>Skill</strong>：Claude 只能靠 Skill 文档里<strong>写死的说明</strong>知道接口参数和返回。API 更新了、加了新功能，文档不同步就用不上。</li>
+<li><strong>MCP</strong>：服务端<strong>实时告诉</strong> Claude「我现在有哪些工具、参数长什么样」，动态双向通信，不需要人工同步文档。</li>
+</ul>
+<h3>3. 网络沙箱是硬墙</h3>
+<p>Claude 执行环境的网络访问是<strong>白名单机制</strong>。你的 API 域名不在白名单里，Skill 里的代码直接被拦截（<code>x-deny-reason</code>）。</p>
+<p>MCP 走的是<strong>平台专门开的通道</strong>，不受沙箱限制。</p>
+<h3>4. 复用性差</h3>
+<p>Skill 里写的连接代码<strong>只属于这个 Skill</strong>，别的场景用不了。MCP 连接一次是<strong>账号级别</strong>的，所有场景通用，不用重复造轮子。</p>
+<hr/>
+<h2>二、「我加了网关统一鉴权，是不是就够了？」</h2>
+<p>网关 + userid 换 token 这套很成熟，能解决密钥硬编码，但对比 MCP 还有几层问题：</p>
+<h3>1. 只解决了「认证」，没解决「标准化」</h3>
+<p>网关方案是你<strong>自己的私有协议</strong>——只有你知道怎么调、token 怎么传。换个网关实现、改个字段，所有 Skill 代码都得跟着改。</p>
+<p>MCP 是<strong>协议层标准化</strong>：不管后端什么语言、什么实现，Claude 都用同一种方式发现工具、调用工具。</p>
+<h3>2. userid 和 token 谁来触发？</h3>
+<ul>
+<li>Skill 里用<strong>固定 userid/密钥换 token</strong> → 那个固定凭证还是得存某处，本质没变，只是换层皮</li>
+<li><strong>用户当场 OAuth 授权</strong> → 这本来就是 MCP 的标准做法（用户登录 → 平台托管 token → 自动带上），你等于在每个 Skill 里重造 MCP</li>
+</ul>
+<h3>3. 网络沙箱依然是硬限制</h3>
+<p>网关鉴权做得再好，域名不在白名单里就是连不上，与鉴权设计无关。</p>
+<hr/>
+<h2>三、什么时候用哪种？</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>建议方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>公开、无需认证、不敏感的接口（查天气、单位换算）</td>
+<td>Skill 里直接写代码，没问题</td>
+</tr>
+<tr>
+<td>需要认证、涉及私人数据（邮箱、日历、公司系统、CRM、数据库）</td>
+<td>用 MCP，别在 Skill 里硬塞</td>
+</tr>
+<tr>
+<td>需要动态发现工具、跨对话/跨场景复用</td>
+<td>用 MCP</td>
+</tr>
+<tr>
+<td>一次性、临时性、只在这个 Skill 里用的调用</td>
+<td>Skill 内脚本可以</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>一句话终极总结</h2>
+<blockquote>
+<p>Skill 里塞连接代码，像是<strong>自己焊根电线偷偷接到邻居家电表</strong>——能用，但违规、不安全、随时会断。</p>
+<p>MCP 则是<strong>正经找电力公司拉了一条有合同、有电表、随时可查用量的线路</strong>——标准化、平台托管、安全且可复用。</p>
+<p>能用，但不是一回事。</p>
+</blockquote></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

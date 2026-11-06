@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">AI knowledge</title>
+  <desc id="desc">AI knowledge article cover</desc>
+  <rect width="640" height="360" fill="#182231"/>
+  <path d="M0 270h640M0 300h640" stroke="#39516a" stroke-width="2" opacity=".75"/>
+  <path d="M80 225 190 100l92 83 88-112 126 154" fill="none" stroke="#8bd5d0" stroke-width="5"/>
+  <circle cx="190" cy="100" r="10" fill="#f2c879"/>
+  <circle cx="370" cy="71" r="10" fill="#f2c879"/>
+  <circle cx="496" cy="225" r="10" fill="#f2c879"/>
+  <text x="48" y="72" fill="#f6f8fb" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="3">AI KNOWLEDGE</text>
+  <text x="48" y="328" fill="#a9bbca" font-family="Arial, sans-serif" font-size="15" letter-spacing="2">LIUPZONE / READING NOTES</text>
+</svg>

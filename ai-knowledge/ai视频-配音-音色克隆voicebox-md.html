@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Voicebox 总结 · AI知识库专栏" />
+  <title>Voicebox 总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/ai视频-配音-音色克隆voicebox-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / AI视频</div><h1>Voicebox 总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/ai-----voicebox-md.svg" alt="Voicebox 总结主题配图" /></header><article class="ai-body ai-reading-width">
+<p>仓库地址：https://github.com/jamiepine/voicebox</p>
+<h2>是什么</h2>
+<p>一款<strong>本地优先的开源 AI 语音工作室</strong>，是 <strong>ElevenLabs（语音输出）+ WisprFlow（语音输入）二合一</strong>的免费开源替代品。核心能力：</p>
+<blockquote>
+<p>克隆任意声音 · 生成语音 · 向任意应用听写 · 让 AI Agent 用你拥有的声音说话</p>
+</blockquote>
+<p>覆盖完整的语音 I/O 链路，全部<strong>在本地运行</strong>——模型、语音数据、录音都不离开你的机器，完全隐私。用 Tauri（Rust）构建而非 Electron，原生性能。</p>
+<h2>核心特性</h2>
+<ul>
+<li><strong>7 大 TTS 引擎</strong>：Qwen3-TTS、Qwen CustomVoice、LuxTTS、Chatterbox Multilingual、Chatterbox Turbo、HumeAI TADA、Kokoro，可按每次生成切换</li>
+<li><strong>声音克隆 + 预置声音</strong>：从几秒参考音频零样本克隆，或用 Kokoro / Qwen CustomVoice 的 50+ 预置声音</li>
+<li><strong>23 种语言</strong>：英、阿、日、印地、斯瓦希里语等</li>
+<li><strong>后处理效果</strong>：变调、混响、延迟、合唱、压缩、滤波（基于 Spotify 的 <code>pedalboard</code>）</li>
+<li><strong>富表现力语音</strong>：Chatterbox Turbo 支持 <code>[laugh]</code>、<code>[sigh]</code>、<code>[gasp]</code> 等副语言标签；Qwen CustomVoice 支持自然语言控制语气</li>
+<li><strong>无限长度生成</strong>：按句子自动分块 + 交叉淡入淡出拼接（最长 5 万字符）</li>
+<li><strong>Stories 编辑器</strong>：多轨时间线，做对话、播客、叙事</li>
+<li><strong>语音输入</strong>：全局听写热键（按住说话 / 点击切换），macOS 无障碍验证自动粘贴，基于 Whisper 的 STT</li>
+<li><strong>Agent 语音输出</strong>：一次工具调用 <code>voicebox.speak</code>，任意 MCP Agent（Claude Code、Cursor、Cline）就能用你克隆的声音说话</li>
+<li><strong>语音人格</strong>：给声音配 free-form 人格，通过内置本地 LLM 实现 Compose / Rewrite / Respond</li>
+<li><strong>API 优先</strong>：REST API + 内置 MCP 服务器</li>
+</ul>
+<h2>TTS 引擎对比</h2>
+<table>
+<thead>
+<tr>
+<th>引擎</th>
+<th>语言</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen3-TTS (0.6B/1.7B)</td>
+<td>10</td>
+<td>高质量多语言克隆，支持语气指令（"慢速说""耳语"）</td>
+</tr>
+<tr>
+<td>Qwen CustomVoice</td>
+<td>10</td>
+<td>9 个预置声音 + 自然语言控制，无需参考音频</td>
+</tr>
+<tr>
+<td>LuxTTS</td>
+<td>英</td>
+<td>轻量（~1GB 显存），48kHz，CPU 上 150 倍实时</td>
+</tr>
+<tr>
+<td>Chatterbox Multilingual</td>
+<td>23</td>
+<td>语言覆盖最广</td>
+</tr>
+<tr>
+<td>Chatterbox Turbo</td>
+<td>英</td>
+<td>快速 350M 模型，支持情绪 / 音效标签</td>
+</tr>
+<tr>
+<td>HumeAI TADA (1B/3B)</td>
+<td>10</td>
+<td>语音语言模型，700s+ 连贯音频，文本-声学双对齐</td>
+</tr>
+<tr>
+<td>Kokoro</td>
+<td>8</td>
+<td>50 个预置声音，超小 82M 模型，CPU 快速推理</td>
+</tr>
+</tbody>
+</table>
+<h2>应用场景</h2>
+<ul>
+<li>Agent 开发循环（语音提问、克隆声音听答复）</li>
+<li>游戏对话、叙事工具的交互角色</li>
+<li>播客制作、内容自动化</li>
+<li>无障碍辅助（为失去原声者提供发声）</li>
+<li>语音助手</li>
+</ul>
+<h2>语音输入与听写</h2>
+<p>在系统任意位置按住热键说话、松开，macOS 上转写文本直接粘贴到焦点输入框：</p>
+<ul>
+<li>可配置和弦快捷键（按住说话 / 点击切换，且可在按住中途升级为切换模式）</li>
+<li>目标感知粘贴（macOS 无障碍注入，剪贴板原子保存/恢复不被污染）</li>
+<li>每个文本框都有麦克风按钮</li>
+<li>可选 LLM 精修（清理"嗯""口吃"、错误开始）</li>
+<li>屏幕悬浮胶囊显示 <code>recording</code> / <code>transcribing</code> / <code>refining</code> / <code>speaking</code> 状态，与 Agent 说话共用一个界面</li>
+</ul>
+<h2>STT（语音转文本）</h2>
+<p>内置 OpenAI Whisper，支撑听写、Captures 面板与 <code>/transcribe</code> API。Apple Silicon 走 MLX，其他平台走 PyTorch。提供 Base / Small / Medium / Large 及 Turbo（比 Large 快约 8 倍，质量损失极小）。</p>
+<h2>API 与 MCP</h2>
+<p>REST API（默认 <code>http://127.0.0.1:17493</code>）：</p>
+<pre><code class="language-bash"># 生成语音
+curl -X POST http://127.0.0.1:17493/generate \
+  -d '{"text": "Hello world", "profile_id": "abc123", "language": "en"}'
+
+# Agent 语音输出
+curl -X POST http://127.0.0.1:17493/speak \
+  -d '{"text": "Deploy complete.", "profile": "Morgan"}'
+
+# 转写音频
+curl -X POST http://127.0.0.1:17493/transcribe -F "audio=@recording.wav" -F "model=whisper-turbo"
+</code></pre>
+<p>内置 MCP 服务器，四个工具：<code>voicebox.speak</code>、<code>voicebox.transcribe</code>、<code>voicebox.list_captures</code>、<code>voicebox.list_profiles</code>。</p>
+<p>Claude Code 一行接入：</p>
+<pre><code>claude mcp add voicebox --transport http \
+  --url http://127.0.0.1:17493/mcp \
+  --header "X-Voicebox-Client-Id: claude-code"
+</code></pre>
+<p>支持 HTTP 与 stdio 两种传输；可在 Settings → MCP 为每个客户端绑定不同声音（如 Claude Code 用 Morgan、Cursor 用 Scarlett）。</p>
+<h2>技术栈</h2>
+<table>
+<thead>
+<tr>
+<th>层</th>
+<th>技术</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>桌面端</td>
+<td>Tauri (Rust)</td>
+</tr>
+<tr>
+<td>前端</td>
+<td>React、TypeScript、Tailwind CSS</td>
+</tr>
+<tr>
+<td>状态</td>
+<td>Zustand、React Query</td>
+</tr>
+<tr>
+<td>后端</td>
+<td>FastAPI (Python)</td>
+</tr>
+<tr>
+<td>TTS</td>
+<td>Qwen3-TTS / Qwen CustomVoice / LuxTTS / Chatterbox / Chatterbox Turbo / TADA / Kokoro</td>
+</tr>
+<tr>
+<td>STT</td>
+<td>Whisper / Whisper Turbo（PyTorch 或 MLX）</td>
+</tr>
+<tr>
+<td>本地 LLM</td>
+<td>Qwen3 (0.6B/1.7B/4B)，与 TTS/STT 共享运行时</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>FastMCP（Streamable HTTP）+ stdio shim</td>
+</tr>
+<tr>
+<td>效果</td>
+<td>Pedalboard (Spotify)</td>
+</tr>
+<tr>
+<td>推理</td>
+<td>MLX (Apple Silicon) / PyTorch (CUDA/ROCm/XPU/CPU)</td>
+</tr>
+<tr>
+<td>数据库</td>
+<td>SQLite</td>
+</tr>
+</tbody>
+</table>
+<h2>平台与 GPU</h2>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>后端</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>macOS (Apple Silicon)</td>
+<td>MLX (Metal)</td>
+<td>神经引擎加速 4-5 倍</td>
+</tr>
+<tr>
+<td>Windows (NVIDIA)</td>
+<td>PyTorch (CUDA)</td>
+<td>应用内自动下载 CUDA 二进制</td>
+</tr>
+<tr>
+<td>Linux (AMD)</td>
+<td>PyTorch (ROCm)</td>
+<td>自动配置 HSA_OVERRIDE_GFX_VERSION</td>
+</tr>
+<tr>
+<td>Windows (任意 GPU)</td>
+<td>DirectML</td>
+<td>通用 Windows GPU 支持</td>
+</tr>
+<tr>
+<td>Intel Arc</td>
+<td>IPEX/XPU</td>
+<td>Intel 独显加速</td>
+</tr>
+<tr>
+<td>任意</td>
+<td>CPU</td>
+<td>到处可跑，只是慢</td>
+</tr>
+</tbody>
+</table>
+<h2>下载</h2>
+<ul>
+<li>macOS（Apple Silicon / Intel）、Windows：官网 <a href="https://voicebox.sh">voicebox.sh/download</a> 提供 DMG / MSI</li>
+<li>Docker：<code>docker compose up</code></li>
+<li>Linux：暂无预编译包，需源码构建（见 voicebox.sh/linux-install）</li>
+</ul>
+<h2>路线图（部分）</h2>
+<ul>
+<li>Windows / Linux 自动粘贴对齐</li>
+<li>STT 引擎扩展（Parakeet v3、Qwen3-ASR）</li>
+<li>流式转写（WebSocket <code>/transcribe/stream</code>）</li>
+<li>端到端语音 LLM（Moshi、GLM-4-Voice、Qwen2.5 Omni），真正语音到语音</li>
+<li>从文字描述创建新声音（Voice Design）</li>
+<li>插件架构、移动端伴侣 App</li>
+</ul></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

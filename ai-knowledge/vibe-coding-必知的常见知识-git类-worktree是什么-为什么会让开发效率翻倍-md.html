@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Git worktree 是什么，为什么开发效率能翻倍 - 总结 · AI知识库专栏" />
+  <title>Git worktree 是什么，为什么开发效率能翻倍 - 总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/vibe-coding-必知的常见知识-git类-worktree是什么-为什么会让开发效率翻倍-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / vibe coding 必知的常见知识</div><h1>Git worktree 是什么，为什么开发效率能翻倍 - 总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/vibe-coding---git--worktree----md.svg" alt="Git worktree 是什么，为什么开发效率能翻倍 - 总结主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>一句话核心</h2>
+<p><strong>git worktree = 一份 Git 仓库对象库 + 多个独立工作目录</strong>，每个目录可绑定不同分支，并行存在互不干扰。</p>
+<ul>
+<li>传统 Git：1 个 <code>.git</code> + 1 个工作目录，同时只能签出一个分支</li>
+<li>worktree：主仓库 <code>.git</code> 只有一份，附加目录只是很小的指针，<strong>共享对象库、极省磁盘</strong></li>
+</ul>
+<h2>核心命令</h2>
+<pre><code class="language-bash">git worktree add ../hotfix-v2 v2-hotfix   # 新建worktree并绑定分支
+git worktree list                          # 查看所有worktree
+git worktree remove ../hotfix-v2           # 删除（必须用这个，不要手动删文件夹）
+git worktree prune                         # 清理残留记录
+</code></pre>
+<h2>不用 worktree 的传统痛点</h2>
+<p>场景：正写 feature/a 到一半，紧急要切 hotfix 改 bug。三种旧方案都难受：
+1. <code>git stash</code> → 容易乱、冲突、忘记
+2. <code>git commit --wip</code> → 产生垃圾提交
+3. 完整 clone 第二份仓库 → 双倍磁盘、克隆慢、同步麻烦</p>
+<h2>效率翻倍的四大原因</h2>
+<h3>1. 多分支同时可见，免切换免重编译</h3>
+<ul>
+<li>不用 <code>checkout</code> 来回切，两个 IDE 各开一个分支</li>
+<li><strong>大项目编译一次十几分钟，避免反复编译 = 效率暴涨最大来源</strong></li>
+</ul>
+<h3>2. 共享 git 对象，几乎不占磁盘</h3>
+<p>只复制工作文件，<code>.git</code> 对象复用主仓库，远比二次 clone 轻量</p>
+<h3>3. 跨分支对比、移植代码方便</h3>
+<p>两个目录并排开，直接文件对比、复制粘贴，不用来回 <code>git diff</code></p>
+<h3>4. 完美适配并行多任务</h3>
+<ul>
+<li>新需求 + 紧急 hotfix 并行</li>
+<li>多版本维护（v1/v2/v3 各一个 worktree）</li>
+<li>拉别人 PR 评审，不污染自己工作区</li>
+<li>一边写功能，一边跑自动化测试</li>
+</ul>
+<h2>三个必知的坑</h2>
+<ol>
+<li><strong>同一分支不能被多个 worktree 同时签出</strong>（防冲突）</li>
+<li>子模块不自动同步，需单独处理</li>
+<li><strong>不要手动删文件夹</strong>！必须 <code>git worktree remove</code>，否则残留记录，需 <code>git worktree prune</code> 清理</li>
+</ol>
+<h2>一句话记住</h2>
+<p><strong>worktree = 让你在一个仓库里"平行宇宙"般同时活在多个分支上</strong>，特别适合：写新功能被打断修 bug、并行维护多版本、评审 PR 不打扰自己代码。</p>
+<p>举个例子：
+比如 我现在 feature-1 分枝上，开发了一半， 然后我想在 master 上拉一个新的分支 hotfix-1 去改个 bug，用 worktree 是什么流程</p>
+<h2>完整流程</h2>
+<h3>1、在你当前仓库（feature‑1 这个目录）执行</h3>
+<pre><code class="language-bash"># 基于master创建新分支hotfix‑1，同时生成worktree文件夹 ../hotfix‑1
+git worktree add ../hotfix‑1 -b hotfix‑1 master
+</code></pre>
+<p>解释这条命令：
+- <code>../hotfix‑1</code>：新的工作目录，放在仓库外面同级；<strong>你原来的目录一点不会改动</strong>
+- <code>-b hotfix‑1</code>：创建新分支叫 hotfix‑1
+- <code>master</code>：新分支的父分支，从 master 切出来</p>
+<p>执行完磁盘结构：</p>
+<pre><code>./my-project      ← 原来目录，依旧在 feature‑1，写一半代码原样保留，IDE不用关
+../hotfix‑1       ← 全新文件夹，worktree，已经处于 hotfix‑1 分支
+</code></pre>
+<h3>2、去hotfix目录改bug</h3>
+<pre><code class="language-bash">cd ../hotfix‑1
+# 这里就是master切出来的hotfix‑1代码，直接改bug、编译、提交
+git add .
+git commit -m "fix: xxx线上bug"
+git push origin hotfix‑1
+</code></pre>
+<blockquote>
+<p>✨ 此时，回到你的老项目目录，还是 feature‑1，写了一半的代码还在，完全不受任何影响。</p>
+</blockquote>
+<h3>3、bug处理完，用完清理 worktree（重要）</h3>
+<p>修复完成、合并完PR之后，删掉这个worktree工作目录：</p>
+<pre><code class="language-bash"># 回到主仓库目录执行
+cd ./my-project
+git worktree remove ../hotfix‑1
+</code></pre>
+<blockquote>
+<p>⚠️ 不要手动去rm删除文件夹，要用 <code>git worktree remove</code>，git内部记录才会清理干净。</p>
+</blockquote>
+<h2>补充常用查看命令</h2>
+<pre><code class="language-bash"># 查看全部worktree，看哪些目录绑定哪个分支
+git worktree list
+</code></pre>
+<h2>变种场景：如果hotfix‑1分支已经提前存在</h2>
+<p>那就不需要 <code>-b</code> 参数：</p>
+<pre><code class="language-bash">git worktree add ../hotfix‑1 hotfix‑1
+</code></pre>
+<h2>和传统方式对比，感受差异</h2>
+<h3>不用worktree的老流程</h3>
+<ol>
+<li><code>git stash</code> 把feature‑1半成品存起来</li>
+<li><code>git switch master</code></li>
+<li><code>git switch -c hotfix‑1</code></li>
+<li>改bug提交push</li>
+<li><code>git switch feature‑1</code></li>
+<li><code>git stash pop</code> 恢复代码</li>
+</ol>
+<p>缺点：来回切分支，项目文件全部重写，需要重新编译；stash多了容易搞丢、冲突。</p>
+<h3>worktree流程</h3>
+<p>原目录原地躺平不动，新开一个文件夹做hotfix，<strong>零切换，不用动当前IDE、不用动未提交代码</strong>。</p>
+<h2>容易踩的坑</h2>
+<ol>
+<li>❌ 不要跑到hotfix目录去修改feature‑1的代码，每个worktree只管自己绑定的分支。</li>
+<li>❌ 不要手动rm -rf ../hotfix‑1，会留下git内部残留记录；真手动删了，执行 <code>git worktree prune</code> 清理。</li>
+<li>fetch 在主仓库执行一次即可，所有worktree都能看到新远程分支，不用每个目录都pull。</li>
+</ol>
+<h2>极简记忆版</h2>
+<blockquote>
+<p>当前在feature‑1写一半不动 → <code>git worktree add ../hotfix‑1 -b hotfix‑1 master</code> → 切到新目录改bug提交push → 完事 <code>git worktree remove ../hotfix‑1</code>。</p>
+</blockquote></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

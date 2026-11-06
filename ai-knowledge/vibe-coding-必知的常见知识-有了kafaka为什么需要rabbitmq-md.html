@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="有了 Kafka 为什么还需要 RabbitMQ？ · AI知识库专栏" />
+  <title>有了 Kafka 为什么还需要 RabbitMQ？ · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/vibe-coding-必知的常见知识-有了kafaka为什么需要rabbitmq-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / vibe coding 必知的常见知识</div><h1>有了 Kafka 为什么还需要 RabbitMQ？</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/vibe-coding----kafaka-rabbitmq-md.svg" alt="有了 Kafka 为什么还需要 RabbitMQ？主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>一句话结论</h2>
+<p><strong>已经有 Kafka 就先别急着上 RabbitMQ</strong>，能用 Kafka 搞定的就用 Kafka；等真遇到 Kafka 干起来别扭的场景，再单独引入 RabbitMQ。</p>
+<p>它俩不是替代关系，是<strong>互补</strong>关系。</p>
+<hr/>
+<h2>本质区别（打个比方）</h2>
+<ul>
+<li>
+<p><strong>Kafka = 事件流水账</strong>
+  一件事发生了，写进日志，谁想看谁来读，还能回头重看。适合"广播"和"留档"。</p>
+</li>
+<li>
+<p><strong>RabbitMQ = 任务派发中心</strong>
+  一个任务扔进去，一堆工人抢着干，干完就销账。适合"派活"和"精细控制"。</p>
+</li>
+</ul>
+<hr/>
+<h2>核心差异对比</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Kafka</th>
+<th>RabbitMQ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>设计定位</strong></td>
+<td>分布式事件流平台（append-only log）</td>
+<td>传统消息代理（队列 + Exchange）</td>
+</tr>
+<tr>
+<td><strong>模型</strong></td>
+<td>分区日志，<strong>拉模式 (pull)</strong></td>
+<td>交换机 + 队列，<strong>推模式 (push)</strong></td>
+</tr>
+<tr>
+<td><strong>吞吐量</strong></td>
+<td>极高（百万级/秒）</td>
+<td>中等（万~十万级/秒）</td>
+</tr>
+<tr>
+<td><strong>消息存储</strong></td>
+<td>持久化日志，可回溯重放</td>
+<td>消费确认后删除</td>
+</tr>
+<tr>
+<td><strong>路由能力</strong></td>
+<td>弱，只能按 partition key</td>
+<td>强：direct/topic/fanout/headers</td>
+</tr>
+<tr>
+<td><strong>消费语义</strong></td>
+<td>至少一次</td>
+<td>支持最多一次/至少一次/恰好一次</td>
+</tr>
+<tr>
+<td><strong>延迟消息</strong></td>
+<td>需自己封装</td>
+<td>原生支持</td>
+</tr>
+<tr>
+<td><strong>死信队列</strong></td>
+<td>需业务代码兜底</td>
+<td>原生支持</td>
+</tr>
+<tr>
+<td><strong>消息优先级</strong></td>
+<td>不擅长</td>
+<td>原生支持</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>各自的强项</h2>
+<h3>Kafka 擅长</h3>
+<ul>
+<li>日志、埋点、监控数据</li>
+<li>海量事件流（百万级/秒）</li>
+<li>一个事件多个系统消费</li>
+<li>消息回放（今天读了明天还能重读）</li>
+<li>数据同步、CDC、流计算</li>
+</ul>
+<h3>RabbitMQ 擅长</h3>
+<ul>
+<li>后台任务队列（发邮件、生成 PDF、图片处理）</li>
+<li><strong>延迟消息</strong>（30 分钟后自动关闭未支付订单）</li>
+<li><strong>死信队列</strong>（失败消息隔离，不阻塞正常流程）</li>
+<li>复杂路由（按 header、topic、优先级精细分发）</li>
+<li>RPC 请求-响应模式</li>
+<li>多协议支持（AMQP、MQTT、STOMP）</li>
+</ul>
+<hr/>
+<h2>场景对照表</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>Kafka</th>
+<th>RabbitMQ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>服务异步解耦</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>削峰填谷</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>日志/埋点</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>大数据量消息</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐⭐</td>
+</tr>
+<tr>
+<td>一个事件多个系统消费</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>消息回放</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐</td>
+</tr>
+<tr>
+<td>数据流/事件流</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>⭐⭐</td>
+</tr>
+<tr>
+<td>简单后台任务</td>
+<td>⭐⭐⭐</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>延迟任务</td>
+<td>一般</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>复杂路由</td>
+<td>一般</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>消息优先级</td>
+<td>不擅长</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>什么时候必须再加 RabbitMQ</h2>
+<p>即便已经有 Kafka，遇到这些场景 Kafka 会很别扭：</p>
+<ol>
+<li><strong>延迟任务</strong> —— Kafka 得自己封装，RabbitMQ 开箱即用</li>
+<li><strong>死信/重试</strong> —— Kafka 需要业务代码兜底，RabbitMQ 原生支持</li>
+<li><strong>复杂路由</strong> —— Kafka 只能按 partition key，RabbitMQ 有 Exchange</li>
+<li><strong>单条消息级 ACK</strong> —— Kafka 是按分区批处理的</li>
+<li><strong>消息优先级</strong> —— Kafka 不擅长</li>
+<li><strong>RPC 请求-响应</strong> —— 需要 correlation ID 的同步/半同步场景</li>
+<li><strong>多协议支持</strong> —— IoT、遗留系统对接（MQTT、STOMP）</li>
+</ol>
+<hr/>
+<h2>实操建议</h2>
+<h3>新系统怎么选</h3>
+<pre><code>第一版：只上 Kafka
+    ↓
+遇到任务队列类需求实在憋屈
+    ↓
+再引入 RabbitMQ 补位
+</code></pre>
+<h3>生产上的典型混合架构</h3>
+<p>Uber、Zalando 等公司的做法：</p>
+<pre><code>                业务事件
+                   ↓
+                 Kafka（事件总线）
+                   ├── 业务事件、日志、数据流
+                   ├── 库存系统消费
+                   ├── 数据分析消费
+                   └── 风控系统消费
+
+                任务派发
+                   ↓
+               RabbitMQ（任务分发中心）
+                   ├── 发邮件
+                   ├── 生成 PDF
+                   ├── 延迟关单
+                   └── 图片处理
+</code></pre>
+<ul>
+<li><strong>Kafka</strong> 当事件总线，承载业务事件、日志、数据流</li>
+<li><strong>RabbitMQ</strong> 当任务分发，承载后台作业、延迟任务、复杂路由</li>
+</ul>
+<hr/></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

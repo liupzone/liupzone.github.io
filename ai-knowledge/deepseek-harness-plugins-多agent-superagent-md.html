@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="dsh-superagent：DeepSeek 官方的「超级智能体」研究原型 · AI知识库专栏" />
+  <title>dsh-superagent：DeepSeek 官方的「超级智能体」研究原型 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-plugins-多agent-superagent-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness plugins</div><h1>dsh-superagent：DeepSeek 官方的「超级智能体」研究原型</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness-plugins--agent-superagent-md.svg" alt="dsh-superagent：DeepSeek 官方的「超级智能体」研究原型主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p>项目地址：<a href="https://github.com/deepseek-ai/dsh-superagent-prototype">https://github.com/deepseek-ai/dsh-superagent-prototype</a></p>
+<p>定位：<strong>一个只服务于一个 GitHub 仓库的「主动式」编码 Agent</strong>，以 DSH bundle 形式发布</p>
+</blockquote>
+<p>⚠️ 官方声明：<strong>研究原型，仅供参考，不是 DeepSeek 正式产品</strong>。大部分工程代码由 coding agent 写成，可能有 bug、风格不统一；公开版与内部版本、以及论文《Exploring Super-agent Design: Towards a More Autonomous Agent System》中描述的设计并不完全一致，部分设计只是未来方向。</p>
+<h2>一、这是什么</h2>
+<p>把 Agent 当成团队里的一个「自动化成员」：</p>
+<ul>
+<li>它<strong>监听 GitHub</strong>（可选再加<strong>飞书</strong>）上的事件；</li>
+<li>白名单里的人 <code>@</code> 它提需求 → 它开一张<strong>工单（Ticket）</strong>；</li>
+<li>每张工单在<strong>独立的 DSH Session + 独立目录（git worktree）</strong> 里干活；</li>
+<li>结果回到<strong>原来的对话里</strong>，比如在 Issue 下回复、直接开 PR；</li>
+<li>提供一个 <strong>Web 面板</strong>（DSH 侧边栏的 <strong>Superagent</strong> 入口），只展示「需要人处理」的事情。</li>
+</ul>
+<p>和 <a href="https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/master/deepseek%20harness%20plugins/%E5%A4%9Aagent%20dsh-agent-teams.md">dsh-agent-teams</a> 那种「当前会话当队长、拉起子代理团队」的思路不同，superagent 是<strong>常驻后台、事件驱动</strong>的：没人找它时它不动，有人找它时它自己开 Session 干活。</p>
+<h2>二、核心理念：最少的人类注意力，最大的价值</h2>
+<blockquote>
+<p><strong>Take as little human attention as possible, and give as much value as possible.</strong></p>
+</blockquote>
+<p>一个能代表整个团队行动的 Agent，也能浪费整个团队的注意力。所以：</p>
+<table>
+<thead>
+<tr>
+<th>对 Agent 的要求</th>
+<th>具体表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>只在被要求时行动</strong></td>
+<td>必须直接 @ 它、且发起人在白名单；主动干活必须有团队写好的规则，并且默认只「记录」不「执行」</td>
+</tr>
+<tr>
+<td><strong>只在有人需要时说话</strong></td>
+<td>接单确认一次 → 干活时保持安静 → 有结果 / 需要决策 / 干不完时再开口；IM 消息默认一句话，硬上限 100 词</td>
+</tr>
+<tr>
+<td><strong>一次只问一个具体问题</strong></td>
+<td>用结构化字段 <code>human_action</code> 提问，而不是埋在长报告里</td>
+</tr>
+<tr>
+<td><strong>按影响停，不按工作量停</strong></td>
+<td>局部改动做到可评审为止；需要设计决策的改动带着问题停下</td>
+</tr>
+<tr>
+<td><strong>诚实汇报</strong></td>
+<td>草稿标未完成、失败就说失败、不绕过限制来避免提问；「开了 PR ≠ 完成」，UI 改动没有真实前后截图不算 ready</td>
+</tr>
+</tbody>
+</table>
+<p>给运营者的四条责任：<strong>从窄开始</strong>（白名单短、主动工作只记录）、<strong>为降噪调参</strong>（吵了就把 prompt 改短改严，别加更多消息去解释）、<strong>别拿它刷量</strong>、<strong>为它说的话负责</strong>。</p>
+<h2>三、领域模型（整个项目最值得学的部分）</h2>
+<h3>1. 数据流</h3>
+<pre><code>Source → Trigger → Thread → Eval → Ticket → Assignment(Executor) → Channel → Source
+                                  ↘ Subscription 扇出 → Ticket（上下文）
+</code></pre>
+<h3>2. 核心概念</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>中文</th>
+<th>一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td>来源</td>
+<td>事件流（GitHub / 飞书），持有读位置，重启不重放</td>
+</tr>
+<tr>
+<td>Trigger</td>
+<td>触发</td>
+<td>一条不可变事件；幂等与审计的单位</td>
+</tr>
+<tr>
+<td>Thread</td>
+<td>线程</td>
+<td>按时间排列的 Trigger；<strong>同一时刻最多一个 Eval 在跑</strong></td>
+</tr>
+<tr>
+<td>Eval</td>
+<td>评估</td>
+<td>两层：<strong>Gate 准入</strong>（确定性代码）+ <strong>Assessment 研判</strong>（模型判断）</td>
+</tr>
+<tr>
+<td>Decision</td>
+<td>决定</td>
+<td><code>accept / stop / ignore / unavailable</code></td>
+</tr>
+<tr>
+<td>Mandate</td>
+<td>授权</td>
+<td>接单授予的东西：Policy 版本、范围、强度、命中规则；<strong>不可变</strong>，范围变大开新工单</td>
+</tr>
+<tr>
+<td>Ticket</td>
+<td>工单</td>
+<td>一个被授权的工作单元，<strong>只有 Eval 能创建</strong></td>
+</tr>
+<tr>
+<td>Subscription</td>
+<td>订阅</td>
+<td>工单 ↔ 线程的多对多；后续消息无需再 @ Agent 就能送到执行器</td>
+</tr>
+<tr>
+<td>Channel</td>
+<td>渠道</td>
+<td>线程的写入侧：评论、回复、PR 都算写</td>
+</tr>
+<tr>
+<td>Policy</td>
+<td>策略</td>
+<td>带版本的规则：谁能发起工作、接单模式、各 Source 的白名单</td>
+</tr>
+</tbody>
+</table>
+<p>几个关键设计取舍：</p>
+<ul>
+<li><strong>「人」不是领域概念</strong>：只是 Trigger 上的元数据，跨平台身份映射写在 prompt / skill 里。</li>
+<li><strong>没有「追加到工单」这种 Decision</strong>：追加就是订阅扇出，不需要 Eval。</li>
+<li><strong>Policy 变更不取消运行中的工单</strong>：只把变更作为 Input 通知给受影响的工单，避免半拉子工作。</li>
+<li><strong>需要「等待」的条件做成 Source</strong>（例如「N 小时无人认领」），Eval 永远不等待。</li>
+</ul>
+<h2>四、授权机制</h2>
+<h3>1. 两条路径</h3>
+<ul>
+<li><strong>Eval 路径</strong>：决定要不要开新工作。白名单里的人 @ Agent = <strong>explicit 明确请求</strong>；白名单 Bot（如 <code>dependabot[bot]</code>）只能产生 <strong>inferred 推断候选</strong>，永远不能发起明确请求或叫停工单。</li>
+<li><strong>订阅路径</strong>：已订阅线程上的所有消息（包括 Bot、CI）直接作为上下文送到工单，<strong>绕过 Gate 但不授予新权限</strong>——工单仍受原 Mandate 约束。</li>
+</ul>
+<h3>2. 接单模式（Accept mode）</h3>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>off</code></td>
+<td>推断类候选不进入评估</td>
+</tr>
+<tr>
+<td><code>observe</code>（默认）</td>
+<td>推断候选评估为正时只记录「would accept」，<strong>不真正接单</strong></td>
+</tr>
+<tr>
+<td><code>auto</code></td>
+<td>推断候选评估为正就自动接单</td>
+</tr>
+</tbody>
+</table>
+<p>推荐先用 <code>observe</code> 看一段时间再切 <code>auto</code>。</p>
+<h3>3. 准入表（Admission table）</h3>
+<p>每个 Source 的每个接收范围（飞书各群/私聊、GitHub 新 Issue/新 PR/评论/默认分支 CI）都有一行三格配置：「在名单但没 @」「不在名单但 @ 了」「不在名单也没 @」各自映射到 explicit / inferred / ignore。</p>
+<h3>4. 恢复与重新校验</h3>
+<p>已结束的工单有人继续说话 → <strong>直接恢复</strong>（不走 Eval），恢复前按当前 Policy 重校验 Mandate。改变 Mandate 的只有三种操作：<strong>accept 创建、人的 stop 撤回、重校验失败吊销</strong>。</p>
+<h2>五、执行层</h2>
+<h3>1. 双角色 Session</h3>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>主 Session（orchestrator）</strong></td>
+<td><strong>只路由</strong>：一次 <code>orchestrator_route</code> 批量处理候选；不做技术决策、不写实现计划，路由备注 ≤ 30 词；<strong>禁止等待</strong>（sleep / 超时 &gt; 30s / job wait &gt; 5s 全被拦截）</td>
+</tr>
+<tr>
+<td><strong>执行器（worker）</strong></td>
+<td>每张工单一个 Session；读原始上下文、判断范围、实现、验证、开 PR，用 <code>orchestrator_report</code> 汇报</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 工单阶段</h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>面板标签</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input 投递失败（退避重试）</td>
+<td>等待送达</td>
+</tr>
+<tr>
+<td>有待回答的问题</td>
+<td>等待回答</td>
+</tr>
+<tr>
+<td>最新报告是 <code>ready</code></td>
+<td>等待评审</td>
+</tr>
+<tr>
+<td>报告 blocked/failed 且无人回复</td>
+<td>受阻 · 失败</td>
+</tr>
+<tr>
+<td>没有派工或待启动</td>
+<td>排队中</td>
+</tr>
+<tr>
+<td>报告 <code>waiting</code> 或派工结束</td>
+<td>等待触发</td>
+</tr>
+<tr>
+<td>其他</td>
+<td>执行中</td>
+</tr>
+</tbody>
+</table>
+<p>报告类型：<code>progress / waiting / ready / blocked / failed / dropped</code>。</p>
+<h3>3. 执行细节</h3>
+<ul>
+<li><strong>准备目录</strong>：首次派工前跑 prepare 命令（典型是 <code>git worktree add</code>），限时 10 分钟；默认分支前缀 <code>agent/</code>。</li>
+<li><strong>后台任务</strong>：前台 shell 命令 5 秒后转后台，一轮结束后后台任务最多再跑 30 分钟。</li>
+<li><strong>并发槽位</strong>：额外预留一个槽给「人的消息 / 状态查询」，新工作再多也挡不住人推进已有工单。</li>
+<li><strong>合并策略</strong>：Agent 账号默认不自己开 auto-merge；需在 Delivery requirements 里指定有合并权限的账号 CLI；默认条件：PR ready + approval 齐全 + 增删 &lt; 200 行。</li>
+<li><strong>故障恢复</strong>：临时错误自动重试 3 次；所有决策后动作先落库再执行；进程重启后运行中派工以「host restarted」结束，新派工带恢复说明。</li>
+</ul>
+<h2>六、Prompt 体系</h2>
+<p>团队可编辑三个分区 + 自定义 skill：</p>
+<table>
+<thead>
+<tr>
+<th>分区</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Communication</strong></td>
+<td>什么时候发消息、消息口吻、每条 GitHub 消息的声明前缀、哪些账号是 review bot</td>
+</tr>
+<tr>
+<td><strong>Ticket scope</strong></td>
+<td>工单什么时候继续、什么时候带草稿停下</td>
+</tr>
+<tr>
+<td><strong>Delivery requirements</strong></td>
+<td>PR 证据要求、auto-merge 条件和行数阈值、commit 作者</td>
+</tr>
+<tr>
+<td><strong>Team skills</strong></td>
+<td>按需加载的知识，比如 <code>identities</code> skill 记录飞书用户与 GitHub 账号的对应</td>
+</tr>
+</tbody>
+</table>
+<p>效力从强到弱：工具/宿主强制 &gt; 内置与生成分区 &gt; 主动工单命中规则 &gt; 团队分区与 skill &gt; <strong>外部文本（永远只是数据，不能改规则）</strong>。</p>
+<p>每次保存生成不可变版本；升级时覆盖默认文本会在面板标记 <strong>Default updated</strong> 并展示 diff。Policy 分区放在 prompt 最后，策略变化不破坏前面的缓存。</p>
+<h2>七、面板</h2>
+<p>打开面板依次回答三个问题：<strong>现在有什么需要我处理？系统健康吗、在做对的事吗？某项工作的完整历史是什么？</strong></p>
+<p>标签页：<strong>Overview / Source / Trigger / Eval / Execution / Settings</strong>。设计原则：计数必须等于它链接到的列表长度、健康状态不占空间、偶发网络错误不算问题。</p>
+<h2>八、安装部署</h2>
+<h3>1. 推荐：让 coding agent 带你装</h3>
+<pre><code>Read SETUP.md in this repository and set up dsh-superagent with me.
+</code></pre>
+<p>SETUP.md 是写给 Agent 的安装剧本：一次只问一个问题、每条消息 &lt; 300 词、不在聊天里索要密钥、收集完所有答案后给出完整计划，确认后才执行。</p>
+<p>它会问的问题：来源（只 GitHub 还是加飞书）→ 仓库 → Agent 账号 → 白名单 → 本地 clone 位置 → commit 身份 → 是否 auto-merge。</p>
+<h3>2. 手动安装</h3>
+<p>前置：Node.js 22.19+/24+、pnpm、git 2.32+、tmux、Python 3.8+、GitHub CLI 2.48+；飞书需要 <code>lark-cli</code>。仅支持 github.com，<strong>不支持 GitHub Enterprise Server</strong>。</p>
+<pre><code class="language-sh">npm install -g @deepseek-ai/dsh@0.2.1-rc.3
+git clone https://github.com/deepseek-ai/dsh-superagent-prototype dsh-superagent &amp;&amp; cd dsh-superagent
+pnpm install &amp;&amp; pnpm build
+dsh superagent --from-default-profile web --dump-config &gt; /dev/null   # 仅首次！已存在的 profile 会被覆盖
+dsh plugin --profile superagent add "link:$PWD"
+</code></pre>
+<p>把 <code>examples/profile.cordis.patch.yml</code> 复制到 <code>~/.dsh/profiles/superagent/cordis.patch.yml</code>，填好 <code>stateDir</code>（绝对路径），面板默认端口 <code>3082</code>。</p>
+<h3>3. 专用 Agent 账号</h3>
+<p>必须是独立的 GitHub 用户账号（不能用 GitHub App，因为要读通知），给它一个只用自己凭证的 <code>gh</code> 包装：</p>
+<pre><code class="language-sh">cat &gt; ~/.local/bin/gh-agent &lt;&lt;'EOF'
+#!/bin/sh
+GH_CONFIG_DIR="$HOME/.config/gh-agent" exec gh "$@"
+EOF
+chmod +x ~/.local/bin/gh-agent
+gh-agent auth login
+</code></pre>
+<p>飞书同理，独立配置目录的 <code>lark-bot</code> 包装，且只允许 bot 身份。</p>
+<h3>4. 启停</h3>
+<pre><code class="language-sh">scripts/dsh-superagent start    # 在 tmux 会话 dsh-superagent 里跑
+scripts/dsh-superagent status   # 0 正常 / 1 没跑或运行时出错 / 2 部件出错 / 3 等待配置
+</code></pre>
+<p>建议在日常 profile 里建每小时检查任务，挂了自动修复。</p>
+<h3>5. 上手试用</h3>
+<p>用白名单里的账号，在仓库某个 Issue 下评论 <code>@&lt;agent 账号&gt; &lt;需求&gt;</code>，约一分钟内 Overview 上出现工单。</p>
+<h2>九、安全提醒</h2>
+<ul>
+<li>两个预设都以 <code>danger-full-access</code> 运行，<strong>用的是你的操作系统用户</strong>；</li>
+<li><code>gh-agent</code> / <code>lark-bot</code> 包装器和禁用命令列表只是默认值，<strong>不是安全边界</strong>——worker 可以执行任意程序、读你的 home 目录；</li>
+<li>真要隔离，官方建议用<strong>独立 OS 账号</strong>来跑；</li>
+<li>必须用独立 profile，插件会修改进程级 <code>PATH</code> 和 git 配置。</li>
+</ul>
+<h2>十、代码结构速览</h2>
+<p>TypeScript，约 1.5 万行源码、60 个测试文件，<code>pnpm check</code> 一次跑完 typecheck + test + build。</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/core/engine.ts</code></td>
+<td><strong>唯一</strong>写领域状态的地方；内部拆成 Intake、Evals、Tickets、Assignments、Replies 五部分，所有方法同步、每条命令一个事务</td>
+</tr>
+<tr>
+<td><code>src/policy.ts</code></td>
+<td>Gate、Mandate 重校验、Policy 版本哈希</td>
+</tr>
+<tr>
+<td><code>src/app/runtime.ts</code></td>
+<td>组合根，负责启动/关闭，不含领域规则</td>
+</tr>
+<tr>
+<td><code>src/executor/</code></td>
+<td>DshExecutor：为每张工单创建/恢复 DSH Session</td>
+</tr>
+<tr>
+<td><code>src/sources/</code></td>
+<td>GitHub 与飞书 Source 实现</td>
+</tr>
+<tr>
+<td><code>prompts/</code></td>
+<td>orchestrator / worker / dispatch / admission 等内置 prompt</td>
+</tr>
+<tr>
+<td><code>docs/000~008</code></td>
+<td>编号文档，按顺序读，每篇只依赖前面的概念</td>
+</tr>
+</tbody>
+</table>
+<p>想接入新事件源（如 Slack、Jira），看 <code>docs/008-cookbook.md</code>，有 11 步的「Add a Source」指南。</p>
+<h2>十一、亮点与适用场景</h2>
+<p><strong>亮点</strong></p>
+<ul>
+<li>一套干净的「事件 → 评估 → 授权 → 执行 → 回写」领域模型，概念边界清晰，<strong>可直接借鉴到自己的 Agent 系统设计</strong>；</li>
+<li><strong>授权与上下文彻底分离</strong>：订阅只送上下文、不给权限，外部文本永远是数据；</li>
+<li><strong>主动工作的灰度机制</strong>：<code>off → observe → auto</code>，先看 Agent「会怎么做」再放权；</li>
+<li>把「少打扰人」当作第一设计原则，落实到消息长度、面板布局、文档组织；</li>
+<li>安装文档本身就是写给 Agent 执行的，是一个很好的 Agent-first 工程范例。</li>
+</ul>
+<p><strong>适合</strong></p>
+<ul>
+<li>想让 Agent 以「团队成员」身份长期驻守某个仓库，处理 Issue、修 bug、回 review；</li>
+<li>团队用 GitHub + 飞书协作；</li>
+<li>研究多 Agent / 主动式 Agent 架构，找工程化落地参考。</li>
+</ul>
+<p><strong>不适合</strong></p>
+<ul>
+<li>想要开箱即用的生产级产品（官方明确是研究原型）；</li>
+<li>需要强隔离的安全环境（需自行用独立 OS 账号兜底）；</li>
+<li>使用 GitHub Enterprise Server 或非 GitHub 代码托管。</li>
+</ul></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

@@ -8,6 +8,9 @@ const siteUrl = 'https://www.liupzone.cn';
 const robots = read('robots.txt');
 if (!robots.includes(`Sitemap: ${siteUrl}/sitemap.xml`)) throw new Error('robots sitemap missing');
 const sitemap = read('sitemap.xml');
+const lifePage = read('life.html');
+const aiPage = read('ai-knowledge.html');
+const lifeArticle = read('life/smk-shanghai-xiaoshengchu.html');
 const publishedSlugs = [
   'tencent', 'alibaba', 'bytedance', 'baidu', 'meituan', 'jd', 'huawei', 'kuaishou', 'dji',
   'xiaomi', 'vivo', 'oppo', 'microsoft', 'google', 'ant', 'bilibili', 'xiaohongshu', 'didi',
@@ -17,6 +20,50 @@ const publishedSlugs = [
 for (const url of [`${siteUrl}/`, `${siteUrl}/campus-prep.html`, ...publishedSlugs.map((slug) => `${siteUrl}/campus-prep/${slug}.html`)]) {
   if (!sitemap.includes(`<loc>${url}</loc>`)) throw new Error(`sitemap URL missing: ${url}`);
 }
+if (!sitemap.includes(`<loc>${siteUrl}/life.html</loc>`)) throw new Error('life section URL missing');
+if (!sitemap.includes(`<loc>${siteUrl}/ai-knowledge.html</loc>`)) throw new Error('AI knowledge section URL missing');
+if (!aiPage.includes(`<link rel="canonical" href="${siteUrl}/ai-knowledge.html" />`)) throw new Error('AI knowledge canonical URL missing');
+if (!aiPage.includes('AI知识库专栏') || !aiPage.includes('ai-knowledge-data.js') || !aiPage.includes('知识文章') || !aiPage.includes('阅读全文')) throw new Error('AI knowledge section content missing');
+for (const marker of ['ai-directory-table', 'ai-directory-row', 'ai-article-view', '目录导航', 'selectedCategory']) {
+  if (!aiPage.includes(marker)) throw new Error(`AI category-first navigation missing: ${marker}`);
+}
+if (!aiPage.includes('返回目录')) throw new Error('AI directory view should provide a return control');
+for (const marker of ['ai-directory-table', 'ai-directory-row', 'ai-directory-link', 'ai-article-view', 'ai-section', 'ai-section-title', 'ai-card-title', 'ai-card-excerpt', 'ai-card-meta']) {
+  if (!aiPage.includes(marker)) throw new Error(`AI feed layout missing: ${marker}`);
+}
+for (const marker of ['ai-directory-table', 'AI编码助手', 'claudeCode', 'ai-breadcrumb', 'ai-directory-level']) {
+  if (!aiPage.includes(marker)) throw new Error(`AI directory navigation missing: ${marker}`);
+}
+const aiData = read('ai-knowledge-data.js');
+if (!aiData.includes('window.aiKnowledgeArticles') || (aiData.match(/"title":/g) || []).length !== 248) throw new Error('AI knowledge article index should contain 248 knowledge-sharing articles');
+if (!aiData.includes('github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/master/')) throw new Error('AI source links missing');
+if ((aiData.match(/"url":"ai-knowledge\//g) || []).length !== 248) throw new Error('AI articles should link to local pages');
+if ((aiData.match(/"excerpt":"/g) || []).length !== 248) throw new Error('AI article excerpts missing');
+if ((aiData.match(/"image":"/g) || []).length !== 248) throw new Error('AI article thumbnails missing');
+if (require('fs').readdirSync('ai-knowledge').filter((name) => name.endsWith('.html')).length !== 248) throw new Error('AI local article pages missing');
+if ((sitemap.match(/<loc>https:\/\/www\.liupzone\.cn\/ai-knowledge\//g) || []).length !== 248) throw new Error('AI article sitemap URLs missing');
+if (aiData.includes('"title":"index"')) throw new Error('AI knowledge index pages should not be published');
+const aiArticleSample = read('ai-knowledge/claudecode-claude-code-提示词大全-md.html');
+for (const marker of ['class="ai-body ai-reading-width"', 'Claude Code 推荐提示词大全', 'assets/ai-knowledge-covers/']) {
+  if (!aiArticleSample.includes(marker)) throw new Error(`AI article source metadata missing: ${marker}`);
+}
+if (aiArticleSample.includes('github.com/Awesome-AI-Pedia') || aiArticleSample.includes('git@github.com:Awesome-AI-Pedia')) {
+  throw new Error('AI article should not expose the original GitHub repository path');
+}
+for (const marker of ['ai-article-header', 'ai-reading-width', 'ai-body pre', 'ai-body h2']) {
+  if (!aiArticleSample.includes(marker)) throw new Error(`AI article reading styles missing: ${marker}`);
+}
+if (aiArticleSample.includes('class="vp-doc') || aiArticleSample.includes('class="header-anchor"') || aiArticleSample.includes('<button class="copy"')) {
+  throw new Error('AI article still contains VitePress presentation wrappers');
+}
+if ((aiArticleSample.match(/<article class="ai-body ai-reading-width"/g) || []).length !== 1) throw new Error('AI article body should not be nested');
+if (!lifePage.includes(`<link rel="canonical" href="${siteUrl}/life.html" />`)) throw new Error('life section canonical URL missing');
+if (!lifePage.includes('life/smk-shanghai-xiaoshengchu.html')) throw new Error('life section article card missing');
+if (!lifePage.includes('.life-card img { display: block; width: 260px; height: 178px; object-fit: contain;')) throw new Error('life card cover should show the complete image');
+if (!lifeArticle.includes('<title>上海小升初“神秘考”全攻略')) throw new Error('life article title missing');
+if (!lifeArticle.includes('生活福利')) throw new Error('life article category missing');
+if (!lifeArticle.includes('https://x.com/HytidelLegend/status/2117231010433884519')) throw new Error('source link missing');
+if (!sitemap.includes(`<loc>${siteUrl}/life/smk-shanghai-xiaoshengchu.html</loc>`)) throw new Error('life article URL missing');
 if (sitemap.includes('liupzone.github.io') || robots.includes('liupzone.github.io')) {
   throw new Error('SEO entry points still reference the old GitHub Pages domain');
 }
@@ -36,14 +83,23 @@ if (/本周更新 12 篇|27届秋招内推信息|大厂笔试面试真题合集|
 if (!home.includes('31 篇') || !home.includes('900 份')) {
   throw new Error('homepage should show actual published guide and resource counts');
 }
-for (const label of ['校招稳稳拿OFFER', '宝藏资源', '考研之路', '生活福利']) {
+for (const label of ['校招稳稳拿OFFER', '宝藏资源', '考研之路', 'AI知识库专栏', '生活福利']) {
   if (!home.includes(label)) throw new Error(`homepage theme missing: ${label}`);
 }
 if (!home.includes('resources.html?category=考研')) {
   throw new Error('homepage should link to the real graduate-exam resources');
 }
-if ((home.match(/class="update-card"/g) || []).length !== 5) {
-  throw new Error('homepage should list exactly five latest updates');
+if (!home.includes('href="ai-knowledge.html"')) throw new Error('homepage AI knowledge link missing');
+if (!home.includes('href="life.html"') || home.includes('href="#life"')) throw new Error('homepage life navigation should use the section page');
+if (!home.includes('life/smk-shanghai-xiaoshengchu.html')) throw new Error('homepage life article link missing');
+const lifePanel = home.slice(home.indexOf('id="life"'), home.indexOf('</section>', home.indexOf('id="life"')));
+if (!lifePanel.includes('life/smk-shanghai-xiaoshengchu.html')) throw new Error('life panel article link missing');
+if (lifePanel.includes('内容筹备中')) throw new Error('life panel still shows unpublished placeholder');
+if ((home.match(/class="update-card"/g) || []).length !== 6) {
+  throw new Error('homepage should retain five static cards plus the latest article card');
+}
+if (!home.includes("insertAdjacentHTML('afterbegin','<a class=\"update-card\" href=\"life/smk-shanghai-xiaoshengchu.html\"")) {
+  throw new Error('homepage should inject the latest life article into updates');
 }
 if (!home.includes('每日访问人数') || !home.includes('visitCount')) {
   throw new Error('homepage should expose daily visit statistics');
@@ -51,7 +107,7 @@ if (!home.includes('每日访问人数') || !home.includes('visitCount')) {
 if ((home.match(/id="visitCount"/g) || []).length !== 1) {
   throw new Error('homepage should have one daily visit counter');
 }
-if (!home.includes('内容贡献') || !home.includes('campus-prep/horizon.html') || !home.includes('campus-prep/unitree.html')) {
+if (!home.includes('内容贡献') || !home.includes("textContent='近期发布的站内文章'") || !home.includes('life/smk-shanghai-xiaoshengchu.html') || !home.includes('campus-prep/horizon.html') || !home.includes('campus-prep/unitree.html')) {
   throw new Error('homepage latest content should use published campus articles');
 }
 if (home.includes('topic-grid')) {
@@ -64,11 +120,15 @@ const siteSearch = read('search.html');
 for (const marker of ['腾讯校招备考攻略', 'resources-data.js', '校招稳稳拿OFFER', '宝藏资源']) {
   if (!siteSearch.includes(marker)) throw new Error(`site search missing: ${marker}`);
 }
-for (const marker of ['考研之路', '生活福利', 'fuzzyMatch', 'queryTerms', 'examResults']) {
+for (const marker of ['考研之路', 'AI知识库专栏', '生活福利', 'fuzzyMatch', 'queryTerms', 'examResults', 'aiResults', 'aiKnowledgeArticles']) {
   if (!siteSearch.includes(marker)) throw new Error(`site-wide fuzzy search missing: ${marker}`);
 }
 if (!siteSearch.includes('<script src="resources-data.js"></script>')) {
   throw new Error('site search should load the complete resource index directly');
+}
+if (!siteSearch.includes('life/smk-shanghai-xiaoshengchu.html')) throw new Error('life article search index missing');
+for (const page of [read('resources.html'), read('campus-prep.html'), aiPage, lifeArticle]) {
+  if (!page.includes('href="../life.html"') && !page.includes('href="life.html"')) throw new Error('page life navigation should use the section page');
 }
 if (!overview.includes('校招稳稳拿OFFER')) throw new Error('overview title missing');
 if (!overview.includes('大厂校招备考攻略')) throw new Error('overview subtitle missing');

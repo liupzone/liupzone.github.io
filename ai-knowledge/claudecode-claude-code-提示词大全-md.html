@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Claude Code 推荐提示词大全 · AI知识库专栏" />
+  <title>Claude Code 推荐提示词大全 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/claudecode-claude-code-提示词大全-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / claudeCode</div><h1>Claude Code 推荐提示词大全</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/claudecode-claude-code---md.svg" alt="Claude Code 推荐提示词大全主题配图" /></header><article class="ai-body ai-reading-width">
+<p>这是一份精心整理的 Claude Code 提示词参考指南，旨在帮助开发者更高效地利用 Claude Code 进行项目开发、调试、测试和管理。</p>
+<h2>🚀 项目初始化</h2>
+<h3>快速了解项目结构</h3>
+<pre><code class="language-markdown">请阅读项目的 README.md、package.json 和主要目录，帮我了解这个项目的架构和技术栈，但暂时不要编写任何代码。
+</code></pre>
+<h3>创建项目配置文件</h3>
+<pre><code class="language-markdown">请帮我创建一个详细的 CLAUDE.md 文件，包含项目架构说明、常用命令、代码规范和开发环境配置。
+</code></pre>
+<h3>项目环境配置</h3>
+<pre><code class="language-markdown">请检查项目的环境配置，确保所有依赖正确安装，并运行初始化脚本。如果有任何问题请告诉我如何解决。
+</code></pre>
+<h2>🎯 功能开发</h2>
+<h3>新功能开发流程</h3>
+<pre><code class="language-markdown">我需要开发 [功能描述]。请按照以下步骤：
+1. 先阅读相关代码了解现有架构
+2. 制定详细的实现计划
+3. 实现核心功能
+4. 编写测试
+5. 更新文档
+每完成一步都要暂停等待我确认。
+</code></pre>
+<h3>测试驱动开发 (TDD)</h3>
+<pre><code class="language-markdown">我要实现 [功能描述]。请先基于期望的输入输出编写测试用例，确保测试会失败，然后再实现功能代码使测试通过。
+</code></pre>
+<h3>API 接口开发</h3>
+<pre><code class="language-markdown">请帮我设计和实现 [API 描述] 接口，包括：
+- 路由定义
+- 请求参数验证
+- 业务逻辑实现
+- 响应格式定义
+- 错误处理
+- API 文档
+</code></pre>
+<h3>组件开发</h3>
+<pre><code class="language-markdown">请帮我创建一个 [组件名称] 组件，要求：
+- 遵循项目现有的组件模式
+- 包含 TypeScript 类型定义
+- 支持 [具体功能需求]
+- 编写对应的测试文件
+</code></pre>
+<h2>🔧 代码调试与优化</h2>
+<h3>错误诊断</h3>
+<pre><code class="language-markdown">我遇到了这个错误：[错误信息]。请帮我分析错误原因，并提供修复方案。如果需要查看相关代码，请告诉我。
+</code></pre>
+<h3>性能优化</h3>
+<pre><code class="language-markdown">请分析 [文件/功能] 的性能问题，并提供优化建议。重点关注：
+- 执行效率
+- 内存使用
+- 加载速度
+- 用户体验
+</code></pre>
+<h3>代码重构</h3>
+<pre><code class="language-markdown">请重构 [文件名] 中的 [函数/类]，目标是：
+- 提高代码可读性
+- 减少重复代码
+- 遵循最佳实践
+- 保持功能不变
+请先分析现有代码，然后提供重构计划。
+</code></pre>
+<h3>代码审查</h3>
+<pre><code class="language-markdown">请对 [文件/功能] 进行代码审查，重点检查：
+- 代码规范
+- 安全问题
+- 性能问题
+- 最佳实践
+- 潜在 bug
+</code></pre>
+<h2>🧪 测试相关</h2>
+<h3>测试用例编写</h3>
+<pre><code class="language-markdown">请为 [函数/类/组件] 编写全面的测试用例，包括：
+- 正常情况测试
+- 边界条件测试
+- 错误情况测试
+- 模拟依赖项
+</code></pre>
+<h3>测试修复</h3>
+<pre><code class="language-markdown">有几个测试失败了，请分析失败原因并修复。运行测试命令是：[测试命令]
+</code></pre>
+<h3>测试覆盖率提升</h3>
+<pre><code class="language-markdown">请分析当前的测试覆盖率，并为覆盖率不足的部分补充测试用例。
+</code></pre>
+<h2>📱 前端开发</h2>
+<h3>UI 组件实现</h3>
+<pre><code class="language-markdown">请根据这个设计图实现 UI 组件：[上传设计图]
+要求：
+- 响应式设计
+- 支持深色模式
+- 无障碍性支持
+- 符合设计规范
+</code></pre>
+<h3>样式调整</h3>
+<pre><code class="language-markdown">请优化 [组件/页面] 的样式，实现以下效果：
+- [具体样式需求]
+- 保持与整体设计一致
+- 确保在不同设备上显示正常
+</code></pre>
+<h3>状态管理</h3>
+<pre><code class="language-markdown">请为 [功能] 实现状态管理，包括：
+- 状态结构设计
+- Action 定义
+- Reducer 实现
+- 异步操作处理
+</code></pre>
+<h2>⚡ 后端开发</h2>
+<h3>数据库设计</h3>
+<pre><code class="language-markdown">请为 [功能] 设计数据库表结构，包括：
+- 表结构定义
+- 索引设计
+- 关系约束
+- 迁移脚本
+</code></pre>
+<h3>中间件开发</h3>
+<pre><code class="language-markdown">请实现一个 [中间件名称] 中间件，功能包括：
+- [具体功能需求]
+- 错误处理
+- 日志记录
+- 性能监控
+</code></pre>
+<h3>服务集成</h3>
+<pre><code class="language-markdown">请帮我集成 [第三方服务]，包括：
+- SDK 配置
+- API 调用封装
+- 错误处理
+- 单元测试
+</code></pre>
+<h2>📚 文档编写</h2>
+<h3>API 文档生成</h3>
+<pre><code class="language-markdown">请为项目生成 API 文档，包括：
+- 接口列表
+- 请求参数说明
+- 响应格式示例
+- 错误码说明
+</code></pre>
+<h3>代码注释</h3>
+<pre><code class="language-markdown">请为 [文件/函数] 添加详细的代码注释，包括：
+- 功能描述
+- 参数说明
+- 返回值说明
+- 使用示例
+</code></pre>
+<h3>README 更新</h3>
+<pre><code class="language-markdown">请更新项目的 README.md 文件，确保包含：
+- 项目简介
+- 安装说明
+- 使用方法
+- 贡献指南
+</code></pre>
+<h2>🔄 Git 工作流</h2>
+<h3>代码提交</h3>
+<pre><code class="language-markdown">请查看当前的修改，编写合适的提交信息并提交代码。提交信息要遵循项目的提交规范。
+</code></pre>
+<h3>创建 PR</h3>
+<pre><code class="language-markdown">请创建一个 Pull Request，包括：
+- 清晰的标题和描述
+- 修改内容摘要
+- 测试计划
+- 相关 Issue 链接
+</code></pre>
+<h3>分支管理</h3>
+<pre><code class="language-markdown">请帮我创建一个新的功能分支 [分支名称]，并切换到该分支开始开发。
+</code></pre>
+<h2>🏗️ 项目管理</h2>
+<h3>任务分解</h3>
+<pre><code class="language-markdown">我需要实现 [大功能描述]。请帮我分解成多个小任务，每个任务包括：
+- 任务描述
+- 预估工时
+- 依赖关系
+- 验收标准
+</code></pre>
+<h3>项目规划</h3>
+<pre><code class="language-markdown">请帮我制定项目开发计划，包括：
+- 功能模块划分
+- 开发优先级
+- 时间安排
+- 风险评估
+</code></pre>
+<h3>技术选型</h3>
+<pre><code class="language-markdown">对于 [项目需求]，请帮我分析技术选型，比较不同方案的优缺点，并推荐最适合的技术栈。
+</code></pre>
+<h2>🔍 代码分析</h2>
+<h3>依赖分析</h3>
+<pre><code class="language-markdown">请分析项目的依赖关系，检查：
+- 是否有冗余依赖
+- 是否有安全漏洞
+- 是否需要更新版本
+- 是否有替代方案
+</code></pre>
+<h3>架构分析</h3>
+<pre><code class="language-markdown">请分析项目的整体架构，评估：
+- 模块职责是否清晰
+- 耦合度是否合理
+- 扩展性如何
+- 有哪些改进空间
+</code></pre>
+<h3>代码统计</h3>
+<pre><code class="language-markdown">请统计项目的代码情况，包括：
+- 代码行数
+- 文件数量
+- 技术栈分布
+- 测试覆盖率
+</code></pre>
+<h2>🛠️ 环境配置</h2>
+<h3>开发环境搭建</h3>
+<pre><code class="language-markdown">请帮我配置开发环境，包括：
+- 安装必要的依赖
+- 配置环境变量
+- 设置开发工具
+- 验证环境是否正常
+</code></pre>
+<h3>CI/CD 配置</h3>
+<pre><code class="language-markdown">请为项目配置 CI/CD 流程，包括：
+- 自动化测试
+- 代码质量检查
+- 自动部署
+- 通知机制
+</code></pre>
+<h3>Docker 配置</h3>
+<pre><code class="language-markdown">请为项目创建 Docker 配置，包括：
+- Dockerfile
+- docker-compose.yml
+- 环境变量配置
+- 部署说明
+</code></pre>
+<h2>💡 高级技巧</h2>
+<h3>批量处理</h3>
+<pre><code class="language-markdown">请对项目中所有的 [文件类型] 文件执行 [操作]，确保：
+- 操作的一致性
+- 不破坏现有功能
+- 符合项目规范
+</code></pre>
+<h3>自动化脚本</h3>
+<pre><code class="language-markdown">请创建一个自动化脚本来 [任务描述]，脚本应该：
+- 支持命令行参数
+- 包含错误处理
+- 提供详细日志
+- 易于维护
+</code></pre>
+<h3>代码生成</h3>
+<pre><code class="language-markdown">请根据 [配置/模板] 生成相应的代码文件，包括：
+- [具体文件类型]
+- 遵循项目约定
+- 包含必要注释
+- 通过基本测试
+</code></pre>
+<h2>📋 使用建议</h2>
+<h3>提示词编写原则</h3>
+<ol>
+<li><strong>明确具体</strong>：详细描述需求，避免模糊表达。</li>
+<li><strong>分步骤</strong>：复杂任务拆分为多个步骤。</li>
+<li><strong>设定边界</strong>：明确什么要做，什么不要做。</li>
+<li><strong>包含上下文</strong>：提供必要的背景信息。</li>
+<li><strong>验证确认</strong>：重要步骤要求确认再继续。</li>
+</ol>
+<h3>常用修饰词</h3>
+<ul>
+<li>"请先分析..."：要求 Claude 先理解再行动。</li>
+<li>"暂时不要..."：设定明确的边界。</li>
+<li>"每完成一步都要暂停"：控制执行节奏。</li>
+<li>"遵循项目现有..."：保持一致性。</li>
+<li>"如果需要...请告诉我"：主动沟通。</li>
+</ul>
+<h3>效率提升技巧</h3>
+<ol>
+<li><strong>使用 @ 引用文件</strong>：例如 <code>@src/components/Button.tsx</code>。</li>
+<li><strong>利用扩展思考</strong>：按两次 <code>Shift+TAB</code> 进入 PLAN 模式（仅限特定 IDE 插件或环境）。</li>
+<li><strong>合理清理上下文</strong>：使用 <code>/clear</code> 和 <code>/compact</code>。</li>
+<li><strong>创建自定义命令</strong>：在 <code>.claude/commands/</code> 目录下定义常用脚本。</li>
+<li><strong>批量操作</strong>：一次性处理多个相似任务。</li>
+</ol>
+<hr/>
+<p>💡 <strong>提示</strong>：这些提示词模板可以根据具体项目需求进行调整。建议根据日常开发习惯进行微调，逐步掌握与 Claude Code 高效沟通的艺术。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

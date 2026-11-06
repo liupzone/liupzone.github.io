@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="本地部署 deepseek · AI知识库专栏" />
+  <title>本地部署 deepseek · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/部署ai-本地部署deepseek-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / 部署ai</div><h1>本地部署 deepseek</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/ai--deepseek-md.svg" alt="本地部署 deepseek主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>一、为什么要部署本地 DeepSeek？</h2>
+<p>相信大家在使用 DeepSeek 时都会遇到这样的问题：</p>
+<p>这是由于 DeepSeek 大火之后访问量比较大，再加上漂亮国大规模、持续的恶意攻击，导致 DeepSeek 的服务器很不稳定。所以，这个此时在本地部署一个 DeepSeek 大模型就非常有必要了。</p>
+<p>再者说，有些数据比较敏感，咱也不想随便传到网上去，本地大模型可以根据你的需求进行定制，想怎么用就怎么用，灵活性超强！</p>
+<h2>二、怎么部署本地大模型？</h2>
+<p>在本地部署 DeepSeek 只需要以下三步：</p>
+<p>安装 Ollama。
+部署 DeepSeek。
+使用 DeepSeek：这里我们使用 ChatBox 客户端操作 DeepSeek（此步骤非必须）。
+Ollama、DeepSeek 和 ChatBox 之间的关系如下：</p>
+<p>Ollama 是“大管家”，负责把 DeepSeek 安装到你的电脑上。
+DeepSeek 是“超级大脑”，住在 Ollama 搭建好的环境里，帮你做各种事情。
+ChatBox 是“聊天工具”，让你更方便地和 DeepSeek 交流。
+安装 Ollama
+Ollama 是一个开源的大型语言模型服务工具。它的主要作用是帮助用户快速在本地运行大模型，简化了在 Docker 容器内部署和管理大语言模型（LLM）的过程。</p>
+<p>PS：Ollama 就是大模型届的“Docker”。</p>
+<p>Ollama 优点如下：</p>
+<p>易于使用：即使是没有经验的用户也能轻松上手，无需开发即可直接与模型进行交互。
+轻量级：代码简洁，运行时占用资源少，能够在本地高效运行，不需要大量的计算资源。
+可扩展：支持多种模型架构，并易于添加新模型或更新现有模型，还支持热加载模型文件，无需重新启动即可切换不同的模型，具有较高的灵活性。
+预构建模型库：包含一系列预先训练好的大型语言模型，可用于各种任务，如文本生成、翻译、问答等，方便在本地运行大型语言模型。</p>
+<p>下载并安装 Ollama
+下载地址：https://ollama.com/</p>
+<p>mac 下载完后，选择一个模型，然后终端中打开 输入 你选择的模型命令 即可</p>
+<pre><code class="language-shell">ollama run deepseek-r1:1.5b
+</code></pre>
+<p>此时你就可以在命令行中使用 DeepSeek 了。</p>
+<p>怎么得到一个可视化页面的呢</p>
+<p>在 Docker 应用上添加一个 Open-WebUI 组件，让 DeepSeek-R1 可以通过浏览器界面交互，并赋予它联系上下文的能力。</p>
+<pre><code class="language-shell">docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+</code></pre></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

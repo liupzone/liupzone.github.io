@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="social-auto-upload 总结 · AI知识库专栏" />
+  <title>social-auto-upload 总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/ai视频-多平台自动发布social-auto-upload-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / AI视频</div><h1>social-auto-upload 总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/ai---social-auto-upload-md.svg" alt="social-auto-upload 总结主题配图" /></header><article class="ai-body ai-reading-width">
+<p>仓库地址：https://github.com/dreammis/social-auto-upload
+作者：dreammis ｜ 许可证：MIT ｜ Star：14.4k</p>
+<h2>是什么</h2>
+<p>一款视频<strong>一键多平台自动发布</strong>工具，面向管理多平台分发的内容创作者，用脚本化流程替代重复手动上传和易碎的浏览器 Agent 截图方案。</p>
+<p>原作者用途：<strong>提前一天定时发布</strong>，因此很多默认时间逻辑围绕"次日"设计。</p>
+<h2>支持平台</h2>
+<p>抖音、B 站、小红书、快手、微信视频号（tencent）、百家号、支付宝生活号、微博、虎扑、TikTok、YouTube</p>
+<p><strong>能力覆盖不一</strong>：
+- 抖音在当前重构分支上最完善
+- 图文（"图文"）仅支持：抖音、快手、小红书、B 站
+- TikTok、百家号无定时发布
+- 只有部分平台有 Skills</p>
+<h2>核心特性</h2>
+<ul>
+<li>登录 / cookie 设置、账号检查、视频上传、图文上传、定时发布</li>
+<li><strong>统一 <code>sau</code> CLI</strong>，跨平台一致</li>
+<li><strong>Skills</strong>：与 OpenClaw / Codex / Claude Code 集成（抖音、快手、小红书、B 站）</li>
+<li><strong>多账号</strong>：一账号一文件（按 <code>account_name</code>），可并行</li>
+<li>B 站运行时自动下载并更新 <code>biliup</code></li>
+<li>YouTube 用浏览器自动化而非官方 API，规避未审核项目的私有锁限制；支持播放列表和可见性设置</li>
+<li>短信 2FA 通过 <code>verify_code.txt</code> 回填</li>
+<li>受限地区 YouTube 支持 <code>YT_PROXY</code> 代理</li>
+</ul>
+<h2>技术栈</h2>
+<ul>
+<li>Python（<code>uv</code> 管理，<code>pyproject.toml</code>）</li>
+<li>浏览器自动化正迁移到 <strong><code>patchright</code></strong>（更好的隐身与 headless 支持）</li>
+<li>提供 Dockerfile</li>
+<li>独立的 <code>sau_backend</code> / <code>sau_frontend</code> 目录（Web 前端<strong>已非主线</strong>，不保证运行与同步）</li>
+<li>B 站上传用 <code>biliup</code></li>
+</ul>
+<h2>安装</h2>
+<p>详见 <code>docs/install.md</code> 与 <code>docs/update.md</code>。</p>
+<p><strong>AI Agent 引导安装</strong>：把仓库 + <code>docs/agent-bootstrap.md</code> 交给 Claude Code / Codex / OpenClaw，它们会优先使用 <code>uv</code>、<code>sau</code> CLI 和 <code>skills/</code> 目录。</p>
+<h2>使用</h2>
+<p>统一 CLI 模式：</p>
+<pre><code class="language-sh">sau &lt;platform&gt; login|check|upload-video|upload-note \
+  --account &lt;账号名&gt; --file &lt;文件&gt; \
+  --title &lt;标题&gt; --desc &lt;描述&gt; --tags &lt;标签&gt;
+</code></pre>
+<p>平台特有参数：
+- B 站：<code>--tid</code>
+- YouTube：<code>--playlist</code>、<code>--visibility</code></p>
+<p><code>examples/</code> 下保留旧版直传脚本供参考。</p>
+<h2>注意事项与限制</h2>
+<ul>
+<li>项目<strong>处于重构中</strong>：统一上传器结构、统一 CLI、推进 headless-first</li>
+<li>Web UI 代码保留但<strong>不再是主线</strong></li>
+<li>部分平台标题长度限制：微博 ≤ 30、虎扑 4–40</li>
+<li>YouTube 上传需等到 100% 才点发布——提前关闭会中断传输</li>
+<li>作者因创业维护带宽下降，但会有一波重构更新</li>
+<li>赞助方：DolOffer、chilltion、ClawPower（AI 模型代理商），README 中含推广码</li>
+</ul></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

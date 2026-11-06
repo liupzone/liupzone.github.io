@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="dsh-minigames 总结 · AI知识库专栏" />
+  <title>dsh-minigames 总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-plugins-娱乐类-小游戏dsh-minigames-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness plugins</div><h1>dsh-minigames 总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness-plugins----dsh-minigames-md.svg" alt="dsh-minigames 总结主题配图" /></header><article class="ai-body ai-reading-width">
+<p>仓库地址：https://github.com/lhh010/dsh-minigames
+许可证：BSD-3-Clause</p>
+<h2>是什么</h2>
+<p><strong>DSH Web UI 的小游戏插件</strong>——在右侧添加一个悬浮小游戏面板，专为等待模型回复或调试时打发时间设计。</p>
+<h2>定位</h2>
+<p>Canvas 渲染的<strong>离线零素材</strong>小游戏，通过一个可拖拽的悬浮窗 + 边缘吸附的 🎮 启动按钮承载。通过游戏注册表可扩展。</p>
+<h2>内置 18 款游戏</h2>
+<ol>
+<li>🦖 Dino Run（含昼夜/下雨）</li>
+<li>🧱 俄罗斯方块</li>
+<li>🛡️ 坦克大战（含 AI，3 波）</li>
+<li>💎 连消（四连同色消除）</li>
+<li>🔢 数字华容道</li>
+<li>🐍 贪吃蛇（环形穿边）</li>
+<li>🔢 2048</li>
+<li>💣 扫雷（含双击/chord）</li>
+<li>🃏 记忆翻牌</li>
+<li>⚫ 五子棋 vs AI（15×15）</li>
+<li>🦘 跳一跳（蓄力）</li>
+<li>🧱 打砖块</li>
+<li>🔨 打地鼠（5×5，最多 5 只）</li>
+<li>⚫ 黑白棋 vs AI（8×8）</li>
+<li>🐦 Flappy Bird</li>
+<li>🧩 数独（三档难度）</li>
+<li>🟡 吃豆人（含能量豆）</li>
+<li>🎯 FPS 瞄准训练器（指针锁定 + 后坐力）</li>
+</ol>
+<h2>核心特性</h2>
+<ul>
+<li><strong>悬浮可拖拽窗口</strong>，边缘吸附；收起时是一个记忆位置的圆形 🎮 按钮</li>
+<li><strong>面板隐藏或标签切换时自动暂停</strong>；每游戏最高分存 localStorage</li>
+<li><strong>键盘输入限于游戏区</strong>——"不会劫持聊天输入框"</li>
+<li>Canvas 自适应真实可用面板空间（≤ 960px），无滚动条</li>
+<li><strong>可扩展 <code>registerGame</code> 注册表</strong>——新游戏只需实现单一接口 <code>MiniGameDefinition</code></li>
+<li>面板走纯 <code>document.body</code> portal，不依赖宿主服务或布局槽</li>
+</ul>
+<h2>技术栈</h2>
+<ul>
+<li>TypeScript + React（TSX 客户端）、CSS 前缀 <code>dmg-</code></li>
+<li>构建：<code>tsc</code> 出声明 + <code>tsdown</code> 出两个包</li>
+<li><code>lib/index.js</code> — Node 半侧 loader stub</li>
+<li><code>lib/client.js</code> — 浏览器 bundle，经 <code>window.__ModuleLoader__.load</code> 注册</li>
+<li>测试：Vitest（<strong>201 单元测试</strong>覆盖纯逻辑模块）</li>
+<li>包管理：pnpm workspace</li>
+<li>Peer 依赖迁到 <code>@deepseek-ai/cordis</code>（仅类型导入），运行时零 cordis</li>
+<li>兼容：DSH 快照 0810 / 0811 / 0812，以及 <code>@deepseek-ai/dsh@0.0.1-rc.5</code>（含 rc.2）</li>
+</ul>
+<h2>安装</h2>
+<p>前置：已构建的 DSH 快照（20260808+）和 pnpm</p>
+<pre><code class="language-bash">git clone https://github.com/lhh010/dsh-minigames.git
+cd dsh-minigames
+pnpm install
+pnpm build
+
+# 安装到当前 web profile
+dsh plugin --profile web add /abs/path/to/dsh-minigames
+
+# 可选验证
+dsh --profile web --dump-config | grep dsh-minigames
+</code></pre>
+<p>重启 <code>dsh web</code> 生效。
+卸载：<code>dsh plugin --profile web remove @dsh-external/dsh-minigames</code></p>
+<p>⚠️ 仓库同时提供 <code>dsh.plugin.json</code>（注册表通道）和 <code>cordis.patch.yml</code>（profile bundle 通道）——<strong>二选一</strong>，不要同时启用。</p>
+<h2>使用</h2>
+<ol>
+<li>启动 <code>dsh web</code>，右下角出现 🎮 按钮（可拖）</li>
+<li>点击展开面板，标题栏拖动，靠近边缘释放即吸附</li>
+<li>选游戏卡启动。<code>P</code> 暂停，游戏结束后 <code>R</code> 重开，"选游戏"回到列表</li>
+<li>收起面板 = 游戏自动暂停并保留状态</li>
+</ol>
+<h2>开发</h2>
+<pre><code class="language-bash">pnpm run typecheck   # tsc --noEmit
+pnpm run test        # vitest（201 纯逻辑测试）
+pnpm run build       # 声明 + tsdown bundle
+</code></pre>
+<p>新游戏实现 <code>MiniGameDefinition</code>：
+- 字段：<code>id</code>、<code>title</code>、<code>icon</code>、<code>controls</code>、<code>create(host, options)</code>
+- 调用 <code>registerGame(...)</code>
+- 面板负责生命周期（<code>start</code> / <code>pause</code> / <code>resume</code> / <code>destroy</code>）和 <code>options.onScore</code> 计分回调</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

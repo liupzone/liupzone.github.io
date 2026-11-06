@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="LiveTalking 总结 · AI知识库专栏" />
+  <title>LiveTalking 总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/ai视频-数字人-livetalking-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / AI视频</div><h1>LiveTalking 总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/ai----livetalking-md.svg" alt="LiveTalking 总结主题配图" /></header><article class="ai-body ai-reading-width">
+<p>仓库地址：https://github.com/lipku/LiveTalking</p>
+<h2>是什么</h2>
+<p>一款<strong>实时交互流式数字人引擎</strong>，通过文本或语音驱动虚拟形象说话，实现音视频同步对话，已在业内获得广泛商用。</p>
+<p>结合 LLM 可实现智能对话，核心流程：</p>
+<blockquote>
+<p>用户输入文字/音频 → LLM 生成回复（可选）→ TTS 合成语音 → 数字人实时口型同步 → 音视频推流输出</p>
+</blockquote>
+<h2>核心特性</h2>
+<ul>
+<li>支持多种数字人模型：<strong>ernerf、musetalk、wav2lip、Ultralight-Digital-Human</strong></li>
+<li>支持<strong>声音克隆</strong></li>
+<li>支持数字人说话被<strong>打断</strong>（打断重说）</li>
+<li>支持<strong>全身视频拼接</strong></li>
+<li>支持 <strong>WebRTC、RTMP、虚拟摄像头</strong>三种输出</li>
+<li>支持<strong>动作编排</strong>：不说话时播放自定义视频</li>
+<li>支持<strong>多并发</strong></li>
+<li>支持<strong>自定义数字人形象</strong>（上传视频自动生成）</li>
+<li>提供前端 API 接口对接</li>
+</ul>
+<h2>应用场景</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>虚拟主播 / 直播带货</td>
+<td>24 小时无人直播，LLM 自动生成带货话术，配合动作编排（配套 <a href="https://github.com/lipku/livestream">livestream</a>）</td>
+</tr>
+<tr>
+<td>AI 数字人客服</td>
+<td>接入企业知识库，语音提问实时回答，支持打断重说</td>
+</tr>
+<tr>
+<td>在线教育 / 培训</td>
+<td>教师数字分身录课，或通过 API 驱动讲师实时授课</td>
+</tr>
+<tr>
+<td>智能语音助手</td>
+<td>结合智能音箱 / APP，调用 <code>/human</code> 接口语音对话</td>
+</tr>
+<tr>
+<td>大屏讲解</td>
+<td>展厅大屏、活动现场的讲解员互动</td>
+</tr>
+<tr>
+<td>短视频批量制作</td>
+<td>API 批量提交文案生成出镜视频，调用 <code>/human</code> + <code>/record</code></td>
+</tr>
+</tbody>
+</table>
+<h2>技术架构</h2>
+<p>分层设计，插件化扩展（基于 <code>registry.py</code> 去中心化注册机制，可自扩展 TTS / Avatar / Output 模块）：</p>
+<ul>
+<li><strong>API 层</strong>：<code>/human</code>（文本，支持 echo 复读与 chat 对话）、<code>/humanaudio</code>（音频直接播放）；每连接分配唯一 <code>sessionid</code>，支持多用户并发</li>
+<li><strong>逻辑层</strong>：</li>
+<li>LLM 引擎——对接 Qwen 等大模型，也可通过 OpenAI 兼容网关接入</li>
+<li>TTS 引擎——模块化，支持 EdgeTTS、GPT-SoVITS、CosyVoice、腾讯云等</li>
+<li>特征提取——同步提取音频声学特征（Mel 频谱）用于口型推理</li>
+<li><strong>渲染层</strong>：模型推理（Wav2Lip / MuseTalk 等）生成口型画面 → 后处理平滑贴回高清视频</li>
+<li><strong>推流层</strong>：WebRTC（低延迟浏览器端）/ RTMP（推 B 站、YouTube 等）/ 虚拟摄像头</li>
+</ul>
+<pre><code class="language-bash">python app.py --transport webrtc --model wav2lip --avatar_id wav2lip256_avatar1
+</code></pre>
+<blockquote>
+<p>服务端需开放端口 TCP:8010、UDP:1-65536</p>
+</blockquote>
+<h2>客户端接入</h2>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>浏览器</td>
+<td>打开 <code>http://serverip:8010/index.html</code>，点"开始连接"播放数字人，文本框输入文字提交</td>
+</tr>
+<tr>
+<td>API 调用</td>
+<td>参考 <code>docs/api.md</code> 通过 HTTP 驱动</td>
+</tr>
+<tr>
+<td>桌面客户端</td>
+<td><a href="https://pan.quark.cn/s/d7192d8ac19b">下载地址</a></td>
+</tr>
+</tbody>
+</table>
+<p>Web 页面：<code>/index.html</code>（连接+驱动+录制）、<code>/avatar.html</code>（上传视频生成形象）、<code>/admin.html</code>（会话监控与全局配置）。</p>
+<p>快速体验：UCloud 在线镜像 / Windows 整合包 / 商用版体验 <a href="https://www.livetalking.top">https://www.livetalking.top</a>。</p>
+<h2>性能指标</h2>
+<p>实时标准：<code>inferfps</code>（GPU 推理帧率）与 <code>finalfps</code>（最终推流帧率）均需 ≥25。不说话时并发看 CPU，同时说话并发看 GPU。</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>显卡</th>
+<th>FPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wav2lip256</td>
+<td>RTX 3060</td>
+<td>60</td>
+</tr>
+<tr>
+<td>wav2lip256</td>
+<td>RTX 3080Ti</td>
+<td>120</td>
+</tr>
+<tr>
+<td>musetalk</td>
+<td>RTX 3080Ti</td>
+<td>42</td>
+</tr>
+<tr>
+<td>musetalk</td>
+<td>RTX 3090</td>
+<td>45</td>
+</tr>
+<tr>
+<td>musetalk</td>
+<td>RTX 4090</td>
+<td>72</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>wav2lip256 推荐 RTX 3060 及以上；musetalk 推荐 RTX 3080Ti 及以上</li>
+</ul></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

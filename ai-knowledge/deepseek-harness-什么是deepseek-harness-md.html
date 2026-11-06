@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="DeepSeek Harness 深读：一个把&quot;Agent 内核&quot;完全拆掉的运行时 · AI知识库专栏" />
+  <title>DeepSeek Harness 深读：一个把&quot;Agent 内核&quot;完全拆掉的运行时 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-什么是deepseek-harness-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness</div><h1>DeepSeek Harness 深读：一个把&quot;Agent 内核&quot;完全拆掉的运行时</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness--deepseek-harness-md.svg" alt="DeepSeek Harness 深读：一个把&quot;Agent 内核&quot;完全拆掉的运行时主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>一句话结论</h2>
+<p><strong>DeepSeek Harness（<code>dsh</code>）不是又一个 Agent 框架，而是一个"没有内核"的 Agent 操作系统——从模型适配器到主循环、从工具执行到会话记录，每一个部件都是可以随时替换的插件；所有能力都通过统一的事件总线协作，任何行为都能被拦截、改写或彻底换掉，而不需要 fork 任何代码。</strong></p>
+<p>一行启动：</p>
+<pre><code class="language-sh">npx @deepseek-ai/dsh web
+# → http://127.0.0.1:3080
+</code></pre>
+<hr/>
+<h2>一、坐标系：<code>dsh</code> 到底站在哪儿？</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>隐喻</th>
+<th>你能改动的边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LangChain / LlamaIndex</td>
+<td>脚本 + 工具箱</td>
+<td>拼流程</td>
+</tr>
+<tr>
+<td>Claude Code / Codex</td>
+<td>打包好的"应用"</td>
+<td>加 hooks、写 skill</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>编辑器里嵌 Agent</td>
+<td>极少</td>
+</tr>
+<tr>
+<td><strong>DeepSeek Harness</strong></td>
+<td><strong>微内核操作系统</strong></td>
+<td><strong>一切皆插件，包括主循环</strong></td>
+</tr>
+</tbody>
+</table>
+<p>DeepSeek 官方给自己的定位是"<strong>a plugin-first agent harness</strong>"。技术上它构建在 <a href="https://github.com/cordiverse/cordis">Cordis</a> 之上——Cordis 是一个"时空可组合"的插件框架，可以把它理解为 <strong>Agent 世界的 Kubernetes 或 systemd</strong>：负责挂载/卸载模块、事件路由、生命周期管理、副作用回滚。</p>
+<p><code>dsh</code> 的所有代码几乎都住在 <code>packages/</code> 下面，我数了一下，<strong>大约 60+ 个独立包</strong>，每一个都是一个 Cordis 插件。真正的入口只是一个几十行的 boot loader，把这些插件按 profile 组装起来。</p>
+<hr/>
+<h2>二、心智模型：三个必须先建立的概念</h2>
+<p>读代码之前先把这三个词吃透，后面看什么都通顺。</p>
+<h3>1. Profile（配置档）= 一份"发行版"</h3>
+<p><code>dsh</code> 内置两个 profile：</p>
+<ul>
+<li><strong><code>web</code></strong>：跑一个浏览器 UI，长驻服务</li>
+<li><strong><code>headless</code></strong>：一次性命令行任务，跑完退出</li>
+</ul>
+<p>一个 profile 本质上就是一个 <strong>有序的 bundle（组合包）列表</strong>：先叠 <code>dsh-base</code>（模型、工具、持久化、沙箱、审批、遥测），再叠 <code>dsh-web-app</code> 或 <code>dsh-headless</code>。每一层都能对下一层做 patch。</p>
+<p>启动时想看它到底组装出了什么？</p>
+<pre><code class="language-sh">dsh --profile web --dump-config
+</code></pre>
+<p>出来的每一个条目，<strong>都可以被你自己的一份 <code>cordis.patch.yml</code> 通过 id 定位、整块替换或插入新条目</strong>。这就是 dsh 版本的 "everything is configurable"。</p>
+<h3>2. Capability Seam（能力接缝）= 让一切"可换"的秘密</h3>
+<p>这个词是 dsh 架构最核心的一个术语。一个 seam 由三个角色组成：</p>
+<pre><code>Service Definition (接口 + ctx.&lt;key&gt;)
+        │
+        ├── Service Provider (具体实现，可以有多个)
+        │
+        └── Consumer (使用方，通常是面向模型的工具)
+</code></pre>
+<p>看一个官方范例——<strong>Shell 能力</strong>：</p>
+<ul>
+<li><strong>Service Definition</strong>：<code>dsh-shell</code>——定义"执行 shell 命令"的抽象接口 <code>ShellExecutor</code></li>
+<li><strong>Service Provider</strong>：<code>dsh-bash-local</code>（本地 bash）/ <code>dsh-bash-sandbox</code>（沙箱）</li>
+<li><strong>Consumer</strong>：<code>dsh-tool-bash</code>（模型侧的 <code>bash</code> 工具）</li>
+</ul>
+<p>想换成 Docker、E2B、远程 SSH？<strong>写一个新的 Provider 挂上去，Consumer 一行不改</strong>。</p>
+<p>更进一步：文件系统 seam 和进程 seam 共享同一个"执行世界"，所以<strong>把 shell 指向远程沙箱后，Bash、PTY、LSP 会自动全都跑到远程</strong>——你不需要为它们分别写沙箱适配。</p>
+<p><code>subagent</code> 也是同一套路：同一个接口下面，实现可以是"在本进程里开个 subagent"、"跨会话把工作委派给另一个 agent"、甚至"派给另一个完全不同的 harness"。</p>
+<h3>3. 硬性不变量："模型可见 ⟺ 已记录"</h3>
+<p><code>dsh</code> 有一条<strong>运行时会 assert 的不变量</strong>：</p>
+<blockquote>
+<p><strong>任何进入模型请求的东西，必须能从会话日志里重建出来。</strong></p>
+</blockquote>
+<p>也就是说，你想给模型加一段隐藏系统提示词？可以，但<strong>必须先扩展 <code>SessionEventMap</code> 加一个新事件类型，把这段内容写进日志</strong>，然后再从日志渲染。</p>
+<p>这看起来很麻烦，但换来的是三个几乎"免费"的能力：</p>
+<ol>
+<li><strong>完美重放</strong>：任何一次会话都能字节级重现</li>
+<li><strong>完美 fork</strong>：任意时点分叉出一个新会话</li>
+<li><strong>完美审计/迁移</strong>：日志就是唯一真源，替换存储只是换一个 provider</li>
+</ol>
+<hr/>
+<h2>三、Agent 循环怎么跑？一个"轮次"的完整生命周期</h2>
+<p><code>dsh</code> 把执行拆成三层：</p>
+<ul>
+<li><strong>Round</strong>（策略层迭代，例如一次 Ralph 循环、一个 Goal Round）</li>
+<li><strong>Turn（轮次）</strong>：一次"排空已接纳输入"的过程</li>
+<li><strong>Step（步骤）</strong>：一次模型请求 + 它触发的所有工具</li>
+</ul>
+<p>一个 turn 展开来长这样（简化自 <code>docs/architecture.zh.md</code>）：</p>
+<pre><code class="language-text">turn/start
+  claim next-step input + 一条排队消息
+  组装 prompt sections + tool schemas
+  → agent/pre-step        （waterfall：可以 reject / 改写消息 / enter）
+     step/start
+       user/message
+       agent/request → llm/stream → assistant/chunk* → assistant/message
+       tool/call* → tools/pre-execute → tools/execute → tools/post-execute → tool/result*
+     step/end
+     还有工具欠请求？or 下一步输入到了？→ 继续 claim → 下一步
+  → agent/turn-stopping    （serial：最后一次干预机会）
+turn/end
+</code></pre>
+<p>几个关键设计点：</p>
+<p><strong>a) <code>agent/pre-step</code> 决定"模型这次到底看到什么"</strong>
+它是 waterfall 事件——每个监听器都可以调用 <code>next()</code> 把权力往下传，也可以直接 reject 或改写消息。压缩插件（<code>compaction</code>）就挂在这里，做完摘要再把改写后的消息交给下游。</p>
+<p><strong>b) 工具执行是一条完整的流水线</strong></p>
+<pre><code>tools/pre-execute (waterfall: hooks / permission / sandbox)
+   ↓
+Monotonic guards（单调守卫：只增不减地否决）
+   ↓
+ctx.approval（询问用户）
+   ↓
+tools/execute (waterfall: timeout / retry / metrics)
+   ↓
+Tool body 执行 (可能触发 fs/write-intent, fs/edit-intent)
+   ↓
+tools/post-execute (waterfall: accept / block / replace / add-context)
+   ↓
+Registry outer normalization
+   ↓
+ToolDefinition.finalizeContent
+   ↓
+tools/result（frozen 权威结果）
+</code></pre>
+<p><strong>任何一层都能挂插件干预</strong>——超时、重试、审批、沙箱、结果重写、TODO 联动、hook 触发全都在这条管道上，<strong>但工具本体不需要感知任何策略</strong>。</p>
+<p><strong>c) 事件分三个"域"，各司其职</strong></p>
+<table>
+<thead>
+<tr>
+<th>事件域</th>
+<th>特性</th>
+<th>举例</th>
+<th>什么时候用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Session Events</strong></td>
+<td>持久、追加、可回放</td>
+<td><code>turn/*</code>, <code>assistant/message</code>, <code>tool/result</code></td>
+<td>需要"重启后仍存在"的事实</td>
+</tr>
+<tr>
+<td><strong>Agent Events</strong></td>
+<td>实时、携带 Agent 句柄</td>
+<td><code>agent/pre-step</code>, <code>agent/request</code>, <code>agent/turn-stopping</code></td>
+<td>观察/拦截进行中的工作</td>
+</tr>
+<tr>
+<td><strong>Capability Events</strong></td>
+<td>挂在具体 seam 上</td>
+<td><code>fs/*</code>, <code>tools/*</code>, <code>telemetry/*</code></td>
+<td>附加策略/适配器，不改主循环</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>四、包目录导览：<code>packages/</code> 里有什么？</h2>
+<p>我按职能给整理了一下（不完全清单）：</p>
+<p><strong>核心层</strong>
+- <code>core/session</code>、<code>core/tools</code>、<code>core/agent</code>、<code>core/agent-loop</code>、<code>core/scope</code>、<code>core/system-prompt</code></p>
+<p><strong>模型层</strong>
+- <code>llm/llm</code>（协议） + <code>llm-deepseek</code>（默认适配器）+ <code>llm-replay</code>（回放）+ <code>llm-pi-ai</code></p>
+<p><strong>执行世界</strong>
+- <code>shell</code>（seam）+ <code>code-runtime</code>、<code>sandbox</code>、<code>subprocess</code>、<code>terminal</code>、<code>fs</code>、<code>e2b</code></p>
+<p><strong>工具集合</strong>（都在同一个流水线下）
+- <code>tool-bash</code>、<code>tool-fs</code>、<code>tool-web</code>、<code>tool-terminal</code>、<code>tool-ask-user</code>、<code>tool-skill</code>、<code>tool-subagent</code>、<code>tool-todo</code>、<code>tool-cordis</code>、<code>tool-session-query</code></p>
+<p><strong>编排 / 高级能力</strong>
+- <code>subagent</code>、<code>workflow</code>、<code>plan</code>（plan mode）、<code>goal</code>（同会话持久目标）、<code>schedule</code>、<code>jobs</code></p>
+<p><strong>兼容层（关键！）</strong>
+- <code>hooks-claude-code</code>、<code>hooks-codex</code>——<strong>兼容 Claude Code / Codex 的 hooks 协议</strong>，你在 Claude Code 里写的 hooks 理论上直接就能搬过来
+- <code>acp</code>——自动化控制协议服务器
+- <code>mcp</code>——MCP 支持</p>
+<p><strong>持久化 seam</strong>
+- <code>session-persistence</code> + <code>session-persistence-jsonl</code> / <code>session-persistence-sqlite</code>
+- <code>storage</code> + <code>storage-json</code> / <code>storage-sqlite</code>
+- <code>session-query</code> + <code>session-query-sqlite</code></p>
+<p><strong>基础设施</strong>
+- <code>boot</code>、<code>bundle</code>、<code>host</code>、<code>identity</code>、<code>credentials</code>、<code>settings</code>、<code>spill</code>、<code>guard</code>、<code>invariants</code>、<code>compaction</code>、<code>context</code>、<code>typert</code></p>
+<hr/>
+<h2>五、真正"极客"的几个设计决定</h2>
+<h3>决定 1：<strong>主循环也是插件</strong></h3>
+<p><code>core/agent</code> 只定义 <code>Agent</code> 接口和 <code>agent/*</code> 事件；真正跑轮次的驱动器是 <code>core/agent-loop</code>，它是<strong>独立的一个包</strong>。想把主循环换成一个完全不同的调度器（比如 Ralph 循环、Goal 驱动、DAG 编排）？拔掉、换上、完事。</p>
+<h3>决定 2：<strong>Scope 只有两层，扁平结构</strong></h3>
+<p>不像很多框架搞父子上下文继承，dsh <strong>只区分"全局注册"和"scope 注册"</strong>，scope 不向下继承。父子关系用叫 <strong>lineage</strong> 的数据字段表达（<code>parentSession</code> / <code>delegationDepth</code> / <code>subagentDepth</code>），跟可见性完全解耦。</p>
+<p>好处：<strong>shadowing（最具体者胜出）语义简单可预测</strong>——给某个 agent 定制一个同名工具，只在那个 agent 内替换全局版本，其他 agent 完全无感。</p>
+<h3>决定 3：<strong>Human Command 和 Model Tool 是两个不同的平面</strong></h3>
+<ul>
+<li><code>/goal</code>、<code>/fork</code> 这种 <strong>斜杠命令 = 人类命令</strong>，由 <code>ctx.commands</code> 处理，<strong>不会成为模型消息</strong></li>
+<li>模型侧的工具 = 面向 LLM 的能力，走 <code>ctx.tools</code> 流水线</li>
+</ul>
+<p>两个平面隔离清楚——UI 层的操作不会污染模型上下文，模型也无法伪造斜杠命令。</p>
+<h3>决定 4：<strong>Goal Round 与 Ralph Loop 的区分</strong></h3>
+<p><code>dsh</code> 引入了<strong>同会话的持久目标</strong>（<code>goal</code>）——一个 goal 可以横跨多个 turn，有 <code>active</code> / <code>paused</code> / <code>blocked</code> / <code>complete</code> 状态和轮次上限。<strong>注意目标激活态有意不参与持久回放</strong>：恢复或 fork 后不会自动继续跑，必须人类显式再授权一次。这个决策本身就体现了 dsh 对"AI 自主性 vs 人类审计"的谨慎立场。</p>
+<p><strong>Ralph Loop</strong> 是另一码事：每轮开一个<strong>全新的子会话</strong>，只通过一份有界的 "Ralph handoff" 报告传递跨轮状态。适合"多次全新尝试收敛到目标"的场景。</p>
+<h3>决定 5：<strong>Code Mode</strong></h3>
+<p>传统函数调用是 <code>tool_call</code> JSON。<code>dsh</code> 提供了 <code>run_code</code> 通道：<strong>模型可以直接吐一段代码，代码里再串行调用一堆子工具</strong>，子调用会带上父级 token、记录 <code>tool/code-dispatch</code> 事件、把拒绝转成有约束的驳回，并且<strong>省略 additionalContexts 让调用和结果紧邻</strong>——这对复杂多步工具编排是重大简化。</p>
+<hr/>
+<h2>六、<code>dsh</code> 现在成熟吗？</h2>
+<p><strong>不成熟。</strong> 官方在 README 里写得很直白：</p>
+<blockquote>
+<p>DeepSeek Harness 目前处于 <strong>Developer Preview</strong> 阶段，正在快速迭代。<strong>未来将出现破坏兼容性的变更。</strong></p>
+</blockquote>
+<p>而且在架构文档里有一句我特别认同：</p>
+<blockquote>
+<p><strong>"因为还没有外部用户，我们宁可推倒重来做对基础，也不做兼容层。"</strong></p>
+</blockquote>
+<p><strong>早期不敢动架构，晚期就更动不了</strong>。Kubernetes 早期也砍过很多 API，正是那段时间的果断，才有了今天稳定的地基。</p>
+<hr/>
+<h2>七、什么人应该现在就关注它？</h2>
+<table>
+<thead>
+<tr>
+<th>你是谁</th>
+<th>为什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>想深度定制 Agent 行为的开发者</td>
+<td>主循环、提示词组装、模型适配、工具流水线都能改</td>
+</tr>
+<tr>
+<td>研究 Agent 架构的人</td>
+<td>"一切皆插件 + Capability Seam" 是目前最激进的参考样本</td>
+</tr>
+<tr>
+<td>DeepSeek 模型重度用户</td>
+<td>官方出品，新特性第一时间适配</td>
+</tr>
+<tr>
+<td>想搞插件生态的团队</td>
+<td>可以基于 dsh 发布自己的 bundle，加 <code>dsh-plugin</code> topic 即可被发现</td>
+</tr>
+<tr>
+<td>从 Claude Code / Codex 迁移的团队</td>
+<td>hooks 协议兼容，MCP 也支持</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>八、我的一句话总结</h2>
+<p><strong>Agent 框架正从"应用软件"走向"微内核操作系统"。</strong></p>
+<p>LangChain 那代像"脚本+工具箱"；Claude Code、Cursor 像"应用软件"，功能齐全但内核不可动；<strong><code>dsh</code> 更像 Linux 那种微内核——内核尽可能小，一切能力都通过可加载模块提供，模块之间靠事件通信，各自可以独立演进</strong>。</p>
+<p>未来一两年会有更多这种设计的框架冒出来。真正的问题不是"技术选型"，而是——<strong>谁能把插件生态先做起来，谁就有机会成为 Agent 界的 Linux。</strong></p>
+<hr/>
+<h2>附：进一步阅读顺序（官方文档）</h2>
+<p>如果你想认真读一遍，推荐这个顺序：</p>
+<ol>
+<li><code>README.zh.md</code>——5 分钟建立初印象</li>
+<li><code>docs/cordis-primer.zh.md</code>——插件系统底座</li>
+<li><code>docs/architecture.zh.md</code>——<strong>核心中的核心，反复读</strong></li>
+<li><code>docs/agent-lifecycle.zh.md</code>——一张时序图讲清 turn/step 流程</li>
+<li><code>docs/tool-execution-pipeline.zh.md</code>——工具流水线全景</li>
+<li><code>docs/capability-seams.zh.md</code>——所有 seam 的可视化图谱</li>
+<li><code>docs/glossary.zh.md</code>——术语表，随时回查</li>
+<li><code>docs/cookbook/</code>——具体扩展怎么写（加包、加工具、加 LLM 适配器、加 Chat 节点）</li>
+</ol>
+<p><strong>项目地址</strong>：https://github.com/deepseek-ai/deepseek-harness</p>
+<p>一个建议：<strong>别只看 README，直接开一个 dsh session 让它自己带你逛 <code>packages/</code></strong>——官方明确推荐用 agent 探索代码库理解架构，这本身就是 dsh 想传达的信念之一。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

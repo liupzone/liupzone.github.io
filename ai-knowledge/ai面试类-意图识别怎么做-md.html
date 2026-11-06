@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="意图识别怎么做？ · AI知识库专栏" />
+  <title>意图识别怎么做？ · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/ai面试类-意图识别怎么做-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / Ai面试类</div><h1>意图识别怎么做？</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/ai----md.svg" alt="意图识别怎么做？主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>一句话结论</h2>
+<p><strong>混合架构：规则快筛 + 向量检索 + 轻量模型 + LLM 兜底</strong>，用"分层漏斗"把简单意图用极低成本快速处理，复杂意图才交给更强但更贵的模型，在<strong>准确率、延迟、成本</strong>之间取得平衡。</p>
+<ul>
+<li>综合准确率 93%+（很多团队实测 95% 左右）</li>
+<li>90% 以上请求 30ms 内响应</li>
+<li>LLM 调用量从 100% 降到 10~30%</li>
+</ul>
+<hr/>
+<h2>核心思想</h2>
+<blockquote>
+<p><strong>能用便宜且确定的方法就绝不走贵的方法。</strong></p>
+</blockquote>
+<p>分层过滤、逐级升维——由快到慢、由确定到模糊。</p>
+<hr/>
+<h2>四层漏斗架构</h2>
+<pre><code>用户输入
+    ↓
+【第一层：规则过滤】        &lt;5ms      拦截 10~20% 流量
+    ├─ 命中 → 直出
+    └─ 未命中 ↓
+【第二层：轻量分类器】      10~30ms    消化 60~70% 流量
+    ├─ 高置信度 → 业务分流
+    └─ 低置信度 ↓
+【第三层：LLM 复杂解析】    300~1000ms 处理 10~20% 长尾
+    ↓
+【第四层：拒识与澄清】      &lt;10ms      兜底 5~10%
+    ↓
+最终意图（含置信度、槽位、是否追问）
+</code></pre>
+<hr/>
+<h2>第一层：规则过滤（Rule-based）</h2>
+<p><strong>目标</strong>：&lt; 5ms、100% 确定性，处理高频固定模式。</p>
+<h3>技术方案</h3>
+<ul>
+<li><strong>AC 自动机 / Trie 树</strong>：海量关键词高效匹配（敏感词、命令词）</li>
+<li><strong>正则表达式</strong>：结构化文本（订单号、手机号、金额）</li>
+<li><strong>关键词词表</strong>：正/负关键词 + 同义词</li>
+<li><strong>模板匹配</strong>：固定话术</li>
+</ul>
+<h3>工程要点</h3>
+<ul>
+<li>规则全部<strong>配置化</strong>（YAML/JSON/数据库），运营可热更新</li>
+<li>支持优先级、黑白名单、冲突投票</li>
+<li>覆盖问候、退款、明确指令等强模式意图</li>
+</ul>
+<hr/>
+<h2>第二层：轻量分类器（Small Model）</h2>
+<p><strong>目标</strong>：10~30ms 内消化 70%~80% 常见业务意图。</p>
+<h3>技术选型对比</h3>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>原理</th>
+<th>延迟</th>
+<th>适合场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FastText</strong></td>
+<td>词向量叠加 + 层次 Softmax</td>
+<td>&lt; 2ms</td>
+<td>类别极多、样本极大</td>
+</tr>
+<tr>
+<td><strong>SVM/XGBoost</strong></td>
+<td>TF-IDF + 机器学习</td>
+<td>&lt; 5ms</td>
+<td>样本较小、特征工程成熟</td>
+</tr>
+<tr>
+<td><strong>TinyBERT</strong></td>
+<td>蒸馏后的轻量 Transformer</td>
+<td>10~30ms</td>
+<td>绝大多数高频业务</td>
+</tr>
+<tr>
+<td><strong>向量检索</strong></td>
+<td>Embedding + 相似度（BGE）</td>
+<td>&lt;50ms</td>
+<td>意图描述式匹配，新增方便</td>
+</tr>
+</tbody>
+</table>
+<h3>工程实践</h3>
+<ul>
+<li><strong>模型蒸馏</strong>：Teacher Model 标数据 → 蒸馏出 3~6 层 TinyBERT，推理提升 5~10 倍</li>
+<li><strong>联合模型</strong>：JointBERT 同时输出意图 + 槽位（NER），一次 Forward 搞定</li>
+<li><strong>向量方案</strong>：每个意图写好"描述"，用户 query embedding 后做 topK 检索</li>
+<li>中文推荐 <strong>BGE 系列</strong> embedding + <strong>Qdrant / Faiss</strong> 向量库</li>
+<li>新增意图只要加描述，不用重训模型</li>
+</ul>
+<hr/>
+<h2>第三层：LLM 复杂解析</h2>
+<p><strong>目标</strong>：处理长尾、口语化、多意图交织、多轮上下文相关的复杂 Query。</p>
+<h3>核心能力</h3>
+<p><strong>1. 多意图分解</strong></p>
+<blockquote>
+<p>"我想退昨天买的鞋子，另外帮我查下积分"
+→ <code>[{intent: return_item}, {intent: query_points}]</code></p>
+</blockquote>
+<p><strong>2. 隐晦意图</strong></p>
+<blockquote>
+<p>"这衣服穿两次袖子就开线了，你们怎么处理？"
+→ 传统模型：<code>product_review</code>
+→ LLM：<code>after_sales_complaint</code> + 负面情绪 → 优先补偿</p>
+</blockquote>
+<p><strong>3. 上下文补全</strong></p>
+<blockquote>
+<p>上一轮："请问您想订哪天的机票？" 用户："大后天吧"
+→ LLM：<code>provide_date(date=2026-08-10)</code></p>
+</blockquote>
+<h3>实现方式</h3>
+<ul>
+<li><strong>Function Calling / Structured Outputs</strong>：强约束 JSON Schema 输出</li>
+<li><strong>候选意图辅助</strong>：把第二层的 topK 候选喂给 LLM，命中率大幅提升</li>
+<li><strong>本地化 SFT</strong>：Qwen-7B / Llama-3-8B 微调，兼顾成本与语义泛化</li>
+<li><strong>RAG 增强</strong>：检索相似历史案例、注入多轮上下文</li>
+</ul>
+<hr/>
+<h2>第四层：拒识与澄清（Fallback）</h2>
+<p><strong>原则</strong>：宁可主动询问，也不盲目猜错。</p>
+<h3>三种触发状态</h3>
+<p><strong>A. 完全越界（OOD）</strong></p>
+<blockquote>
+<p>电商问"怎么修火箭？"
+→ 话术拒识 + 引导菜单：[退换货] [查物流] [人工]</p>
+</blockquote>
+<p><strong>B. 歧义（Top-2 接近）</strong></p>
+<blockquote>
+<p><code>intent_A: 0.45</code>, <code>intent_B: 0.42</code>
+→ 澄清："您是想查订单，还是改地址？"</p>
+</blockquote>
+<p><strong>C. 槽位缺失</strong></p>
+<blockquote>
+<p>意图明确但缺目的地
+→ 追问："请问飞往哪个城市？"</p>
+</blockquote>
+<h3>置信度阈值工程</h3>
+<pre><code>置信度
+1.0 ├── [ 直行处理 ]
+0.8 ├── [ T_high ]  Top-2 接近 → 澄清
+0.5 ├── [ T_low ]   低于此值 → 兜底拒识 / 转人工
+0.0 └──
+</code></pre>
+<ul>
+<li><strong>高安全业务</strong>（金融）：提高 T_high，宁可多问</li>
+<li><strong>高流畅业务</strong>（闲聊）：降低 T_high，保对话连贯</li>
+</ul>
+<p>用 <strong>PR 曲线 / ROC 曲线</strong> 在验证集找业务最佳平衡点。</p>
+<hr/>
+<h2>路由与决策工程</h2>
+<ul>
+<li><strong>不确定性路由</strong>：向量相似度接近、轻量模型熵高 → 强制走 LLM</li>
+<li><strong>多意图支持</strong>：第三层直接输出意图列表</li>
+<li><strong>Fallback 策略</strong>：全部失败 → 默认意图或转人工</li>
+<li><strong>A/B 测试与监控</strong>：实时监控每级命中率、准确率、延迟、成本</li>
+<li><strong>缓存</strong>：高频相似 query 直接命中结果</li>
+<li><strong>全链路日志</strong>：记录走了哪一级、为什么、最终结果，方便迭代 Bad Case</li>
+</ul>
+<hr/>
+<h2>总结对照表</h2>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>流量占比</th>
+<th>延迟</th>
+<th>目标</th>
+<th>技术手段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. 规则过滤</strong></td>
+<td>10~20%</td>
+<td>&lt; 5ms</td>
+<td>强指令、敏感词</td>
+<td>AC 自动机、正则、精确 Map</td>
+</tr>
+<tr>
+<td><strong>2. 轻量分类</strong></td>
+<td>60~70%</td>
+<td>10~30ms</td>
+<td>高频常见意图</td>
+<td>FastText、TinyBERT、向量检索</td>
+</tr>
+<tr>
+<td><strong>3. LLM 解析</strong></td>
+<td>10~20%</td>
+<td>300~1000ms</td>
+<td>长尾、多意图、复杂</td>
+<td>LLM + Function Call / SFT</td>
+</tr>
+<tr>
+<td><strong>4. 拒识澄清</strong></td>
+<td>5~10%</td>
+<td>&lt; 10ms</td>
+<td>歧义、越界防护</td>
+<td>阈值控流、澄清 Prompt、菜单</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>落地实践建议</h2>
+<ol>
+<li><strong>先统计流量分布</strong>——用日志看哪些意图高频、表达是否固定，决定规则覆盖目标</li>
+<li><strong>意图描述先写好</strong>——这是向量层效果的关键</li>
+<li><strong>阈值必须业务调优</strong>——在验证集画 PR 曲线</li>
+<li><strong>全链路日志</strong>——必须记录走了哪级、为什么</li>
+<li><strong>渐进上线</strong>——先规则+向量，再加轻量模型，最后引入 LLM</li>
+</ol>
+<h3>中文推荐技术栈</h3>
+<ul>
+<li><strong>Embedding</strong>：BGE 系列</li>
+<li><strong>轻量模型</strong>：Chinese-BERT / RoBERTa-wwm</li>
+<li><strong>LLM</strong>：Qwen 系列（性价比高）</li>
+<li><strong>向量库</strong>：Qdrant / Faiss</li>
+</ul>
+<hr/>
+<h2>为什么这套架构能成？</h2>
+<ul>
+<li>简单请求被规则和向量极速解决，本身准确率就高</li>
+<li>难请求走 LLM，且有候选意图辅助，接近纯 LLM 准确率</li>
+<li>加权综合准确率 93%+</li>
+<li>平均延迟被前两级拉低，很多请求几十毫秒完成</li>
+<li>LLM 成本降到 10~30%</li>
+<li>扩展性好——新意图先加规则/向量描述，实在不行再微调</li>
+</ul></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

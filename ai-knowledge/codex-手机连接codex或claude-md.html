@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="手机连接 Codex 或 Claude (CLI) 完整指南 · AI知识库专栏" />
+  <title>手机连接 Codex 或 Claude (CLI) 完整指南 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/codex-手机连接codex或claude-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / codex</div><h1>手机连接 Codex 或 Claude (CLI) 完整指南</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/codex--codex-claude-md.svg" alt="手机连接 Codex 或 Claude (CLI) 完整指南主题配图" /></header><article class="ai-body ai-reading-width">
+<p>随着 Claude Code 和 Codex 等命令行 AI 编程工具的发布，开发者们拥有了更强大的本地开发助手。然而，由于这些工具本质上是运行在电脑端的 CLI 程序，如何在手机或平板等移动设备上便捷地连接并使用它们，成为了许多人的痛点。</p>
+<p>本指南将为您介绍目前主流的三种连接方案，您可以根据自己的使用习惯和技术背景进行选择。</p>
+<hr/>
+<h2>方案一：官方 Remote Control (最推荐)</h2>
+<p>Anthropic 官方为 Claude Code 推出了 <strong>Remote Control</strong> 功能，允许用户从手机端直接同步并控制桌面端的 CLI 会话。</p>
+<h3>1. 使用前提</h3>
+<ul>
+<li>拥有 Claude Pro、Max、Team 或 Enterprise 订阅。</li>
+<li>电脑端已安装最新版本的 <code>claude-code</code>。</li>
+<li>如果你的网络需要代理，请先确认本机代理端口；下面的代理命令需要改成你自己的代理端口。</li>
+</ul>
+<h3>2. 操作步骤</h3>
+<ol>
+<li><strong>启动远程模式</strong>：在电脑项目目录下运行命令：
+    <code>bash
+    claude remote-control</code>
+    或者在已有的 Claude 会话中输入 <code>/remote-control</code> (或简写 <code>/rc</code>)。
+    如果需要通过代理启动，可以参考下面的写法，并把 <code>PROXY_PORT</code> 换成你自己的代理端口：
+    <code>bash
+    HTTP_PROXY=http://127.0.0.1:PROXY_PORT HTTPS_PROXY=http://127.0.0.1:PROXY_PORT claude remote-control</code></li>
+<li><strong>获取链接</strong>：终端会显示一个专用的 URL 和一个二维码。</li>
+<li><strong>移动端登录</strong>：<ul>
+<li>使用手机扫描二维码。</li>
+<li>或者在手机浏览器访问 <code>claude.ai/code</code> 并登录相同账号。</li>
+</ul>
+</li>
+<li><strong>开始操作</strong>：此时，您的手机端将与电脑端实时同步，您可以在手机上发送语音或文本指令，控制电脑进行代码修改、文件阅读和命令执行。</li>
+</ol>
+<hr/>
+<h2>方案二：第三方专用应用 (移动端体验优化)</h2>
+<p>如果您觉得在移动端浏览器操作不够灵敏，或者需要更原生的交互体验，可以使用社区开发的专用 App。</p>
+<h3>1. Happy Coder (跨平台)</h3>
+<p><strong>Happy Coder</strong> 是一款专为 Claude Code 和 Codex 打造的移动端中继应用。
+- <strong>优点</strong>：提供加密中继服务，自带针对代码输入的虚拟键盘优化，支持 iOS 和 Android。
+- <strong>使用</strong>：在电脑端运行其提供的配套服务端脚本，然后在手机 App 中输入配对码即可。</p>
+<p>第一步：去应用市场搜索“happy”，一定要要记住这个H的图标。
+第二步：要保证你的电脑有nodejs，支持nodejs 18+环境，安装下面的命令：</p>
+<p>当然，官方说是所有的通信都是匿名加密，不会获取到信息，
+安装</p>
+<p>安装 HappyCoding CLI</p>
+<p>```js
+ npm install -g happy-coder</p>
+<pre><code>
+2.  首次登录/绑定
+
+```js
+ happy auth login
+
+ happy auth login --force
+</code></pre>
+<ol start="3">
+<li>启动模式</li>
+</ol>
+<pre><code class="language-js">happy          # Claude 模式
+happy codex    # Codex 模式
+</code></pre>
+<ol start="2">
+<li>后台进程管理</li>
+</ol>
+<p>启停与状态</p>
+<pre><code class="language-js">happy daemon start
+happy daemon stop
+happy daemon status
+happy daemon list
+</code></pre>
+<ol start="2">
+<li>健康检查与诊断</li>
+</ol>
+<p>```js
+ happy doctor</p>
+<pre><code>
+3.  清理异常残留进程
+
+
+ ```js
+ happy doctor clean
+</code></pre>
+<ol start="3">
+<li>卸载
+推荐按“先停服务，再卸载，再清数据”：</li>
+</ol>
+<p>停止后台与清理进程</p>
+<pre><code class="language-js">happy daemon stop
+happy doctor clean
+</code></pre>
+<ol start="2">
+<li>退出登录并清认证</li>
+</ol>
+<pre><code class="language-js">happy auth logout
+</code></pre>
+<ol start="3">
+<li>卸载全局包</li>
+</ol>
+<p><code>js 
+ npm uninstall -g happy-coder</code></p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="git命令大全 · AI知识库专栏" />
+  <title>git命令大全 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/vibe-coding-必知的常见知识-git类-git命令大全-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / vibe coding 必知的常见知识</div><h1>git命令大全</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/vibe-coding---git--git--md.svg" alt="git命令大全主题配图" /></header><article class="ai-body ai-reading-width">
+<p>我们我们开发时候在工作区，当我们把修改，add之后，修改内容会被提到暂存区，当我们commit 之后修改的内容
+会被提到我们本地的仓库（repository）,当我们push之后，会被提到远程仓库（remote）</p>
+<pre><code class="language-js">Workspace：工作区
+Index / Stage：暂存区
+Repository：仓库区（或本地仓库）
+Remote：远程仓库
+</code></pre>
+<h1>一、新建代码库</h1>
+<h4>在当前目录新建一个Git代码库</h4>
+<pre><code class="language-bash"> git init
+</code></pre>
+<h4>新建一个目录，将其初始化为Git代码库</h4>
+<pre><code class="language-bash">git init [project-name]
+</code></pre>
+<h4>下载一个项目和它的整个代码历史</h4>
+<pre><code class="language-bash">git clone [url]
+</code></pre>
+<h1>生成ssh</h1>
+<pre><code class="language-bash">git config --global user.name "yk"
+添加邮箱
+git config --global user.email "youremail@163.com"
+</code></pre>
+<h4>生成公钥</h4>
+<pre><code class="language-js">生成ssh-keygen -t rsa -C "你的邮箱"  连续回车  
+ssh-keygen -t rsa
+生成公钥
+</code></pre>
+<blockquote>
+<p>（然后有个C盘的路径，沿着那个路径找到那个文件，把里面的内容粘贴过来，在GitHub上那个ssh，设置秘钥，密码粘进去）</p>
+</blockquote>
+<h1>添加到暂存区</h1>
+<h4>添加指定文件到暂存区</h4>
+<pre><code class="language-bash">git add [file1] [file2] ...
+</code></pre>
+<h4>添加指定目录到暂存区，包括子目录</h4>
+<pre><code class="language-bash">$ git add [dir]
+</code></pre>
+<h4>添加当前目录的所有文件到暂存区</h4>
+<pre><code class="language-bash">$ git add .
+</code></pre>
+<h5>添加每个变化前，都会要求确认 对于同一个文件的多处变化，可以实现分次提交</h5>
+<pre><code class="language-bash">git add -p
+</code></pre>
+<h4>删除工作区文件，并且将这次删除放入暂存区</h4>
+<pre><code class="language-bash">git rm [file1] [file2] ...
+</code></pre>
+<h4>改名文件，并且将这个改名放入暂存区</h4>
+<pre><code class="language-bash"> git mv [file-original] [file-renamed]
+</code></pre>
+<h1>代码提交</h1>
+<h4>提交暂存区到仓库区</h4>
+<pre><code class="language-bash"> git commit -m [message]
+</code></pre>
+<h4>提交暂存区的指定文件到仓库区</h4>
+<pre><code class="language-bash">git commit [file1] [file2] ... -m [message]
+</code></pre>
+<h4>使用一次新的commit，替代上一次提交</h4>
+<h4>如果代码没有任何新变化，则用来改写上一次commit的提交信息</h4>
+<pre><code class="language-bash">git commit --amend -m [message]
+</code></pre>
+<h1>分支</h1>
+<h4>查看所有分支</h4>
+<pre><code class="language-bash">git branch -a
+</code></pre>
+<h4>查看所有远程分支</h4>
+<pre><code class="language-bash">git branch -r
+</code></pre>
+<h4>查看所有本地分支</h4>
+<pre><code class="language-bash">git branch
+</code></pre>
+<h4>新建一个分支，但依然停留在当前分支</h4>
+<pre><code class="language-bash">git branch [branch-name]
+</code></pre>
+<h4>新建一个分支，并切换到该分支</h4>
+<pre><code class="language-bash">git checkout -b [branch]
+</code></pre>
+<h4>切换到指定分支，并更新工作区</h4>
+<pre><code class="language-bash">git checkout [branch-name]
+</code></pre>
+<h4>切换到上一个分支</h4>
+<pre><code class="language-bash">git checkout -
+</code></pre>
+<h4>合并指定分支到当前分支</h4>
+<pre><code class="language-bash"> git merge [branch]
+</code></pre>
+<h4>删除本地分支</h4>
+<pre><code class="language-bash">git branch -d &lt;branchName&gt;
+</code></pre>
+<h4>强制删除本地分支</h4>
+<pre><code class="language-bash">git branch -D &lt;branchName&gt;
+</code></pre>
+<h4>删除远程分支</h4>
+<pre><code class="language-js">git push origin --delete [branch-name]
+git branch -dr [remote/branch]
+</code></pre>
+<h4>新建一个分支，与指定的远程分支建立追踪关系</h4>
+<pre><code class="language-bash">git branch --track [branch] [remote-branch]
+</code></pre>
+<blockquote>
+<p>git branch -d 删除分支，会在删除前检查merge状态，避免误删没有合并的分支。
+git branch -D 是git branch --delete --force的简写，它会强制删除该分支。
+如果想要删除远程分支以及追踪分支需使用: git push --origin -delete branch</p>
+</blockquote>
+<h1>查看信息</h1>
+<h4>显示有变更的文件</h4>
+<pre><code class="language-bash"> git status
+</code></pre>
+<h4>显示当前分支的版本历史</h4>
+<pre><code class="language-bash">git log
+</code></pre>
+<p>如果嫌输出信息太多，看得眼花缭乱的，可以试试加上--pretty=oneline参数：</p>
+<pre><code class="language-bash"> git log --pretty=oneline
+ ```
+
+#### 搜索提交历史，根据关键词
+</code></pre>
+<p>$ git log -S [keyword]</p>
+<pre><code class="language-css">
+#### 显示某个文件的版本历史，包括文件改名
+</code></pre>
+<p>git log --follow [file]
+git whatchanged [file]</p>
+<pre><code class="language-css">
+#### 显示过去5次提交
+</code></pre>
+<p>git log -5 --pretty --oneline</p>
+<pre><code class="language-css">
+#### 显示暂存区和工作区的差异
+
+</code></pre>
+<p>git diff</p>
+<pre><code class="language-css">
+#### 显示当前分支的最近几次提交
+</code></pre>
+<p>git reflog</p>
+<pre><code class="language-css">
+# 远程同步
+#### 上传本地指定分支到远程仓库
+</code></pre>
+<p>git push [remote] [branch]</p>
+<pre><code class="language-css">
+#### 强行推送当前分支到远程仓库，即使有冲突
+</code></pre>
+<p>git push [remote] --force</p>
+<pre><code class="language-css">
+#### 推送所有分支到远程仓库
+</code></pre>
+<p>git push [remote] --all</p>
+<pre><code class="language-css">
+#### 下载远程仓库的所有变动
+</code></pre>
+<p>git fetch [remote]</p>
+<pre><code class="language-css">
+#### 显示所有远程仓库
+</code></pre>
+<p>git remote -v</p>
+<pre><code class="language-css">
+#### 增加一个新的远程仓库，并命名
+</code></pre>
+<p>git remote add [shortname] [url]</p>
+<pre><code class="language-css">
+#### 取回远程仓库的变化，并与本地分支合并
+</code></pre>
+<p>git pull [remote] [branch]</p>
+<pre><code class="language-css">
+# 撤销
+
+#### 恢复暂存区的指定文件到工作区
+</code></pre>
+<p>git checkout [file]</p>
+<pre><code class="language-css">
+#### 恢复暂存区的所有文件到工作区
+</code></pre>
+<p>git checkout .</p>
+<pre><code class="language-css">
+#### 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
+</code></pre>
+<p>git reset [file]</p>
+<pre><code class="language-css">
+#### 重置暂存区与工作区，与上一次commit保持一致
+</code></pre>
+<p>git reset --hard</p>
+<pre><code class="language-css">
+#### 恢复某个commit的指定文件到暂存区和工作区
+</code></pre>
+<p>git checkout [commit] [file]</p>
+<pre><code class="language-css">
+#### 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
+</code></pre>
+<p>git reset [commit]</p>
+<pre><code class="language-css">
+#### 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致
+</code></pre>
+<p>git reset --hard [commit]</p>
+<pre><code class="language-js"></code></pre>
+<p>git reset --hard 1094a  //返回到指定某一版本</p>
+<pre><code class="language-js">
+&gt;Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，也就是最新的提交1094adb...（注意我的提交ID和你的肯定不一样），上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+
+</code></pre>
+<p>git reset --hard HEAD^ //返回上一个版本</p>
+<pre><code class="language-css">
+#### 暂时将未提交的变化移除，稍后再移入
+</code></pre>
+<p>$ git stash
+$ git stash pop</p>
+<pre><code class="language-css">
+### 拉取远程所有分支
+
+</code></pre>
+<p>git branch -r | grep -v '-&gt;' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done</p>
+<pre><code class="language-css">
+## 首先同步所有远程分支，如上：
+
+
+
+### 将本地所有分支与远程保持同步 
+</code></pre>
+<p>git fetch --all</p>
+<pre><code class="language-css">
+### 最后拉取所有分支代码
+</code></pre>
+<p>git pull --all</p>
+<pre><code class="language-js"></code></pre></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

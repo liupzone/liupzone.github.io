@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="agent memory · AI知识库专栏" />
+  <title>agent memory · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/skills-agent-memory-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / skills</div><h1>agent memory</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills-agent-memory-md.svg" alt="agent memory主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p>让你的编码代理记住一切。不再重复解释。</p>
+<p>为 Claude Code、Cursor、Gemini CLI、Codex CLI、Hermes、OpenClaw、pi、OpenCode 以及任何 MCP 客户端提供持久化记忆。</p>
+</blockquote>
+<h2>参考项目:<a href="https://github.com/rohitg00/agentmemory">rohitg00/agentmemory</a></h2>
+<h2>解决了什么问题</h2>
+<p>你每次会话都在重复解释同样的架构。你反复发现同样的 bug。你重复教同样的偏好。内建的记忆(CLAUDE.md、<code>.cursorrules</code>)上限只有 200 行,而且会过时。</p>
+<p><strong>agentmemory 的做法:</strong> 在后台静默捕获代理的行为,将其压缩为可搜索的记忆,并在下次会话开始时注入正确的上下文。一条命令,跨代理工作。</p>
+<pre><code class="language-text">会话 1:"给 API 加上鉴权"
+  代理写代码、跑测试、修 bug
+  agentmemory 静默捕获每次工具使用
+  会话结束 -&gt; 观测被压缩为结构化记忆
+
+会话 2:"现在加上限流"
+  代理已经知道:
+    - 鉴权使用 src/middleware/auth.ts 中的 JWT 中间件
+    - test/auth.test.ts 覆盖 token 校验
+    - 为了 Edge 兼容性选择了 jose 而非 jsonwebtoken
+  无需重新解释,直接开始工作
+</code></pre>
+<hr/>
+<h2>安装</h2>
+<h3>一键启动</h3>
+<pre><code class="language-bash">npm install -g @agentmemory/agentmemory          # 全局安装,获得 `agentmemory` 命令
+agentmemory                                      # 在 :3111 启动记忆服务器
+agentmemory demo                                 # 注入示例会话并验证召回
+agentmemory connect claude-code                  # 连接代理(可选:codex、cursor、gemini-cli ...)
+</code></pre>
+<p>或不安装直接用 <code>npx</code>:</p>
+<pre><code class="language-bash">npx @agentmemory/agentmemory
+</code></pre>
+<blockquote>
+<p>npx 按版本缓存。若想强制最新版:<code>npx -y @agentmemory/agentmemory@latest</code>。</p>
+</blockquote>
+<h3>30 秒体验</h3>
+<pre><code class="language-bash"># 终端 1:启动服务器
+npx @agentmemory/agentmemory
+
+# 终端 2:注入示例数据并查看召回
+npx @agentmemory/agentmemory demo
+</code></pre>
+<p><code>demo</code> 会注入 3 个真实会话(JWT 鉴权、N+1 查询修复、限流)并对它们执行语义搜索。打开 <code>http://localhost:3113</code> 即时观察记忆的构建过程。</p>
+<hr/>
+<h2>支持的代理</h2>
+<p>agentmemory 兼容任何支持 hooks、MCP 或 REST API 的代理。<strong>所有代理共享同一个记忆服务器。</strong></p>
+<table>
+<thead>
+<tr>
+<th>代理</th>
+<th>接入方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>原生插件 + 12 hooks + MCP</td>
+</tr>
+<tr>
+<td><strong>Codex CLI</strong></td>
+<td>原生插件 + 6 hooks + MCP</td>
+</tr>
+<tr>
+<td><strong>OpenClaw / Hermes / pi</strong></td>
+<td>原生插件 + MCP</td>
+</tr>
+<tr>
+<td><strong>OpenHuman</strong></td>
+<td>原生 Memory trait 后端</td>
+</tr>
+<tr>
+<td><strong>Cursor / Claude Desktop / Windsurf</strong></td>
+<td>MCP 服务器</td>
+</tr>
+<tr>
+<td><strong>Gemini CLI / Cline / Roo Code / Kilo Code / Goose</strong></td>
+<td>MCP 服务器</td>
+</tr>
+<tr>
+<td><strong>OpenCode</strong></td>
+<td>22 hooks + MCP + 插件</td>
+</tr>
+<tr>
+<td><strong>Aider</strong></td>
+<td>REST API</td>
+</tr>
+<tr>
+<td><strong>Qwen Code / Antigravity / Kiro</strong></td>
+<td><code>agentmemory connect &lt;name&gt;</code> 自动写入</td>
+</tr>
+</tbody>
+</table>
+<h3>Claude Code 接入</h3>
+<p>在新终端启动服务:</p>
+<pre><code class="language-bash">npx @agentmemory/agentmemory
+</code></pre>
+<p>然后在 Claude Code 内:</p>
+<pre><code class="language-text">/plugin marketplace add rohitg00/agentmemory
+/plugin install agentmemory
+</code></pre>
+<p>插件会注册全部 12 个 hooks、4 个 skills,并自动接入 53 个 MCP 工具。验证:</p>
+<pre><code class="language-bash">curl http://localhost:3111/agentmemory/health
+</code></pre>
+<p>实时查看器:<a href="http://localhost:3113">http://localhost:3113</a>。</p>
+<h3>不装插件(纯 MCP)</h3>
+<pre><code class="language-bash">agentmemory connect claude-code --with-hooks
+</code></pre>
+<p>将 hook 命令合并到 <code>~/.claude/settings.json</code>,使用当前安装包的绝对路径。升级后需重新运行以刷新路径。</p>
+<h3>Codex CLI</h3>
+<pre><code class="language-bash">npx @agentmemory/agentmemory                    # 启动记忆服务器
+codex plugin marketplace add rohitg00/agentmemory
+codex plugin add agentmemory@agentmemory
+</code></pre>
+<blockquote>
+<p>Codex Desktop 当前不派发插件本地 hooks(<a href="https://github.com/openai/codex/issues/16430">openai/codex#16430</a>),变通方法是运行 <code>agentmemory connect codex --with-hooks</code> 将 hook 镜像到 <code>~/.codex/hooks.json</code>。</p>
+</blockquote>
+<h3>其他代理的通用 MCP 配置</h3>
+<p>将以下条目<strong>合并</strong>到宿主的 <code>mcpServers</code> 对象中(不要替换整个文件):</p>
+<pre><code class="language-json">"agentmemory": {
+  "command": "npx",
+  "args": ["-y", "@agentmemory/mcp"],
+  "env": {
+    "AGENTMEMORY_URL": "${AGENTMEMORY_URL}",
+    "AGENTMEMORY_SECRET": "${AGENTMEMORY_SECRET}"
+  }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>代理</th>
+<th>配置文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cursor</td>
+<td><code>~/.cursor/mcp.json</code></td>
+</tr>
+<tr>
+<td>Claude Desktop</td>
+<td><code>claude_desktop_config.json</code></td>
+</tr>
+<tr>
+<td>Cline / Roo Code / Kilo Code</td>
+<td>Cline MCP 设置 UI</td>
+</tr>
+<tr>
+<td>Windsurf</td>
+<td><code>~/.codeium/windsurf/mcp_config.json</code></td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><code>gemini mcp add agentmemory npx -y @agentmemory/mcp --scope user</code></td>
+</tr>
+<tr>
+<td>OpenCode</td>
+<td><code>opencode.json</code>(顶层 <code>mcp</code> key,command 用数组)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>沙盒化客户端</strong>(Flatpak、Snap、受限容器)无法访问宿主 <code>localhost</code>,需在 <code>env</code> 中加 <code>"AGENTMEMORY_FORCE_PROXY": "1"</code>,并把 <code>AGENTMEMORY_URL</code> 指向沙盒能到达的路由(如 LAN IP)。</p>
+<hr/>
+<h2>工作原理</h2>
+<h3>记忆流水线</h3>
+<pre><code class="language-text">PostToolUse hook 触发
+  -&gt; SHA-256 去重(5 分钟窗口)
+  -&gt; 隐私过滤(剥离 secrets、API keys)
+  -&gt; 存储原始观测
+  -&gt; LLM 压缩 -&gt; 结构化事实 + 概念 + 叙事
+  -&gt; 向量嵌入(6 个提供者 + 本地)
+  -&gt; 索引到 BM25 + 向量
+
+Stop / SessionEnd hook 触发
+  -&gt; 总结会话
+  -&gt; 知识图谱抽取(GRAPH_EXTRACTION_ENABLED=true)
+  -&gt; 槽位反思(SLOT_REFLECT_ENABLED=true)
+
+SessionStart hook 触发
+  -&gt; 加载项目档案(顶层概念、文件、模式)
+  -&gt; 混合搜索(BM25 + 向量 + 图)
+  -&gt; Token 预算(默认 2000)
+  -&gt; 注入到对话
+</code></pre>
+<h3>4 层记忆整合</h3>
+<p>灵感来自人脑处理记忆的方式(睡眠时的记忆整合)。</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>内容</th>
+<th>类比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Working(工作)</strong></td>
+<td>来自工具使用的原始观测</td>
+<td>短期记忆</td>
+</tr>
+<tr>
+<td><strong>Episodic(情景)</strong></td>
+<td>压缩后的会话摘要</td>
+<td>「发生了什么」</td>
+</tr>
+<tr>
+<td><strong>Semantic(语义)</strong></td>
+<td>提取的事实与模式</td>
+<td>「我知道什么」</td>
+</tr>
+<tr>
+<td><strong>Procedural(程序)</strong></td>
+<td>工作流与决策模式</td>
+<td>「怎么做」</td>
+</tr>
+</tbody>
+</table>
+<p>记忆随时间衰减(Ebbinghaus 曲线),频繁访问的会强化,陈旧的自动清除,矛盾会被检测并解决。</p>
+<h3>Hook 捕获了什么</h3>
+<table>
+<thead>
+<tr>
+<th>Hook</th>
+<th>捕获内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SessionStart</code></td>
+<td>项目路径、会话 ID</td>
+</tr>
+<tr>
+<td><code>UserPromptSubmit</code></td>
+<td>用户提示词(隐私过滤)</td>
+</tr>
+<tr>
+<td><code>PreToolUse</code></td>
+<td>文件访问模式 + 富化上下文</td>
+</tr>
+<tr>
+<td><code>PostToolUse</code></td>
+<td>工具名、输入、输出</td>
+</tr>
+<tr>
+<td><code>PostToolUseFailure</code></td>
+<td>错误上下文</td>
+</tr>
+<tr>
+<td><code>PreCompact</code></td>
+<td>在压缩前重新注入记忆</td>
+</tr>
+<tr>
+<td><code>SubagentStart/Stop</code></td>
+<td>子代理生命周期</td>
+</tr>
+<tr>
+<td><code>Stop</code> / <code>SessionEnd</code></td>
+<td>会话结束摘要</td>
+</tr>
+</tbody>
+</table>
+<h3>关键能力</h3>
+<table>
+<thead>
+<tr>
+<th>能力</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自动捕获</td>
+<td>每次工具使用都通过 hooks 记录,零人工</td>
+</tr>
+<tr>
+<td>语义搜索</td>
+<td>BM25 + 向量 + 知识图谱,RRF 融合</td>
+</tr>
+<tr>
+<td>记忆演化</td>
+<td>版本控制、覆盖关系、关系图</td>
+</tr>
+<tr>
+<td>自动遗忘</td>
+<td>TTL 过期、矛盾检测、重要性驱逐</td>
+</tr>
+<tr>
+<td>隐私优先</td>
+<td>API key、secret、<code>&lt;private&gt;</code> 标签存储前剥离</td>
+</tr>
+<tr>
+<td>自愈</td>
+<td>熔断器、提供者回退链、健康监控</td>
+</tr>
+<tr>
+<td>Claude 桥接</td>
+<td>与 <code>MEMORY.md</code> 双向同步</td>
+</tr>
+<tr>
+<td>知识图谱</td>
+<td>实体抽取 + BFS 遍历</td>
+</tr>
+<tr>
+<td>团队记忆</td>
+<td>命名空间共享 + 私有</td>
+</tr>
+<tr>
+<td>引用溯源</td>
+<td>任意记忆追溯到源观测</td>
+</tr>
+<tr>
+<td>Git 快照</td>
+<td>记忆状态的版本、回滚、diff</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>检索机制</h2>
+<p>三路检索结合三种信号,通过 Reciprocal Rank Fusion (RRF, k=60) 融合,并按会话多样化(每会话最多 3 个结果):</p>
+<table>
+<thead>
+<tr>
+<th>流</th>
+<th>作用</th>
+<th>启用条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BM25</strong></td>
+<td>词干化关键词匹配 + 同义词扩展</td>
+<td>始终启用</td>
+</tr>
+<tr>
+<td><strong>Vector(向量)</strong></td>
+<td>稠密嵌入上的余弦相似度</td>
+<td>配置了嵌入提供者</td>
+</tr>
+<tr>
+<td><strong>Graph(图)</strong></td>
+<td>通过实体匹配的知识图谱遍历</td>
+<td>查询中检测到实体</td>
+</tr>
+</tbody>
+</table>
+<p>BM25 默认支持希腊语、西里尔语、希伯来语、阿拉伯语和带音标的拉丁文分词。<strong>中文/日语/韩语</strong>需要安装可选分词器:</p>
+<pre><code class="language-bash">npm install @node-rs/jieba tiny-segmenter
+</code></pre>
+<h3>嵌入提供者</h3>
+<pre><code class="language-bash">npm install @xenova/transformers   # 推荐:本地嵌入,免费
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>提供者</th>
+<th>模型</th>
+<th>成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>本地(推荐)</strong></td>
+<td><code>all-MiniLM-L6-v2</code></td>
+<td>免费,离线</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td><code>gemini-embedding-001</code></td>
+<td>免费层</td>
+</tr>
+<tr>
+<td>OpenAI</td>
+<td><code>text-embedding-3-small</code></td>
+<td>$0.02/1M</td>
+</tr>
+<tr>
+<td>Voyage AI</td>
+<td><code>voyage-code-3</code></td>
+<td>付费,代码优化</td>
+</tr>
+<tr>
+<td>Cohere</td>
+<td><code>embed-english-v3.0</code></td>
+<td>免费试用</td>
+</tr>
+<tr>
+<td>OpenRouter</td>
+<td>任意模型</td>
+<td>视而定</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>MCP 工具</h2>
+<p><strong>53 个工具、6 个资源、3 个提示词、4 个 skills</strong> —— 任何代理可用的最全面 MCP 记忆工具包。</p>
+<h3>核心工具(始终可用)</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>memory_recall</code></td>
+<td>搜索过去的观测</td>
+</tr>
+<tr>
+<td><code>memory_save</code></td>
+<td>保存洞察、决策或模式</td>
+</tr>
+<tr>
+<td><code>memory_smart_search</code></td>
+<td>混合语义 + 关键词搜索</td>
+</tr>
+<tr>
+<td><code>memory_sessions</code></td>
+<td>列出最近的会话</td>
+</tr>
+<tr>
+<td><code>memory_profile</code></td>
+<td>项目档案(概念、文件、模式)</td>
+</tr>
+<tr>
+<td><code>memory_export</code></td>
+<td>导出所有记忆数据</td>
+</tr>
+<tr>
+<td><code>memory_file_history</code></td>
+<td>关于特定文件的过去观测</td>
+</tr>
+<tr>
+<td><code>memory_governance_delete</code></td>
+<td>带审计轨迹的删除</td>
+</tr>
+</tbody>
+</table>
+<h3>扩展工具(<code>AGENTMEMORY_TOOLS=all</code>)</h3>
+<p>包含图查询、整合、团队共享、快照、动作管理(<code>memory_action_*</code>、<code>memory_lease</code>、<code>memory_signal_*</code>)、哨兵(<code>memory_sentinel_*</code>)、网状同步(<code>memory_mesh_sync</code>)、诊断(<code>memory_diagnose</code>、<code>memory_heal</code>)、facet 标签等共 51 个工具。</p>
+<h3>Skills</h3>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/recall</code></td>
+<td>搜索记忆</td>
+</tr>
+<tr>
+<td><code>/remember</code></td>
+<td>保存到长期记忆</td>
+</tr>
+<tr>
+<td><code>/session-history</code></td>
+<td>最近的会话摘要</td>
+</tr>
+<tr>
+<td><code>/forget</code></td>
+<td>删除观测/会话</td>
+</tr>
+</tbody>
+</table>
+<h3>MCP shim 提示</h3>
+<p>已发布的 <code>@agentmemory/mcp</code> 是一个薄 shim。<strong>只有当它能通过 <code>AGENTMEMORY_URL</code> 连通运行中的 agentmemory 服务器时</strong>,才暴露完整 51 工具表面;否则回退到 7 个工具的本地集合。在 Cursor/OpenCode/Gemini CLI 中只看到 7 个工具时,启动 <code>npx @agentmemory/agentmemory</code> 并设置 <code>AGENTMEMORY_URL=http://localhost:3111</code>。</p>
+<hr/>
+<h2>实时查看器与 iii 控制台</h2>
+<h3>查看器(端口 3113)</h3>
+<pre><code class="language-bash">open http://localhost:3113
+</code></pre>
+<p>实时观测流、会话浏览器、记忆浏览器、知识图谱可视化、健康仪表板。默认绑定 <code>127.0.0.1</code>,REST 端点 <code>/agentmemory/viewer</code> 遵循 <code>AGENTMEMORY_SECRET</code> bearer token 规则。</p>
+<h3>iii 控制台</h3>
+<p><code>:3113</code> 展示代理<strong>记住了什么</strong>,<a href="https://iii.dev/docs/console">iii 控制台</a>展示代理<strong>做了什么</strong>。</p>
+<pre><code class="language-bash"># agentmemory 查看器占用 3113,控制台在 3114 运行
+iii console --port 3114
+</code></pre>
+<p>控制台页面:Workers / Functions / Triggers / States / Streams / Queues / <strong>Traces</strong> / Logs / Config / Flow。每个记忆操作都是一个 OpenTelemetry trace span。</p>
+<blockquote>
+<p>控制台未强制鉴权,保持其绑定 <code>127.0.0.1</code>,不要对外暴露。</p>
+</blockquote>
+<hr/>
+<h2>部署</h2>
+<p>托管主机的一键模板,自包含 Dockerfile 从 npm 拉取 <code>@agentmemory/agentmemory</code>,从官方 <code>iiidev/iii</code> 复制引擎二进制。持久存储挂载在 <code>/data</code>。<strong>只发布端口 <code>3111</code></strong>(查看器仍绑 loopback,需 SSH 隧道)。</p>
+<ul>
+<li><code>deploy/fly</code> —— 单机配 <code>auto_stop_machines = "stop"</code>,空闲最便宜</li>
+<li><code>deploy/railway</code> —— Hobby 套餐固定费用,卷在仪表板配置</li>
+<li><code>deploy/render</code> —— Blueprint 流程,付费套餐自动磁盘快照</li>
+<li><code>deploy/coolify</code> —— 在自己的 VPS 自托管,数据归你所有</li>
+</ul>
+<hr/>
+<h2>配置</h2>
+<h3>LLM 提供者</h3>
+<p>默认是 <strong>no-op</strong>(不调用 LLM,合成 BM25 压缩 + 召回仍可用)。</p>
+<table>
+<thead>
+<tr>
+<th>提供者</th>
+<th>环境变量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic</td>
+<td><code>ANTHROPIC_API_KEY</code></td>
+</tr>
+<tr>
+<td>MiniMax</td>
+<td><code>MINIMAX_API_KEY</code></td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td><code>GEMINI_API_KEY</code>(同时启用嵌入)</td>
+</tr>
+<tr>
+<td>OpenRouter</td>
+<td><code>OPENROUTER_API_KEY</code></td>
+</tr>
+<tr>
+<td>OpenAI</td>
+<td><code>OPENAI_API_KEY</code>(同时启用 OpenAI 嵌入)</td>
+</tr>
+<tr>
+<td>Claude 订阅回退</td>
+<td><code>AGENTMEMORY_ALLOW_AGENT_SDK=true</code>(默认关,有 Stop-hook 递归风险)</td>
+</tr>
+</tbody>
+</table>
+<h3>成本感知的模型选择</h3>
+<p>后台压缩在每次观测时运行,模型选择影响月度支出。基于 635 次请求 / 888K tokens / 35 小时活跃使用的实测:</p>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th>模型</th>
+<th>35 小时成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ 推荐</td>
+<td><code>deepseek/deepseek-v4-pro</code></td>
+<td>~$0.46</td>
+</tr>
+<tr>
+<td>✅ 推荐</td>
+<td><code>deepseek/deepseek-chat</code></td>
+<td>~$0.40</td>
+</tr>
+<tr>
+<td>✅ 推荐</td>
+<td><code>qwen/qwen3-coder</code></td>
+<td>~$0.55(代码场景强)</td>
+</tr>
+<tr>
+<td>⚠️ 高级</td>
+<td><code>anthropic/claude-sonnet-4.6</code></td>
+<td>~$5.02</td>
+</tr>
+<tr>
+<td>⚠️ 高级</td>
+<td><code>openai/gpt-4o</code></td>
+<td>~$4.20</td>
+</tr>
+<tr>
+<td>❌ 避免</td>
+<td><code>anthropic/claude-opus-4.6</code></td>
+<td>~$25+</td>
+</tr>
+</tbody>
+</table>
+<p>压缩是质量门槛宽松的摘要任务(代理读、不是用户读),DeepSeek-V4-Pro / Qwen3-Coder 与 Sonnet 误差极小但成本约低 10×。</p>
+<h3>多代理记忆</h3>
+<p>在多角色共享一台服务器的场景(architect / developer / reviewer ...):</p>
+<pre><code class="language-env">TEAM_ID=company
+USER_ID=engineering-team
+AGENT_ID=architect
+AGENTMEMORY_AGENT_SCOPE=isolated   # 可选,默认 shared
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>标记写入</th>
+<th>过滤召回</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>shared</code>(默认)</td>
+<td>✅</td>
+<td>❌</td>
+<td>跨代理共享上下文 + 审计轨迹</td>
+</tr>
+<tr>
+<td><code>isolated</code></td>
+<td>✅</td>
+<td>✅</td>
+<td>严格隔离</td>
+</tr>
+</tbody>
+</table>
+<h3>端口</h3>
+<table>
+<thead>
+<tr>
+<th>端口</th>
+<th>进程</th>
+<th>用途</th>
+<th>环境覆盖</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>3111</code></td>
+<td>agentmemory</td>
+<td>REST API + MCP HTTP + 健康检查</td>
+<td><code>III_REST_PORT</code></td>
+</tr>
+<tr>
+<td><code>3112</code></td>
+<td>iii-engine</td>
+<td>内部流 worker</td>
+<td><code>III_STREAMS_PORT</code></td>
+</tr>
+<tr>
+<td><code>3113</code></td>
+<td>agentmemory</td>
+<td>实时查看器</td>
+<td><code>AGENTMEMORY_VIEWER_PORT</code></td>
+</tr>
+<tr>
+<td><code>49134</code></td>
+<td>iii-engine</td>
+<td>WebSocket + OTel 遥测</td>
+<td><code>III_ENGINE_URL</code></td>
+</tr>
+</tbody>
+</table>
+<h3>配置文件</h3>
+<p>把运行时配置放到 <code>~/.agentmemory/.env</code>(Windows: <code>%USERPROFILE%\.agentmemory\.env</code>)。常用开关:</p>
+<pre><code class="language-env"># 自动压缩(默认关,开启后每次 PostToolUse 都会调用 LLM)
+AGENTMEMORY_AUTO_COMPRESS=true
+
+# 可编辑的固定记忆槽位(persona、user_preferences ...)
+AGENTMEMORY_SLOTS=true
+
+# Stop hook 自动反思,追加 TODOs 到 pending_items
+AGENTMEMORY_REFLECT=true
+
+# SessionStart 注入 1-2K 字符项目上下文到首轮对话
+AGENTMEMORY_INJECT_CONTEXT=true
+
+# 知识图谱抽取
+GRAPH_EXTRACTION_ENABLED=true
+
+# 4 层整合
+CONSOLIDATION_ENABLED=true
+
+# 工具可见度:core(8 个)或 all(51 个)
+AGENTMEMORY_TOOLS=core
+
+# 鉴权
+AGENTMEMORY_SECRET=your-secret
+</code></pre>
+<hr/>
+<h2>REST API</h2>
+<p>端口 <code>3111</code> 上有 <strong>124 个端点</strong>,默认绑定 <code>127.0.0.1</code>。设置 <code>AGENTMEMORY_SECRET</code> 后受保护端点要求 <code>Authorization: Bearer &lt;secret&gt;</code>。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>路径</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><code>/agentmemory/health</code></td>
+<td>健康检查(始终公开)</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/session/start</code></td>
+<td>开始会话 + 获取上下文</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/session/end</code></td>
+<td>结束会话</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/observe</code></td>
+<td>捕获观测</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/smart-search</code></td>
+<td>混合搜索</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/context</code></td>
+<td>生成上下文</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/remember</code></td>
+<td>保存到长期记忆</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/forget</code></td>
+<td>删除观测</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/enrich</code></td>
+<td>文件上下文 + 记忆 + bugs</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/agentmemory/profile</code></td>
+<td>项目档案</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/agentmemory/export</code></td>
+<td>导出所有数据</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/import</code></td>
+<td>从 JSON 导入</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/graph/query</code></td>
+<td>知识图谱查询</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/agentmemory/team/share</code></td>
+<td>与团队共享</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/agentmemory/audit</code></td>
+<td>审计轨迹</td>
+</tr>
+</tbody>
+</table>
+<h3>程序化访问(Python / Rust / Node)</h3>
+<p>agentmemory 把核心操作注册为 iii 函数(<code>mem::remember</code>、<code>mem::observe</code>、<code>mem::context</code>、<code>mem::smart-search</code>、<code>mem::forget</code>),任何 iii SDK 都可通过 <code>ws://localhost:49134</code> 直接调用。</p>
+<pre><code class="language-bash">pip install iii-sdk         # Python
+cargo add iii-sdk           # Rust
+npm install iii-sdk         # Node
+</code></pre>
+<pre><code class="language-python">from iii import register_worker
+
+iii = register_worker("ws://localhost:49134")
+iii.connect()
+
+iii.trigger({
+    "function_id": "mem::smart-search",
+    "payload": {"project": "demo", "query": "how do tokens refresh"},
+})
+</code></pre>
+<hr/>
+<h2>基准</h2>
+<h3>检索准确率</h3>
+<p><strong>coding-agent-life-v1</strong>(内部语料库)</p>
+<table>
+<thead>
+<tr>
+<th>适配器</th>
+<th>P@5</th>
+<th>R@5</th>
+<th>Top-5 命中</th>
+<th>p50 延迟</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>agentmemory 混合</strong></td>
+<td><strong>0.578</strong></td>
+<td><strong>0.967</strong></td>
+<td><strong>15/15</strong></td>
+<td>14 ms</td>
+</tr>
+<tr>
+<td>grep 基线</td>
+<td>0.267</td>
+<td>0.967</td>
+<td>15/15</td>
+<td>0 ms</td>
+</tr>
+</tbody>
+</table>
+<p>精度比 grep 基线高 <strong>2.2×</strong>。</p>
+<p><strong>LongMemEval-S</strong>(ICLR 2025,500 个问题)</p>
+<table>
+<thead>
+<tr>
+<th>系统</th>
+<th>R@5</th>
+<th>R@10</th>
+<th>MRR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>agentmemory</strong></td>
+<td><strong>95.2%</strong></td>
+<td><strong>98.6%</strong></td>
+<td><strong>88.2%</strong></td>
+</tr>
+<tr>
+<td>仅 BM25 回退</td>
+<td>86.2%</td>
+<td>94.6%</td>
+<td>71.5%</td>
+</tr>
+</tbody>
+</table>
+<h3>Token 节省</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Token/年</th>
+<th>成本/年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>粘贴全部上下文</td>
+<td>19.5M+</td>
+<td>不可能(超出窗口)</td>
+</tr>
+<tr>
+<td>LLM 摘要</td>
+<td>~650K</td>
+<td>~$500</td>
+</tr>
+<tr>
+<td><strong>agentmemory</strong></td>
+<td><strong>~170K</strong></td>
+<td><strong>~$10</strong></td>
+</tr>
+<tr>
+<td>agentmemory + 本地嵌入</td>
+<td>~170K</td>
+<td><strong>$0</strong></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>对比竞品</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>agentmemory</th>
+<th>mem0 (53K ⭐)</th>
+<th>Letta / MemGPT (22K ⭐)</th>
+<th>内建 (CLAUDE.md)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>类型</strong></td>
+<td>记忆引擎 + MCP</td>
+<td>记忆层 API</td>
+<td>完整代理运行时</td>
+<td>静态文件</td>
+</tr>
+<tr>
+<td><strong>检索 R@5</strong></td>
+<td><strong>95.2%</strong></td>
+<td>68.5% (LoCoMo)</td>
+<td>83.2% (LoCoMo)</td>
+<td>N/A (grep)</td>
+</tr>
+<tr>
+<td><strong>自动捕获</strong></td>
+<td>12 hooks(零人工)</td>
+<td>手动调用 <code>add()</code></td>
+<td>代理自编辑</td>
+<td>手动编辑</td>
+</tr>
+<tr>
+<td><strong>搜索</strong></td>
+<td>BM25 + 向量 + 图 (RRF)</td>
+<td>向量 + 图</td>
+<td>向量(归档)</td>
+<td>全部加载到上下文</td>
+</tr>
+<tr>
+<td><strong>多代理</strong></td>
+<td>MCP + REST + 租约 + 信号</td>
+<td>API(无协调)</td>
+<td>仅 Letta 内部</td>
+<td>每代理一个文件</td>
+</tr>
+<tr>
+<td><strong>框架锁定</strong></td>
+<td>无(任何 MCP 客户端)</td>
+<td>无</td>
+<td>高(必须 Letta)</td>
+<td>每代理格式</td>
+</tr>
+<tr>
+<td><strong>外部依赖</strong></td>
+<td>无(SQLite + iii)</td>
+<td>Qdrant / pgvector</td>
+<td>Postgres + 向量库</td>
+<td>无</td>
+</tr>
+<tr>
+<td><strong>记忆生命周期</strong></td>
+<td>4 层整合 + 衰减 + 自动遗忘</td>
+<td>被动提取</td>
+<td>代理管理</td>
+<td>手动清理</td>
+</tr>
+<tr>
+<td><strong>Token 效率</strong></td>
+<td>~1,900 tokens/会话</td>
+<td>依集成方式</td>
+<td>核心记忆在上下文</td>
+<td>240 条观测 22K+ tokens</td>
+</tr>
+<tr>
+<td><strong>实时查看器</strong></td>
+<td>端口 3113</td>
+<td>云端仪表板</td>
+<td>云端仪表板</td>
+<td>无</td>
+</tr>
+<tr>
+<td><strong>自托管</strong></td>
+<td>默认</td>
+<td>可选</td>
+<td>可选</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>由 iii 驱动</h2>
+<p>agentmemory <strong>本身就是一个运行中的 <a href="https://iii.dev">iii</a> 实例</strong>。函数、触发器、KV 状态、流、OTEL traces —— 全部都是 iii 原语。没有 Postgres、Redis、Express、pm2、Prometheus —— iii 替代了它们。</p>
+<p><strong>一条命令扩展:</strong></p>
+<pre><code class="language-bash">iii worker add iii-pubsub          # 把记忆写入扇出到每个实例
+iii worker add iii-cron            # 定时整合、衰减扫描、快照轮换
+iii worker add iii-queue           # 嵌入 + 压缩任务的持久重试
+iii worker add iii-observability   # 每个操作的 OTEL traces(默认开)
+iii worker add iii-sandbox         # 在隔离 microVM 内运行召回到的代码
+iii worker add iii-database        # 切换 SQL 后端的状态适配器
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>传统栈</th>
+<th>agentmemory 使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Express.js / Fastify</td>
+<td>iii HTTP Triggers</td>
+</tr>
+<tr>
+<td>SQLite / Postgres + pgvector</td>
+<td>iii KV State + 内存向量索引</td>
+</tr>
+<tr>
+<td>SSE / Socket.io</td>
+<td>iii Streams (WebSocket)</td>
+</tr>
+<tr>
+<td>pm2 / systemd</td>
+<td>iii engine worker 监管</td>
+</tr>
+<tr>
+<td>Prometheus / Grafana</td>
+<td>iii OTEL + 健康监控</td>
+</tr>
+<tr>
+<td>自定义插件系统</td>
+<td><code>iii worker add &lt;name&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>118 个源文件 · ~21,800 行代码 · 950+ 测试 · 123 个函数 · 34 个 KV 作用域</strong>,全部基于三种原语。</p>
+<hr/>
+<h2>Windows 注意事项</h2>
+<p>仅 Node.js 包不够,还需要 <code>iii-engine</code> 原生二进制。三条路径:</p>
+<ul>
+<li><strong>选项 A</strong>(推荐):从 <a href="https://github.com/iii-hq/iii/releases/tag/iii%2Fv0.11.2">iii v0.11.2 release</a> 下载 <code>iii-x86_64-pc-windows-msvc.zip</code>,把 <code>iii.exe</code> 放到 PATH 或 <code>%USERPROFILE%\.local\bin\</code></li>
+<li><strong>选项 B</strong>:安装 Docker Desktop for Windows,agentmemory 会自动拉取捆绑的 compose</li>
+<li><strong>选项 C</strong>:只跑独立 MCP(无引擎):<code>npx -y @agentmemory/agentmemory mcp</code></li>
+</ul>
+<hr/>
+<h2>常见问题排查</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>修复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>did not become ready within 15s</code></td>
+<td><code>--verbose</code> 重跑,检查 stderr</td>
+</tr>
+<tr>
+<td><code>Could not start iii-engine</code></td>
+<td>安装 iii.exe 或启动 Docker Desktop</td>
+</tr>
+<tr>
+<td>端口冲突</td>
+<td><code>lsof -i :3111</code> / <code>netstat -ano \| findstr :3111</code>,kill 或 <code>--port &lt;N&gt;</code></td>
+</tr>
+<tr>
+<td>Cursor/Gemini 只看到 7 个工具</td>
+<td>启动 <code>agentmemory</code> 并设 <code>AGENTMEMORY_URL=http://localhost:3111</code></td>
+</tr>
+<tr>
+<td>沙盒客户端连不到</td>
+<td>加 <code>AGENTMEMORY_FORCE_PROXY=1</code>,<code>AGENTMEMORY_URL</code> 改 LAN IP</td>
+</tr>
+<tr>
+<td>Codex Desktop hooks 无响应</td>
+<td><code>agentmemory connect codex --with-hooks</code> 镜像到全局</td>
+</tr>
+</tbody>
+</table>
+<p>陈旧进程清理:</p>
+<pre><code class="language-bash"># macOS / Linux
+lsof -i :3111,3112,3113,49134
+pkill -f agentmemory
+pkill -f 'iii '
+
+# Windows
+netstat -ano | findstr ":3111 :3112 :3113 :49134"
+taskkill /F /PID &lt;pid&gt;
+</code></pre>
+<hr/></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

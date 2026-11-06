@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="dsh-web-ui：DSH 的 Web UI 插件全家桶 · AI知识库专栏" />
+  <title>dsh-web-ui：DSH 的 Web UI 插件全家桶 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-plugins-换皮肤dsh-web-ui-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness plugins</div><h1>dsh-web-ui：DSH 的 Web UI 插件全家桶</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness-plugins--dsh-web-ui-md.svg" alt="dsh-web-ui：DSH 的 Web UI 插件全家桶主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p>项目地址：<a href="https://github.com/zhu1090093659/dsh-web-ui">https://github.com/zhu1090093659/dsh-web-ui</a>
+授权：Apache-2.0 · 4.9k stars
+核心理念：<strong>一切皆开发，一切皆插件</strong></p>
+</blockquote>
+<h2>一、这是什么</h2>
+<p><strong>dsh-web-ui</strong> 是 DeepSeek Harness (DSH) Web UI 的<strong>插件与皮肤集合</strong>。不改 DSH 源码，通过官方 profile 机制挂载，装完即在 Web 界面里出现一组新模块。既可以整包一次装齐，也可以按需单装。</p>
+<h2>二、模块一览</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>包名</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>梁神模式</strong></td>
+<td><code>dsh-liangshen</code></td>
+<td>面向 V4 Pro 的两阶段锚定 agent 预设：首轮 Minimal 开局，锚定后切 PTC Mode</td>
+</tr>
+<tr>
+<td><strong>任务看板</strong></td>
+<td><code>dsh-task-board</code></td>
+<td>五列看板（待规划/待办/进行中/已完成/已失败），支持 cron 定时执行 + 空闲睡眠保护</td>
+</tr>
+<tr>
+<td><strong>Git 图谱</strong></td>
+<td><code>dsh-git-graph</code></td>
+<td>分支泳道 + 提交历史可视化</td>
+</tr>
+<tr>
+<td><strong>移动端远程</strong></td>
+<td><code>dsh-remote-web-ui</code></td>
+<td>扫码配对手机/PC 浏览器，SSE 实时同步，支持 cloudflared 隧道</td>
+</tr>
+<tr>
+<td><strong>SSH 远程</strong></td>
+<td><code>dsh-ssh</code></td>
+<td>Web 终端、SFTP 传输、端口转发、集群执行、Agent 直连</td>
+</tr>
+<tr>
+<td><strong>图像理解</strong></td>
+<td><code>dsh-tool-describe-image</code></td>
+<td><code>describe_image</code> 工具，对接 OpenAI 兼容视觉端点</td>
+</tr>
+<tr>
+<td><strong>右侧面板</strong></td>
+<td>集成 <code>dsh-better-sidebar</code></td>
+<td>文件/编辑器/终端/Git/浏览器（旧 aionui-panel 已停维）</td>
+</tr>
+<tr>
+<td><strong>鲸鱼娘宠物</strong></td>
+<td><code>dsh-pet</code></td>
+<td>常驻界面伴侣，随 agent 状态换动画，支持养成互动</td>
+</tr>
+<tr>
+<td><strong>皮肤中心</strong></td>
+<td>—</td>
+<td>12 款皮肤，试穿即生效；支持 Wallpaper Engine 壁纸导入</td>
+</tr>
+</tbody>
+</table>
+<h2>三、安装</h2>
+<p><strong>npm（推荐）</strong>：</p>
+<pre><code class="language-sh">dsh plugin --profile web add @linxin666/dsh-web-ui-all@latest
+</code></pre>
+<p>装完重启 <code>dsh web</code> 即可。也可单装某个模块，比如 <code>@linxin666/dsh-liangshen@latest</code>。</p>
+<p><strong>从仓库（开发调试用）</strong>：Node.js ≥ 22 + pnpm，克隆后：</p>
+<pre><code class="language-sh">pnpm install &amp;&amp; pnpm -r build
+# 再用 scripts/link-profile.mjs 链接到 profile
+</code></pre>
+<h2>四、配置</h2>
+<ul>
+<li><strong>设置 → 插件配置</strong>：按需开关每个插件</li>
+<li><strong>皮肤中心</strong>：试穿再应用，不落盘</li>
+<li><strong>SSH 配置</strong>：写入 <code>~/.dsh/dsh-ssh.json</code>（口令明文，0600 权限）</li>
+<li><strong>定时任务</strong>：在任务详情里配 cron 表达式</li>
+<li><strong>图像理解</strong>：在 "Image understanding" 卡片配置端点 / 模型 / 密钥</li>
+</ul>
+<h2>五、亮点</h2>
+<ol>
+<li><strong>插件化彻底</strong>：零侵入，官方 profile 机制挂载</li>
+<li><strong>皮肤与官方解耦</strong>：纯资产目录（<code>skin.json</code> + 样式/贴图），只与皮肤中心耦合</li>
+<li><strong>梁神模式实测强</strong>：Windows 原生环境均值 98.5，兼顾工具完整性</li>
+<li><strong>Host 级定时任务</strong>：关闭浏览器仍继续执行</li>
+<li><strong>一份配对链接</strong>同时兼顾手机与 PC 远程</li>
+<li><strong>聚合包 id 加 <code>web-ui-</code> 前缀</strong>避免与单包冲突</li>
+</ol>
+<h2>六、排障要点</h2>
+<ul>
+<li><strong>pnpm 11 的 <code>minimumReleaseAge</code>（默认 24h）</strong> 会让 <code>@latest</code> 静默装到旧版 → 皮肤中心崩溃。需在 profile 的 <code>pnpm-workspace.yaml</code> 里把 <code>@linxin666/*</code> 排除</li>
+<li>严格 isolated 布局要设 <code>nodeLinker: hoisted</code></li>
+<li>Cloudflare quick tunnel / Tailscale Serve 不透传 SSE，插件会自动降级为轮询</li>
+</ul>
+<h2>七、已知限制</h2>
+<ul>
+<li>SSH 口令<strong>明文存储</strong>（0600 权限）</li>
+<li>任务错过<strong>不补跑</strong></li>
+<li>仓库源码安装仅供开发调试，生产用 npm</li>
+</ul>
+<h2>一句话总结</h2>
+<p><strong>dsh-web-ui 是 DSH Web 端的"全家桶"</strong>：任务看板、Git 图谱、SSH、移动远程、图像理解、皮肤、桌宠都能一次装齐，也能按需单装。不改 DSH 源码，靠官方 profile 挂载——想给 DSH Web 补齐"能用起来的日常界面"，装它就是最省事的选择。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="🔍 导航栏问题排查 · AI知识库专栏" />
+  <title>🔍 导航栏问题排查 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/docs-导航栏诊断-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / docs</div><h1>🔍 导航栏问题排查</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/docs---md.svg" alt="🔍 导航栏问题排查主题配图" /></header><article class="ai-body ai-reading-width">
+<p>如果导航栏没有显示，请按以下步骤排查：</p>
+<h2>1️⃣ 清除浏览器缓存</h2>
+<p><strong>Chrome/Edge</strong>:
+1. 按 <code>Ctrl + Shift + Delete</code> (Windows) 或 <code>Cmd + Shift + Delete</code> (Mac)
+2. 选择"缓存的图片和文件"
+3. 点击"清除数据"</p>
+<p><strong>或者强制刷新</strong>:
+- Windows: <code>Ctrl + Shift + R</code>
+- Mac: <code>Cmd + Shift + R</code></p>
+<h2>2️⃣ 检查部署状态</h2>
+<p>访问 GitHub Actions 查看部署是否完成：
+https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/actions</p>
+<p>最新的部署应该显示 ✅ 绿色的勾</p>
+<p><strong>等待时间</strong>: 首次部署可能需要 2-5 分钟</p>
+<h2>3️⃣ 检查页面源代码</h2>
+<ol>
+<li>访问 https://qdleader.github.io/Awesome-AI-Pedia/</li>
+<li>右键点击页面，选择"查看页面源代码"</li>
+<li>搜索 <code>VPNavBar</code> 或 <code>nav</code></li>
+<li>如果找到这些关键词，说明导航栏HTML已生成</li>
+</ol>
+<h2>4️⃣ 检查浏览器控制台</h2>
+<ol>
+<li>按 <code>F12</code> 打开开发者工具</li>
+<li>查看 Console 标签是否有错误</li>
+<li>查看 Network 标签，看是否有资源加载失败</li>
+</ol>
+<h2>5️⃣ 尝试其他页面</h2>
+<p>访问以下链接，看导航栏是否显示：
+- https://qdleader.github.io/Awesome-AI-Pedia/ai/
+- https://qdleader.github.io/Awesome-AI-Pedia/blog/
+- https://qdleader.github.io/Awesome-AI-Pedia/guide/</p>
+<p>如果这些页面有导航栏，说明只是首页的问题</p>
+<h2>6️⃣ 检查CSS是否被加载</h2>
+<p>在控制台执行：</p>
+<pre><code class="language-javascript">console.log(getComputedStyle(document.querySelector('.VPNavBar')))
+</code></pre>
+<h2>📸 预期效果</h2>
+<p>正常情况下，导航栏应该包含：
+- <strong>左侧</strong>: Awesome AI Pedia (logo/标题)
+- <strong>中间</strong>: 首页 | AI知识库 | 博客 | 指南 | 关于
+- <strong>右侧</strong>: GitHub 图标
+- <strong>最右侧</strong>: 搜索图标 + 暗黑模式切换按钮</p>
+<h2>🆘 如果仍然无法显示</h2>
+<p>请提供以下信息：
+1. 浏览器类型和版本
+2. 浏览器控制台的错误信息（如果有）
+3. 访问的完整URL
+4. 是否能看到页面其他内容（标题、按钮等）</p>
+<h2>⚡ 快速测试</h2>
+<p>本地测试：</p>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+<p>然后访问 http://localhost:3000/Awesome-AI-Pedia/</p>
+<p>如果本地有导航栏，说明配置正确，只是GitHub Pages部署或缓存问题。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="anydoc：Firecrawl 出品的「任意办公文档 → 干净 Markdown」Rust 转换器 · AI知识库专栏" />
+  <title>anydoc：Firecrawl 出品的「任意办公文档 → 干净 Markdown」Rust 转换器 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/常用skills-anydoc-任意格式转md-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / 常用skills</div><h1>anydoc：Firecrawl 出品的「任意办公文档 → 干净 Markdown」Rust 转换器</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills-anydoc--md-md.svg" alt="anydoc：Firecrawl 出品的「任意办公文档 → 干净 Markdown」Rust 转换器主题配图" /></header><article class="ai-body ai-reading-width">
+<ul>
+<li>
+<p><strong>仓库</strong>：<a href="https://github.com/firecrawl/anydoc">https://github.com/firecrawl/anydoc</a></p>
+</li>
+<li>
+<p><strong>热度</strong>：⭐ 17,341 · 🍴 996（截至 2026-08-20）</p>
+</li>
+<li><strong>首次发布</strong>：2026-08-03（半个多月冲到 1.7 万星）</li>
+<li><strong>分发</strong>：<code>crates.io</code> / <code>@firecrawl/anydoc</code>（npm） / <code>firecrawl-anydoc</code>（PyPI） / <code>@firecrawl/anydoc-wasm</code>（浏览器）</li>
+</ul>
+<h2>一句话总结</h2>
+<p>anydoc 是 Firecrawl 团队用纯 Rust 写的<strong>「一份代码把 Word / PowerPoint / Excel / OpenDocument / RTF / EPUB / CSV / PDF 全都转成 LLM-ready GitHub-Flavored Markdown」</strong>的库。核心卖点两个字：<strong>统一 + 快</strong>——所有格式走同一个 document model + 同一个 GFM serializer，中位耗时 <strong>&lt; 5ms/文档</strong>，比 LibreOffice 快 ~250 倍，且质量分全面碾压 markitdown / unstructured / pandoc / docling。</p>
+<p>它同时<strong>打包成 Agent Skill</strong>：<code>npx skills add firecrawl/anydoc</code> 一句话就能让 Claude Code / Codex / Cursor / OpenCode 学会读办公文档。</p>
+<h2>支持的 14 种格式</h2>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>扩展名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Word</td>
+<td><code>.doc</code> / <code>.docx</code> / <code>.docm</code></td>
+</tr>
+<tr>
+<td>PowerPoint</td>
+<td><code>.ppt</code> / <code>.pps</code> / <code>.pot</code> / <code>.pptx</code> / <code>.pptm</code> / <code>.ppsx</code> / <code>.ppsm</code></td>
+</tr>
+<tr>
+<td>Excel</td>
+<td><code>.xls</code> / <code>.xlsx</code> / <code>.xlsm</code> / <code>.xlsb</code></td>
+</tr>
+<tr>
+<td>OpenDocument</td>
+<td><code>.odt</code> / <code>.ods</code> / <code>.odp</code></td>
+</tr>
+<tr>
+<td>RTF</td>
+<td><code>.rtf</code></td>
+</tr>
+<tr>
+<td>EPUB</td>
+<td><code>.epub</code></td>
+</tr>
+<tr>
+<td>CSV</td>
+<td><code>.csv</code></td>
+</tr>
+<tr>
+<td>PDF</td>
+<td><code>.pdf</code>（文本 PDF，走同厂 <a href="https://github.com/firecrawl/pdf-inspector">pdf-inspector</a>，不需要 OCR 服务）</td>
+</tr>
+</tbody>
+</table>
+<h2>五分钟上手</h2>
+<h3>作为 Agent Skill（推荐给 Claude Code 用户）</h3>
+<pre><code class="language-bash">npx skills add firecrawl/anydoc
+</code></pre>
+<p>装完，agent 遇到任何办公文档都能读——<code>skills/convert-documents-to-markdown/SKILL.md</code> 教会它调 anydoc CLI。</p>
+<h3>CLI</h3>
+<pre><code class="language-bash">npx @firecrawl/anydoc report.docx                # 输出到 stdout
+npx @firecrawl/anydoc slides.pptx -o slides.md   # 输出到文件
+npx @firecrawl/anydoc - --format csv &lt; data.csv  # 从 stdin 读
+
+# 常驻命令：
+npm install -g @firecrawl/anydoc
+anydoc --help
+</code></pre>
+<p><code>npx</code> 首次运行会下载对应平台预编译二进制，无需 Rust 环境。</p>
+<h3>Node.js</h3>
+<pre><code class="language-bash">npm install @firecrawl/anydoc
+</code></pre>
+<pre><code class="language-js">import { toDocument, toMarkdown, toMarkdownBytes } from '@firecrawl/anydoc';
+
+// 从文件路径
+const md = await toMarkdown('report.docx');
+
+// 从字节，自动嗅探格式
+const md2 = await toMarkdownBytes(bytes);
+
+// CSV 这种没签名的格式，必须显式指定
+const md3 = await toMarkdownBytes(bytes, 'csv');
+
+// 只到 document model 层（带内嵌资产原始字节 + media type）
+const doc = await toDocument(bytes);
+</code></pre>
+<p>Node 绑定跑在 libuv 线程池上，<strong>不阻塞事件循环</strong>。</p>
+<h3>Python</h3>
+<pre><code class="language-bash">pip install firecrawl-anydoc
+</code></pre>
+<pre><code class="language-python">import anydoc
+
+markdown = anydoc.to_markdown("report.docx")
+markdown = anydoc.to_markdown_bytes(data)
+markdown = anydoc.to_markdown_bytes(data, "csv")
+document = anydoc.to_document(data)
+</code></pre>
+<p>Python 绑定<strong>主动释放 GIL</strong>，其他线程不会被阻塞。</p>
+<h3>浏览器 WASM</h3>
+<pre><code class="language-bash">npm install @firecrawl/anydoc-wasm
+</code></pre>
+<pre><code class="language-js">import init, { toMarkdownBytes, toDocument } from '@firecrawl/anydoc-wasm';
+await init();
+const md = toMarkdownBytes(bytes);
+</code></pre>
+<p><strong>文件在本机浏览器里转换，不上传任何服务器</strong>——官方 demo 页就是这么跑的。</p>
+<h3>Rust</h3>
+<pre><code class="language-bash">cargo add anydoc
+</code></pre>
+<pre><code class="language-rust">let md = anydoc::to_markdown("report.docx")?;
+let md = anydoc::to_markdown_bytes(&amp;bytes, None)?;
+let md = anydoc::to_markdown_bytes(&amp;bytes, anydoc::Format::Csv)?;
+let doc = anydoc::to_document(&amp;bytes, None)?;
+</code></pre>
+<h2>核心特性</h2>
+<ul>
+<li><strong>一份 Markdown 输出适配所有格式</strong>——docx / rtf / odt / pptx 全部走同一个 document model → 同一个 GFM serializer。表格转义、标题锚点、脚注行为<strong>跨格式一致</strong>，2003 的 .doc 和昨天的 .pptx 走同一套逻辑。</li>
+<li><strong>完整保留文档结构</strong>——带锚点的标题、粗体/斜体/删除线、行内代码和代码块、链接和内部交叉引用、有序/无序/嵌套/任务列表（<strong>保留源文件自己的编号</strong>）、带合并单元格和表头的表格、块引用、脚注/尾注、演讲者备注。</li>
+<li><strong>嵌入资产</strong>——图片/嵌入对象在 Markdown 里渲染为 alt text，原始字节仍挂在 document model 上并标注 media type；外链图片直接变成普通 Markdown 图片。</li>
+<li><strong>内容嗅探格式</strong>（不看扩展名）——PDF header、RTF open group、OLE stream 名、ZIP 包 mimetype……<strong>改错扩展名也能正确识别</strong>。</li>
+<li><strong>快</strong>——纯 Rust，无 ML 模型、无外部服务，<strong>中位耗时 &lt; 5ms</strong>。</li>
+<li><strong>PDF 内建支持</strong>——文本 PDF 走 pdf-inspector，本地转换，不需要 OCR。</li>
+<li><strong>Agent Ready</strong>——一行 <code>npx skills add firecrawl/anydoc</code> 即用。</li>
+</ul>
+<p>需要 OCR 处理扫描件？官方指路 <a href="https://firecrawl.dev/parse">Firecrawl Parse</a> 托管 API，同样的转换 + OCR 模型。</p>
+<h2>基准测试：14 种格式全部第一</h2>
+<p>anydoc 对比其他 6 个转换器，100 份真实文档、14 种格式，LLM Judge（Claude Sonnet 5）盲评，交换位置消偏，共 482 次判决：</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>覆盖格式</th>
+<th>中位耗时</th>
+<th>综合分</th>
+<th>完整性</th>
+<th>结构</th>
+<th>格式化</th>
+<th>干净度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>anydoc</strong></td>
+<td><strong>14/14</strong></td>
+<td><strong>4.4ms</strong></td>
+<td><strong>81</strong></td>
+<td><strong>87</strong></td>
+<td><strong>79</strong></td>
+<td><strong>78</strong></td>
+<td><strong>81</strong></td>
+</tr>
+<tr>
+<td>libreoffice</td>
+<td>12/14</td>
+<td>1129.5ms</td>
+<td>40</td>
+<td>59</td>
+<td>42</td>
+<td>40</td>
+<td>24</td>
+</tr>
+<tr>
+<td>unstructured</td>
+<td>8/14</td>
+<td>572.9ms</td>
+<td>63</td>
+<td>76</td>
+<td>59</td>
+<td>51</td>
+<td>63</td>
+</tr>
+<tr>
+<td>markitdown</td>
+<td>6/14</td>
+<td>134.8ms</td>
+<td>65</td>
+<td>78</td>
+<td>66</td>
+<td>60</td>
+<td>52</td>
+</tr>
+<tr>
+<td>pandoc</td>
+<td>5/14</td>
+<td>102.1ms</td>
+<td>56</td>
+<td>74</td>
+<td>57</td>
+<td>56</td>
+<td>38</td>
+</tr>
+<tr>
+<td>docling</td>
+<td>4/14</td>
+<td>513.6ms</td>
+<td>57</td>
+<td>60</td>
+<td>60</td>
+<td>57</td>
+<td>51</td>
+</tr>
+<tr>
+<td>mammoth</td>
+<td>1/14</td>
+<td>52.5ms</td>
+<td>70</td>
+<td>84</td>
+<td>71</td>
+<td>75</td>
+<td>51</td>
+</tr>
+</tbody>
+</table>
+<p><strong>逐格式对比</strong>（同格式下 anydoc 分数）：doc 87、docm 84、docx 88、epub 77、odp 86、ods 82、odt 80、ppt 80、pptx 74、rtf 88、xls 80、xlsm 76、xlsx 72——<strong>每个都是第一名</strong>。</p>
+<blockquote>
+<p><strong>结论（官方原话）</strong>：在这轮对比中，anydoc 是<strong>唯一覆盖全部 14 种格式</strong>的工具，<strong>每个被评的格式都拿到最高分</strong>，速度比第二名快一个数量级。</p>
+</blockquote>
+<p>评测方法学挺严谨：Ground truth 用 LibreOffice 把文档前 6 页渲成图作参照，交换位置消位置偏。速度是 Ryzen 9 9950X3D 单次热转换的中位时间——<strong>Rust 版排除进程启动，CLI 工具包含进程启动</strong>（因为那才是真实使用方式）。</p>
+<h2>错误分类（可编程处理）</h2>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Unsupported</code></td>
+<td>未知格式或不可转换（如纯图 PDF）</td>
+</tr>
+<tr>
+<td><code>Malformed</code></td>
+<td>结构破损，抽不出内容</td>
+</tr>
+<tr>
+<td><code>Encrypted</code></td>
+<td>加密/密码保护</td>
+</tr>
+<tr>
+<td><code>ResourceLimit</code></td>
+<td>触发安全上限（解压/嵌套/节点数）</td>
+</tr>
+<tr>
+<td><code>MissingPart</code></td>
+<td>缺少必要的组成部分</td>
+</tr>
+<tr>
+<td><code>Io</code></td>
+<td>文件读不出来（仅 <code>to_markdown</code> 返回）</td>
+</tr>
+</tbody>
+</table>
+<p>Node/WASM 通过 <code>error.code</code> 暴露；Python 每个 variant 一个 <code>anydoc.ConvertError</code> 子类。<strong>接入时可以按 variant 分流</strong>——比如遇到 <code>Encrypted</code> 就跳过、遇到 <code>ResourceLimit</code> 就告警。</p>
+<h2>架构一览</h2>
+<pre><code>document bytes
+  │
+  ├─► 格式嗅探           → 看内容 marker，不看扩展名
+  │
+  ├─► 各格式 parser      → doc/docx/ppt/pptx/xls/xlsx/odt/ods/odp/rtf/epub/csv
+  │         │
+  │         └─► Document → 共享模型：blocks/inlines/tables/footnotes/assets
+  │               │
+  │               └─► GFM serializer → Markdown
+  │
+  └─► PDF → pdf-inspector → 直接产出 Markdown
+</code></pre>
+<p><strong>关键设计</strong>：所有格式共用 document model + 共用 serializer——<strong>修一个 bug（比如表格转义）自动惠及所有格式</strong>。这是它能保持"跨格式一致输出"的根源。</p>
+<h2>值得留意的点</h2>
+<ul>
+<li><strong>不做 OCR</strong>——扫描件 / 纯图 PDF 需要走 Firecrawl Parse 托管服务或别的方案。</li>
+<li><strong>不做 Excel 公式求值</strong>——只导出单元格内容和结构。</li>
+<li><strong>CSV 无 magic bytes</strong>——从 bytes 转必须显式传 <code>'csv'</code>，从文件转看扩展名。</li>
+<li><strong>无 ML 模型 = 无 GPU 依赖</strong>——但也意味着不做「智能理解」，只做结构化提取。</li>
+<li><strong>测试严谨</strong>：<code>tests/fixtures/</code> 快照测试 + <code>tests/robustness.rs</code> mutation test + <code>fuzz/</code> 每格式一个 cargo-fuzz target——比大多数同类工具靠谱得多。</li>
+</ul>
+<h2>我的判断</h2>
+<p>anydoc 的位置非常好：</p>
+<ul>
+<li><strong>对比 markitdown / unstructured</strong>：更全（14 vs 6/8）、更快（4ms vs 130–570ms）、质量更高，且不依赖 Python 运行时；</li>
+<li><strong>对比 pandoc</strong>：格式覆盖更广、体积更小、无外部依赖；</li>
+<li><strong>对比 docling</strong>：不吃 ML 模型，本地化部署零门槛；</li>
+<li><strong>对比 LibreOffice headless</strong>：快 250 倍，输出还更干净——LibreOffice 那种 40 分的输出根本不能直接给 LLM 读。</li>
+</ul>
+<p><strong>适合谁</strong>：
+1. <strong>需要给 LLM 喂各类办公文档的场景</strong>——RAG 索引、Agent 处理邮件附件、企业知识库 ETL；
+2. <strong>想要一个跨语言一致的转换库</strong>——同一份 Rust 核心 + Node/Python/浏览器绑定；
+3. <strong>对速度和资源敏感的批处理</strong>——4ms/doc 的中位耗时意味着单机每分钟能处理 15000 份；
+4. <strong>Claude Code / Codex 用户</strong>——直接 <code>npx skills add firecrawl/anydoc</code> 让 agent 学会读文档。</p>
+<p><strong>注意</strong>：
+- 扫描件需另找 OCR 方案；
+- 只有 14 种格式（虽然已经很全）——HTML、Markdown、JSON、图片等不在其列；
+- 半个月冲上 1.7 万星，说明<strong>这个赛道之前一直缺一个"又快又全又对"的选手</strong>——但也意味着还年轻，边角格式（<code>.doc</code> 2003、<code>.xlsb</code>、<code>.ppsm</code>）遇到极端 corner case 时值得多试几个样本。</p>
+<h2>常用命令速查</h2>
+<pre><code class="language-bash"># 装 Agent Skill（推荐）
+npx skills add firecrawl/anydoc
+
+# 一次性 CLI
+npx @firecrawl/anydoc report.docx
+npx @firecrawl/anydoc slides.pptx -o slides.md
+cat data.csv | npx @firecrawl/anydoc - --format csv
+
+# 全局安装
+npm install -g @firecrawl/anydoc
+
+# 各语言 SDK
+npm install @firecrawl/anydoc              # Node.js
+pip install firecrawl-anydoc                # Python
+npm install @firecrawl/anydoc-wasm          # 浏览器 WASM
+cargo add anydoc                            # Rust
+</code></pre>
+<hr/></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

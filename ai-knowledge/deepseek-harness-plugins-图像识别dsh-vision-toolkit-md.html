@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="DSH Vision Toolkit 总结 · AI知识库专栏" />
+  <title>DSH Vision Toolkit 总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-plugins-图像识别dsh-vision-toolkit-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness plugins</div><h1>DSH Vision Toolkit 总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness-plugins--dsh-vision-toolkit-md.svg" alt="DSH Vision Toolkit 总结主题配图" /></header><article class="ai-body ai-reading-width">
+<p>仓库地址：https://github.com/Anionex/dsh-vision-toolkit
+包名：<code>@anionex/dsh-vision-toolkit</code>
+许可证：MIT</p>
+<h2>是什么</h2>
+<p>为 <strong>DeepSeek Harness (DSH)</strong> 打造的视觉能力插件，是上游 <code>agent-vision-toolkit</code> 的 DSH 原生集成。让<strong>纯文本模型也能"看见"图像</strong>，无需手动切到多模态模型。</p>
+<h2>用途</h2>
+<ul>
+<li>图像问答</li>
+<li>长截图 OCR</li>
+<li>从截图/草图还原 UI</li>
+<li>GUI grounding（定位）</li>
+<li>像素级 diff</li>
+</ul>
+<h2>主要特性</h2>
+<ul>
+<li><strong>粘贴即问</strong>：在 DSH Web 粘贴图片时，自动把当前文本模型切换到对应的 <code>(Vision Toolkit)</code> 变体</li>
+<li><strong>内置免费视觉模型</strong>：Gemini 3.7 Flash，无需 API key</li>
+<li>限制：100 张/机器/天，每次最多 5 张，单张 ≤ 4 MiB</li>
+<li><strong><code>vision-skills</code> Skill</strong>：内置长截图 OCR、UI 还原、图标还原、草图转结构、GUI 操作等 playbook</li>
+<li><strong>10 个工具</strong>：</li>
+<li><code>vision_glance</code> — 快速浏览</li>
+<li><code>vision_ground</code> — 目标定位（返回原图像素坐标 <code>x1,y1,x2,y2</code>，可直接喂给裁剪/自动化）</li>
+<li><code>vision_detect</code> — 检测</li>
+<li><code>vision_crop</code> — 裁剪</li>
+<li><code>vision_trace</code> — 转 SVG</li>
+<li><code>vision_pixel_diff</code> — 像素 diff</li>
+<li><code>vision_long_screenshot_ocr</code> — 长截图 OCR</li>
+<li><code>vision_extract_foreground</code> — 前景提取</li>
+<li><code>vision_dominant_colors</code> — 主色提取</li>
+<li><code>vision_html_screenshot</code> — HTML 截图</li>
+<li><strong>任务感知</strong>：基于用户意图生成"focus hint"，而非通用 caption</li>
+</ul>
+<h2>技术栈</h2>
+<ul>
+<li>TypeScript 插件</li>
+<li>隔离的 Python 3.11+ 运行时（若系统无 Python 会自动下载 ~35 MB standalone）</li>
+<li>Chrome/Chromium/Edge（仅 HTML 截图功能需要）</li>
+<li>pnpm workspace，<code>vendor/agent-vision-toolkit</code> 存放上游快照</li>
+</ul>
+<h2>安装</h2>
+<pre><code class="language-sh">dsh plugin --profile web add @anionex/dsh-vision-toolkit
+</code></pre>
+<p>也支持 <code>--profile headless</code> 和 <code>--profile desktop</code>
+（Desktop 用户需从托盘"DSH Terminal"运行并重启——2.0.1 打包版有已知安装问题）</p>
+<p>安装后重启 profile，进入 <strong>Settings → Vision Toolkit → Test vision model</strong> 验证。</p>
+<h2>使用示例</h2>
+<p>粘贴或拖入图片，调用 <code>/vision-skills</code>。README 示例：</p>
+<ul>
+<li>"把这张图还原成 HTML"</li>
+<li>"把这张草图变成可运行的前端页面"</li>
+<li>"快速把这张图还原成 HTML"（fast mode 首屏约 3 分钟）</li>
+</ul>
+<h2>配置</h2>
+<p>默认视觉服务：</p>
+<pre><code>Base URL: https://vision.anionex.me/v1
+Model:    gemini-3.7-flash
+</code></pre>
+<p><strong>自带模型（BYOM）</strong>——支持 OpenAI Chat Completions 和 Anthropic Messages 协议：</p>
+<pre><code class="language-yaml">- id: vision-toolkit
+  config:
+    provider:
+      baseUrl: https://api.example.com/v1
+      credential: MY_VISION_KEY
+      model: your-vision-model
+      protocol: openai
+</code></pre>
+<p><strong>自签名/内网 MITM 场景</strong>：启动时加 <code>VISION_SSL_VERIFY=0</code>
+另有使用免费 Groq Qwen3.6-27B key 作为替代供应商的分步指南。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

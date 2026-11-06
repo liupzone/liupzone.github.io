@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="DSH-better-sidebar：DSH 的服务化侧边栏框架 · AI知识库专栏" />
+  <title>DSH-better-sidebar：DSH 的服务化侧边栏框架 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-plugins-侧边栏插件dsh-better-sidebar-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness plugins</div><h1>DSH-better-sidebar：DSH 的服务化侧边栏框架</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness-plugins--dsh-better-sidebar-md.svg" alt="DSH-better-sidebar：DSH 的服务化侧边栏框架主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p>项目地址：<a href="https://github.com/omdsh-dev/DSH-better-sidebar">https://github.com/omdsh-dev/DSH-better-sidebar</a>
+授权：MIT · ~2.3k stars
+定位：<strong>一个服务化的侧边栏框架，一套开箱即用的完整工作台</strong></p>
+</blockquote>
+<h2>一、这是什么</h2>
+<p>面向 <strong>DeepSeek Harness (DSH)</strong> 的<strong>开源侧边栏框架插件</strong>。既是官方内置一整套右侧栏 + 底部面板的工作台，也通过 <code>ctx.betterSidebar</code> 服务向第三方插件<strong>开放同等注册能力</strong>——第三方 tab 与官方 tab 走同一套 API。</p>
+<h2>二、核心功能</h2>
+<ul>
+<li><strong>双工作台布局</strong>：右侧栏 + 底部面板，Tab 可拖拽拆分/合并；移动端自动合并为全宽抽屉</li>
+<li><strong>会话隔离</strong>：布局与 Tab 状态按会话持久化到 <code>localStorage</code></li>
+<li><strong>按需加载</strong>：核心启动包约 <strong>325KB</strong>，终端/编辑器/Mermaid 等重依赖懒加载</li>
+<li><strong>多语言</strong>：跟随 DSH 语言（中/英）实时切换</li>
+<li><strong>声明式设置</strong>：每个功能独立开关，二级设置走齿轮弹窗</li>
+</ul>
+<h2>三、内置页面（7 tabs + 6 viewers）</h2>
+<table>
+<thead>
+<tr>
+<th>页面</th>
+<th>能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>文件工作台</strong></td>
+<td>懒加载目录树 + CodeMirror 编辑器；支持图片、Markdown（含 Mermaid 严格安全渲染）、HTML、PDF、Office 预览</td>
+</tr>
+<tr>
+<td><strong>内嵌浏览器</strong></td>
+<td>多 tab、沙箱 iframe、HTTP/HTTPS 分流</td>
+</tr>
+<tr>
+<td><strong>真实终端</strong></td>
+<td>基于 xterm.js + node-pty，断线重连，可为模型注入 <code>terminal_*</code> 工具</td>
+</tr>
+<tr>
+<td><strong>Git 面板</strong></td>
+<td>真实 diff、VSCode 风格 diff tab、历史、暂存/提交/还原</td>
+</tr>
+<tr>
+<td><strong>后台任务页</strong></td>
+<td>subagent 拓扑与后台任务管理</td>
+</tr>
+</tbody>
+</table>
+<h2>四、安装</h2>
+<p><strong>前置</strong>：已运行 <code>dsh web</code>，Node ≥ 20，pnpm ≥ 10。</p>
+<pre><code class="language-sh">dsh plugin --profile web add dsh-better-sidebar@latest
+</code></pre>
+<p>装完<strong>硬刷新浏览器</strong>（Cmd/Ctrl + Shift + R）即可。更新命令相同。</p>
+<p>也支持 <code>link:</code> 本地开发方式，或走 plugin-registry 通道——<strong>两种通道不能同时启用</strong>，否则会双挂载。</p>
+<h2>五、配置</h2>
+<ul>
+<li><strong>设置页 → 侧边卡片</strong>：逐项开关功能</li>
+<li><strong>终端</strong>：v0.14.0 起可在设置页配 <code>shell</code> / <code>shellArgs</code>，或改 <code>~/.dsh/profiles/web/cordis.patch.yml</code> 里的 <code>config.shell</code> / <code>config.shellArgs</code></li>
+<li><strong>文件打开方式</strong>：「独立」（默认，新开 tab）或「合并」</li>
+</ul>
+<h2>六、开发者：注册自定义页面</h2>
+<p>v0.4.0 起提供 <code>ctx.betterSidebar</code> 服务：</p>
+<pre><code class="language-tsx">import type {} from 'dsh-better-sidebar'
+export const inject = ['betterSidebar']
+export function apply(ctx: Context) {
+  ctx.effect(() =&gt; ctx.betterSidebar.registerTab({
+    id: 'my-plugin:db',
+    title: 'Database',
+    component: ({ scope }) =&gt; &lt;DbView sessionId={scope.sessionId} /&gt;,
+  }))
+}
+</code></pre>
+<ul>
+<li>提供 <code>registerTab</code> 与 <code>registerFileViewer</code></li>
+<li>完整能力：类型导出、能力探测、状态订阅、tab 角标、生命周期回调、定向打开、插件自有设置</li>
+<li>详见 <code>AGENTS.md</code> 与 <code>docs/external-plugin-guide.md</code></li>
+<li>进「推荐插件目录」：向 <code>src/client/plugins-tabs.ts</code> 或 <code>plugins-viewers.ts</code> 提 PR，仓库打 <code>dsh-better-sidebar</code> topic</li>
+</ul>
+<h2>七、亮点</h2>
+<ol>
+<li><strong>服务优先架构</strong>：官方内置与第三方插件走同一套 API，能力对等</li>
+<li><strong>纵深安全</strong>：Host 头信任围栏、原子写入、会话 cwd 边界；HTML 预览用不透明源沙箱 iframe，Mermaid <code>securityLevel: 'strict'</code> + SVG 二次清洗</li>
+<li><strong>鲁棒性</strong>：node-pty 加载失败时不拖垮 server，终端展示带修复命令的横幅</li>
+<li><strong>跨平台</strong>：Windows / Linux / macOS</li>
+<li><strong>生态兼容</strong>：兼容 <code>dsh-web-ui</code> 皮肤中心 10 款皮肤；与 aionui-panel 家族自动互斥防双挂载</li>
+</ol>
+<h2>八、已知限制</h2>
+<ul>
+<li>Git <strong>无 push/pull/fetch</strong></li>
+<li><strong>无文件 watcher</strong>，需手动刷新</li>
+<li>终端 Tab <strong>跨分栏拖动会重挂载 shell</strong></li>
+<li>HTML 预览基于<strong>已保存文件</strong></li>
+<li>移动端<strong>无底部面板</strong></li>
+</ul>
+<h2>一句话总结</h2>
+<p><strong>DSH-better-sidebar 把 IDE 侧边栏那套（文件树 + 编辑器 + 终端 + Git + 预览 + 浏览器）搬进了 DSH Web</strong>，最关键的不是"内置多少页"，而是<strong>它把这些能力抽成服务开放给所有插件</strong>——第三方注册一个数据库面板、日志查看器都跟官方 tab 一样待遇。对于把 DSH 当日常工作台的人来说，这是最接近"少切一次 VSCode"的选择。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

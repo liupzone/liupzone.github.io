@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Lightpanda Browser · AI知识库专栏" />
+  <title>Lightpanda Browser · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/skills-浏览器类-lightpanda-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / skills</div><h1>Lightpanda Browser</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills---lightpanda-md.svg" alt="Lightpanda Browser主题配图" /></header><article class="ai-body ai-reading-width">
+<p>专为 AI Agent 和自动化做的无头浏览器，用 Zig 从零写成，不是 Chromium 或 WebKit 的分支。</p>
+<p>https://github.com/lightpanda-io/browser</p>
+<h2>性能</h2>
+<p>官方基准：AWS m5.large，请求 933 个真实页面。</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>Lightpanda</th>
+<th>Headless Chrome</th>
+<th>差距</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>峰值内存（100 页）</td>
+<td>123MB</td>
+<td>2GB</td>
+<td>约少 16 倍</td>
+</tr>
+<tr>
+<td>执行时间（100 页）</td>
+<td>5s</td>
+<td>46s</td>
+<td>约快 9 倍</td>
+</tr>
+</tbody>
+</table>
+<h2>技术栈</h2>
+<p>Zig 0.15.2、V8（JS 引擎）、html5ever（HTML 解析）、libcurl（HTTP）。</p>
+<h2>已支持能力</h2>
+<ul>
+<li>Web 能力：CORS、DOM、XHR / Fetch、Cookies、自定义 Header、代理、网络拦截、广告拦截</li>
+<li>协议：CDP（WebSocket）和 WebDriver BiDi</li>
+<li>合规：<code>--obey-robots</code> 遵守 robots.txt</li>
+<li>页面操作：点击、表单输入</li>
+<li>导出：DOM、Markdown、PNG、PDF</li>
+</ul>
+<h2>安装</h2>
+<pre><code class="language-bash"># Homebrew
+brew install lightpanda-io/browser/lightpanda
+
+# Docker
+docker run -d --name lightpanda -p 127.0.0.1:9222:9222 lightpanda/browser:latest
+</code></pre>
+<p>也可从 <a href="https://github.com/lightpanda-io/browser/releases/tag/nightly">nightly releases</a> 下载二进制（Linux / macOS，x86_64 和 aarch64），或通过 AUR 安装（<code>yay -S lightpanda-nightly-bin</code>）。安装后用 <code>./lightpanda version</code> 验证。</p>
+<h2>使用方式</h2>
+<h3>fetch：抓取页面</h3>
+<pre><code class="language-bash">./lightpanda fetch --obey-robots --dump markdown https://example.com
+</code></pre>
+<p><code>--dump</code> 支持 <code>html</code>、<code>markdown</code>、<code>png</code>、<code>pdf</code>。可用 <code>--wait-until</code>、<code>--wait-ms</code>、<code>--wait-selector</code>、<code>--wait-script</code> 控制等待时机。</p>
+<h3>serve：启动 CDP 服务</h3>
+<pre><code class="language-bash">./lightpanda serve --obey-robots --host 127.0.0.1 --port 9222
+</code></pre>
+<p>Puppeteer / Playwright 只需把连接地址指到 <code>ws://127.0.0.1:9222</code>：</p>
+<pre><code class="language-js">import puppeteer from 'puppeteer-core';
+
+const browser = await puppeteer.connect({
+  browserWSEndpoint: "ws://127.0.0.1:9222",
+});
+</code></pre>
+<p>加 <code>--protocol webdriver</code> 启用 BiDi，<code>--protocol webdriver --protocol cdp</code> 可同时启用。</p>
+<h3>agent：自然语言驱动浏览器</h3>
+<pre><code class="language-bash">./lightpanda agent --task "top story on news.ycombinator.com?"
+./lightpanda agent --no-llm          # 不用 LLM，进入 REPL
+./lightpanda run session.js          # 回放录制的脚本
+</code></pre>
+<ul>
+<li>与浏览器同进程运行，保留速度和内存优势</li>
+<li>支持 Anthropic、OpenAI、Gemini、Vertex AI、Mistral、Hugging Face、OpenRouter、Vercel AI Gateway、任意 OpenAI 兼容端点，以及 Ollama / llama.cpp 本地模型</li>
+<li>会话可用 <code>/save</code> 导出为 PandaScript（带浏览器原语的原生 JS），再用 <code>lightpanda run</code> 回放。回放结果确定、不消耗 token，适合先用 LLM 原型验证，再无模型上线</li>
+</ul>
+<h3>MCP</h3>
+<pre><code class="language-json">{
+  "mcpServers": {
+    "lightpanda": {
+      "command": "/path/to/lightpanda",
+      "args": ["mcp"]
+    }
+  }
+}
+</code></pre>
+<p>默认走 stdio。用 <code>lightpanda mcp --port 9223</code> 可改为 HTTP 模式，供多个 Agent 共用一个进程：</p>
+<ul>
+<li>每个连接分配独立会话（页面、Cookie、内存隔离）</li>
+<li>请求带相同的 <code>Mcp-Session-Id</code> 则共享同一浏览上下文</li>
+<li><code>session_new</code>、<code>session_list</code>、<code>session_close</code> 工具可显式管理会话</li>
+</ul>
+<p>官方 skill：https://github.com/lightpanda-io/agent-skill</p>
+<h2>注意事项</h2>
+<ul>
+<li>没有原生 Windows 版，需在 WSL2 中运行</li>
+<li>Linux 二进制依赖 glibc，Alpine（musl）和 Android / Termux 上无法运行，需换 glibc 基础镜像或从源码构建</li>
+<li>默认开启遥测，设置 <code>LIGHTPANDA_DISABLE_TELEMETRY=true</code> 可关闭</li>
+<li>目前只提供 nightly 版本，没有稳定版</li>
+<li>不是完整浏览器，兼容性以官方 <a href="https://perf.lightpanda.io/wpt">Web Platform Tests</a> 结果为准，复杂站点可能不如 Chrome</li>
+</ul>
+<h2>适用场景</h2>
+<ul>
+<li>大规模爬取</li>
+<li>Agent 获取网页内容并转 Markdown</li>
+<li>对内存和启动速度敏感的自动化</li>
+</ul>
+<p>需要完整渲染或强兼容性时，仍用 Chrome。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

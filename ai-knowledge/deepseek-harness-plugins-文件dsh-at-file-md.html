@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="dsh-at-file：给 DSH 输入框加上 @ 文件提及 · AI知识库专栏" />
+  <title>dsh-at-file：给 DSH 输入框加上 @ 文件提及 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-plugins-文件dsh-at-file-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness plugins</div><h1>dsh-at-file：给 DSH 输入框加上 @ 文件提及</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness-plugins--dsh-at-file-md.svg" alt="dsh-at-file：给 DSH 输入框加上 @ 文件提及主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p>项目地址：<a href="https://github.com/omdsh-dev/dsh-at-file">https://github.com/omdsh-dev/dsh-at-file</a>
+授权：MIT · 当前版本 <strong>v0.6.5</strong>
+定位：<strong>Codex-style @file mentions for DeepSeek Harness</strong></p>
+</blockquote>
+<h2>一、这是什么</h2>
+<p>给 <strong>DeepSeek Harness (DSH) Web 界面</strong>的聊天输入框添加<strong>类似 Codex 的 <code>@file</code> 提及功能</strong>——输入 <code>@</code> 就能搜索并引用工作区里的文件或目录，不用手动拼路径，也不用先复制文件内容进对话。</p>
+<h2>二、主要功能</h2>
+<h3>1. <code>@</code> 路径选择器</h3>
+<p>在 composer 里敲 <code>@</code> 触发工作区文件搜索。</p>
+<h3>2. 智能匹配</h3>
+<ul>
+<li><strong>普通查询</strong>：匹配文件名</li>
+<li><strong>含 <code>/</code></strong>：按<strong>路径段顺序</strong>匹配（例如 <code>src/view</code> 可找到 <code>src/client/view.ts</code>）</li>
+</ul>
+<h3>3. 目录导航</h3>
+<p>高亮目录时按 <strong><code>ArrowRight</code></strong> 可<strong>进入目录</strong>继续选择。</p>
+<h3>4. 路径引用而非内容（v0.3.0 起）</h3>
+<p>只插入标记：</p>
+<pre><code class="language-html">&lt;workspace-reference path="..." kind="..." /&gt;
+</code></pre>
+<p><strong>不读取文件内容，也不强制大小限制</strong>——由 agent 需要时自己用 <code>read</code> / <code>read_image</code> 等工具去读。</p>
+<h3>5. 文件过滤</h3>
+<ul>
+<li><strong>两级规则</strong>：Global / Workspace</li>
+<li><strong>Exact 精确匹配</strong> 或 <strong>Regex 正则模式</strong></li>
+<li>可独立设置大小写敏感</li>
+</ul>
+<h3>6. 默认忽略</h3>
+<p>跳过常见 VCS、IDE 元数据、依赖树、缓存与构建产物目录（覆盖 VS Code、JetBrains、Xcode、Gradle、.NET 等）。</p>
+<h3>7. 粘贴保护</h3>
+<p>默认把粘贴的 <code>@path</code> 当<strong>普通文本</strong>，避免误触发。</p>
+<h3>8. 图标区分</h3>
+<p>内置 SVG 图标：文件夹、源码、PDF、图像、配置、压缩包等一目了然。</p>
+<h2>三、安装与更新</h2>
+<pre><code class="language-sh">dsh plugin --profile web add https://github.com/omdsh-dev/dsh-at-file/archive/refs/tags/v0.6.5.tar.gz
+</code></pre>
+<p>装完<strong>重启 <code>dsh web</code></strong>。</p>
+<h2>四、配置</h2>
+<p>在 <code>~/.dsh/profiles/web/cordis.patch.yml</code> 里：</p>
+<table>
+<thead>
+<tr>
+<th>键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxIndexedFiles</code></td>
+<td>最大索引条目数</td>
+</tr>
+<tr>
+<td><code>ignoreDirs</code></td>
+<td>替换内置忽略目录列表</td>
+</tr>
+</tbody>
+</table>
+<h2>五、亮点</h2>
+<ol>
+<li><strong>轻量引用模型</strong>：不夹带文件内容 → 避免 token 浪费，也没有大小限制</li>
+<li><strong>安全边界</strong>：Host 只接受<strong>工作区相对路径</strong>，<strong>拒绝绝对路径和越界路径</strong></li>
+<li><strong>性能友好</strong>：索引<strong>按会话缓存 30 秒</strong>；过滤在 Host 端索引阶段就应用</li>
+<li><strong>工程完整</strong>：中英双 README + vitest 全测试 + pnpm workspace + <code>lib/</code> 预构建（安装即用）</li>
+</ol>
+<h2>一句话总结</h2>
+<p><strong>dsh-at-file 用最小的产品增量补上了 DSH Web 长期缺失的一环</strong>——把"想让 agent 看某个文件"这件事从"复制路径 / 粘贴内容"降级为"敲个 <code>@</code> 就选"，而且不夹带内容、只留引用，token 和安全都不亏。对每天在 DSH Web 里指来指去文件的人，几乎是即装即上瘾的插件。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

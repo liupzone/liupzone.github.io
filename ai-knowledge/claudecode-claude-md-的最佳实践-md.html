@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="CLAUDE.md 的最佳实践 · AI知识库专栏" />
+  <title>CLAUDE.md 的最佳实践 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/claudecode-claude-md-的最佳实践-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / claudeCode</div><h1>CLAUDE.md 的最佳实践</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/claudecode-claude-md---md.svg" alt="CLAUDE.md 的最佳实践主题配图" /></header><article class="ai-body ai-reading-width">
+<blockquote>
+<p><strong>CLAUDE.md 是给 Claude Code 看的「项目说明书」。</strong>
+写好它，Claude 每次进入项目都自动继承团队规范、构建命令、架构决策，
+而不必你在每次对话里从头解释一遍。</p>
+</blockquote>
+<h2>一、CLAUDE.md 是什么</h2>
+<p>CLAUDE.md 是 Claude Code 的<strong>项目记忆文件</strong>（Project Memory）。每次会话开始，Claude 会<strong>自动读取</strong>它，把内容注入系统提示，用来指导本次会话的所有行为。</p>
+<p>它承担四个角色：</p>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>📚 项目知识库</td>
+<td>记录架构、技术栈、依赖、领域概念</td>
+</tr>
+<tr>
+<td>🚀 快速上手手册</td>
+<td>常用命令、目录约定、环境变量</td>
+</tr>
+<tr>
+<td>🤝 团队共识文件</td>
+<td>代码规范、Git 规则、Review 清单</td>
+</tr>
+<tr>
+<td>🔄 AI 行为准则</td>
+<td>直接约束 Claude 的写代码方式（"不要用 enum"、"始终用 bun"）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心心智</strong>：CLAUDE.md 不是文档、不是 wiki，而是 <strong>prompt</strong>。写在里面的每一条都会花费上下文预算——所以要"精、准、狠"。</p>
+<hr/>
+<h2>二、存放位置与加载优先级</h2>
+<p>CLAUDE.md 可以放在多层，形成一个层级化的规则系统：</p>
+<pre><code>~/.claude/CLAUDE.md              # ① 用户级：跨所有项目生效
+项目根/CLAUDE.md                  # ② 项目级：团队共享（签入 Git）
+项目根/CLAUDE.local.md            # ③ 个人级：git-ignored（个人临时偏好）
+子模块/CLAUDE.md                  # ④ 模块级：进入该子目录才生效
+.claude/rules/*.md                # ⑤ 规则片段：按 paths 懒加载
+</code></pre>
+<p><strong>优先级（从高到低）</strong>：模块 rules &gt; 模块 CLAUDE.md &gt; 项目 CLAUDE.md &gt; 用户 CLAUDE.md。越近越具体，越优先。</p>
+<p><strong>约定俗成</strong>：</p>
+<ul>
+<li>团队共享的写 <code>CLAUDE.md</code>，签入 Git</li>
+<li>个人偏好写 <code>CLAUDE.local.md</code>，加进 <code>.gitignore</code></li>
+<li>全局默认（如"始终用简体中文交流"）写到 <code>~/.claude/CLAUDE.md</code></li>
+</ul>
+<hr/>
+<h2>三、一份好 CLAUDE.md 该写什么</h2>
+<p>按信息密度倒序排列——<strong>越靠上越值得写</strong>。</p>
+<h3>1. 项目一句话定位（必写）</h3>
+<p>用一句话说清"这是什么、给谁用、核心边界"。让 Claude 一开口就用对术语。</p>
+<h3>2. 技术栈 &amp; 版本（必写）</h3>
+<p>框架、语言、包管理器（<code>bun</code> / <code>pnpm</code> / <code>npm</code>）、数据库、部署方式。<strong>版本号要写具体</strong>——"Node.js 20" 比 "Node.js" 有用得多。</p>
+<h3>3. 常用命令（必写）</h3>
+<p>装、跑、测、构建、部署、格式化、类型检查。这是 Claude <strong>动手前必看</strong>的一节。少一条就多一次翻文档。</p>
+<h3>4. 目录结构（必写）</h3>
+<p>只画到二级/三级，配一行注释说明每个目录<strong>做什么</strong>。别贴 <code>ls -R</code>。</p>
+<h3>5. 命名 &amp; 提交规范</h3>
+<p>文件名 kebab-case？变量 camelCase？Git 用 Conventional Commits？把这些"团队肌肉记忆"显式写出来。</p>
+<h3>6. 代码规范红线</h3>
+<p>"不要 X，改用 Y"型条目最有用——因为它直接矫正 Claude 的默认行为：</p>
+<pre><code class="language-markdown">- ❌ 不要用 enum，✅ 改用 string union（更好的 Tree-shaking）
+- ❌ 不要引入新的 UI 库，✅ 复用 src/ui/ 下已有组件
+- ❌ 不要写 try/catch 吞异常，✅ 让错误冒到 Route Handler 统一处理
+</code></pre>
+<h3>7. 架构决策记录（ADR）</h3>
+<p>"为什么这么做"比"怎么做"更值钱。ADR 让 Claude 不会推翻团队既有决策：</p>
+<pre><code class="language-markdown">### ADR-002: 采用微服务
+- 日期: 2024-02-20
+- 状态: 已接受
+- 理由: 团队并行、独立部署、技术栈灵活
+</code></pre>
+<h3>8. 领域词汇表</h3>
+<p>业务黑话、内部术语、缩写全表。让 Claude 一次听懂"下单 == Order.confirm() 不是 create"。</p>
+<hr/>
+<h2>四、编写原则（十条金句）</h2>
+<p>来自 <a href="https://github.com/shanraisshan/claude-code-best-practice/blob/main/CLAUDE.md">shanraisshan/claude-code-best-practice</a> 与实战沉淀：</p>
+<ol>
+<li><strong>单文件 200 行以内</strong>。超过 200 行 Claude 就会开始"选择性忽略"——拆到 <code>.claude/rules/</code> 里。</li>
+<li><strong>写 prompt，不是写文档</strong>。目标是让 Claude 照做，不是给人看的百科。删掉所有"背景介绍"式段落。</li>
+<li><strong>一条一句话</strong>。用祈使句、列表、表格。禁用长段落。</li>
+<li><strong>写"红线"胜过写"愿景"</strong>。<code>don't do X</code> 比 <code>try to write clean code</code> 有用 10 倍。</li>
+<li><strong>给理由</strong>。<code>- ❌ enum · 理由: Tree-shaking 差</code> — 有理由 Claude 才能在边界情况自己判断。</li>
+<li><strong>命令用可复制的代码块</strong>。不要写"运行测试命令"，直接写 <code>```bash npm test ```</code>。</li>
+<li><strong>列出确切文件路径</strong>。比"数据库配置"更好的是"数据库配置在 <code>src/config/db.ts</code>"。</li>
+<li><strong>避免通用建议</strong>。"要写测试"没用；"新增 API 必须在 <code>tests/api/*.test.ts</code> 加集成测试"才有用。</li>
+<li><strong>持续裁剪</strong>。每周 review 一次：过时的删、重复的合、模糊的具体化。</li>
+<li><strong>签入 Git，用 PR 演进</strong>。CLAUDE.md 是团队资产，改动走 PR，让 Claude 也参与评审。</li>
+</ol>
+<hr/>
+<h2>五、三种生成方式</h2>
+<h3>方式 1：<code>/init</code> 命令（推荐首次使用）</h3>
+<pre><code class="language-bash"># 项目根目录
+claude
+&gt; /init
+</code></pre>
+<p>Claude 会自动扫描仓库、探测框架、读 <code>package.json</code> / <code>Cargo.toml</code> / <code>go.mod</code>，生成一个包含"构建命令 / 目录结构 / 代码规范 / 架构信息"的初始 CLAUDE.md。<strong>先用 <code>/init</code>，再手工精修</strong>是最省事的路径。</p>
+<h3>方式 2：手动创建</h3>
+<pre><code class="language-bash">touch CLAUDE.md
+# 让 Claude 起草
+claude "请根据当前项目结构起草 CLAUDE.md（不超过 200 行，遵循祈使句 + 列表风格）"
+</code></pre>
+<h3>方式 3：Memory Updates —— 用自然语言持续更新</h3>
+<pre><code>&gt; Update CLAUDE.md: always use bun instead of npm
+&gt; Update CLAUDE.md: 禁止使用 enum，改用 string union
+</code></pre>
+<p>Claude 会直接把新规则追加到 CLAUDE.md 对应章节。<strong>这条是让 CLAUDE.md 越用越聪明的核心机制</strong>——见下一节。</p>
+<hr/>
+<h2>六、让 CLAUDE.md 自我进化：PR-Driven Memory</h2>
+<p>这是 Claude Code 团队的原生工作流，也是 CLAUDE.md 从"静态文档"变成"AI 行为准则"的关键。</p>
+<p><strong>四步循环</strong>：</p>
+<pre><code>Step 1 — 在 PR 里发现问题
+   @claude 这里用了 enum，我们项目规范是 string union，请修
+
+Step 2 — 让 Claude 记住教训
+   @claude 请把这次教训写进 CLAUDE.md：不要用 enum，改用 string union
+
+Step 3 — Claude 自动追加
+   ## 代码规范更新 (2026-07-08)
+   - ❌ enum · ✅ string union
+   - 理由: Tree-shaking 更彻底、类型推断更准
+
+Step 4 — 提交到 Git
+   git add CLAUDE.md
+   git commit -m "docs(claude): 禁用 enum → string union"
+</code></pre>
+<p><strong>效果</strong>：</p>
+<ul>
+<li>🧠 <strong>集体智慧</strong>：团队每一次 review 都在给 AI 上课</li>
+<li>🔄 <strong>单调递增</strong>：Claude 不会重复犯已修正过的错</li>
+<li>📚 <strong>规范自动文档化</strong>：口口相传的"我们不用 enum" 变成可执行 prompt</li>
+<li>🤝 <strong>新人 &amp; AI 同步上手</strong>：读一遍 CLAUDE.md 就懂全部潜规则</li>
+</ul>
+<hr/>
+<h2>七、可直接抄的完整模板</h2>
+<blockquote>
+<p>复制到项目根目录 <code>CLAUDE.md</code>，把中括号占位替换掉即可上手。<strong>保持 200 行以内</strong>。</p>
+</blockquote>
+<pre><code class="language-markdown"># 项目: [ProjectName]
+
+&gt; [一句话定位：这是什么，给谁用，核心边界]
+
+## 技术栈
+- 前端: React 18 · TypeScript 5.3 · Tailwind · Redux Toolkit
+- 后端: Node 20 · Express · TypeScript
+- 数据库: PostgreSQL 15 · Redis 7
+- 包管理: **bun**（禁用 npm/yarn）
+- 部署: Docker · Kubernetes
+
+## 目录结构
+```
+src/
+├── frontend/     # React 前端
+├── backend/      # Node.js API
+└── shared/       # 前后端共用类型
+```
+
+## 常用命令
+```bash
+bun install                          # 装依赖
+bun dev                              # 起前后端
+bun test                             # 全量测试
+bun test:e2e                         # Playwright E2E
+bun run build                        # 构建
+bun run lint &amp;&amp; bun run type-check   # 提交前必跑
+```
+
+## 命名规范
+- 文件: kebab-case（`user-profile.ts`）
+- 组件: PascalCase（`UserProfile`）
+- 变量/函数: camelCase
+- 常量: UPPER_SNAKE_CASE
+
+## 代码红线
+- ❌ enum → ✅ string union（Tree-shaking）
+- ❌ any / as unknown → ✅ 补类型或用 zod 校验
+- ❌ 新引 UI 库 → ✅ 复用 src/ui/
+- ❌ try/catch 吞异常 → ✅ 让错误冒到 Route Handler
+- ❌ 硬编码密钥 → ✅ 从 process.env 读
+
+## Git 提交
+遵循 Conventional Commits，**一个文件一个 commit**，便于 revert &amp; cherry-pick：
+- `feat:` 新功能 / `fix:` 修 bug / `docs:` 文档 / `refactor:` 重构 / `test:` 测试 / `chore:` 构建
+
+## 架构决策
+### ADR-001 TypeScript 全栈 (2024-01-15)
+类型安全 + IDE 支持 + 可维护性。
+
+### ADR-002 微服务拆分 (2024-02-20)
+团队并行 · 独立部署 · 技术栈灵活。
+
+## 环境变量
+必需: `DATABASE_URL` · `REDIS_URL` · `JWT_SECRET` · `API_BASE_URL`
+可选: `LOG_LEVEL=info` · `NODE_ENV=development` · `PORT=3000`
+
+## 工作流约束
+- 复杂改动先进 **Plan 模式**（Shift+Tab × 2）
+- 上下文用到 ~50% 手动 `/compact`
+- 每个新 API 必须在 `tests/api/*.test.ts` 加集成测试
+- 前端改动必须自查 Lighthouse 分数不降
+
+## 相关资源
+- Wiki: https://wiki.example.com
+- API 文档: https://docs.example.com
+</code></pre>
+<hr/>
+<h2>八、进阶：<code>.claude/rules/</code> 懒加载</h2>
+<p>单个 CLAUDE.md 装不下所有规则时，用 <code>.claude/rules/*.md</code> 拆分。带 <code>paths:</code> frontmatter 的 rules <strong>只在 Claude 触碰匹配路径时才载入</strong>——不占用全局上下文。</p>
+<pre><code class="language-markdown">---
+# .claude/rules/auth.md
+paths:
+  - "src/auth/**"
+  - "src/middleware/auth*.ts"
+---
+
+# 认证模块规则
+- Token 存 httpOnly cookie，禁止 localStorage
+- 所有 auth 路由必须过 rate-limit 中间件
+- 密码用 argon2id，禁用 bcrypt
+</code></pre>
+<p><strong>推荐拆分方式</strong>：</p>
+<pre><code>.claude/rules/
+├── auth.md          # 认证 (paths: src/auth/**)
+├── database.md      # 数据库 (paths: src/db/**, migrations/**)
+├── api.md           # API 设计 (paths: src/api/**)
+├── ui.md            # 前端组件 (paths: src/ui/**, src/components/**)
+└── testing.md       # 测试规范 (paths: **/*.test.ts, **/*.spec.ts)
+</code></pre>
+<p><strong>没有 <code>paths:</code> frontmatter 的 rules 文件会像 CLAUDE.md 一样每次都载入</strong>——这是坑，别乱写。</p>
+<hr/>
+<h2>九、和 Skills / SubAgents / settings 的分工</h2>
+<p>CLAUDE.md 不是万能的。<strong>分清各自职责</strong>才不会写得又臃肿又低效：</p>
+<table>
+<thead>
+<tr>
+<th>载体</th>
+<th>定位</th>
+<th>装什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CLAUDE.md</code></td>
+<td>项目全局 prompt</td>
+<td>技术栈、命令、红线、ADR</td>
+</tr>
+<tr>
+<td><code>.claude/rules/*.md</code></td>
+<td>路径条件规则</td>
+<td>模块细则、领域规范</td>
+</tr>
+<tr>
+<td><code>.claude/skills/*/SKILL.md</code></td>
+<td>可复用工作流</td>
+<td>"生成前端组件"、"审 PR" 等固定流程</td>
+</tr>
+<tr>
+<td><code>.claude/agents/*.md</code></td>
+<td>专职子代理</td>
+<td>code-reviewer、test-writer、verify-app</td>
+</tr>
+<tr>
+<td><code>.claude/settings.json</code></td>
+<td>硬约束/权限</td>
+<td>Hooks、允许/禁止命令、MCP 配置</td>
+</tr>
+<tr>
+<td><code>.claude/settings.local.json</code></td>
+<td>个人本地覆盖</td>
+<td>个人 token、本地 hooks 开关（git-ignored）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判断口诀</strong>：</p>
+<ul>
+<li><strong>每次都要 Claude 记住</strong> → CLAUDE.md</li>
+<li><strong>只在改某目录时需要</strong> → <code>.claude/rules/</code>（带 paths）</li>
+<li><strong>重复的工作流</strong> → Skill</li>
+<li><strong>需要独立上下文并行</strong> → SubAgent</li>
+<li><strong>必须硬拦截</strong> → Hook / permissions</li>
+</ul>
+<hr/>
+<h2>十、反面案例（别这么写）</h2>
+<h3>❌ 反例 1：把 README 复制进来</h3>
+<pre><code class="language-markdown">## 关于本项目
+本项目诞生于 2023 年春天，创始人希望打造一款为开发者服务的...
+（三屏背景介绍）
+</code></pre>
+<p><strong>改</strong>：删掉。CLAUDE.md 不是给人看的。</p>
+<h3>❌ 反例 2：全是"要"，没有"不要"</h3>
+<pre><code class="language-markdown">- 请写清晰的代码
+- 请注重性能
+- 请遵循最佳实践
+</code></pre>
+<p><strong>改</strong>：全是废话。换成<strong>具体的红线</strong>——"禁用 enum"、"禁用 lodash 全量引入"。</p>
+<h3>❌ 反例 3：一个文件塞 800 行</h3>
+<p>超 200 行 Claude 就开始遗漏。<strong>拆到 <code>.claude/rules/</code> 里</strong>，按 paths 懒加载。</p>
+<h3>❌ 反例 4：把密钥/token 写进去</h3>
+<p>CLAUDE.md 会被签入 Git、被 Claude 输出到日志。<strong>任何秘密都用 <code>process.env</code></strong>。</p>
+<h3>❌ 反例 5：模糊指令</h3>
+<pre><code class="language-markdown">- 尽量避免使用 any
+</code></pre>
+<p><strong>改</strong>：<code>- ❌ any / as unknown → ✅ 补类型；无法补时用 zod 运行时校验</code></p>
+<hr/>
+<h2>十一、每周维护清单</h2>
+<p>把这份 checklist 加进团队 rituals（例如每周五 review）：</p>
+<ul>
+<li>[ ] 本周 PR 有没有<strong>重复出现</strong>的错误？→ 沉淀成 CLAUDE.md 红线</li>
+<li>[ ] 有没有条目<strong>从没被触发</strong>？→ 删掉</li>
+<li>[ ] 单文件超过 200 行了吗？→ 拆到 <code>.claude/rules/</code></li>
+<li>[ ] 是否有条目<strong>互相矛盾</strong>？→ 保留最新</li>
+<li>[ ] <code>bun</code> / 版本号 / API 路径<strong>是否过时</strong>？→ 更新</li>
+<li>[ ] 有没有条目<strong>其实应该是 Hook</strong>（可自动强制）？→ 迁到 <code>settings.json</code></li>
+</ul>
+<hr/>
+<h2>十二、一句话总结</h2>
+<blockquote>
+<p><strong>CLAUDE.md 是团队和 AI 的契约。写得越具体、越有理由、越常更新，
+AI 就越像团队里那个"熟练的老工程师"。</strong></p>
+</blockquote>
+<hr/></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

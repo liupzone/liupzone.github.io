@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f6fb" />
+  <meta name="description" content="liupzone AI知识库专栏：整理人工智能、大模型与 AI 工具相关的知识内容。" />
+  <meta name="keywords" content="AI知识库,人工智能,大模型,机器学习,AI工具,liupzone" />
+  <meta name="author" content="liupzone" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <title>AI知识库专栏 · liupzone 人生路标小站</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://www.liupzone.cn/ai-knowledge.html" />
+  <link rel="sitemap" type="application/xml" href="https://www.liupzone.cn/sitemap.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:site_name" content="liupzone 人生路标小站" />
+  <meta property="og:title" content="AI知识库专栏 · liupzone 人生路标小站" />
+  <meta property="og:description" content="整理人工智能、大模型与 AI 工具相关的知识内容。" />
+  <meta property="og:url" content="https://www.liupzone.cn/ai-knowledge.html" />
+  <link rel="stylesheet" href="campus-prep.css" />
+  <style>
+    .ai-hero { padding: 54px 0 32px; }
+    .ai-hero h1 { max-width: 760px; margin: 10px 0 12px; font-size: clamp(34px, 5vw, 58px); }
+    .ai-hero p { max-width: 650px; margin: 0; color: var(--prep-muted); line-height: 1.85; }
+    .ai-main { padding: 10px 0 80px; overflow: hidden; }
+    .ai-category-overview, .ai-article-view { min-width: 0; }
+    .ai-category-intro { max-width: 760px; margin-bottom: 27px; }
+    .ai-category-intro h2 { margin: 0 0 9px; color: var(--prep-ink); font-size: 25px; }
+    .ai-category-intro p { margin: 0; color: var(--prep-muted); font-size: 14px; line-height: 1.8; }
+    .ai-directory-table { overflow: hidden; border: 1px solid var(--prep-line); border-radius: 4px; background: var(--prep-panel); }
+    .ai-directory-head, .ai-directory-row { display: grid; grid-template-columns: minmax(190px, 260px) minmax(0, 1fr); }
+    .ai-directory-head { color: var(--prep-muted); background: var(--prep-blue-soft); font-size: 13px; }
+    .ai-directory-head span, .ai-directory-row > * { padding: 13px 18px; }
+    .ai-directory-head span:first-child, .ai-directory-row > *:first-child { border-right: 1px solid var(--prep-line); }
+    .ai-directory-row { border-top: 1px solid var(--prep-line); color: var(--prep-ink); }
+    .ai-directory-row:hover { background: var(--prep-blue-soft); }
+    .ai-directory-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--prep-blue); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; text-decoration: none; }
+    .ai-directory-link::after { content: '↗'; color: var(--prep-faint); font-family: inherit; }
+    .ai-directory-link:hover { color: var(--prep-blue); text-decoration: underline; }
+    .ai-directory-description { color: var(--prep-muted); font-size: 14px; line-height: 1.55; }
+    .ai-directory-count { display: inline-block; margin-left: 9px; color: var(--prep-faint); font-family: inherit; font-size: 11px; }
+    .ai-breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 0 0 18px; color: var(--prep-muted); font-size: 13px; }
+    .ai-breadcrumb button { padding: 0; border: 0; color: var(--prep-blue); background: transparent; font: inherit; cursor: pointer; }
+    .ai-breadcrumb button:hover { text-decoration: underline; }
+    .ai-directory-level { margin: 0 0 17px; color: var(--prep-ink); font-size: 23px; }
+    .ai-article-toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .ai-back { flex: 0 0 auto; padding: 9px 12px; border: 1px solid var(--prep-line); border-radius: 8px; color: var(--prep-muted); background: var(--prep-panel); font: inherit; font-size: 12px; cursor: pointer; }
+    .ai-back:hover { color: var(--prep-blue); border-color: var(--prep-blue); }
+    .ai-toolbar { flex: 1; display: flex; gap: 10px; }
+    .ai-toolbar input { width: 100%; min-height: 42px; padding: 0 13px; border: 1px solid var(--prep-line); border-radius: 9px; color: var(--prep-ink); background: var(--prep-panel); font: inherit; }
+    .ai-summary { margin: 0 0 25px; color: var(--prep-muted); font-size: 12px; }
+    .ai-section { margin-bottom: 35px; }
+    .ai-section-title { display: flex; align-items: baseline; gap: 10px; margin: 0 0 3px; padding-bottom: 10px; border-bottom: 2px solid var(--prep-ink); color: var(--prep-ink); font-size: 20px; }
+    .ai-section-title span { color: var(--prep-faint); font-size: 11px; font-weight: 400; }
+    .ai-feed { border-top: 1px solid var(--prep-line); }
+    .ai-card { display: block; padding: 18px 0; border-bottom: 1px solid var(--prep-line); color: inherit; text-decoration: none; }
+    .ai-card:hover .ai-card-title { color: var(--prep-blue); }
+    .ai-card-title { display: block; overflow: hidden; color: var(--prep-ink); font-size: 17px; font-weight: 750; line-height: 1.5; text-overflow: ellipsis; white-space: nowrap; }
+    .ai-card-content { display: grid; grid-template-columns: 236px minmax(0, 1fr); gap: 22px; align-items: start; min-width: 0; margin-top: 10px; }
+    .ai-card-media { display: block; width: 236px; height: 132px; border-radius: 5px; object-fit: cover; background: #e9eef4; }
+    .ai-card-copy { min-width: 0; }
+    .ai-card-excerpt { display: -webkit-box; overflow: hidden; margin: 1px 0 0; color: var(--prep-muted); font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+    .ai-card-more { display: inline-block; margin-top: 8px; color: var(--prep-blue); font-size: 13px; }
+    .ai-card-more::after { content: '⌄'; margin-left: 5px; font-size: 16px; }
+    .ai-card-meta { display: flex; gap: 18px; align-items: center; margin-top: 13px; color: var(--prep-faint); font-size: 12px; }
+    .ai-card-meta strong { color: var(--prep-blue); font-weight: 600; }
+    .ai-card-meta .ai-card-open { margin-left: auto; color: var(--prep-muted); }
+    .ai-empty { padding: 45px 20px; border: 1px dashed var(--prep-line); border-radius: 13px; color: var(--prep-muted); text-align: center; font-size: 13px; }
+    @media (max-width: 760px) { .ai-hero { padding-top: 34px; } .ai-directory-head, .ai-directory-row { grid-template-columns: minmax(115px, 36%) minmax(0, 1fr); } .ai-directory-head span, .ai-directory-row > * { padding: 11px 12px; } .ai-directory-description { font-size: 12px; } .ai-article-toolbar { align-items: stretch; flex-direction: column; gap: 9px; } .ai-back { align-self: flex-start; } .ai-card { padding: 15px 0; overflow: hidden; } .ai-card-title { font-size: 16px; white-space: normal; overflow-wrap: anywhere; } .ai-card-content { grid-template-columns: 112px minmax(0, 1fr); gap: 11px; } .ai-card-media { width: 112px; height: 78px; } .ai-card-excerpt { min-width: 0; font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; -webkit-line-clamp: 3; } .ai-card-more { margin-top: 3px; font-size: 11px; } .ai-card-meta { gap: 9px; flex-wrap: wrap; font-size: 10px; } .ai-card-meta span:nth-child(2) { display: none; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="index.html">首页</a><a href="campus-prep.html">校招稳稳拿OFFER</a><a href="resources.html">宝藏资源</a><a href="resources.html?category=考研">考研之路</a><a class="active" href="ai-knowledge.html">AI知识库专栏</a><a href="life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main>
+    <section class="ai-hero shell"><div class="eyebrow">LIUPZONE / AI KNOWLEDGE</div><h1>AI知识库专栏</h1><p>整理人工智能、大模型、机器学习与 AI 工具相关的知识内容，当前已发布 Awesome-AI-Pedia 的真实文章正文。</p></section>
+    <section class="ai-main shell"><div id="aiDirectoryView"><div class="ai-category-intro"><div class="eyebrow">目录导航</div><h2 class="ai-directory-level" id="aiDirectoryTitle">AI知识库分类</h2><p id="aiDirectoryIntro">参考 Awesome-AI-Pedia 的目录结构，先按主题查看 AI 知识，再进入具体工具或专题目录。</p></div><div class="ai-breadcrumb" id="aiBreadcrumb" hidden></div><div class="ai-directory-table" id="aiDirectoryTable"><div class="ai-directory-head"><span>目录</span><span>说明</span></div><div id="aiDirectoryRows"></div></div></div><div class="ai-article-view" id="aiArticleView" hidden><div class="ai-article-toolbar"><button class="ai-back" id="aiBack" type="button">← 返回目录</button><div class="ai-toolbar"><input id="aiSearch" type="search" placeholder="搜索当前目录的文章" aria-label="搜索当前目录的 AI 知识文章" /></div></div><p class="ai-summary" id="aiSummary"></p><div id="aiList"></div><div class="ai-empty" id="aiEmpty" hidden>没有匹配的知识文章，试试更短的关键词。</div></div></section>
+  </main>
+  <script src="ai-knowledge-data.js"></script>
+  <script>
+    const aiSearch = document.getElementById('aiSearch');
+    const aiDirectoryView = document.getElementById('aiDirectoryView');
+    const aiDirectoryTitle = document.getElementById('aiDirectoryTitle');
+    const aiDirectoryIntro = document.getElementById('aiDirectoryIntro');
+    const aiBreadcrumb = document.getElementById('aiBreadcrumb');
+    const aiDirectoryRows = document.getElementById('aiDirectoryRows');
+    const aiArticleView = document.getElementById('aiArticleView');
+    const aiBack = document.getElementById('aiBack');
+    const aiList = document.getElementById('aiList');
+    const aiSummary = document.getElementById('aiSummary');
+    const aiEmpty = document.getElementById('aiEmpty');
+    const articles = window.aiKnowledgeArticles || [];
+    const esc = (value) => String(value).replace(/[&<>"']/g, (ch) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[ch]));
+    const categoryCounts = articles.reduce((counts, article) => { counts[article.category] = (counts[article.category] || 0) + 1; return counts; }, {});
+    const topicGroups = [
+      { name: 'AI编码助手', description: 'AI 编程助手、编辑器与代码协作工具。', dirs: ['claudeCode', 'cursor', 'codex', 'antigravity', 'openclaw'] },
+      { name: 'AI开发与部署', description: 'AI 应用开发、部署、工程化与 Harness 实践。', dirs: ['开发ai应用相关问题', '部署ai', 'Harness Engineering'] },
+      { name: 'MCP与工具', description: 'MCP、命令行工具、浏览器工具与效率工具。', dirs: ['mcp', '工具', 'deepseek harness', 'deepseek harness plugins'] },
+      { name: '提示词与规则', description: '提示词、Rules、Vibe Coding 与设计方法。', dirs: ['prompt', 'rules', '好的rules', 'vibe coding 必知的常见知识', 'vibe coding', 'vibe design'] },
+      { name: 'Skills与智能体', description: 'Skills、Agent、Subagents 与常用智能体能力。', dirs: ['skills', '常用skills', 'Agent', 'subagents'] },
+      { name: 'AI知识与内容', description: 'AI 基础知识、视频、面试、文档与其他专题。', dirs: ['不可不知的Ai知识', 'AI视频', 'Ai面试类', 'docs', '使用ai技巧', 'qm', '其他'] },
+    ];
+    const directoryDescriptions = { claudeCode: 'Claude Code 完整使用指南：安装配置、常用命令、Browser 工具、Settings.json 详解', cursor: 'Cursor 编辑器：功能详解、中文对话、区域限制、菜单栏自定义、版本管理', codex: 'OpenAI Codex 相关实践', antigravity: 'Antigravity 相关笔记', openclaw: 'Openclaw 相关内容', mcp: '模型上下文协议与外部工具连接实践', 工具: 'CLI、浏览器和其他 AI 效率工具', prompt: '面向开发、设计、写作和内容创作的提示词', rules: 'AI 协作规则与项目级规则', skills: '可复用的 AI Skills 与工作流', 常用skills: '常用 Skills 安装、配置与使用', 'AI视频': '视频生成、数字人、配音与视频自动化', '不可不知的Ai知识': '模型、参数与 AI 基础概念', docs: 'AI 文档、博客与知识库建设' };
+    const categories = Object.keys(categoryCounts);
+    const categoryArticleCount = (name) => categoryCounts[name] || 0;
+    let selectedTopic = '';
+    let selectedCategory = '';
+    const topicByName = Object.fromEntries(topicGroups.map((group) => [group.name, group]));
+    const directoryRow = (label, description, action, count) => '<div class="ai-directory-row"><a class="ai-directory-link" href="#" data-action="'+action+'" data-value="'+esc(label)+'">'+esc(label)+'/</a><div class="ai-directory-description">'+esc(description)+'<span class="ai-directory-count">'+count+' 篇</span></div></div>';
+    function renderDirectory() {
+      if (!selectedTopic) {
+        aiDirectoryTitle.textContent = 'AI知识库分类';
+        aiDirectoryIntro.textContent = '参考 Awesome-AI-Pedia 的目录结构，先按主题查看 AI 知识，再进入具体工具或专题目录。';
+        aiBreadcrumb.hidden = true;
+        aiDirectoryRows.innerHTML = topicGroups.map((group) => directoryRow(group.name, group.description, 'topic', group.dirs.reduce((sum, name) => sum + categoryArticleCount(name), 0))).join('');
+        return;
+      }
+      const group = topicByName[selectedTopic];
+      aiDirectoryTitle.textContent = selectedTopic;
+      aiDirectoryIntro.textContent = group.description;
+      aiBreadcrumb.hidden = false;
+      aiBreadcrumb.innerHTML = '<button type="button" data-action="home">AI知识库分类</button><span>/</span><strong>'+esc(selectedTopic)+'</strong>';
+      aiDirectoryRows.innerHTML = group.dirs.filter((name) => categories.includes(name)).map((name) => directoryRow(name, directoryDescriptions[name] || 'AI 知识库专题文章', 'category', categoryArticleCount(name))).join('');
+    }
+    function render() {
+      const query = aiSearch.value.trim().toLowerCase();
+      const category = selectedCategory;
+      const found = articles.filter((article) => (!category || article.category === category) && (!query || (article.title+' '+article.category+' '+article.path).toLowerCase().includes(query)));
+      aiSummary.textContent = '显示 '+found.length+' 篇文章 · 共 '+articles.length+' 篇 · 来源于 Awesome-AI-Pedia';
+      const grouped = category ? [[category, found]] : categories.map((name) => [name, found.filter((article) => article.category === name)]).filter(([, items]) => items.length);
+      aiList.innerHTML = grouped.map(([name, items]) => '<section class="ai-section"><h2 class="ai-section-title">'+esc(name)+'<span>'+items.length+' 篇</span></h2><div class="ai-feed">'+items.map((article) => '<a class="ai-card" href="'+esc(article.url)+'"><strong class="ai-card-title">'+esc(article.title)+'</strong><div class="ai-card-content"><img class="ai-card-media" src="'+esc(article.image)+'" alt="'+esc(article.title)+'封面" loading="lazy" /><div class="ai-card-copy"><p class="ai-card-excerpt">'+esc(article.excerpt)+'</p><span class="ai-card-more">阅读全文</span></div></div><div class="ai-card-meta"><span><strong>'+esc(article.category)+'</strong></span><span>'+esc(article.path)+'</span><span class="ai-card-open">打开文章 ↗</span></div></a>').join('')+'</div></section>').join('');
+      aiEmpty.hidden = found.length > 0;
+      aiDirectoryView.hidden = !!category;
+      aiArticleView.hidden = !category;
+    }
+    aiSearch.addEventListener('input', render);
+    aiDirectoryRows.addEventListener('click', (event) => { const link = event.target.closest('[data-action]'); if (!link) return; event.preventDefault(); if (link.dataset.action === 'topic') { selectedTopic = link.dataset.value; selectedCategory = ''; renderDirectory(); render(); } else { selectedCategory = link.dataset.value; aiSearch.value = ''; render(); } });
+    aiBreadcrumb.addEventListener('click', () => { selectedTopic = ''; selectedCategory = ''; renderDirectory(); render(); });
+    aiBack.addEventListener('click', () => { selectedCategory = ''; renderDirectory(); render(); });
+    renderDirectory();
+    render();
+  </script>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

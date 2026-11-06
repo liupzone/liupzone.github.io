@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="DSH（DeepSeek‑Harness）四种运行模式 · AI知识库专栏" />
+  <title>DSH（DeepSeek‑Harness）四种运行模式 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/deepseek-harness-dsh-的四种模式-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / deepseek harness</div><h1>DSH（DeepSeek‑Harness）四种运行模式</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/deepseek-harness-dsh---md.svg" alt="DSH（DeepSeek‑Harness）四种运行模式主题配图" /></header><article class="ai-body ai-reading-width">
+<p>DSH 四种模式本质是<strong>加载不同插件集合</strong>，决定 Agent 可用工具、系统提示词与运行能力。</p>
+<h2>1. Standard 标准模式｜默认模式</h2>
+<ul>
+<li><strong>工具集</strong>：全套能力，文件编辑、Shell、网页搜索、子Agent、任务规划、Skills 技能等完整插件。</li>
+<li><strong>工作方式</strong>：传统逐轮工具调用，思考一步，调用一次工具。</li>
+<li><strong>适用场景</strong>：绝大多数日常开发、写代码、调试项目、查资料。普通用户首选。</li>
+<li><strong>特点</strong>：能力最全，交互直观，每一步操作可见可控。</li>
+</ul>
+<h2>2. PTC / Code 模式（Programmatic Tool‑Calling 程序化工具调用）</h2>
+<ul>
+<li><strong>工具集</strong>：标准模式全部能力 + Code‑Mode SDK。</li>
+<li><strong>工作方式</strong>：模型不做零散工具调用，直接生成一段 TypeScript 脚本，<strong>把多步操作打包一次性执行</strong>。原本 5‑10 轮工具调用压缩成一轮执行。</li>
+<li><strong>适用场景</strong>：批量任务、多步骤自动化、数据处理、批量文件修改。</li>
+<li><strong>特点</strong>：减少来回轮次，效率高；缺点是生成 TS 脚本有失败概率，排错比普通 tool‑call 麻烦，简单任务没必要用。</li>
+</ul>
+<h2>3. Minimal 极简模式</h2>
+<ul>
+<li><strong>工具集</strong>：仅保留 2 个工具：持久 Bash shell + 文件编辑器，砍掉搜索、子Agent、任务规划等全部附加插件；系统提示词极简，关闭上下文压缩。</li>
+<li><strong>工作方式</strong>：裸环境，只允许读写文件、执行 shell。</li>
+<li><strong>适用场景</strong>：模型基准评测、能力对照测试；安全限制场景，只允许改文件跑命令。</li>
+<li><strong>特点</strong>：能力受限，<strong>普通日常开发几乎不用</strong>。</li>
+</ul>
+<h2>4. Creator 创造模式（Cordis 模式）</h2>
+<ul>
+<li><strong>工具集</strong>：标准模式全部能力，额外开放运行时读写、Cordis 插件内存调试、编写 Agent 预设/插件。</li>
+<li><strong>工作方式</strong>：Agent 可以读取、修改 DSH 自身运行时，帮助开发新插件、自定义 Agent 预设。</li>
+<li><strong>适用场景</strong>：DSH 插件二次开发、自定义 Agent 配置。</li>
+<li><strong>⚠️ 风险</strong>：高权限，可篡改本地配置，误操作可能影响 DSH 自身运行环境，需谨慎使用。</li>
+</ul>
+<hr/>
+<h1>DSH 4种模式实操小任务示例</h1>
+<p>统一测试任务：<strong>在当前目录新建 <code>demo/</code> 文件夹，创建 <code>hello.txt</code>，写入 <code>hello dsh mode test</code>，打印文件内容</strong>。</p>
+<blockquote>
+<p>配置切换方式：启动时通过 <code>--preset &lt;mode&gt;</code>，或者配置文件 <code>agent‑presets: default: &lt;mode&gt;</code></p>
+</blockquote>
+<h2>1. Standard（标准模式，默认）</h2>
+<p><strong>命令启动</strong></p>
+<pre><code>dsh run --preset standard
+</code></pre>
+<p><strong>给模型指令</strong></p>
+<blockquote>
+<p>创建demo目录，新建hello.txt写入 hello dsh mode test，读取并打印文件内容</p>
+</blockquote>
+<p><strong>实际行为：分步工具调用</strong></p>
+<ol>
+<li>调用 shell：<code>mkdir demo</code></li>
+<li>调用 file_write：<code>demo/hello.txt</code> 写入文本</li>
+<li>调用 file_read：读取文件</li>
+<li>返回打印内容</li>
+</ol>
+<blockquote>
+<p>特点：一步一工具，每步都返回结果，出错会停下来问你，适合调试看过程。</p>
+</blockquote>
+<hr/>
+<h2>2. PTC / Code 模式（Programmatic Tool‑Calling）</h2>
+<p><strong>命令启动</strong></p>
+<pre><code>dsh run --preset code
+</code></pre>
+<p><strong>给模型同样指令</strong></p>
+<blockquote>
+<p>创建demo目录，新建hello.txt写入 hello dsh mode test，读取并打印文件内容</p>
+</blockquote>
+<p><strong>实际行为：生成一段 TS 脚本一次性执行，不拆分多轮工具调用</strong></p>
+<pre><code class="language-typescript">// 模型内部生成的执行脚本示例
+await tools.bash.exec("mkdir -p demo");
+await tools.file.write("demo/hello.txt", "hello dsh mode test");
+const content = await tools.file.read("demo/hello.txt");
+console.log(content);
+</code></pre>
+<p>一次性把全部逻辑丢给执行器跑完，中间不会回传每一步状态。</p>
+<blockquote>
+<p>坑点：脚本语法写错会整体失败；复杂逻辑脚本容易写崩；简单小任务看不出优势，批量重构大量文件才体现速度。</p>
+</blockquote>
+<hr/>
+<h2>3. Minimal 极简模式</h2>
+<p><strong>命令启动</strong></p>
+<pre><code>dsh run --preset minimal
+</code></pre>
+<p><strong>给模型同样指令</strong></p>
+<blockquote>
+<p>创建demo目录，新建hello.txt写入 hello dsh mode test，读取并打印文件内容</p>
+</blockquote>
+<p><strong>实际行为：只有 bash + 文件编辑工具，没有规划、搜索等额外能力</strong></p>
+<p>模型只会使用 bash shell 和基础文件工具完成任务，不会调用任何额外插件。示例执行流程全部走 bash：</p>
+<pre><code>mkdir -p demo
+echo "hello dsh mode test" &gt; demo/hello.txt
+cat demo/hello.txt
+</code></pre>
+<blockquote>
+<p>特点：没有任务规划、没有搜索、没有子Agent，模型直接用最原始的 shell 命令串行完成，反而更快更省 token，但复杂任务（需要查资料、多步规划）就完全做不了。</p>
+</blockquote>
+<hr/>
+<h2>4. Creator 创造模式（Cordis 模式）</h2>
+<p><strong>命令启动</strong></p>
+<pre><code>dsh run --preset creator
+</code></pre>
+<p><strong>给模型同样指令</strong></p>
+<blockquote>
+<p>创建demo目录，新建hello.txt写入 hello dsh mode test，读取并打印文件内容</p>
+</blockquote>
+<p><strong>实际行为：与标准模式类似完成基础任务，但额外具备读写 DSH 自身运行时、调试 Cordis 插件内存、编写/加载自定义 Agent 预设与插件的能力</strong></p>
+<p>除了完成上述文件操作外，Creator 模式下模型还可以：</p>
+<ul>
+<li>读取/修改当前会话的插件配置</li>
+<li>动态生成一个临时插件并加载进当前运行时</li>
+<li>修改 Agent 预设参数后立即生效，无需重启</li>
+</ul>
+<p><strong>模式风险对照</strong></p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>风险等级</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard</td>
+<td>低</td>
+<td>工具调用受限于既定插件，行为可预测</td>
+</tr>
+<tr>
+<td>PTC/Code</td>
+<td>中</td>
+<td>脚本一次性执行，出错影响范围较大</td>
+</tr>
+<tr>
+<td>Minimal</td>
+<td>低</td>
+<td>能力最小，几乎无越权空间</td>
+</tr>
+<tr>
+<td>Creator</td>
+<td>高</td>
+<td>高权限，可篡改本地配置</td>
+</tr>
+</tbody>
+</table>
+<h2>小实操提示</h2>
+<ol>
+<li>临时切换模式优先用 <code>--preset xxx</code>，不要改配置文件反复改默认；</li>
+<li>Code 模式遇到失败，可以切回 Standard 跑同一个 prompt，分步排错；</li>
+<li>Creator 模式用完记得切回 standard，避免误操作。</li>
+</ol>
+<p>如果你需要，我可以给一份可复制的 dsh 配置片段，直接放到 yaml 配置里快速切换测试。</p></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

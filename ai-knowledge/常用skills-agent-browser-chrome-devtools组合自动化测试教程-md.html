@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Agent Browser + Chrome Dev Tools 组合自动化测试教程 · AI知识库专栏" />
+  <title>Agent Browser + Chrome Dev Tools 组合自动化测试教程 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/常用skills-agent-browser-chrome-devtools组合自动化测试教程-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / 常用skills</div><h1>Agent Browser + Chrome Dev Tools 组合自动化测试教程</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/skills-agent-browser-chrome-devtools--md.svg" alt="Agent Browser + Chrome Dev Tools 组合自动化测试教程主题配图" /></header><article class="ai-body ai-reading-width">
+<h2>一、组合优势概述</h2>
+<h3>为什么要组合使用?</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>主要优势</th>
+<th>Token效率</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent Browser</td>
+<td>超高效率、简洁API</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>快速交互、表单填写</td>
+</tr>
+<tr>
+<td>Chrome Dev Tools</td>
+<td>深度分析、性能调试</td>
+<td>⭐⭐⭐</td>
+<td>性能分析、网络监控</td>
+</tr>
+</tbody>
+</table>
+<h3>组合效果</h3>
+<ul>
+<li>🚀 <strong>效率最大化</strong>: Agent Browser 负责高频交互,Chrome Dev Tools 负责深度分析</li>
+<li>💰 <strong>成本控制</strong>: 相比纯 Playwright MCP 节省 90%+ tokens</li>
+<li>🔍 <strong>能力互补</strong>: 既能快速操作,又能深度调试</li>
+</ul>
+<hr/>
+<h2>二、环境搭建</h2>
+<h3>2.1 基础环境准备</h3>
+<pre><code class="language-bash"># 1. 安装 Agent Browser
+npm install -g agent-browser
+agent-browser install
+
+# 2. 安装 Chrome Dev Tools MCP
+npm install -g chrome-devtools-mcp
+
+# 3. 启动 Chrome 持久化服务
+python chrome_persistent_service.py start
+</code></pre>
+<h2>五、AI 提示词实例</h2>
+<h3>5.1 组合测试提示词模板</h3>
+<h4>模板 1: 性能测试组合</h4>
+<pre><code>请帮我执行组合性能测试:
+
+阶段1 - 快速操作(使用 Agent Browser):
+1. 打开 https://example.com
+2. 点击登录按钮
+3. 输入用户名 test@example.com
+4. 输入密码 test123
+5. 点击提交按钮
+
+阶段2 - 性能分析(使用 Chrome Dev Tools):
+6. 分析页面加载性能,获取 LCP 指标
+7. 检查内存使用情况
+8. 分析所有网络请求,找出响应时间超过 1 秒的请求
+9. 提供性能优化建议
+
+阶段3 - 验证(使用 Agent Browser):
+10. 截图保存测试结果
+11. 验证是否成功登录
+
+请以 JSON 格式返回所有性能数据和建议。
+</code></pre>
+<h3>5.2 调试专用提示词</h3>
+<h4>调试模板: 问题诊断组合</h4>
+<pre><code>遇到了页面加载问题,请帮我诊断:
+
+快速检查(Agent Browser):
+1. 打开页面并截图当前状态
+2. 检查控制台是否有错误信息
+3. 验证关键元素是否可见
+4. 测试基本交互是否正常
+
+深度分析(Chrome Dev Tools):
+5. 分析网络请求是否有失败的
+6. 检查 JavaScript 控制台错误
+7. 分析页面加载时间分布
+8. 检查内存泄漏情况
+9. 分析 DOM 结构变化
+
+验证修复(Agent Browser):
+10. 根据分析结果重试操作
+11. 验证问题是否解决
+12. 截图对比修复前后的状态
+
+请提供:
+- 错误原因分析
+- 具体的修复建议
+- 预防类似问题的方法
+</code></pre>
+<hr/>
+<h2>六、最佳实践</h2>
+<h3>6.1 使用原则</h3>
+<ol>
+<li><strong>效率优先</strong>: 常规操作优先使用 Agent Browser</li>
+<li><strong>按需切换</strong>: 需要深度分析时才切换到 Chrome Dev Tools</li>
+<li><strong>数据整合</strong>: 将两种工具的结果整合分析</li>
+<li><strong>成本控制</strong>: 监控 token 使用情况</li>
+</ol>
+<h3>6.3 错误处理策略</h3>
+<p><strong>健壮性设计原则</strong>:</p>
+<ol>
+<li><strong>超时控制</strong>: 为每个操作设置合理的超时时间</li>
+<li><strong>重试机制</strong>: 关键操作失败后自动重试</li>
+<li><strong>降级策略</strong>: Chrome Dev Tools 不可用时降级为纯 Agent Browser</li>
+<li><strong>日志记录</strong>: 详细记录每个步骤的执行情况</li>
+</ol>
+<hr/>
+<h2>总结与最佳实践</h2>
+<h3>8.1 关键优势</h3>
+<ol>
+<li><strong>Token 效率提升 90%+</strong> 相比纯 Playwright MCP</li>
+<li><strong>功能互补</strong>: 快速操作 + 深度分析</li>
+<li><strong>成本可控</strong>: 智能切换,避免不必要的消耗</li>
+<li><strong>错误健壮</strong>: 完整的异常处理机制</li>
+</ol>
+<h3>8.2 使用建议</h3>
+<ul>
+<li><strong>开发阶段</strong>: Agent Browser 为主,快速迭代</li>
+<li><strong>调试阶段</strong>: Chrome Dev Tools 深度分析</li>
+<li><strong>生产阶段</strong>: 组合使用,全面覆盖</li>
+</ul></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

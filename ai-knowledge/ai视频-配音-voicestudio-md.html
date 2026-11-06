@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="VoiceStudio 总结 · AI知识库专栏" />
+  <title>VoiceStudio 总结 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/ai视频-配音-voicestudio-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / AI视频</div><h1>VoiceStudio 总结</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/ai----voicestudio-md.svg" alt="VoiceStudio 总结主题配图" /></header><article class="ai-body ai-reading-width">
+<p>仓库地址：https://github.com/debpalash/VoiceStudio</p>
+<h2>是什么</h2>
+<p>一款<strong>开源、完全本地的 ElevenLabs 替代品</strong>——集语音克隆、声音设计、视频配音、听写、转录和有声书制作于一体的桌面工作室，支持 <strong>646 种语言</strong>。</p>
+<blockquote>
+<p>核心创作流程运行在你自己的硬件上，<strong>默认本地优先</strong>，没有订阅、没有用量计费，联网服务始终由你主动选择。</p>
+</blockquote>
+<p>⚠️ 处于活跃 Beta 阶段，版本间可能不稳定，需最新修复建议从源码运行。</p>
+<h2>八大主打功能</h2>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎙️ 语音克隆</td>
+<td>3 秒音频复刻任何声音，646 种语言，零样本</td>
+</tr>
+<tr>
+<td>🎨 声音设计</td>
+<td>性别、年龄、口音、音高、语速、情感、方言随心调节</td>
+</tr>
+<tr>
+<td>🎬 视频配音</td>
+<td>YouTube 链接或文件 → 转录 → 翻译 → 重新配音 → MP4</td>
+</tr>
+<tr>
+<td>📖 有声书编辑器</td>
+<td>导入文本 / EPUB / PDF，自动分章、响度归一、元数据，导出 .m4b</td>
+</tr>
+<tr>
+<td>🎭 故事模式</td>
+<td>多声音编辑器，逐行分配声音、预览、导出完整配音阵容</td>
+</tr>
+<tr>
+<td>⌨️ 听写工具</td>
+<td>任意应用中按 ⌘+⇧+Space，转录、自动粘贴、随即消失</td>
+</tr>
+<tr>
+<td>🔐 本地优先</td>
+<td>核心创作流程留在你的设备上</td>
+</tr>
+<tr>
+<td>🤖 MCP 服务器</td>
+<td>从 Claude、Cursor 或任何 MCP 客户端调用 VoiceStudio</td>
+</tr>
+</tbody>
+</table>
+<p><strong>另有 12 项</strong>：人声分离（Demucs）、说话人分离（Pyannote + WhisperX）、批量队列、AI 水印（Meta AudioSeal）、诊断自检、GPU 自动检测、引擎路由（绝不静默回退 CPU）、可扩展（继承 <code>TTSBackend</code> 约 50 行接入新引擎）、便携声音角色（<code>.ovsvoice</code> 包）、无限长 TTS（按句分块 + WebSocket 流式）、远程后端（Tailscale 友好 + Bearer 认证）、听写 + 本地 LLM 润色。</p>
+<h2>对比 ElevenLabs</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ElevenLabs</th>
+<th>VoiceStudio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>价格</td>
+<td>订阅 + 用量限制</td>
+<td>免费开源（AGPL-3.0）</td>
+</tr>
+<tr>
+<td>语言</td>
+<td>取决于套餐</td>
+<td><strong>646</strong></td>
+</tr>
+<tr>
+<td>有声书 / 故事</td>
+<td>❌</td>
+<td>✅ 完整编辑器（EPUB/PDF 导入、.m4b 导出）</td>
+</tr>
+<tr>
+<td>视频配音</td>
+<td>✅ 仅云端</td>
+<td>✅ 完全本地</td>
+</tr>
+<tr>
+<td>数据隐私</td>
+<td>音频在远端处理</td>
+<td>核心流程本地运行</td>
+</tr>
+<tr>
+<td>TTS 引擎</td>
+<td>1</td>
+<td><strong>16</strong></td>
+</tr>
+<tr>
+<td>ASR 引擎</td>
+<td>1</td>
+<td><strong>11</strong></td>
+</tr>
+<tr>
+<td>MCP 服务器</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>桌面应用</td>
+<td>❌</td>
+<td>✅ macOS / Windows / Linux</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>ElevenLabs 仍领先的地方：开箱即用的稳定性与打磨（尤其英语 TTS）。VoiceStudio 质量取决于所选引擎、硬件与参考音频（干燥近麦音频克隆效果最佳）。</p>
+</blockquote>
+<h2>TTS 引擎（16 个）</h2>
+<p>默认 <strong>VoiceStudio</strong>（由 k2-fsa/OmniVoice 驱动，600+ 语言，支持克隆与指令）始终可用。另有可选装自动检测的引擎：CosyVoice 3、GPT-SoVITS、VoxCPM2、MOSS-TTS-Nano、KittenTTS、MLX-Audio（仅 Apple Silicon）、Sherpa-ONNX；以及按需延迟安装（⚡）的：IndexTTS 2.5、OmniVoice GGUF、PocketTTS、Supertonic 3、MOSS-TTS-v1.5（8B）、dots.tts（2B）、Confucius4-TTS 等。在 <strong>设置 → TTS 引擎</strong> 中切换。</p>
+<h2>ASR 引擎（11 个）</h2>
+<p>默认 <strong>WhisperX</strong>（约 100 种语言，词级时间对齐）驱动听写、配音、字幕。其余可选：Faster-Whisper（含崩溃隔离版）、MLX Whisper（Apple Silicon 原生）、PyTorch Whisper、Parakeet TDT（NeMo，SOTA 精度）、Moonshine（边缘低延迟）、FunASR/SenseVoice（多语言 + 内置说话人分离）、sherpa-onnx（实时听写）、OpenAI 兼容远程（接 Qwen3-ASR 等）。除远程外全部本地运行，无需 API 密钥。</p>
+<h2>架构</h2>
+<pre><code>Frontend (React)：DubTab · VoiceConsole · Stories · Audiobook · Gallery · Dictation · BatchQueue · Diagnostics · MCP Client
+Backend (FastAPI)：100+ API 端点 · SSE+WSS 流式 · SQLite
+核心模块：WhisperX(+7 ASR) · Demucs 人声分离 · VoiceStudio(+10 TTS) · Pyannote 说话人分离 · 引擎路由(GPU 预检，绝不静默回退 CPU)
+硬件：CUDA / MPS / ROCm / CPU（自动检测 + 路由）
+</code></pre>
+<h2>OpenAI 兼容 API</h2>
+<p>已有会说 OpenAI 音频 API 的脚本/Agent？指向 <code>http://localhost:3900/v1</code> 即可，无需密钥、无需改代码：</p>
+<ul>
+<li><code>POST /v1/audio/speech</code> — TTS（<code>tts-1</code>/<code>tts-1-hd</code> 映射当前引擎，输出 mp3/wav/flac/opus/pcm）</li>
+<li><code>POST /v1/audio/transcriptions</code> — STT（<code>whisper-1</code> 映射当前 ASR）</li>
+<li><code>GET /v1/audio/voices</code> — 列出所有声音配置与引擎</li>
+</ul>
+<p>完整 100+ 端点参考内嵌于应用（设置 → OpenAPI 参考，由 Scalar 驱动）。</p>
+<h2>快速开始</h2>
+<ol>
+<li>从 <a href="https://github.com/debpalash/VoiceStudio/releases/latest">Releases</a> 下载对应系统安装包（macOS DMG / Windows MSI / Linux AppImage），或 Docker（<code>palashdeb/omnivoice-studio</code>）</li>
+<li>首次启动自动搭建 Python 环境并下载模型权重（仅首次，需几分钟）</li>
+<li>打开语音克隆，拖入 3 秒音频 → 输入一句话 → 点击生成</li>
+</ol>
+<ul>
+<li>无本地 GPU？官方 Colab 笔记本可在免费 T4 上启动完整应用</li>
+<li>Agent Skills 一键接入：<code>npx skills add debpalash/omnivoice-studio</code></li>
+</ul>
+<h2>系统要求</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>最低</th>
+<th>推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系统</td>
+<td>Windows 10 / macOS 12+（Apple Silicon）/ Ubuntu 24.04+</td>
+<td>现代 64 位系统</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>8 GB</td>
+<td>16 GB+</td>
+</tr>
+<tr>
+<td>显存</td>
+<td>4 GB（自动卸载 TTS 到 CPU）</td>
+<td>8 GB+（RTX 3060+）</td>
+</tr>
+<tr>
+<td>硬盘</td>
+<td>10 GB</td>
+<td>20 GB+ SSD</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>可选，CPU 也能跑</td>
+<td>NVIDIA CUDA / Apple MPS / AMD ROCm（仅 Linux）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意：<strong>macOS Intel 不支持本地后端</strong>（PyTorch 已停止发布 Intel Mac 轮子），只能配远程后端。Windows 上 AMD GPU 只能 CPU 运行（ROCm 无 Windows 轮子）。</p>
+</blockquote></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="UI 设计+html+js 提示词 · AI知识库专栏" />
+  <title>UI 设计+html+js 提示词 · AI知识库专栏</title>
+  <link rel="canonical" href="https://www.liupzone.cn/ai-knowledge/prompt-开发类提示词-ui设计-html-js提示词-md.html" />
+  <link rel="stylesheet" href="../campus-prep.css" />
+  <style>
+    .ai-article { max-width: 1040px; padding: 48px 20px 96px; }
+    .ai-article-header { max-width: 820px; padding-bottom: 26px; border-bottom: 1px solid var(--prep-line); }
+    .ai-article h1 { margin: 10px 0 13px; color: var(--prep-ink); font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.035em; }
+    .ai-meta { margin: 0; color: var(--prep-muted); font-size: 12px; line-height: 1.9; }
+    .ai-source { margin: 6px 0 0; color: var(--prep-faint); font-size: 11px; line-height: 1.6; }
+    .ai-cover { display: block; width: min(100%, 820px); aspect-ratio: 2.4 / 1; margin: 24px 0 0; border: 1px solid var(--prep-line); border-radius: 10px; object-fit: cover; background: var(--prep-blue-soft); }
+    .ai-meta a { color: var(--prep-blue); }
+    .ai-reading-width { max-width: 820px; }
+    .ai-body { margin-top: 30px; padding: 0; color: var(--prep-ink); line-height: 1.9; overflow-wrap: anywhere; }
+    .ai-body h1, .ai-body h2, .ai-body h3, .ai-body h4 { line-height: 1.4; }
+    .ai-body h1 { margin: 36px 0 14px; font-size: 30px; }
+    .ai-body h2 { margin: 38px 0 14px; padding: 0 0 9px 13px; border-left: 3px solid var(--prep-blue); border-bottom: 1px solid var(--prep-line); font-size: 23px; }
+    .ai-body h3 { margin: 27px 0 9px; color: var(--prep-blue); font-size: 17px; }
+    .ai-body h4 { margin: 21px 0 7px; font-size: 15px; }
+    .ai-body p, .ai-body ul, .ai-body ol, .ai-body blockquote { margin: 13px 0; }
+    .ai-body ul, .ai-body ol { padding-left: 25px; }
+    .ai-body li { margin: 5px 0; }
+    .ai-body a { color: var(--prep-blue); }
+    .ai-body img { max-width: 100%; height: auto; }
+    .ai-body pre { position: relative; overflow-x: auto; margin: 17px 0; padding: 17px 19px; border: 1px solid #293552; border-radius: 9px; color: #e8eefc; background: #172033; font-size: 12px; line-height: 1.7; tab-size: 2; }
+    .ai-body code { padding: 2px 5px; border-radius: 4px; color: #a04f35; background: #fff1e9; font-size: .9em; }
+    .ai-body pre code { padding: 0; color: inherit; background: transparent; }
+    .ai-body table { width: 100%; margin: 17px 0; border-collapse: collapse; font-size: 13px; }
+    .ai-body th, .ai-body td { padding: 8px 10px; border: 1px solid var(--prep-line); text-align: left; }
+    .ai-body blockquote { margin: 18px 0; padding: 10px 16px; border-left: 3px solid var(--prep-orange); color: var(--prep-muted); background: #fff7f2; }
+    .ai-body hr { margin: 30px 0; border: 0; border-top: 1px solid var(--prep-line); }
+    body.dark .ai-body code { color: #ffc0a4; background: rgba(241, 154, 114, .13); }
+    body.dark .ai-body blockquote { background: rgba(241, 154, 114, .1); }
+    @media (max-width: 680px) { .ai-article { padding-top: 30px; padding-bottom: 60px; } .ai-body { margin-top: 24px; } .ai-body h2 { font-size: 20px; } .ai-body h3 { font-size: 16px; } .ai-body pre { margin-left: -2px; margin-right: -2px; padding: 14px; font-size: 11px; } }
+  </style>
+</head>
+<body class="light">
+  <header class="topbar shell"><a class="brand" href="../index.html" aria-label="liupzone 首页"><span class="mark" aria-hidden="true"></span><span><span class="brand-cn">liupzone</span><span class="brand-en">人生路标小站</span></span></a><nav class="nav" aria-label="主导航"><a href="../index.html">首页</a><a href="../campus-prep.html">校招稳稳拿OFFER</a><a href="../resources.html">宝藏资源</a><a href="../resources.html?category=考研">考研之路</a><a class="active" href="../ai-knowledge.html">AI知识库专栏</a><a href="../life.html">生活福利</a><button class="icon-btn" id="themeToggle" aria-label="切换主题" title="切换主题">☾</button></nav></header>
+  <main class="ai-article shell"><header class="ai-article-header"><div class="eyebrow">AI KNOWLEDGE / prompt</div><h1>UI 设计+html+js 提示词</h1><p class="ai-meta">内容来源：Awesome-AI-Pedia 知识整理</p><img class="ai-cover" src="../assets/ai-knowledge-covers/prompt---ui--html-js--md.svg" alt="UI 设计+html+js 提示词主题配图" /></header><article class="ai-body ai-reading-width">
+<pre><code class="language-js">&lt;role&gt;
+您是一名精通UI设计和HTML/JavaScript开发的专家顾问。您擅长分析需求、创造直观的用户界面，并将设计转化为高质量的前端代码。
+&lt;/role&gt;
+
+&lt;task&gt;
+基于用户需求，完成以下三个阶段的工作：
+1. 深入分析用户需求
+2. 制定专业的UI设计方案
+3. 实现符合现代Web标准的HTML/CSS/JavaScript代码
+&lt;/task&gt;
+
+&lt;workflow&gt;
+1. 需求分析：
+   - 目标：明确项目目的、核心功能和关键特性
+   - 用户：识别目标用户群体、使用场景和用户痛点
+   - 约束：确定技术限制、设计规范和项目边界
+   - 输出：生成结构化的需求文档，作为后续设计和开发的基础
+
+2. UI设计方案：
+   - 布局：详细说明页面结构、组件排列和响应式设计策略
+   - 交互：描述用户操作流程、反馈机制和动画效果
+   - 视觉：定义色彩方案、字体选择、图标风格和整体美学
+   - 原型：提供关键界面的线框图或高保真原型图
+
+3. 代码实现：
+   - HTML：构建语义化、可访问的页面结构
+   - CSS：实现响应式布局、样式美化和动画效果
+   - JavaScript：开发交互功能、数据处理和动态更新逻辑
+   - 优化：确保代码性能、可维护性和跨浏览器兼容性
+&lt;/workflow&gt;
+
+&lt;output_format&gt;
+
+## 1. 需求分析
+
+[详细的思维链分析过程，包括目标、用户和约束的具体阐述]
+
+## 2. UI设计方案
+
+[完整的UI设计描述，涵盖布局、交互、视觉风格，并附带必要的原型图]
+
+## 3. 代码实现
+```html
+
+&lt;!-- 结构化、语义化的HTML代码 --&gt;
+</code></pre>
+<pre><code>
+/* 模块化、响应式的CSS代码 */
+```js
+</code></pre>
+<p>// 功能完整、注释清晰的JavaScript代码</p>
+<pre><code class="language-css">
+## 4. 实现说明
+
+[代码结构解释、关键功能说明、性能优化措施]
+
+## 5. 改进建议
+
+[可选的优化方向、扩展功能或替代方案]
+&lt;/output_format&gt;
+
+&lt;instructions&gt;
+- 严格遵循工作流程，确保每个阶段的输出质量
+- 在需求分析中运用批判性思维，全面考虑用户需求和项目约束
+- 设计方案应注重用户体验，平衡美观性和功能性
+- 代码实现需遵循最新的Web标准和最佳实践
+- 优先考虑界面的直观性、易用性和响应式特性
+- 提供清晰的代码注释和实现说明，便于后续维护
+- 如发现原需求中的潜在问题，请在"改进建议"部分提出
+- 确保最终deliverable完整、专业，能直接指导项目实施
+&lt;/instructions&gt;
+
+&lt;query&gt;
+您的需求
+&lt;/query&gt;
+
+</code></pre>
+<pre><code class="language-js"></code></pre></article></main>
+  <script>document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';});</script>
+</body>
+</html>
