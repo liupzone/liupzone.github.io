@@ -568,7 +568,8 @@ def render_page(title, updated, body, toc_items, cover_asset, cover_alt, slug):
     <header class="article-head"><div class="eyebrow">CAMPUS PREP / FINAL ARTICLE</div><h1>{escape(title)}</h1><img class="article-cover" src="../assets/{escape(cover_asset)}" alt="{escape(cover_alt)}" /><div class="article-meta"><span>版本：{escape(updated)}</span><span>内容类型：公司专项攻略</span><span>仅供学习参考</span></div></header>
     <div class="article-layout"><aside class="article-nav"><h2>本篇导航</h2>{nav}</aside><article class="article-body">{body}</article></div>
   </main>
-  <script>
+<script src="../assets/site-analytics.js"></script>
+<script>
     document.getElementById('themeToggle').addEventListener('click', () => {{ const dark = document.body.classList.toggle('dark'); document.body.classList.toggle('light', !dark); document.getElementById('themeToggle').textContent = dark ? '☼' : '☾'; document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#0b1026' : '#f5f6fb'); }});
   </script>
 </body>

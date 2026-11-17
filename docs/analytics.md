@@ -1,8 +1,17 @@
 # 访问统计接入说明
 
-首页默认使用 `localStorage` 做本机回退统计，按自然日去重，并根据浏览器时区显示大致地区。静态 GitHub Pages 无法直接汇总所有访客，因此需要配置一个外部统计接口，才能显示全站数据。
+网站使用 GoatCounter 统计所有页面的匿名访问，首页读取当天全站访问数。GoatCounter 失败时，首页会回退到 `localStorage` 的本机统计，但回退值不代表全站数据。
 
-在部署前注入配置即可：
+当前站点配置为：
+
+```html
+<script data-goatcounter="https://liupzone.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+```
+
+如需更换统计站点，修改 `assets/site-analytics.js` 中的 `endpoint` 和 `site`，并同步更新页面生成器。
+
+旧版自建接口配置示例：
 
 ```html
 <script>
@@ -43,7 +52,7 @@
 
 ## 每日访问人数
 
-首页的“每日访问人数”记录访问网站的匿名人数。同一浏览器在同一自然日只计 1 人；页面默认显示本机统计，不会伪造全站数字。
+首页的“每日访问人数”显示 GoatCounter 返回的当天全站访客数；同一访客在 GoatCounter 的会话规则内不会被重复计为新访客。接口暂时不可用时，页面显示本机回退值，并保持“本机统计”标记。
 
 若配置汇总接口，页面会显示全站匿名人数：
 

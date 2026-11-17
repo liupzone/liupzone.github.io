@@ -60,5 +60,6 @@
     const requestEndpoint=window.LIUPZONE_REQUEST_ENDPOINT||''; $('#requestForm').addEventListener('submit',(event)=>{event.preventDefault(); const payload={name:$('#requestName').value.trim(),contact:$('#requestContact').value.trim(),detail:$('#requestDetail').value.trim(),createdAt:new Date().toISOString(),source:location.href}; if(requestEndpoint){try{navigator.sendBeacon(requestEndpoint,new Blob([JSON.stringify(payload)],{type:'application/json'})); $('#requestResult').textContent='需求已发送，感谢你的留言。'; $('#requestForm').reset()}catch(error){$('#requestResult').textContent='发送失败，请扫码加入资源群咨询。'}}else{try{localStorage.setItem('liupzone:resource-request:last',JSON.stringify(payload))}catch(error){} $('#requestResult').textContent='需求已保存为本机草稿；也可以扫码加入资源群咨询。'; $('#requestForm').reset()} }); const qrViewer=$('#qrViewer'); $('#groupQr').addEventListener('click',()=>{qrViewer.classList.add('open');qrViewer.setAttribute('aria-hidden','false')}); const closeQr=()=>{qrViewer.classList.remove('open');qrViewer.setAttribute('aria-hidden','true')}; $('#closeQr').addEventListener('click',closeQr); qrViewer.addEventListener('click',(event)=>{if(event.target===qrViewer)closeQr()});
     $('#totalCount').textContent=resourceData.length; $('#categoryCount').textContent=categories.length; render();
   </script>
+  <script src="assets/site-analytics.js"></script>
 </body>
 </html>

@@ -107,6 +107,13 @@ if (!home.includes('每日访问人数') || !home.includes('visitCount')) {
 if ((home.match(/id="visitCount"/g) || []).length !== 1) {
   throw new Error('homepage should have one daily visit counter');
 }
+const analytics = read('assets/site-analytics.js');
+if (!analytics.includes("https://liupzone.goatcounter.com/count") || !analytics.includes("/counter/TOTAL.json?start=day")) {
+  throw new Error('site analytics should use the configured GoatCounter site and daily total endpoint');
+}
+if (!home.includes('src="assets/site-analytics.js"')) {
+  throw new Error('homepage should load the shared site analytics script');
+}
 if (!home.includes('内容贡献') || !home.includes("textContent='近期发布的站内文章'") || !home.includes('life/smk-shanghai-xiaoshengchu.html') || !home.includes('campus-prep/horizon.html') || !home.includes('campus-prep/unitree.html')) {
   throw new Error('homepage latest content should use published campus articles');
 }

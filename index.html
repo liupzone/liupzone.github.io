@@ -63,10 +63,7 @@
   <script>
     document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');document.body.classList.toggle('light',!dark);document.getElementById('themeToggle').textContent=dark?'☼':'☾';document.querySelector('meta[name="theme-color"]').setAttribute('content',dark?'#0b1026':'#f5f6fb')}); document.getElementById('mobileSettings').addEventListener('click',()=>document.getElementById('themeToggle').click());
   </script>
-  <script>
-    (() => {
-      const key='liupzone:daily-visit';const day=new Date().toISOString().slice(0,10);let records=[];try{records=JSON.parse(localStorage.getItem(key)||'[]');}catch(error){}const today=records.filter(item=>item&&item.day===day);if(!today.length){records.push({day,at:new Date().toISOString()});try{localStorage.setItem(key,JSON.stringify(records));}catch(error){}}const count=document.getElementById('visitCount'),source=document.getElementById('visitSource');document.getElementById('visitDay').textContent=day;count.textContent=String(Math.max(1,today.length));const summaryUrl=window.LIUPZONE_ANALYTICS_SUMMARY_URL||'';if(summaryUrl){fetch(summaryUrl,{headers:{Accept:'application/json'}}).then(r=>r.ok?r.json():Promise.reject()).then(data=>{count.textContent=String(Number(data.todayVisits)||0);source.textContent='全站匿名统计';source.classList.add('is-live');}).catch(()=>{});}const endpoint=window.LIUPZONE_ANALYTICS_ENDPOINT||'';if(endpoint){navigator.sendBeacon(endpoint,new Blob([JSON.stringify({day,path:location.pathname})],{type:'application/json'}));}});
-  </script>
+  <script src="assets/site-analytics.js"></script>
   <script>
     document.querySelector('.topic-section .section-heading p').textContent='近期发布的站内文章';
     document.querySelector('.update-list')?.insertAdjacentHTML('afterbegin','<a class="update-card" href="life/smk-shanghai-xiaoshengchu.html"><div class="update-copy"><strong>上海小升初“神秘考”全攻略</strong><span>梳理 SMK 的概念、学校暗号、备考规划、证书准备、考试内容与风险提醒。</span><time class="update-date">生活福利 · 升学信息整理</time></div><img class="update-cover" src="assets/smk-shanghai-xiaoshengchu-cover.svg" alt="上海小升初神秘考全攻略封面" /></a>');
